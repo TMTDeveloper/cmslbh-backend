@@ -545,12 +545,19 @@ export enum PersonOrderByInput {
 }
 
 export enum RoleOrderByInput {
+    createdAt_ASC = "createdAt_ASC",
+    createdAt_DESC = "createdAt_DESC",
+    id_ASC = "id_ASC",
+    id_DESC = "id_DESC"
+}
+
+export enum RolesTypeOrderByInput {
+    createdAt_ASC = "createdAt_ASC",
+    createdAt_DESC = "createdAt_DESC",
     id_ASC = "id_ASC",
     id_DESC = "id_DESC",
-    type_ASC = "type_ASC",
-    type_DESC = "type_DESC",
-    userId_ASC = "userId_ASC",
-    userId_DESC = "userId_DESC"
+    description_ASC = "description_ASC",
+    description_DESC = "description_DESC"
 }
 
 export enum UserOrderByInput {
@@ -2012,7 +2019,6 @@ export class CaseCreateInput {
     unlockTransfer: boolean;
     updatedBy?: string;
     application: ApplicationCreateOneWithoutCaseInput;
-    clients?: ClientCreateManyWithoutCaseidInput;
     classifications?: CaseClassificationCreateManyWithoutCaseIdInput;
     consultations?: CaseConsultationCreateManyWithoutCaseIdInput;
     documents?: CaseDocumentCreateManyWithoutCaseIdInput;
@@ -2038,11 +2044,6 @@ export class CaseCreateOneWithoutApplicationInput {
 
 export class CaseCreateOneWithoutClassificationsInput {
     create?: CaseCreateWithoutClassificationsInput;
-    connect?: CaseWhereUniqueInput;
-}
-
-export class CaseCreateOneWithoutClientsInput {
-    create?: CaseCreateWithoutClientsInput;
     connect?: CaseWhereUniqueInput;
 }
 
@@ -2108,7 +2109,6 @@ export class CaseCreateWithoutActivitiesInput {
     unlockTransfer: boolean;
     updatedBy?: string;
     application: ApplicationCreateOneWithoutCaseInput;
-    clients?: ClientCreateManyWithoutCaseidInput;
     classifications?: CaseClassificationCreateManyWithoutCaseIdInput;
     consultations?: CaseConsultationCreateManyWithoutCaseIdInput;
     documents?: CaseDocumentCreateManyWithoutCaseIdInput;
@@ -2137,7 +2137,6 @@ export class CaseCreateWithoutApplicationInput {
     unlockPk: boolean;
     unlockTransfer: boolean;
     updatedBy?: string;
-    clients?: ClientCreateManyWithoutCaseidInput;
     classifications?: CaseClassificationCreateManyWithoutCaseIdInput;
     consultations?: CaseConsultationCreateManyWithoutCaseIdInput;
     documents?: CaseDocumentCreateManyWithoutCaseIdInput;
@@ -2168,37 +2167,6 @@ export class CaseCreateWithoutClassificationsInput {
     unlockTransfer: boolean;
     updatedBy?: string;
     application: ApplicationCreateOneWithoutCaseInput;
-    clients?: ClientCreateManyWithoutCaseidInput;
-    consultations?: CaseConsultationCreateManyWithoutCaseIdInput;
-    documents?: CaseDocumentCreateManyWithoutCaseIdInput;
-    issues?: CaseIssueCreateManyWithoutCaseIdInput;
-    korbans?: CaseKorbanCreateManyWithoutCaseIdInput;
-    pelakus?: CasePelakuCreateManyWithoutCaseIdInput;
-    pks?: CasePkCreateManyWithoutCaseIdInput;
-    progresses?: CaseProgressCreateManyWithoutCaseIdInput;
-    activities?: CaseProgressActivityCreateManyWithoutCaseIdInput;
-    transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput;
-    violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput;
-}
-
-export class CaseCreateWithoutClientsInput {
-    applicationId?: number;
-    caseClosed: boolean;
-    caseClosedJenis?: string;
-    createdBy?: string;
-    hakTerlanggar?: string;
-    issue?: string;
-    judulKasus?: string;
-    klasifikasiDok?: string;
-    kronologiKasus?: string;
-    lockDitolak: boolean;
-    statusPendampingan?: string;
-    targetAdvokasi?: string;
-    unlockPk: boolean;
-    unlockTransfer: boolean;
-    updatedBy?: string;
-    application: ApplicationCreateOneWithoutCaseInput;
-    classifications?: CaseClassificationCreateManyWithoutCaseIdInput;
     consultations?: CaseConsultationCreateManyWithoutCaseIdInput;
     documents?: CaseDocumentCreateManyWithoutCaseIdInput;
     issues?: CaseIssueCreateManyWithoutCaseIdInput;
@@ -2228,7 +2196,6 @@ export class CaseCreateWithoutConsultationsInput {
     unlockTransfer: boolean;
     updatedBy?: string;
     application: ApplicationCreateOneWithoutCaseInput;
-    clients?: ClientCreateManyWithoutCaseidInput;
     classifications?: CaseClassificationCreateManyWithoutCaseIdInput;
     documents?: CaseDocumentCreateManyWithoutCaseIdInput;
     issues?: CaseIssueCreateManyWithoutCaseIdInput;
@@ -2258,7 +2225,6 @@ export class CaseCreateWithoutDocumentsInput {
     unlockTransfer: boolean;
     updatedBy?: string;
     application: ApplicationCreateOneWithoutCaseInput;
-    clients?: ClientCreateManyWithoutCaseidInput;
     classifications?: CaseClassificationCreateManyWithoutCaseIdInput;
     consultations?: CaseConsultationCreateManyWithoutCaseIdInput;
     issues?: CaseIssueCreateManyWithoutCaseIdInput;
@@ -2288,7 +2254,6 @@ export class CaseCreateWithoutIssuesInput {
     unlockTransfer: boolean;
     updatedBy?: string;
     application: ApplicationCreateOneWithoutCaseInput;
-    clients?: ClientCreateManyWithoutCaseidInput;
     classifications?: CaseClassificationCreateManyWithoutCaseIdInput;
     consultations?: CaseConsultationCreateManyWithoutCaseIdInput;
     documents?: CaseDocumentCreateManyWithoutCaseIdInput;
@@ -2318,7 +2283,6 @@ export class CaseCreateWithoutKorbansInput {
     unlockTransfer: boolean;
     updatedBy?: string;
     application: ApplicationCreateOneWithoutCaseInput;
-    clients?: ClientCreateManyWithoutCaseidInput;
     classifications?: CaseClassificationCreateManyWithoutCaseIdInput;
     consultations?: CaseConsultationCreateManyWithoutCaseIdInput;
     documents?: CaseDocumentCreateManyWithoutCaseIdInput;
@@ -2348,7 +2312,6 @@ export class CaseCreateWithoutPelakusInput {
     unlockTransfer: boolean;
     updatedBy?: string;
     application: ApplicationCreateOneWithoutCaseInput;
-    clients?: ClientCreateManyWithoutCaseidInput;
     classifications?: CaseClassificationCreateManyWithoutCaseIdInput;
     consultations?: CaseConsultationCreateManyWithoutCaseIdInput;
     documents?: CaseDocumentCreateManyWithoutCaseIdInput;
@@ -2378,7 +2341,6 @@ export class CaseCreateWithoutPksInput {
     unlockTransfer: boolean;
     updatedBy?: string;
     application: ApplicationCreateOneWithoutCaseInput;
-    clients?: ClientCreateManyWithoutCaseidInput;
     classifications?: CaseClassificationCreateManyWithoutCaseIdInput;
     consultations?: CaseConsultationCreateManyWithoutCaseIdInput;
     documents?: CaseDocumentCreateManyWithoutCaseIdInput;
@@ -2408,7 +2370,6 @@ export class CaseCreateWithoutProgressesInput {
     unlockTransfer: boolean;
     updatedBy?: string;
     application: ApplicationCreateOneWithoutCaseInput;
-    clients?: ClientCreateManyWithoutCaseidInput;
     classifications?: CaseClassificationCreateManyWithoutCaseIdInput;
     consultations?: CaseConsultationCreateManyWithoutCaseIdInput;
     documents?: CaseDocumentCreateManyWithoutCaseIdInput;
@@ -2438,7 +2399,6 @@ export class CaseCreateWithoutTransferreferralsInput {
     unlockTransfer: boolean;
     updatedBy?: string;
     application: ApplicationCreateOneWithoutCaseInput;
-    clients?: ClientCreateManyWithoutCaseidInput;
     classifications?: CaseClassificationCreateManyWithoutCaseIdInput;
     consultations?: CaseConsultationCreateManyWithoutCaseIdInput;
     documents?: CaseDocumentCreateManyWithoutCaseIdInput;
@@ -2468,7 +2428,6 @@ export class CaseCreateWithoutViolatedrightsInput {
     unlockTransfer: boolean;
     updatedBy?: string;
     application: ApplicationCreateOneWithoutCaseInput;
-    clients?: ClientCreateManyWithoutCaseidInput;
     classifications?: CaseClassificationCreateManyWithoutCaseIdInput;
     consultations?: CaseConsultationCreateManyWithoutCaseIdInput;
     documents?: CaseDocumentCreateManyWithoutCaseIdInput;
@@ -4973,7 +4932,6 @@ export class CaseUpdateInput {
     unlockTransfer?: boolean;
     updatedBy?: string;
     application?: ApplicationUpdateOneRequiredWithoutCaseInput;
-    clients?: ClientUpdateManyWithoutCaseidInput;
     classifications?: CaseClassificationUpdateManyWithoutCaseIdInput;
     consultations?: CaseConsultationUpdateManyWithoutCaseIdInput;
     documents?: CaseDocumentUpdateManyWithoutCaseIdInput;
@@ -5024,13 +4982,6 @@ export class CaseUpdateOneRequiredWithoutClassificationsInput {
     connect?: CaseWhereUniqueInput;
     update?: CaseUpdateWithoutClassificationsDataInput;
     upsert?: CaseUpsertWithoutClassificationsInput;
-}
-
-export class CaseUpdateOneRequiredWithoutClientsInput {
-    create?: CaseCreateWithoutClientsInput;
-    connect?: CaseWhereUniqueInput;
-    update?: CaseUpdateWithoutClientsDataInput;
-    upsert?: CaseUpsertWithoutClientsInput;
 }
 
 export class CaseUpdateOneRequiredWithoutConsultationsInput {
@@ -5113,7 +5064,6 @@ export class CaseUpdateWithoutActivitiesDataInput {
     unlockTransfer?: boolean;
     updatedBy?: string;
     application?: ApplicationUpdateOneRequiredWithoutCaseInput;
-    clients?: ClientUpdateManyWithoutCaseidInput;
     classifications?: CaseClassificationUpdateManyWithoutCaseIdInput;
     consultations?: CaseConsultationUpdateManyWithoutCaseIdInput;
     documents?: CaseDocumentUpdateManyWithoutCaseIdInput;
@@ -5142,7 +5092,6 @@ export class CaseUpdateWithoutApplicationDataInput {
     unlockPk?: boolean;
     unlockTransfer?: boolean;
     updatedBy?: string;
-    clients?: ClientUpdateManyWithoutCaseidInput;
     classifications?: CaseClassificationUpdateManyWithoutCaseIdInput;
     consultations?: CaseConsultationUpdateManyWithoutCaseIdInput;
     documents?: CaseDocumentUpdateManyWithoutCaseIdInput;
@@ -5173,37 +5122,6 @@ export class CaseUpdateWithoutClassificationsDataInput {
     unlockTransfer?: boolean;
     updatedBy?: string;
     application?: ApplicationUpdateOneRequiredWithoutCaseInput;
-    clients?: ClientUpdateManyWithoutCaseidInput;
-    consultations?: CaseConsultationUpdateManyWithoutCaseIdInput;
-    documents?: CaseDocumentUpdateManyWithoutCaseIdInput;
-    issues?: CaseIssueUpdateManyWithoutCaseIdInput;
-    korbans?: CaseKorbanUpdateManyWithoutCaseIdInput;
-    pelakus?: CasePelakuUpdateManyWithoutCaseIdInput;
-    pks?: CasePkUpdateManyWithoutCaseIdInput;
-    progresses?: CaseProgressUpdateManyWithoutCaseIdInput;
-    activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput;
-    transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput;
-    violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput;
-}
-
-export class CaseUpdateWithoutClientsDataInput {
-    applicationId?: number;
-    caseClosed?: boolean;
-    caseClosedJenis?: string;
-    createdBy?: string;
-    hakTerlanggar?: string;
-    issue?: string;
-    judulKasus?: string;
-    klasifikasiDok?: string;
-    kronologiKasus?: string;
-    lockDitolak?: boolean;
-    statusPendampingan?: string;
-    targetAdvokasi?: string;
-    unlockPk?: boolean;
-    unlockTransfer?: boolean;
-    updatedBy?: string;
-    application?: ApplicationUpdateOneRequiredWithoutCaseInput;
-    classifications?: CaseClassificationUpdateManyWithoutCaseIdInput;
     consultations?: CaseConsultationUpdateManyWithoutCaseIdInput;
     documents?: CaseDocumentUpdateManyWithoutCaseIdInput;
     issues?: CaseIssueUpdateManyWithoutCaseIdInput;
@@ -5233,7 +5151,6 @@ export class CaseUpdateWithoutConsultationsDataInput {
     unlockTransfer?: boolean;
     updatedBy?: string;
     application?: ApplicationUpdateOneRequiredWithoutCaseInput;
-    clients?: ClientUpdateManyWithoutCaseidInput;
     classifications?: CaseClassificationUpdateManyWithoutCaseIdInput;
     documents?: CaseDocumentUpdateManyWithoutCaseIdInput;
     issues?: CaseIssueUpdateManyWithoutCaseIdInput;
@@ -5263,7 +5180,6 @@ export class CaseUpdateWithoutDocumentsDataInput {
     unlockTransfer?: boolean;
     updatedBy?: string;
     application?: ApplicationUpdateOneRequiredWithoutCaseInput;
-    clients?: ClientUpdateManyWithoutCaseidInput;
     classifications?: CaseClassificationUpdateManyWithoutCaseIdInput;
     consultations?: CaseConsultationUpdateManyWithoutCaseIdInput;
     issues?: CaseIssueUpdateManyWithoutCaseIdInput;
@@ -5293,7 +5209,6 @@ export class CaseUpdateWithoutIssuesDataInput {
     unlockTransfer?: boolean;
     updatedBy?: string;
     application?: ApplicationUpdateOneRequiredWithoutCaseInput;
-    clients?: ClientUpdateManyWithoutCaseidInput;
     classifications?: CaseClassificationUpdateManyWithoutCaseIdInput;
     consultations?: CaseConsultationUpdateManyWithoutCaseIdInput;
     documents?: CaseDocumentUpdateManyWithoutCaseIdInput;
@@ -5323,7 +5238,6 @@ export class CaseUpdateWithoutKorbansDataInput {
     unlockTransfer?: boolean;
     updatedBy?: string;
     application?: ApplicationUpdateOneRequiredWithoutCaseInput;
-    clients?: ClientUpdateManyWithoutCaseidInput;
     classifications?: CaseClassificationUpdateManyWithoutCaseIdInput;
     consultations?: CaseConsultationUpdateManyWithoutCaseIdInput;
     documents?: CaseDocumentUpdateManyWithoutCaseIdInput;
@@ -5353,7 +5267,6 @@ export class CaseUpdateWithoutPelakusDataInput {
     unlockTransfer?: boolean;
     updatedBy?: string;
     application?: ApplicationUpdateOneRequiredWithoutCaseInput;
-    clients?: ClientUpdateManyWithoutCaseidInput;
     classifications?: CaseClassificationUpdateManyWithoutCaseIdInput;
     consultations?: CaseConsultationUpdateManyWithoutCaseIdInput;
     documents?: CaseDocumentUpdateManyWithoutCaseIdInput;
@@ -5383,7 +5296,6 @@ export class CaseUpdateWithoutPksDataInput {
     unlockTransfer?: boolean;
     updatedBy?: string;
     application?: ApplicationUpdateOneRequiredWithoutCaseInput;
-    clients?: ClientUpdateManyWithoutCaseidInput;
     classifications?: CaseClassificationUpdateManyWithoutCaseIdInput;
     consultations?: CaseConsultationUpdateManyWithoutCaseIdInput;
     documents?: CaseDocumentUpdateManyWithoutCaseIdInput;
@@ -5413,7 +5325,6 @@ export class CaseUpdateWithoutProgressesDataInput {
     unlockTransfer?: boolean;
     updatedBy?: string;
     application?: ApplicationUpdateOneRequiredWithoutCaseInput;
-    clients?: ClientUpdateManyWithoutCaseidInput;
     classifications?: CaseClassificationUpdateManyWithoutCaseIdInput;
     consultations?: CaseConsultationUpdateManyWithoutCaseIdInput;
     documents?: CaseDocumentUpdateManyWithoutCaseIdInput;
@@ -5443,7 +5354,6 @@ export class CaseUpdateWithoutTransferreferralsDataInput {
     unlockTransfer?: boolean;
     updatedBy?: string;
     application?: ApplicationUpdateOneRequiredWithoutCaseInput;
-    clients?: ClientUpdateManyWithoutCaseidInput;
     classifications?: CaseClassificationUpdateManyWithoutCaseIdInput;
     consultations?: CaseConsultationUpdateManyWithoutCaseIdInput;
     documents?: CaseDocumentUpdateManyWithoutCaseIdInput;
@@ -5473,7 +5383,6 @@ export class CaseUpdateWithoutViolatedrightsDataInput {
     unlockTransfer?: boolean;
     updatedBy?: string;
     application?: ApplicationUpdateOneRequiredWithoutCaseInput;
-    clients?: ClientUpdateManyWithoutCaseidInput;
     classifications?: CaseClassificationUpdateManyWithoutCaseIdInput;
     consultations?: CaseConsultationUpdateManyWithoutCaseIdInput;
     documents?: CaseDocumentUpdateManyWithoutCaseIdInput;
@@ -5499,11 +5408,6 @@ export class CaseUpsertWithoutApplicationInput {
 export class CaseUpsertWithoutClassificationsInput {
     update: CaseUpdateWithoutClassificationsDataInput;
     create: CaseCreateWithoutClassificationsInput;
-}
-
-export class CaseUpsertWithoutClientsInput {
-    update: CaseUpdateWithoutClientsDataInput;
-    create: CaseCreateWithoutClientsInput;
 }
 
 export class CaseUpsertWithoutConsultationsInput {
@@ -5867,9 +5771,6 @@ export class CaseWhereInput {
     updatedBy_ends_with?: string;
     updatedBy_not_ends_with?: string;
     application?: ApplicationWhereInput;
-    clients_every?: ClientWhereInput;
-    clients_some?: ClientWhereInput;
-    clients_none?: ClientWhereInput;
     classifications_every?: CaseClassificationWhereInput;
     classifications_some?: CaseClassificationWhereInput;
     classifications_none?: CaseClassificationWhereInput;
@@ -5934,16 +5835,10 @@ export class ClientCreateInput {
     usiaSaatKlien?: number;
     applicationId: ApplicationCreateOneWithoutClientsInput;
     personId: PersonCreateOneWithoutClientsInput;
-    caseid: CaseCreateOneWithoutClientsInput;
 }
 
 export class ClientCreateManyWithoutApplicationIdInput {
     create: ClientCreateWithoutApplicationIdInput[];
-    connect: ClientWhereUniqueInput[];
-}
-
-export class ClientCreateManyWithoutCaseidInput {
-    create: ClientCreateWithoutCaseidInput[];
     connect: ClientWhereUniqueInput[];
 }
 
@@ -5976,34 +5871,6 @@ export class ClientCreateWithoutApplicationIdInput {
     updatedBy?: string;
     usiaSaatKlien?: number;
     personId: PersonCreateOneWithoutClientsInput;
-    caseid: CaseCreateOneWithoutClientsInput;
-}
-
-export class ClientCreateWithoutCaseidInput {
-    alamatLokasi?: string;
-    asetGedung?: string;
-    asetKios?: string;
-    asetLahanGarapan?: string;
-    asetLapak?: string;
-    asetMobil?: string;
-    asetMotor?: string;
-    asetRumah?: string;
-    asetTanah?: string;
-    asetToko?: string;
-    asetWarung?: string;
-    createdBy?: string;
-    pendapatan?: string;
-    sktm: boolean;
-    sktmUpload?: string;
-    stmKeterangan?: string;
-    tanggunganAnak?: number;
-    tanggunganFamili?: number;
-    tanggunganLain?: number;
-    tanggunganPasangan?: number;
-    updatedBy?: string;
-    usiaSaatKlien?: number;
-    applicationId: ApplicationCreateOneWithoutClientsInput;
-    personId: PersonCreateOneWithoutClientsInput;
 }
 
 export class ClientCreateWithoutPersonIdInput {
@@ -6030,7 +5897,6 @@ export class ClientCreateWithoutPersonIdInput {
     updatedBy?: string;
     usiaSaatKlien?: number;
     applicationId: ApplicationCreateOneWithoutClientsInput;
-    caseid: CaseCreateOneWithoutClientsInput;
 }
 
 export class ClientScalarWhereInput {
@@ -6365,7 +6231,6 @@ export class ClientUpdateInput {
     usiaSaatKlien?: number;
     applicationId?: ApplicationUpdateOneRequiredWithoutClientsInput;
     personId?: PersonUpdateOneRequiredWithoutClientsInput;
-    caseid?: CaseUpdateOneRequiredWithoutClientsInput;
 }
 
 export class ClientUpdateManyDataInput {
@@ -6430,18 +6295,6 @@ export class ClientUpdateManyWithoutApplicationIdInput {
     upsert: ClientUpsertWithWhereUniqueWithoutApplicationIdInput[];
 }
 
-export class ClientUpdateManyWithoutCaseidInput {
-    create: ClientCreateWithoutCaseidInput[];
-    connect: ClientWhereUniqueInput[];
-    set: ClientWhereUniqueInput[];
-    disconnect: ClientWhereUniqueInput[];
-    delete: ClientWhereUniqueInput[];
-    update: ClientUpdateWithWhereUniqueWithoutCaseidInput[];
-    updateMany: ClientUpdateManyWithWhereNestedInput[];
-    deleteMany: ClientScalarWhereInput[];
-    upsert: ClientUpsertWithWhereUniqueWithoutCaseidInput[];
-}
-
 export class ClientUpdateManyWithoutPersonIdInput {
     create: ClientCreateWithoutPersonIdInput[];
     connect: ClientWhereUniqueInput[];
@@ -6483,34 +6336,6 @@ export class ClientUpdateWithoutApplicationIdDataInput {
     updatedBy?: string;
     usiaSaatKlien?: number;
     personId?: PersonUpdateOneRequiredWithoutClientsInput;
-    caseid?: CaseUpdateOneRequiredWithoutClientsInput;
-}
-
-export class ClientUpdateWithoutCaseidDataInput {
-    alamatLokasi?: string;
-    asetGedung?: string;
-    asetKios?: string;
-    asetLahanGarapan?: string;
-    asetLapak?: string;
-    asetMobil?: string;
-    asetMotor?: string;
-    asetRumah?: string;
-    asetTanah?: string;
-    asetToko?: string;
-    asetWarung?: string;
-    createdBy?: string;
-    pendapatan?: string;
-    sktm?: boolean;
-    sktmUpload?: string;
-    stmKeterangan?: string;
-    tanggunganAnak?: number;
-    tanggunganFamili?: number;
-    tanggunganLain?: number;
-    tanggunganPasangan?: number;
-    updatedBy?: string;
-    usiaSaatKlien?: number;
-    applicationId?: ApplicationUpdateOneRequiredWithoutClientsInput;
-    personId?: PersonUpdateOneRequiredWithoutClientsInput;
 }
 
 export class ClientUpdateWithoutPersonIdDataInput {
@@ -6537,17 +6362,11 @@ export class ClientUpdateWithoutPersonIdDataInput {
     updatedBy?: string;
     usiaSaatKlien?: number;
     applicationId?: ApplicationUpdateOneRequiredWithoutClientsInput;
-    caseid?: CaseUpdateOneRequiredWithoutClientsInput;
 }
 
 export class ClientUpdateWithWhereUniqueWithoutApplicationIdInput {
     where: ClientWhereUniqueInput;
     data: ClientUpdateWithoutApplicationIdDataInput;
-}
-
-export class ClientUpdateWithWhereUniqueWithoutCaseidInput {
-    where: ClientWhereUniqueInput;
-    data: ClientUpdateWithoutCaseidDataInput;
 }
 
 export class ClientUpdateWithWhereUniqueWithoutPersonIdInput {
@@ -6559,12 +6378,6 @@ export class ClientUpsertWithWhereUniqueWithoutApplicationIdInput {
     where: ClientWhereUniqueInput;
     update: ClientUpdateWithoutApplicationIdDataInput;
     create: ClientCreateWithoutApplicationIdInput;
-}
-
-export class ClientUpsertWithWhereUniqueWithoutCaseidInput {
-    where: ClientWhereUniqueInput;
-    update: ClientUpdateWithoutCaseidDataInput;
-    create: ClientCreateWithoutCaseidInput;
 }
 
 export class ClientUpsertWithWhereUniqueWithoutPersonIdInput {
@@ -6869,7 +6682,6 @@ export class ClientWhereInput {
     usiaSaatKlien_gte?: number;
     applicationId?: ApplicationWhereInput;
     personId?: PersonWhereInput;
-    caseid?: CaseWhereInput;
 }
 
 export class ClientWhereUniqueInput {
@@ -9307,8 +9119,123 @@ export class PersonWhereUniqueInput {
 }
 
 export class RoleCreateInput {
-    type?: number;
-    userId?: number;
+    userId?: UserCreateManyWithoutRoles_typeInput;
+    type: RolesTypeCreateOneInput;
+}
+
+export class RoleCreateManyWithoutUserIdInput {
+    create: RoleCreateWithoutUserIdInput[];
+    connect: RoleWhereUniqueInput[];
+}
+
+export class RoleCreateWithoutUserIdInput {
+    type: RolesTypeCreateOneInput;
+}
+
+export class RoleScalarWhereInput {
+    AND: RoleScalarWhereInput[];
+    OR: RoleScalarWhereInput[];
+    NOT: RoleScalarWhereInput[];
+    createdAt?: DateTime;
+    createdAt_not?: DateTime;
+    createdAt_in: DateTime[];
+    createdAt_not_in: DateTime[];
+    createdAt_lt?: DateTime;
+    createdAt_lte?: DateTime;
+    createdAt_gt?: DateTime;
+    createdAt_gte?: DateTime;
+    id?: number;
+    id_not?: number;
+    id_in: number[];
+    id_not_in: number[];
+    id_lt?: number;
+    id_lte?: number;
+    id_gt?: number;
+    id_gte?: number;
+}
+
+export class RolesTypeCreateInput {
+    description?: string;
+}
+
+export class RolesTypeCreateOneInput {
+    create?: RolesTypeCreateInput;
+    connect?: RolesTypeWhereUniqueInput;
+}
+
+export class RolesTypeSubscriptionWhereInput {
+    AND: RolesTypeSubscriptionWhereInput[];
+    OR: RolesTypeSubscriptionWhereInput[];
+    NOT: RolesTypeSubscriptionWhereInput[];
+    mutation_in: MutationType[];
+    updatedFields_contains?: string;
+    updatedFields_contains_every: string[];
+    updatedFields_contains_some: string[];
+    node?: RolesTypeWhereInput;
+}
+
+export class RolesTypeUpdateDataInput {
+    description?: string;
+}
+
+export class RolesTypeUpdateInput {
+    description?: string;
+}
+
+export class RolesTypeUpdateManyMutationInput {
+    description?: string;
+}
+
+export class RolesTypeUpdateOneRequiredInput {
+    create?: RolesTypeCreateInput;
+    connect?: RolesTypeWhereUniqueInput;
+    update?: RolesTypeUpdateDataInput;
+    upsert?: RolesTypeUpsertNestedInput;
+}
+
+export class RolesTypeUpsertNestedInput {
+    update: RolesTypeUpdateDataInput;
+    create: RolesTypeCreateInput;
+}
+
+export class RolesTypeWhereInput {
+    AND: RolesTypeWhereInput[];
+    OR: RolesTypeWhereInput[];
+    NOT: RolesTypeWhereInput[];
+    createdAt?: DateTime;
+    createdAt_not?: DateTime;
+    createdAt_in: DateTime[];
+    createdAt_not_in: DateTime[];
+    createdAt_lt?: DateTime;
+    createdAt_lte?: DateTime;
+    createdAt_gt?: DateTime;
+    createdAt_gte?: DateTime;
+    id?: number;
+    id_not?: number;
+    id_in: number[];
+    id_not_in: number[];
+    id_lt?: number;
+    id_lte?: number;
+    id_gt?: number;
+    id_gte?: number;
+    description?: string;
+    description_not?: string;
+    description_in: string[];
+    description_not_in: string[];
+    description_lt?: string;
+    description_lte?: string;
+    description_gt?: string;
+    description_gte?: string;
+    description_contains?: string;
+    description_not_contains?: string;
+    description_starts_with?: string;
+    description_not_starts_with?: string;
+    description_ends_with?: string;
+    description_not_ends_with?: string;
+}
+
+export class RolesTypeWhereUniqueInput {
+    id?: number;
 }
 
 export class RoleSubscriptionWhereInput {
@@ -9323,19 +9250,48 @@ export class RoleSubscriptionWhereInput {
 }
 
 export class RoleUpdateInput {
-    type?: number;
-    userId?: number;
+    userId?: UserUpdateManyWithoutRoles_typeInput;
+    type?: RolesTypeUpdateOneRequiredInput;
 }
 
-export class RoleUpdateManyMutationInput {
-    type?: number;
-    userId?: number;
+export class RoleUpdateManyWithoutUserIdInput {
+    create: RoleCreateWithoutUserIdInput[];
+    connect: RoleWhereUniqueInput[];
+    set: RoleWhereUniqueInput[];
+    disconnect: RoleWhereUniqueInput[];
+    delete: RoleWhereUniqueInput[];
+    update: RoleUpdateWithWhereUniqueWithoutUserIdInput[];
+    deleteMany: RoleScalarWhereInput[];
+    upsert: RoleUpsertWithWhereUniqueWithoutUserIdInput[];
+}
+
+export class RoleUpdateWithoutUserIdDataInput {
+    type?: RolesTypeUpdateOneRequiredInput;
+}
+
+export class RoleUpdateWithWhereUniqueWithoutUserIdInput {
+    where: RoleWhereUniqueInput;
+    data: RoleUpdateWithoutUserIdDataInput;
+}
+
+export class RoleUpsertWithWhereUniqueWithoutUserIdInput {
+    where: RoleWhereUniqueInput;
+    update: RoleUpdateWithoutUserIdDataInput;
+    create: RoleCreateWithoutUserIdInput;
 }
 
 export class RoleWhereInput {
     AND: RoleWhereInput[];
     OR: RoleWhereInput[];
     NOT: RoleWhereInput[];
+    createdAt?: DateTime;
+    createdAt_not?: DateTime;
+    createdAt_in: DateTime[];
+    createdAt_not_in: DateTime[];
+    createdAt_lt?: DateTime;
+    createdAt_lte?: DateTime;
+    createdAt_gt?: DateTime;
+    createdAt_gte?: DateTime;
     id?: number;
     id_not?: number;
     id_in: number[];
@@ -9344,22 +9300,10 @@ export class RoleWhereInput {
     id_lte?: number;
     id_gt?: number;
     id_gte?: number;
-    type?: number;
-    type_not?: number;
-    type_in: number[];
-    type_not_in: number[];
-    type_lt?: number;
-    type_lte?: number;
-    type_gt?: number;
-    type_gte?: number;
-    userId?: number;
-    userId_not?: number;
-    userId_in: number[];
-    userId_not_in: number[];
-    userId_lt?: number;
-    userId_lte?: number;
-    userId_gt?: number;
-    userId_gte?: number;
+    userId_every?: UserWhereInput;
+    userId_some?: UserWhereInput;
+    userId_none?: UserWhereInput;
+    type?: RolesTypeWhereInput;
 }
 
 export class RoleWhereUniqueInput {
@@ -9380,6 +9324,12 @@ export class UserCreateInput {
     status?: string;
     username?: string;
     profile: UserProfileCreateOneWithoutUserIdInput;
+    roles_type?: RoleCreateManyWithoutUserIdInput;
+}
+
+export class UserCreateManyWithoutRoles_typeInput {
+    create: UserCreateWithoutRoles_typeInput[];
+    connect: UserWhereUniqueInput[];
 }
 
 export class UserCreateOneWithoutProfileInput {
@@ -9400,6 +9350,23 @@ export class UserCreateWithoutProfileInput {
     roles?: string;
     status?: string;
     username?: string;
+    roles_type?: RoleCreateManyWithoutUserIdInput;
+}
+
+export class UserCreateWithoutRoles_typeInput {
+    address?: string;
+    avatar?: string;
+    deletedAt?: DateTime;
+    email?: string;
+    name?: string;
+    password?: string;
+    phone?: string;
+    position?: string;
+    rememberToken?: string;
+    roles?: string;
+    status?: string;
+    username?: string;
+    profile: UserProfileCreateOneWithoutUserIdInput;
 }
 
 export class UserProfileCreateInput {
@@ -9539,6 +9506,198 @@ export class UserProfileWhereUniqueInput {
     id?: number;
 }
 
+export class UserScalarWhereInput {
+    AND: UserScalarWhereInput[];
+    OR: UserScalarWhereInput[];
+    NOT: UserScalarWhereInput[];
+    address?: string;
+    address_not?: string;
+    address_in: string[];
+    address_not_in: string[];
+    address_lt?: string;
+    address_lte?: string;
+    address_gt?: string;
+    address_gte?: string;
+    address_contains?: string;
+    address_not_contains?: string;
+    address_starts_with?: string;
+    address_not_starts_with?: string;
+    address_ends_with?: string;
+    address_not_ends_with?: string;
+    avatar?: string;
+    avatar_not?: string;
+    avatar_in: string[];
+    avatar_not_in: string[];
+    avatar_lt?: string;
+    avatar_lte?: string;
+    avatar_gt?: string;
+    avatar_gte?: string;
+    avatar_contains?: string;
+    avatar_not_contains?: string;
+    avatar_starts_with?: string;
+    avatar_not_starts_with?: string;
+    avatar_ends_with?: string;
+    avatar_not_ends_with?: string;
+    createdAt?: DateTime;
+    createdAt_not?: DateTime;
+    createdAt_in: DateTime[];
+    createdAt_not_in: DateTime[];
+    createdAt_lt?: DateTime;
+    createdAt_lte?: DateTime;
+    createdAt_gt?: DateTime;
+    createdAt_gte?: DateTime;
+    deletedAt?: DateTime;
+    deletedAt_not?: DateTime;
+    deletedAt_in: DateTime[];
+    deletedAt_not_in: DateTime[];
+    deletedAt_lt?: DateTime;
+    deletedAt_lte?: DateTime;
+    deletedAt_gt?: DateTime;
+    deletedAt_gte?: DateTime;
+    email?: string;
+    email_not?: string;
+    email_in: string[];
+    email_not_in: string[];
+    email_lt?: string;
+    email_lte?: string;
+    email_gt?: string;
+    email_gte?: string;
+    email_contains?: string;
+    email_not_contains?: string;
+    email_starts_with?: string;
+    email_not_starts_with?: string;
+    email_ends_with?: string;
+    email_not_ends_with?: string;
+    id?: number;
+    id_not?: number;
+    id_in: number[];
+    id_not_in: number[];
+    id_lt?: number;
+    id_lte?: number;
+    id_gt?: number;
+    id_gte?: number;
+    name?: string;
+    name_not?: string;
+    name_in: string[];
+    name_not_in: string[];
+    name_lt?: string;
+    name_lte?: string;
+    name_gt?: string;
+    name_gte?: string;
+    name_contains?: string;
+    name_not_contains?: string;
+    name_starts_with?: string;
+    name_not_starts_with?: string;
+    name_ends_with?: string;
+    name_not_ends_with?: string;
+    password?: string;
+    password_not?: string;
+    password_in: string[];
+    password_not_in: string[];
+    password_lt?: string;
+    password_lte?: string;
+    password_gt?: string;
+    password_gte?: string;
+    password_contains?: string;
+    password_not_contains?: string;
+    password_starts_with?: string;
+    password_not_starts_with?: string;
+    password_ends_with?: string;
+    password_not_ends_with?: string;
+    phone?: string;
+    phone_not?: string;
+    phone_in: string[];
+    phone_not_in: string[];
+    phone_lt?: string;
+    phone_lte?: string;
+    phone_gt?: string;
+    phone_gte?: string;
+    phone_contains?: string;
+    phone_not_contains?: string;
+    phone_starts_with?: string;
+    phone_not_starts_with?: string;
+    phone_ends_with?: string;
+    phone_not_ends_with?: string;
+    position?: string;
+    position_not?: string;
+    position_in: string[];
+    position_not_in: string[];
+    position_lt?: string;
+    position_lte?: string;
+    position_gt?: string;
+    position_gte?: string;
+    position_contains?: string;
+    position_not_contains?: string;
+    position_starts_with?: string;
+    position_not_starts_with?: string;
+    position_ends_with?: string;
+    position_not_ends_with?: string;
+    rememberToken?: string;
+    rememberToken_not?: string;
+    rememberToken_in: string[];
+    rememberToken_not_in: string[];
+    rememberToken_lt?: string;
+    rememberToken_lte?: string;
+    rememberToken_gt?: string;
+    rememberToken_gte?: string;
+    rememberToken_contains?: string;
+    rememberToken_not_contains?: string;
+    rememberToken_starts_with?: string;
+    rememberToken_not_starts_with?: string;
+    rememberToken_ends_with?: string;
+    rememberToken_not_ends_with?: string;
+    roles?: string;
+    roles_not?: string;
+    roles_in: string[];
+    roles_not_in: string[];
+    roles_lt?: string;
+    roles_lte?: string;
+    roles_gt?: string;
+    roles_gte?: string;
+    roles_contains?: string;
+    roles_not_contains?: string;
+    roles_starts_with?: string;
+    roles_not_starts_with?: string;
+    roles_ends_with?: string;
+    roles_not_ends_with?: string;
+    status?: string;
+    status_not?: string;
+    status_in: string[];
+    status_not_in: string[];
+    status_lt?: string;
+    status_lte?: string;
+    status_gt?: string;
+    status_gte?: string;
+    status_contains?: string;
+    status_not_contains?: string;
+    status_starts_with?: string;
+    status_not_starts_with?: string;
+    status_ends_with?: string;
+    status_not_ends_with?: string;
+    updatedAt?: DateTime;
+    updatedAt_not?: DateTime;
+    updatedAt_in: DateTime[];
+    updatedAt_not_in: DateTime[];
+    updatedAt_lt?: DateTime;
+    updatedAt_lte?: DateTime;
+    updatedAt_gt?: DateTime;
+    updatedAt_gte?: DateTime;
+    username?: string;
+    username_not?: string;
+    username_in: string[];
+    username_not_in: string[];
+    username_lt?: string;
+    username_lte?: string;
+    username_gt?: string;
+    username_gte?: string;
+    username_contains?: string;
+    username_not_contains?: string;
+    username_starts_with?: string;
+    username_not_starts_with?: string;
+    username_ends_with?: string;
+    username_not_ends_with?: string;
+}
+
 export class UserSubscriptionWhereInput {
     AND: UserSubscriptionWhereInput[];
     OR: UserSubscriptionWhereInput[];
@@ -9564,6 +9723,22 @@ export class UserUpdateInput {
     status?: string;
     username?: string;
     profile?: UserProfileUpdateOneRequiredWithoutUserIdInput;
+    roles_type?: RoleUpdateManyWithoutUserIdInput;
+}
+
+export class UserUpdateManyDataInput {
+    address?: string;
+    avatar?: string;
+    deletedAt?: DateTime;
+    email?: string;
+    name?: string;
+    password?: string;
+    phone?: string;
+    position?: string;
+    rememberToken?: string;
+    roles?: string;
+    status?: string;
+    username?: string;
 }
 
 export class UserUpdateManyMutationInput {
@@ -9579,6 +9754,23 @@ export class UserUpdateManyMutationInput {
     roles?: string;
     status?: string;
     username?: string;
+}
+
+export class UserUpdateManyWithoutRoles_typeInput {
+    create: UserCreateWithoutRoles_typeInput[];
+    connect: UserWhereUniqueInput[];
+    set: UserWhereUniqueInput[];
+    disconnect: UserWhereUniqueInput[];
+    delete: UserWhereUniqueInput[];
+    update: UserUpdateWithWhereUniqueWithoutRoles_typeInput[];
+    updateMany: UserUpdateManyWithWhereNestedInput[];
+    deleteMany: UserScalarWhereInput[];
+    upsert: UserUpsertWithWhereUniqueWithoutRoles_typeInput[];
+}
+
+export class UserUpdateManyWithWhereNestedInput {
+    where: UserScalarWhereInput;
+    data: UserUpdateManyDataInput;
 }
 
 export class UserUpdateOneRequiredWithoutProfileInput {
@@ -9601,11 +9793,39 @@ export class UserUpdateWithoutProfileDataInput {
     roles?: string;
     status?: string;
     username?: string;
+    roles_type?: RoleUpdateManyWithoutUserIdInput;
+}
+
+export class UserUpdateWithoutRoles_typeDataInput {
+    address?: string;
+    avatar?: string;
+    deletedAt?: DateTime;
+    email?: string;
+    name?: string;
+    password?: string;
+    phone?: string;
+    position?: string;
+    rememberToken?: string;
+    roles?: string;
+    status?: string;
+    username?: string;
+    profile?: UserProfileUpdateOneRequiredWithoutUserIdInput;
+}
+
+export class UserUpdateWithWhereUniqueWithoutRoles_typeInput {
+    where: UserWhereUniqueInput;
+    data: UserUpdateWithoutRoles_typeDataInput;
 }
 
 export class UserUpsertWithoutProfileInput {
     update: UserUpdateWithoutProfileDataInput;
     create: UserCreateWithoutProfileInput;
+}
+
+export class UserUpsertWithWhereUniqueWithoutRoles_typeInput {
+    where: UserWhereUniqueInput;
+    update: UserUpdateWithoutRoles_typeDataInput;
+    create: UserCreateWithoutRoles_typeInput;
 }
 
 export class UserWhereInput {
@@ -9799,6 +10019,9 @@ export class UserWhereInput {
     username_ends_with?: string;
     username_not_ends_with?: string;
     profile?: UserProfileWhereInput;
+    roles_type_every?: RoleWhereInput;
+    roles_type_some?: RoleWhereInput;
+    roles_type_none?: RoleWhereInput;
 }
 
 export class UserWhereUniqueInput {
@@ -9921,6 +10144,10 @@ export class AggregateRole {
     count: number;
 }
 
+export class AggregateRolesType {
+    count: number;
+}
+
 export class AggregateUser {
     count: number;
 }
@@ -10018,7 +10245,6 @@ export class Case {
     updatedAt: DateTime;
     updatedBy?: string;
     application: Application;
-    clients: Client[];
     classifications: CaseClassification[];
     consultations: CaseConsultation[];
     documents: CaseDocument[];
@@ -10600,7 +10826,6 @@ export class Client {
     updatedAt: DateTime;
     updatedBy?: string;
     usiaSaatKlien?: number;
-    caseid: Case;
 }
 
 export class ClientConnection {
@@ -10938,6 +11163,7 @@ export abstract class IMutation {
     abstract createRole(data: RoleCreateInput): Role | Promise<Role>;
     abstract createUser(data: UserCreateInput): User | Promise<User>;
     abstract createUserProfile(data: UserProfileCreateInput): UserProfile | Promise<UserProfile>;
+    abstract createRolesType(data: RolesTypeCreateInput): RolesType | Promise<RolesType>;
     abstract updateApplication(data: ApplicationUpdateInput, where: ApplicationWhereUniqueInput): Application | Promise<Application>;
     abstract updateCase(data: CaseUpdateInput, where: CaseWhereUniqueInput): Case | Promise<Case>;
     abstract updateCaseClassification(data: CaseClassificationUpdateInput, where: CaseClassificationWhereUniqueInput): CaseClassification | Promise<CaseClassification>;
@@ -10968,6 +11194,7 @@ export abstract class IMutation {
     abstract updateRole(data: RoleUpdateInput, where: RoleWhereUniqueInput): Role | Promise<Role>;
     abstract updateUser(data: UserUpdateInput, where: UserWhereUniqueInput): User | Promise<User>;
     abstract updateUserProfile(data: UserProfileUpdateInput, where: UserProfileWhereUniqueInput): UserProfile | Promise<UserProfile>;
+    abstract updateRolesType(data: RolesTypeUpdateInput, where: RolesTypeWhereUniqueInput): RolesType | Promise<RolesType>;
     abstract deleteApplication(where: ApplicationWhereUniqueInput): Application | Promise<Application>;
     abstract deleteCase(where: CaseWhereUniqueInput): Case | Promise<Case>;
     abstract deleteCaseClassification(where: CaseClassificationWhereUniqueInput): CaseClassification | Promise<CaseClassification>;
@@ -10998,6 +11225,7 @@ export abstract class IMutation {
     abstract deleteRole(where: RoleWhereUniqueInput): Role | Promise<Role>;
     abstract deleteUser(where: UserWhereUniqueInput): User | Promise<User>;
     abstract deleteUserProfile(where: UserProfileWhereUniqueInput): UserProfile | Promise<UserProfile>;
+    abstract deleteRolesType(where: RolesTypeWhereUniqueInput): RolesType | Promise<RolesType>;
     abstract upsertApplication(where: ApplicationWhereUniqueInput, create: ApplicationCreateInput, update: ApplicationUpdateInput): Application | Promise<Application>;
     abstract upsertCase(where: CaseWhereUniqueInput, create: CaseCreateInput, update: CaseUpdateInput): Case | Promise<Case>;
     abstract upsertCaseClassification(where: CaseClassificationWhereUniqueInput, create: CaseClassificationCreateInput, update: CaseClassificationUpdateInput): CaseClassification | Promise<CaseClassification>;
@@ -11028,6 +11256,7 @@ export abstract class IMutation {
     abstract upsertRole(where: RoleWhereUniqueInput, create: RoleCreateInput, update: RoleUpdateInput): Role | Promise<Role>;
     abstract upsertUser(where: UserWhereUniqueInput, create: UserCreateInput, update: UserUpdateInput): User | Promise<User>;
     abstract upsertUserProfile(where: UserProfileWhereUniqueInput, create: UserProfileCreateInput, update: UserProfileUpdateInput): UserProfile | Promise<UserProfile>;
+    abstract upsertRolesType(where: RolesTypeWhereUniqueInput, create: RolesTypeCreateInput, update: RolesTypeUpdateInput): RolesType | Promise<RolesType>;
     abstract updateManyApplications(data: ApplicationUpdateManyMutationInput, where?: ApplicationWhereInput): BatchPayload | Promise<BatchPayload>;
     abstract updateManyCases(data: CaseUpdateManyMutationInput, where?: CaseWhereInput): BatchPayload | Promise<BatchPayload>;
     abstract updateManyCaseClassifications(data: CaseClassificationUpdateManyMutationInput, where?: CaseClassificationWhereInput): BatchPayload | Promise<BatchPayload>;
@@ -11053,9 +11282,9 @@ export abstract class IMutation {
     abstract updateManyNetworks(data: NetworkUpdateManyMutationInput, where?: NetworkWhereInput): BatchPayload | Promise<BatchPayload>;
     abstract updateManyPersons(data: PersonUpdateManyMutationInput, where?: PersonWhereInput): BatchPayload | Promise<BatchPayload>;
     abstract updateManyPersonDocuments(data: PersonDocumentUpdateManyMutationInput, where?: PersonDocumentWhereInput): BatchPayload | Promise<BatchPayload>;
-    abstract updateManyRoles(data: RoleUpdateManyMutationInput, where?: RoleWhereInput): BatchPayload | Promise<BatchPayload>;
     abstract updateManyUsers(data: UserUpdateManyMutationInput, where?: UserWhereInput): BatchPayload | Promise<BatchPayload>;
     abstract updateManyUserProfiles(data: UserProfileUpdateManyMutationInput, where?: UserProfileWhereInput): BatchPayload | Promise<BatchPayload>;
+    abstract updateManyRolesTypes(data: RolesTypeUpdateManyMutationInput, where?: RolesTypeWhereInput): BatchPayload | Promise<BatchPayload>;
     abstract deleteManyApplications(where?: ApplicationWhereInput): BatchPayload | Promise<BatchPayload>;
     abstract deleteManyCases(where?: CaseWhereInput): BatchPayload | Promise<BatchPayload>;
     abstract deleteManyCaseClassifications(where?: CaseClassificationWhereInput): BatchPayload | Promise<BatchPayload>;
@@ -11086,6 +11315,7 @@ export abstract class IMutation {
     abstract deleteManyRoles(where?: RoleWhereInput): BatchPayload | Promise<BatchPayload>;
     abstract deleteManyUsers(where?: UserWhereInput): BatchPayload | Promise<BatchPayload>;
     abstract deleteManyUserProfiles(where?: UserProfileWhereInput): BatchPayload | Promise<BatchPayload>;
+    abstract deleteManyRolesTypes(where?: RolesTypeWhereInput): BatchPayload | Promise<BatchPayload>;
 }
 
 export class Network {
@@ -11300,6 +11530,7 @@ export abstract class IQuery {
     abstract roles(where?: RoleWhereInput, orderBy?: RoleOrderByInput, skip?: number, after?: string, before?: string, first?: number, last?: number): Role[] | Promise<Role[]>;
     abstract users(where?: UserWhereInput, orderBy?: UserOrderByInput, skip?: number, after?: string, before?: string, first?: number, last?: number): User[] | Promise<User[]>;
     abstract userProfiles(where?: UserProfileWhereInput, orderBy?: UserProfileOrderByInput, skip?: number, after?: string, before?: string, first?: number, last?: number): UserProfile[] | Promise<UserProfile[]>;
+    abstract rolesTypes(where?: RolesTypeWhereInput, orderBy?: RolesTypeOrderByInput, skip?: number, after?: string, before?: string, first?: number, last?: number): RolesType[] | Promise<RolesType[]>;
     abstract application(where: ApplicationWhereUniqueInput): Application | Promise<Application>;
     abstract case(where: CaseWhereUniqueInput): Case | Promise<Case>;
     abstract caseClassification(where: CaseClassificationWhereUniqueInput): CaseClassification | Promise<CaseClassification>;
@@ -11330,6 +11561,7 @@ export abstract class IQuery {
     abstract role(where: RoleWhereUniqueInput): Role | Promise<Role>;
     abstract user(where: UserWhereUniqueInput): User | Promise<User>;
     abstract userProfile(where: UserProfileWhereUniqueInput): UserProfile | Promise<UserProfile>;
+    abstract rolesType(where: RolesTypeWhereUniqueInput): RolesType | Promise<RolesType>;
     abstract applicationsConnection(where?: ApplicationWhereInput, orderBy?: ApplicationOrderByInput, skip?: number, after?: string, before?: string, first?: number, last?: number): ApplicationConnection | Promise<ApplicationConnection>;
     abstract casesConnection(where?: CaseWhereInput, orderBy?: CaseOrderByInput, skip?: number, after?: string, before?: string, first?: number, last?: number): CaseConnection | Promise<CaseConnection>;
     abstract caseClassificationsConnection(where?: CaseClassificationWhereInput, orderBy?: CaseClassificationOrderByInput, skip?: number, after?: string, before?: string, first?: number, last?: number): CaseClassificationConnection | Promise<CaseClassificationConnection>;
@@ -11360,13 +11592,15 @@ export abstract class IQuery {
     abstract rolesConnection(where?: RoleWhereInput, orderBy?: RoleOrderByInput, skip?: number, after?: string, before?: string, first?: number, last?: number): RoleConnection | Promise<RoleConnection>;
     abstract usersConnection(where?: UserWhereInput, orderBy?: UserOrderByInput, skip?: number, after?: string, before?: string, first?: number, last?: number): UserConnection | Promise<UserConnection>;
     abstract userProfilesConnection(where?: UserProfileWhereInput, orderBy?: UserProfileOrderByInput, skip?: number, after?: string, before?: string, first?: number, last?: number): UserProfileConnection | Promise<UserProfileConnection>;
+    abstract rolesTypesConnection(where?: RolesTypeWhereInput, orderBy?: RolesTypeOrderByInput, skip?: number, after?: string, before?: string, first?: number, last?: number): RolesTypeConnection | Promise<RolesTypeConnection>;
     abstract node(id: string): Node | Promise<Node>;
 }
 
 export class Role {
+    createdAt: DateTime;
     id: number;
-    type?: number;
-    userId?: number;
+    userId: User[];
+    type: RolesType;
 }
 
 export class RoleConnection {
@@ -11381,9 +11615,38 @@ export class RoleEdge {
 }
 
 export class RolePreviousValues {
+    createdAt: DateTime;
     id: number;
-    type?: number;
-    userId?: number;
+}
+
+export class RolesType {
+    createdAt: DateTime;
+    id: number;
+    description?: string;
+}
+
+export class RolesTypeConnection {
+    pageInfo: PageInfo;
+    edges?: RolesTypeEdge[];
+    aggregate: AggregateRolesType;
+}
+
+export class RolesTypeEdge {
+    node: RolesType;
+    cursor: string;
+}
+
+export class RolesTypePreviousValues {
+    createdAt: DateTime;
+    id: number;
+    description?: string;
+}
+
+export class RolesTypeSubscriptionPayload {
+    mutation: MutationType;
+    node?: RolesType;
+    updatedFields: string[];
+    previousValues?: RolesTypePreviousValues;
 }
 
 export class RoleSubscriptionPayload {
@@ -11424,6 +11687,7 @@ export abstract class ISubscription {
     abstract role(where?: RoleSubscriptionWhereInput): RoleSubscriptionPayload | Promise<RoleSubscriptionPayload>;
     abstract user(where?: UserSubscriptionWhereInput): UserSubscriptionPayload | Promise<UserSubscriptionPayload>;
     abstract userProfile(where?: UserProfileSubscriptionWhereInput): UserProfileSubscriptionPayload | Promise<UserProfileSubscriptionPayload>;
+    abstract rolesType(where?: RolesTypeSubscriptionWhereInput): RolesTypeSubscriptionPayload | Promise<RolesTypeSubscriptionPayload>;
 }
 
 export class User {
@@ -11443,6 +11707,7 @@ export class User {
     updatedAt: DateTime;
     username?: string;
     profile: UserProfile;
+    roles_type: Role[];
 }
 
 export class UserConnection {

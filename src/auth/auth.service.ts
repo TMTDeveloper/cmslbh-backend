@@ -1,7 +1,7 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { JwtPayload } from './interfaces/jwt-payload.interface';
-import { UserResolver } from 'src/resolver/users.resolver';
+import { UserResolver } from '../resolver/users.resolver';
 import { ReqToken } from './interfaces/req-token.interface';
 
 @Injectable()
@@ -12,12 +12,38 @@ export class AuthService {
   ) {}
 
   async createToken(reqs: ReqToken) {
-    const dataUser = await this.userResolver.getPersons({
-      where: {
-        AND: [{ password: reqs.password }],
-        email: reqs.userName,
+    const dataUser = await this.userResolver.getUsers(
+      {
+        where: {
+          AND: [{ password: reqs.password }],
+          email: reqs.userName,
+          status: '1',
+        },
       },
-    });
+      `{ id
+    address
+    avatar
+    email
+    name
+    password
+    phone
+    position
+    rememberToken
+    username
+    profile {
+      id
+      noContact
+      occupation
+      photo
+    }
+    roles_type {
+      id
+      type {
+        id,
+        description
+      }
+    }}`,
+    );
     // console.log(JSON.stringify(dataUser[0]));
     if (dataUser[0] == null) {
       throw new UnauthorizedException();
@@ -32,7 +58,7 @@ export class AuthService {
   }
 
   async validateUser(payload: JwtPayload): Promise<any> {
-    return await this.userResolver.getPersons({
+    return await this.userResolver.getUsers({
       where: {
         email: payload.email,
       },

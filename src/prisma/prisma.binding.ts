@@ -4,7 +4,6 @@ import { Options } from 'graphql-binding'
 import { makePrismaBindingClass, BasePrismaOptions } from 'prisma-binding'
 
 export interface Query {
-    applications: <T = Array<Application | null>>(args: { where?: ApplicationWhereInput | null, orderBy?: ApplicationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     cases: <T = Array<Case | null>>(args: { where?: CaseWhereInput | null, orderBy?: CaseOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     caseClassifications: <T = Array<CaseClassification | null>>(args: { where?: CaseClassificationWhereInput | null, orderBy?: CaseClassificationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     caseConsultations: <T = Array<CaseConsultation | null>>(args: { where?: CaseConsultationWhereInput | null, orderBy?: CaseConsultationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -19,22 +18,25 @@ export interface Query {
     caseProgressActivityLits: <T = Array<CaseProgressActivityLit | null>>(args: { where?: CaseProgressActivityLitWhereInput | null, orderBy?: CaseProgressActivityLitOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     caseProgressActivityNonlits: <T = Array<CaseProgressActivityNonlit | null>>(args: { where?: CaseProgressActivityNonlitWhereInput | null, orderBy?: CaseProgressActivityNonlitOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     caseTransferReferrals: <T = Array<CaseTransferReferral | null>>(args: { where?: CaseTransferReferralWhereInput | null, orderBy?: CaseTransferReferralOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    caseTransfers: <T = Array<CaseTransfer | null>>(args: { where?: CaseTransferWhereInput | null, orderBy?: CaseTransferOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    caseReferrals: <T = Array<CaseReferral | null>>(args: { where?: CaseReferralWhereInput | null, orderBy?: CaseReferralOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     caseViolatedRights: <T = Array<CaseViolatedRight | null>>(args: { where?: CaseViolatedRightWhereInput | null, orderBy?: CaseViolatedRightOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     clients: <T = Array<Client | null>>(args: { where?: ClientWhereInput | null, orderBy?: ClientOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     daftarPengacaras: <T = Array<DaftarPengacara | null>>(args: { where?: DaftarPengacaraWhereInput | null, orderBy?: DaftarPengacaraOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     dataDicts: <T = Array<DataDict | null>>(args: { where?: DataDictWhereInput | null, orderBy?: DataDictOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     dataDictLocals: <T = Array<DataDictLocal | null>>(args: { where?: DataDictLocalWhereInput | null, orderBy?: DataDictLocalOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    logRequests: <T = Array<LogRequest | null>>(args: { where?: LogRequestWhereInput | null, orderBy?: LogRequestOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     logRequestApps: <T = Array<LogRequestApp | null>>(args: { where?: LogRequestAppWhereInput | null, orderBy?: LogRequestAppOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     mtVocabs: <T = Array<MtVocab | null>>(args: { where?: MtVocabWhereInput | null, orderBy?: MtVocabOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     mtVocabGroups: <T = Array<MtVocabGroup | null>>(args: { where?: MtVocabGroupWhereInput | null, orderBy?: MtVocabGroupOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    networks: <T = Array<Network | null>>(args: { where?: NetworkWhereInput | null, orderBy?: NetworkOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    persons: <T = Array<Person | null>>(args: { where?: PersonWhereInput | null, orderBy?: PersonOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     personDocuments: <T = Array<PersonDocument | null>>(args: { where?: PersonDocumentWhereInput | null, orderBy?: PersonDocumentOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     roles: <T = Array<Role | null>>(args: { where?: RoleWhereInput | null, orderBy?: RoleOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    users: <T = Array<User | null>>(args: { where?: UserWhereInput | null, orderBy?: UserOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     userProfiles: <T = Array<UserProfile | null>>(args: { where?: UserProfileWhereInput | null, orderBy?: UserProfileOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    application: <T = Application | null>(args: { where: ApplicationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    applications: <T = Array<Application | null>>(args: { where?: ApplicationWhereInput | null, orderBy?: ApplicationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    logRequests: <T = Array<LogRequest | null>>(args: { where?: LogRequestWhereInput | null, orderBy?: LogRequestOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    rolesTypes: <T = Array<RolesType | null>>(args: { where?: RolesTypeWhereInput | null, orderBy?: RolesTypeOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    networks: <T = Array<Network | null>>(args: { where?: NetworkWhereInput | null, orderBy?: NetworkOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    users: <T = Array<User | null>>(args: { where?: UserWhereInput | null, orderBy?: UserOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    persons: <T = Array<Person | null>>(args: { where?: PersonWhereInput | null, orderBy?: PersonOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     case: <T = Case | null>(args: { where: CaseWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     caseClassification: <T = CaseClassification | null>(args: { where: CaseClassificationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     caseConsultation: <T = CaseConsultation | null>(args: { where: CaseConsultationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
@@ -49,22 +51,25 @@ export interface Query {
     caseProgressActivityLit: <T = CaseProgressActivityLit | null>(args: { where: CaseProgressActivityLitWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     caseProgressActivityNonlit: <T = CaseProgressActivityNonlit | null>(args: { where: CaseProgressActivityNonlitWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     caseTransferReferral: <T = CaseTransferReferral | null>(args: { where: CaseTransferReferralWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    caseTransfer: <T = CaseTransfer | null>(args: { where: CaseTransferWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    caseReferral: <T = CaseReferral | null>(args: { where: CaseReferralWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     caseViolatedRight: <T = CaseViolatedRight | null>(args: { where: CaseViolatedRightWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     client: <T = Client | null>(args: { where: ClientWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     daftarPengacara: <T = DaftarPengacara | null>(args: { where: DaftarPengacaraWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     dataDict: <T = DataDict | null>(args: { where: DataDictWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     dataDictLocal: <T = DataDictLocal | null>(args: { where: DataDictLocalWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    logRequest: <T = LogRequest | null>(args: { where: LogRequestWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     logRequestApp: <T = LogRequestApp | null>(args: { where: LogRequestAppWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     mtVocab: <T = MtVocab | null>(args: { where: MtVocabWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     mtVocabGroup: <T = MtVocabGroup | null>(args: { where: MtVocabGroupWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    network: <T = Network | null>(args: { where: NetworkWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    person: <T = Person | null>(args: { where: PersonWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     personDocument: <T = PersonDocument | null>(args: { where: PersonDocumentWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     role: <T = Role | null>(args: { where: RoleWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    user: <T = User | null>(args: { where: UserWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     userProfile: <T = UserProfile | null>(args: { where: UserProfileWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    applicationsConnection: <T = ApplicationConnection>(args: { where?: ApplicationWhereInput | null, orderBy?: ApplicationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    application: <T = Application | null>(args: { where: ApplicationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    logRequest: <T = LogRequest | null>(args: { where: LogRequestWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    rolesType: <T = RolesType | null>(args: { where: RolesTypeWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    network: <T = Network | null>(args: { where: NetworkWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    user: <T = User | null>(args: { where: UserWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    person: <T = Person | null>(args: { where: PersonWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     casesConnection: <T = CaseConnection>(args: { where?: CaseWhereInput | null, orderBy?: CaseOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     caseClassificationsConnection: <T = CaseClassificationConnection>(args: { where?: CaseClassificationWhereInput | null, orderBy?: CaseClassificationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     caseConsultationsConnection: <T = CaseConsultationConnection>(args: { where?: CaseConsultationWhereInput | null, orderBy?: CaseConsultationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -79,26 +84,29 @@ export interface Query {
     caseProgressActivityLitsConnection: <T = CaseProgressActivityLitConnection>(args: { where?: CaseProgressActivityLitWhereInput | null, orderBy?: CaseProgressActivityLitOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     caseProgressActivityNonlitsConnection: <T = CaseProgressActivityNonlitConnection>(args: { where?: CaseProgressActivityNonlitWhereInput | null, orderBy?: CaseProgressActivityNonlitOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     caseTransferReferralsConnection: <T = CaseTransferReferralConnection>(args: { where?: CaseTransferReferralWhereInput | null, orderBy?: CaseTransferReferralOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    caseTransfersConnection: <T = CaseTransferConnection>(args: { where?: CaseTransferWhereInput | null, orderBy?: CaseTransferOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    caseReferralsConnection: <T = CaseReferralConnection>(args: { where?: CaseReferralWhereInput | null, orderBy?: CaseReferralOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     caseViolatedRightsConnection: <T = CaseViolatedRightConnection>(args: { where?: CaseViolatedRightWhereInput | null, orderBy?: CaseViolatedRightOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     clientsConnection: <T = ClientConnection>(args: { where?: ClientWhereInput | null, orderBy?: ClientOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     daftarPengacarasConnection: <T = DaftarPengacaraConnection>(args: { where?: DaftarPengacaraWhereInput | null, orderBy?: DaftarPengacaraOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     dataDictsConnection: <T = DataDictConnection>(args: { where?: DataDictWhereInput | null, orderBy?: DataDictOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     dataDictLocalsConnection: <T = DataDictLocalConnection>(args: { where?: DataDictLocalWhereInput | null, orderBy?: DataDictLocalOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    logRequestsConnection: <T = LogRequestConnection>(args: { where?: LogRequestWhereInput | null, orderBy?: LogRequestOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     logRequestAppsConnection: <T = LogRequestAppConnection>(args: { where?: LogRequestAppWhereInput | null, orderBy?: LogRequestAppOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     mtVocabsConnection: <T = MtVocabConnection>(args: { where?: MtVocabWhereInput | null, orderBy?: MtVocabOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     mtVocabGroupsConnection: <T = MtVocabGroupConnection>(args: { where?: MtVocabGroupWhereInput | null, orderBy?: MtVocabGroupOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    networksConnection: <T = NetworkConnection>(args: { where?: NetworkWhereInput | null, orderBy?: NetworkOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    personsConnection: <T = PersonConnection>(args: { where?: PersonWhereInput | null, orderBy?: PersonOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     personDocumentsConnection: <T = PersonDocumentConnection>(args: { where?: PersonDocumentWhereInput | null, orderBy?: PersonDocumentOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     rolesConnection: <T = RoleConnection>(args: { where?: RoleWhereInput | null, orderBy?: RoleOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    usersConnection: <T = UserConnection>(args: { where?: UserWhereInput | null, orderBy?: UserOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     userProfilesConnection: <T = UserProfileConnection>(args: { where?: UserProfileWhereInput | null, orderBy?: UserProfileOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    applicationsConnection: <T = ApplicationConnection>(args: { where?: ApplicationWhereInput | null, orderBy?: ApplicationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    logRequestsConnection: <T = LogRequestConnection>(args: { where?: LogRequestWhereInput | null, orderBy?: LogRequestOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    rolesTypesConnection: <T = RolesTypeConnection>(args: { where?: RolesTypeWhereInput | null, orderBy?: RolesTypeOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    networksConnection: <T = NetworkConnection>(args: { where?: NetworkWhereInput | null, orderBy?: NetworkOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    usersConnection: <T = UserConnection>(args: { where?: UserWhereInput | null, orderBy?: UserOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    personsConnection: <T = PersonConnection>(args: { where?: PersonWhereInput | null, orderBy?: PersonOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     node: <T = Node | null>(args: { id: ID_Output }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> 
   }
 
 export interface Mutation {
-    createApplication: <T = Application>(args: { data: ApplicationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createCase: <T = Case>(args: { data: CaseCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createCaseClassification: <T = CaseClassification>(args: { data: CaseClassificationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createCaseConsultation: <T = CaseConsultation>(args: { data: CaseConsultationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -113,22 +121,25 @@ export interface Mutation {
     createCaseProgressActivityLit: <T = CaseProgressActivityLit>(args: { data: CaseProgressActivityLitCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createCaseProgressActivityNonlit: <T = CaseProgressActivityNonlit>(args: { data: CaseProgressActivityNonlitCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createCaseTransferReferral: <T = CaseTransferReferral>(args: { data: CaseTransferReferralCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createCaseTransfer: <T = CaseTransfer>(args: { data: CaseTransferCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createCaseReferral: <T = CaseReferral>(args: { data: CaseReferralCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createCaseViolatedRight: <T = CaseViolatedRight>(args: { data: CaseViolatedRightCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createClient: <T = Client>(args: { data: ClientCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createDaftarPengacara: <T = DaftarPengacara>(args: { data: DaftarPengacaraCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createDataDict: <T = DataDict>(args: { data: DataDictCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createDataDictLocal: <T = DataDictLocal>(args: { data: DataDictLocalCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createLogRequest: <T = LogRequest>(args: { data: LogRequestCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createLogRequestApp: <T = LogRequestApp>(args: { data: LogRequestAppCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createMtVocab: <T = MtVocab>(args: { data: MtVocabCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createMtVocabGroup: <T = MtVocabGroup>(args: { data: MtVocabGroupCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createNetwork: <T = Network>(args: { data: NetworkCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createPerson: <T = Person>(args: { data: PersonCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createPersonDocument: <T = PersonDocument>(args: { data: PersonDocumentCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createRole: <T = Role>(args: { data: RoleCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createUser: <T = User>(args: { data: UserCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createUserProfile: <T = UserProfile>(args: { data: UserProfileCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateApplication: <T = Application | null>(args: { data: ApplicationUpdateInput, where: ApplicationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    createApplication: <T = Application>(args: { data: ApplicationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createLogRequest: <T = LogRequest>(args: { data: LogRequestCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createRolesType: <T = RolesType>(args: { data: RolesTypeCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createNetwork: <T = Network>(args: { data: NetworkCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createUser: <T = User>(args: { data: UserCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createPerson: <T = Person>(args: { data: PersonCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateCase: <T = Case | null>(args: { data: CaseUpdateInput, where: CaseWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateCaseClassification: <T = CaseClassification | null>(args: { data: CaseClassificationUpdateInput, where: CaseClassificationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateCaseConsultation: <T = CaseConsultation | null>(args: { data: CaseConsultationUpdateInput, where: CaseConsultationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
@@ -143,22 +154,25 @@ export interface Mutation {
     updateCaseProgressActivityLit: <T = CaseProgressActivityLit | null>(args: { data: CaseProgressActivityLitUpdateInput, where: CaseProgressActivityLitWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateCaseProgressActivityNonlit: <T = CaseProgressActivityNonlit | null>(args: { data: CaseProgressActivityNonlitUpdateInput, where: CaseProgressActivityNonlitWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateCaseTransferReferral: <T = CaseTransferReferral | null>(args: { data: CaseTransferReferralUpdateInput, where: CaseTransferReferralWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateCaseTransfer: <T = CaseTransfer | null>(args: { data: CaseTransferUpdateInput, where: CaseTransferWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateCaseReferral: <T = CaseReferral | null>(args: { data: CaseReferralUpdateInput, where: CaseReferralWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateCaseViolatedRight: <T = CaseViolatedRight | null>(args: { data: CaseViolatedRightUpdateInput, where: CaseViolatedRightWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateClient: <T = Client | null>(args: { data: ClientUpdateInput, where: ClientWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateDaftarPengacara: <T = DaftarPengacara | null>(args: { data: DaftarPengacaraUpdateInput, where: DaftarPengacaraWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateDataDict: <T = DataDict | null>(args: { data: DataDictUpdateInput, where: DataDictWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateDataDictLocal: <T = DataDictLocal | null>(args: { data: DataDictLocalUpdateInput, where: DataDictLocalWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateLogRequest: <T = LogRequest | null>(args: { data: LogRequestUpdateInput, where: LogRequestWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateLogRequestApp: <T = LogRequestApp | null>(args: { data: LogRequestAppUpdateInput, where: LogRequestAppWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateMtVocab: <T = MtVocab | null>(args: { data: MtVocabUpdateInput, where: MtVocabWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateMtVocabGroup: <T = MtVocabGroup | null>(args: { data: MtVocabGroupUpdateInput, where: MtVocabGroupWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateNetwork: <T = Network | null>(args: { data: NetworkUpdateInput, where: NetworkWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updatePerson: <T = Person | null>(args: { data: PersonUpdateInput, where: PersonWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updatePersonDocument: <T = PersonDocument | null>(args: { data: PersonDocumentUpdateInput, where: PersonDocumentWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateRole: <T = Role | null>(args: { data: RoleUpdateInput, where: RoleWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateUser: <T = User | null>(args: { data: UserUpdateInput, where: UserWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateUserProfile: <T = UserProfile | null>(args: { data: UserProfileUpdateInput, where: UserProfileWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteApplication: <T = Application | null>(args: { where: ApplicationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateApplication: <T = Application | null>(args: { data: ApplicationUpdateInput, where: ApplicationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateLogRequest: <T = LogRequest | null>(args: { data: LogRequestUpdateInput, where: LogRequestWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateRolesType: <T = RolesType | null>(args: { data: RolesTypeUpdateInput, where: RolesTypeWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateNetwork: <T = Network | null>(args: { data: NetworkUpdateInput, where: NetworkWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateUser: <T = User | null>(args: { data: UserUpdateInput, where: UserWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updatePerson: <T = Person | null>(args: { data: PersonUpdateInput, where: PersonWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteCase: <T = Case | null>(args: { where: CaseWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteCaseClassification: <T = CaseClassification | null>(args: { where: CaseClassificationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteCaseConsultation: <T = CaseConsultation | null>(args: { where: CaseConsultationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
@@ -173,22 +187,25 @@ export interface Mutation {
     deleteCaseProgressActivityLit: <T = CaseProgressActivityLit | null>(args: { where: CaseProgressActivityLitWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteCaseProgressActivityNonlit: <T = CaseProgressActivityNonlit | null>(args: { where: CaseProgressActivityNonlitWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteCaseTransferReferral: <T = CaseTransferReferral | null>(args: { where: CaseTransferReferralWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteCaseTransfer: <T = CaseTransfer | null>(args: { where: CaseTransferWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteCaseReferral: <T = CaseReferral | null>(args: { where: CaseReferralWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteCaseViolatedRight: <T = CaseViolatedRight | null>(args: { where: CaseViolatedRightWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteClient: <T = Client | null>(args: { where: ClientWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteDaftarPengacara: <T = DaftarPengacara | null>(args: { where: DaftarPengacaraWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteDataDict: <T = DataDict | null>(args: { where: DataDictWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteDataDictLocal: <T = DataDictLocal | null>(args: { where: DataDictLocalWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteLogRequest: <T = LogRequest | null>(args: { where: LogRequestWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteLogRequestApp: <T = LogRequestApp | null>(args: { where: LogRequestAppWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteMtVocab: <T = MtVocab | null>(args: { where: MtVocabWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteMtVocabGroup: <T = MtVocabGroup | null>(args: { where: MtVocabGroupWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteNetwork: <T = Network | null>(args: { where: NetworkWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deletePerson: <T = Person | null>(args: { where: PersonWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deletePersonDocument: <T = PersonDocument | null>(args: { where: PersonDocumentWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteRole: <T = Role | null>(args: { where: RoleWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteUser: <T = User | null>(args: { where: UserWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteUserProfile: <T = UserProfile | null>(args: { where: UserProfileWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertApplication: <T = Application>(args: { where: ApplicationWhereUniqueInput, create: ApplicationCreateInput, update: ApplicationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteApplication: <T = Application | null>(args: { where: ApplicationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteLogRequest: <T = LogRequest | null>(args: { where: LogRequestWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteRolesType: <T = RolesType | null>(args: { where: RolesTypeWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteNetwork: <T = Network | null>(args: { where: NetworkWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteUser: <T = User | null>(args: { where: UserWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deletePerson: <T = Person | null>(args: { where: PersonWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     upsertCase: <T = Case>(args: { where: CaseWhereUniqueInput, create: CaseCreateInput, update: CaseUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertCaseClassification: <T = CaseClassification>(args: { where: CaseClassificationWhereUniqueInput, create: CaseClassificationCreateInput, update: CaseClassificationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertCaseConsultation: <T = CaseConsultation>(args: { where: CaseConsultationWhereUniqueInput, create: CaseConsultationCreateInput, update: CaseConsultationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -203,26 +220,28 @@ export interface Mutation {
     upsertCaseProgressActivityLit: <T = CaseProgressActivityLit>(args: { where: CaseProgressActivityLitWhereUniqueInput, create: CaseProgressActivityLitCreateInput, update: CaseProgressActivityLitUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertCaseProgressActivityNonlit: <T = CaseProgressActivityNonlit>(args: { where: CaseProgressActivityNonlitWhereUniqueInput, create: CaseProgressActivityNonlitCreateInput, update: CaseProgressActivityNonlitUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertCaseTransferReferral: <T = CaseTransferReferral>(args: { where: CaseTransferReferralWhereUniqueInput, create: CaseTransferReferralCreateInput, update: CaseTransferReferralUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertCaseTransfer: <T = CaseTransfer>(args: { where: CaseTransferWhereUniqueInput, create: CaseTransferCreateInput, update: CaseTransferUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertCaseReferral: <T = CaseReferral>(args: { where: CaseReferralWhereUniqueInput, create: CaseReferralCreateInput, update: CaseReferralUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertCaseViolatedRight: <T = CaseViolatedRight>(args: { where: CaseViolatedRightWhereUniqueInput, create: CaseViolatedRightCreateInput, update: CaseViolatedRightUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertClient: <T = Client>(args: { where: ClientWhereUniqueInput, create: ClientCreateInput, update: ClientUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertDaftarPengacara: <T = DaftarPengacara>(args: { where: DaftarPengacaraWhereUniqueInput, create: DaftarPengacaraCreateInput, update: DaftarPengacaraUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertDataDict: <T = DataDict>(args: { where: DataDictWhereUniqueInput, create: DataDictCreateInput, update: DataDictUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertDataDictLocal: <T = DataDictLocal>(args: { where: DataDictLocalWhereUniqueInput, create: DataDictLocalCreateInput, update: DataDictLocalUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertLogRequest: <T = LogRequest>(args: { where: LogRequestWhereUniqueInput, create: LogRequestCreateInput, update: LogRequestUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertLogRequestApp: <T = LogRequestApp>(args: { where: LogRequestAppWhereUniqueInput, create: LogRequestAppCreateInput, update: LogRequestAppUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertMtVocab: <T = MtVocab>(args: { where: MtVocabWhereUniqueInput, create: MtVocabCreateInput, update: MtVocabUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertMtVocabGroup: <T = MtVocabGroup>(args: { where: MtVocabGroupWhereUniqueInput, create: MtVocabGroupCreateInput, update: MtVocabGroupUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertNetwork: <T = Network>(args: { where: NetworkWhereUniqueInput, create: NetworkCreateInput, update: NetworkUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertPerson: <T = Person>(args: { where: PersonWhereUniqueInput, create: PersonCreateInput, update: PersonUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertPersonDocument: <T = PersonDocument>(args: { where: PersonDocumentWhereUniqueInput, create: PersonDocumentCreateInput, update: PersonDocumentUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertRole: <T = Role>(args: { where: RoleWhereUniqueInput, create: RoleCreateInput, update: RoleUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertUser: <T = User>(args: { where: UserWhereUniqueInput, create: UserCreateInput, update: UserUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertUserProfile: <T = UserProfile>(args: { where: UserProfileWhereUniqueInput, create: UserProfileCreateInput, update: UserProfileUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyApplications: <T = BatchPayload>(args: { data: ApplicationUpdateManyMutationInput, where?: ApplicationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertApplication: <T = Application>(args: { where: ApplicationWhereUniqueInput, create: ApplicationCreateInput, update: ApplicationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertLogRequest: <T = LogRequest>(args: { where: LogRequestWhereUniqueInput, create: LogRequestCreateInput, update: LogRequestUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertRolesType: <T = RolesType>(args: { where: RolesTypeWhereUniqueInput, create: RolesTypeCreateInput, update: RolesTypeUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertNetwork: <T = Network>(args: { where: NetworkWhereUniqueInput, create: NetworkCreateInput, update: NetworkUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertUser: <T = User>(args: { where: UserWhereUniqueInput, create: UserCreateInput, update: UserUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertPerson: <T = Person>(args: { where: PersonWhereUniqueInput, create: PersonCreateInput, update: PersonUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCases: <T = BatchPayload>(args: { data: CaseUpdateManyMutationInput, where?: CaseWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCaseClassifications: <T = BatchPayload>(args: { data: CaseClassificationUpdateManyMutationInput, where?: CaseClassificationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCaseConsultations: <T = BatchPayload>(args: { data: CaseConsultationUpdateManyMutationInput, where?: CaseConsultationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyCaseConsultationApps: <T = BatchPayload>(args: { data: CaseConsultationAppUpdateManyMutationInput, where?: CaseConsultationAppWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCaseDocuments: <T = BatchPayload>(args: { data: CaseDocumentUpdateManyMutationInput, where?: CaseDocumentWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCaseIssues: <T = BatchPayload>(args: { data: CaseIssueUpdateManyMutationInput, where?: CaseIssueWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCasePks: <T = BatchPayload>(args: { data: CasePkUpdateManyMutationInput, where?: CasePkWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -231,22 +250,23 @@ export interface Mutation {
     updateManyCaseProgressActivityLits: <T = BatchPayload>(args: { data: CaseProgressActivityLitUpdateManyMutationInput, where?: CaseProgressActivityLitWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCaseProgressActivityNonlits: <T = BatchPayload>(args: { data: CaseProgressActivityNonlitUpdateManyMutationInput, where?: CaseProgressActivityNonlitWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCaseTransferReferrals: <T = BatchPayload>(args: { data: CaseTransferReferralUpdateManyMutationInput, where?: CaseTransferReferralWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyCaseTransfers: <T = BatchPayload>(args: { data: CaseTransferUpdateManyMutationInput, where?: CaseTransferWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyCaseReferrals: <T = BatchPayload>(args: { data: CaseReferralUpdateManyMutationInput, where?: CaseReferralWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCaseViolatedRights: <T = BatchPayload>(args: { data: CaseViolatedRightUpdateManyMutationInput, where?: CaseViolatedRightWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyClients: <T = BatchPayload>(args: { data: ClientUpdateManyMutationInput, where?: ClientWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyDaftarPengacaras: <T = BatchPayload>(args: { data: DaftarPengacaraUpdateManyMutationInput, where?: DaftarPengacaraWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyDataDicts: <T = BatchPayload>(args: { data: DataDictUpdateManyMutationInput, where?: DataDictWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyDataDictLocals: <T = BatchPayload>(args: { data: DataDictLocalUpdateManyMutationInput, where?: DataDictLocalWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyLogRequests: <T = BatchPayload>(args: { data: LogRequestUpdateManyMutationInput, where?: LogRequestWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyLogRequestApps: <T = BatchPayload>(args: { data: LogRequestAppUpdateManyMutationInput, where?: LogRequestAppWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyMtVocabs: <T = BatchPayload>(args: { data: MtVocabUpdateManyMutationInput, where?: MtVocabWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyMtVocabGroups: <T = BatchPayload>(args: { data: MtVocabGroupUpdateManyMutationInput, where?: MtVocabGroupWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyNetworks: <T = BatchPayload>(args: { data: NetworkUpdateManyMutationInput, where?: NetworkWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyPersons: <T = BatchPayload>(args: { data: PersonUpdateManyMutationInput, where?: PersonWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyPersonDocuments: <T = BatchPayload>(args: { data: PersonDocumentUpdateManyMutationInput, where?: PersonDocumentWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyRoles: <T = BatchPayload>(args: { data: RoleUpdateManyMutationInput, where?: RoleWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyUsers: <T = BatchPayload>(args: { data: UserUpdateManyMutationInput, where?: UserWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyUserProfiles: <T = BatchPayload>(args: { data: UserProfileUpdateManyMutationInput, where?: UserProfileWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyApplications: <T = BatchPayload>(args: { where?: ApplicationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyApplications: <T = BatchPayload>(args: { data: ApplicationUpdateManyMutationInput, where?: ApplicationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyLogRequests: <T = BatchPayload>(args: { data: LogRequestUpdateManyMutationInput, where?: LogRequestWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyRolesTypes: <T = BatchPayload>(args: { data: RolesTypeUpdateManyMutationInput, where?: RolesTypeWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyNetworks: <T = BatchPayload>(args: { data: NetworkUpdateManyMutationInput, where?: NetworkWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyUsers: <T = BatchPayload>(args: { data: UserUpdateManyMutationInput, where?: UserWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyPersons: <T = BatchPayload>(args: { data: PersonUpdateManyMutationInput, where?: PersonWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyCases: <T = BatchPayload>(args: { where?: CaseWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyCaseClassifications: <T = BatchPayload>(args: { where?: CaseClassificationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyCaseConsultations: <T = BatchPayload>(args: { where?: CaseConsultationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -261,25 +281,28 @@ export interface Mutation {
     deleteManyCaseProgressActivityLits: <T = BatchPayload>(args: { where?: CaseProgressActivityLitWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyCaseProgressActivityNonlits: <T = BatchPayload>(args: { where?: CaseProgressActivityNonlitWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyCaseTransferReferrals: <T = BatchPayload>(args: { where?: CaseTransferReferralWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyCaseTransfers: <T = BatchPayload>(args: { where?: CaseTransferWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyCaseReferrals: <T = BatchPayload>(args: { where?: CaseReferralWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyCaseViolatedRights: <T = BatchPayload>(args: { where?: CaseViolatedRightWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyClients: <T = BatchPayload>(args: { where?: ClientWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyDaftarPengacaras: <T = BatchPayload>(args: { where?: DaftarPengacaraWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyDataDicts: <T = BatchPayload>(args: { where?: DataDictWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyDataDictLocals: <T = BatchPayload>(args: { where?: DataDictLocalWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyLogRequests: <T = BatchPayload>(args: { where?: LogRequestWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyLogRequestApps: <T = BatchPayload>(args: { where?: LogRequestAppWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyMtVocabs: <T = BatchPayload>(args: { where?: MtVocabWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyMtVocabGroups: <T = BatchPayload>(args: { where?: MtVocabGroupWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyNetworks: <T = BatchPayload>(args: { where?: NetworkWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyPersons: <T = BatchPayload>(args: { where?: PersonWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyPersonDocuments: <T = BatchPayload>(args: { where?: PersonDocumentWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyRoles: <T = BatchPayload>(args: { where?: RoleWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyUserProfiles: <T = BatchPayload>(args: { where?: UserProfileWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyApplications: <T = BatchPayload>(args: { where?: ApplicationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyLogRequests: <T = BatchPayload>(args: { where?: LogRequestWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyRolesTypes: <T = BatchPayload>(args: { where?: RolesTypeWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyNetworks: <T = BatchPayload>(args: { where?: NetworkWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyUsers: <T = BatchPayload>(args: { where?: UserWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyUserProfiles: <T = BatchPayload>(args: { where?: UserProfileWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> 
+    deleteManyPersons: <T = BatchPayload>(args: { where?: PersonWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> 
   }
 
 export interface Subscription {
-    application: <T = ApplicationSubscriptionPayload | null>(args: { where?: ApplicationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     case: <T = CaseSubscriptionPayload | null>(args: { where?: CaseSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     caseClassification: <T = CaseClassificationSubscriptionPayload | null>(args: { where?: CaseClassificationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     caseConsultation: <T = CaseConsultationSubscriptionPayload | null>(args: { where?: CaseConsultationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
@@ -294,25 +317,28 @@ export interface Subscription {
     caseProgressActivityLit: <T = CaseProgressActivityLitSubscriptionPayload | null>(args: { where?: CaseProgressActivityLitSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     caseProgressActivityNonlit: <T = CaseProgressActivityNonlitSubscriptionPayload | null>(args: { where?: CaseProgressActivityNonlitSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     caseTransferReferral: <T = CaseTransferReferralSubscriptionPayload | null>(args: { where?: CaseTransferReferralSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    caseTransfer: <T = CaseTransferSubscriptionPayload | null>(args: { where?: CaseTransferSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    caseReferral: <T = CaseReferralSubscriptionPayload | null>(args: { where?: CaseReferralSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     caseViolatedRight: <T = CaseViolatedRightSubscriptionPayload | null>(args: { where?: CaseViolatedRightSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     client: <T = ClientSubscriptionPayload | null>(args: { where?: ClientSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     daftarPengacara: <T = DaftarPengacaraSubscriptionPayload | null>(args: { where?: DaftarPengacaraSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     dataDict: <T = DataDictSubscriptionPayload | null>(args: { where?: DataDictSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     dataDictLocal: <T = DataDictLocalSubscriptionPayload | null>(args: { where?: DataDictLocalSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    logRequest: <T = LogRequestSubscriptionPayload | null>(args: { where?: LogRequestSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     logRequestApp: <T = LogRequestAppSubscriptionPayload | null>(args: { where?: LogRequestAppSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     mtVocab: <T = MtVocabSubscriptionPayload | null>(args: { where?: MtVocabSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     mtVocabGroup: <T = MtVocabGroupSubscriptionPayload | null>(args: { where?: MtVocabGroupSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    network: <T = NetworkSubscriptionPayload | null>(args: { where?: NetworkSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    person: <T = PersonSubscriptionPayload | null>(args: { where?: PersonSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     personDocument: <T = PersonDocumentSubscriptionPayload | null>(args: { where?: PersonDocumentSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     role: <T = RoleSubscriptionPayload | null>(args: { where?: RoleSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    userProfile: <T = UserProfileSubscriptionPayload | null>(args: { where?: UserProfileSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    application: <T = ApplicationSubscriptionPayload | null>(args: { where?: ApplicationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    logRequest: <T = LogRequestSubscriptionPayload | null>(args: { where?: LogRequestSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    rolesType: <T = RolesTypeSubscriptionPayload | null>(args: { where?: RolesTypeSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    network: <T = NetworkSubscriptionPayload | null>(args: { where?: NetworkSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     user: <T = UserSubscriptionPayload | null>(args: { where?: UserSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    userProfile: <T = UserProfileSubscriptionPayload | null>(args: { where?: UserProfileSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> 
+    person: <T = PersonSubscriptionPayload | null>(args: { where?: PersonSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> 
   }
 
 export interface Exists {
-  Application: (where?: ApplicationWhereInput) => Promise<boolean>
   Case: (where?: CaseWhereInput) => Promise<boolean>
   CaseClassification: (where?: CaseClassificationWhereInput) => Promise<boolean>
   CaseConsultation: (where?: CaseConsultationWhereInput) => Promise<boolean>
@@ -327,21 +353,25 @@ export interface Exists {
   CaseProgressActivityLit: (where?: CaseProgressActivityLitWhereInput) => Promise<boolean>
   CaseProgressActivityNonlit: (where?: CaseProgressActivityNonlitWhereInput) => Promise<boolean>
   CaseTransferReferral: (where?: CaseTransferReferralWhereInput) => Promise<boolean>
+  CaseTransfer: (where?: CaseTransferWhereInput) => Promise<boolean>
+  CaseReferral: (where?: CaseReferralWhereInput) => Promise<boolean>
   CaseViolatedRight: (where?: CaseViolatedRightWhereInput) => Promise<boolean>
   Client: (where?: ClientWhereInput) => Promise<boolean>
   DaftarPengacara: (where?: DaftarPengacaraWhereInput) => Promise<boolean>
   DataDict: (where?: DataDictWhereInput) => Promise<boolean>
   DataDictLocal: (where?: DataDictLocalWhereInput) => Promise<boolean>
-  LogRequest: (where?: LogRequestWhereInput) => Promise<boolean>
   LogRequestApp: (where?: LogRequestAppWhereInput) => Promise<boolean>
   MtVocab: (where?: MtVocabWhereInput) => Promise<boolean>
   MtVocabGroup: (where?: MtVocabGroupWhereInput) => Promise<boolean>
-  Network: (where?: NetworkWhereInput) => Promise<boolean>
-  Person: (where?: PersonWhereInput) => Promise<boolean>
   PersonDocument: (where?: PersonDocumentWhereInput) => Promise<boolean>
   Role: (where?: RoleWhereInput) => Promise<boolean>
-  User: (where?: UserWhereInput) => Promise<boolean>
   UserProfile: (where?: UserProfileWhereInput) => Promise<boolean>
+  Application: (where?: ApplicationWhereInput) => Promise<boolean>
+  LogRequest: (where?: LogRequestWhereInput) => Promise<boolean>
+  RolesType: (where?: RolesTypeWhereInput) => Promise<boolean>
+  Network: (where?: NetworkWhereInput) => Promise<boolean>
+  User: (where?: UserWhereInput) => Promise<boolean>
+  Person: (where?: PersonWhereInput) => Promise<boolean>
 }
 
 export interface Prisma {
@@ -422,6 +452,14 @@ type AggregateCaseProgressActivityNonlit {
   count: Int!
 }
 
+type AggregateCaseReferral {
+  count: Int!
+}
+
+type AggregateCaseTransfer {
+  count: Int!
+}
+
 type AggregateCaseTransferReferral {
   count: Int!
 }
@@ -478,6 +516,10 @@ type AggregateRole {
   count: Int!
 }
 
+type AggregateRolesType {
+  count: Int!
+}
+
 type AggregateUser {
   count: Int!
 }
@@ -507,8 +549,10 @@ type Application {
   wakilId: Person!
   waktuPernahKlien: String
   whyLbh: String
-  case: Case!
+  case: Case
   clients(where: ClientWhereInput, orderBy: ClientOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Client!]
+  tahap: String
+  status: String
 }
 
 """A connection to a list of items."""
@@ -538,14 +582,21 @@ input ApplicationCreateInput {
   updatedBy: String
   waktuPernahKlien: String
   whyLbh: String
+  tahap: String
+  status: String
   wakilId: PersonCreateOneWithoutApplicationsInput!
-  case: CaseCreateOneWithoutApplicationInput!
+  case: CaseCreateOneWithoutApplicationInput
   clients: ClientCreateManyWithoutApplicationIdInput
 }
 
 input ApplicationCreateManyWithoutWakilIdInput {
   create: [ApplicationCreateWithoutWakilIdInput!]
   connect: [ApplicationWhereUniqueInput!]
+}
+
+input ApplicationCreateOneInput {
+  create: ApplicationCreateInput
+  connect: ApplicationWhereUniqueInput
 }
 
 input ApplicationCreateOneWithoutCaseInput {
@@ -575,6 +626,8 @@ input ApplicationCreateWithoutCaseInput {
   updatedBy: String
   waktuPernahKlien: String
   whyLbh: String
+  tahap: String
+  status: String
   wakilId: PersonCreateOneWithoutApplicationsInput!
   clients: ClientCreateManyWithoutApplicationIdInput
 }
@@ -596,8 +649,10 @@ input ApplicationCreateWithoutClientsInput {
   updatedBy: String
   waktuPernahKlien: String
   whyLbh: String
+  tahap: String
+  status: String
   wakilId: PersonCreateOneWithoutApplicationsInput!
-  case: CaseCreateOneWithoutApplicationInput!
+  case: CaseCreateOneWithoutApplicationInput
 }
 
 input ApplicationCreateWithoutWakilIdInput {
@@ -617,7 +672,9 @@ input ApplicationCreateWithoutWakilIdInput {
   updatedBy: String
   waktuPernahKlien: String
   whyLbh: String
-  case: CaseCreateOneWithoutApplicationInput!
+  tahap: String
+  status: String
+  case: CaseCreateOneWithoutApplicationInput
   clients: ClientCreateManyWithoutApplicationIdInput
 }
 
@@ -669,6 +726,10 @@ enum ApplicationOrderByInput {
   waktuPernahKlien_DESC
   whyLbh_ASC
   whyLbh_DESC
+  tahap_ASC
+  tahap_DESC
+  status_ASC
+  status_DESC
 }
 
 type ApplicationPreviousValues {
@@ -691,6 +752,8 @@ type ApplicationPreviousValues {
   updatedBy: String
   waktuPernahKlien: String
   whyLbh: String
+  tahap: String
+  status: String
 }
 
 input ApplicationScalarWhereInput {
@@ -1300,6 +1363,86 @@ input ApplicationScalarWhereInput {
 
   """All values not ending with the given string."""
   whyLbh_not_ends_with: String
+  tahap: String
+
+  """All values that are not equal to given value."""
+  tahap_not: String
+
+  """All values that are contained in given list."""
+  tahap_in: [String!]
+
+  """All values that are not contained in given list."""
+  tahap_not_in: [String!]
+
+  """All values less than the given value."""
+  tahap_lt: String
+
+  """All values less than or equal the given value."""
+  tahap_lte: String
+
+  """All values greater than the given value."""
+  tahap_gt: String
+
+  """All values greater than or equal the given value."""
+  tahap_gte: String
+
+  """All values containing the given string."""
+  tahap_contains: String
+
+  """All values not containing the given string."""
+  tahap_not_contains: String
+
+  """All values starting with the given string."""
+  tahap_starts_with: String
+
+  """All values not starting with the given string."""
+  tahap_not_starts_with: String
+
+  """All values ending with the given string."""
+  tahap_ends_with: String
+
+  """All values not ending with the given string."""
+  tahap_not_ends_with: String
+  status: String
+
+  """All values that are not equal to given value."""
+  status_not: String
+
+  """All values that are contained in given list."""
+  status_in: [String!]
+
+  """All values that are not contained in given list."""
+  status_not_in: [String!]
+
+  """All values less than the given value."""
+  status_lt: String
+
+  """All values less than or equal the given value."""
+  status_lte: String
+
+  """All values greater than the given value."""
+  status_gt: String
+
+  """All values greater than or equal the given value."""
+  status_gte: String
+
+  """All values containing the given string."""
+  status_contains: String
+
+  """All values not containing the given string."""
+  status_not_contains: String
+
+  """All values starting with the given string."""
+  status_starts_with: String
+
+  """All values not starting with the given string."""
+  status_not_starts_with: String
+
+  """All values ending with the given string."""
+  status_ends_with: String
+
+  """All values not ending with the given string."""
+  status_not_ends_with: String
 }
 
 type ApplicationSubscriptionPayload {
@@ -1339,6 +1482,30 @@ input ApplicationSubscriptionWhereInput {
   node: ApplicationWhereInput
 }
 
+input ApplicationUpdateDataInput {
+  createdBy: String
+  dudukPerara: String
+  infoLbh: String
+  jumlahPenerimaManfaat: Int
+  konfirmasiData: Boolean
+  noReg: String
+  pernahKlien: String
+  pernahPpLain: String
+  ppLain: String
+  regDate: DateTime
+  relasiWakilClient: String
+  setujuAdvokasi: Boolean
+  statusPerwakilan: String
+  updatedBy: String
+  waktuPernahKlien: String
+  whyLbh: String
+  tahap: String
+  status: String
+  wakilId: PersonUpdateOneRequiredWithoutApplicationsInput
+  case: CaseUpdateOneWithoutApplicationInput
+  clients: ClientUpdateManyWithoutApplicationIdInput
+}
+
 input ApplicationUpdateInput {
   createdBy: String
   dudukPerara: String
@@ -1356,8 +1523,10 @@ input ApplicationUpdateInput {
   updatedBy: String
   waktuPernahKlien: String
   whyLbh: String
+  tahap: String
+  status: String
   wakilId: PersonUpdateOneRequiredWithoutApplicationsInput
-  case: CaseUpdateOneRequiredWithoutApplicationInput
+  case: CaseUpdateOneWithoutApplicationInput
   clients: ClientUpdateManyWithoutApplicationIdInput
 }
 
@@ -1378,6 +1547,8 @@ input ApplicationUpdateManyDataInput {
   updatedBy: String
   waktuPernahKlien: String
   whyLbh: String
+  tahap: String
+  status: String
 }
 
 input ApplicationUpdateManyMutationInput {
@@ -1397,6 +1568,8 @@ input ApplicationUpdateManyMutationInput {
   updatedBy: String
   waktuPernahKlien: String
   whyLbh: String
+  tahap: String
+  status: String
 }
 
 input ApplicationUpdateManyWithoutWakilIdInput {
@@ -1414,6 +1587,15 @@ input ApplicationUpdateManyWithoutWakilIdInput {
 input ApplicationUpdateManyWithWhereNestedInput {
   where: ApplicationScalarWhereInput!
   data: ApplicationUpdateManyDataInput!
+}
+
+input ApplicationUpdateOneInput {
+  create: ApplicationCreateInput
+  connect: ApplicationWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: ApplicationUpdateDataInput
+  upsert: ApplicationUpsertNestedInput
 }
 
 input ApplicationUpdateOneRequiredWithoutCaseInput {
@@ -1447,6 +1629,8 @@ input ApplicationUpdateWithoutCaseDataInput {
   updatedBy: String
   waktuPernahKlien: String
   whyLbh: String
+  tahap: String
+  status: String
   wakilId: PersonUpdateOneRequiredWithoutApplicationsInput
   clients: ClientUpdateManyWithoutApplicationIdInput
 }
@@ -1468,8 +1652,10 @@ input ApplicationUpdateWithoutClientsDataInput {
   updatedBy: String
   waktuPernahKlien: String
   whyLbh: String
+  tahap: String
+  status: String
   wakilId: PersonUpdateOneRequiredWithoutApplicationsInput
-  case: CaseUpdateOneRequiredWithoutApplicationInput
+  case: CaseUpdateOneWithoutApplicationInput
 }
 
 input ApplicationUpdateWithoutWakilIdDataInput {
@@ -1489,13 +1675,20 @@ input ApplicationUpdateWithoutWakilIdDataInput {
   updatedBy: String
   waktuPernahKlien: String
   whyLbh: String
-  case: CaseUpdateOneRequiredWithoutApplicationInput
+  tahap: String
+  status: String
+  case: CaseUpdateOneWithoutApplicationInput
   clients: ClientUpdateManyWithoutApplicationIdInput
 }
 
 input ApplicationUpdateWithWhereUniqueWithoutWakilIdInput {
   where: ApplicationWhereUniqueInput!
   data: ApplicationUpdateWithoutWakilIdDataInput!
+}
+
+input ApplicationUpsertNestedInput {
+  update: ApplicationUpdateDataInput!
+  create: ApplicationCreateInput!
 }
 
 input ApplicationUpsertWithoutCaseInput {
@@ -2121,6 +2314,86 @@ input ApplicationWhereInput {
 
   """All values not ending with the given string."""
   whyLbh_not_ends_with: String
+  tahap: String
+
+  """All values that are not equal to given value."""
+  tahap_not: String
+
+  """All values that are contained in given list."""
+  tahap_in: [String!]
+
+  """All values that are not contained in given list."""
+  tahap_not_in: [String!]
+
+  """All values less than the given value."""
+  tahap_lt: String
+
+  """All values less than or equal the given value."""
+  tahap_lte: String
+
+  """All values greater than the given value."""
+  tahap_gt: String
+
+  """All values greater than or equal the given value."""
+  tahap_gte: String
+
+  """All values containing the given string."""
+  tahap_contains: String
+
+  """All values not containing the given string."""
+  tahap_not_contains: String
+
+  """All values starting with the given string."""
+  tahap_starts_with: String
+
+  """All values not starting with the given string."""
+  tahap_not_starts_with: String
+
+  """All values ending with the given string."""
+  tahap_ends_with: String
+
+  """All values not ending with the given string."""
+  tahap_not_ends_with: String
+  status: String
+
+  """All values that are not equal to given value."""
+  status_not: String
+
+  """All values that are contained in given list."""
+  status_in: [String!]
+
+  """All values that are not contained in given list."""
+  status_not_in: [String!]
+
+  """All values less than the given value."""
+  status_lt: String
+
+  """All values less than or equal the given value."""
+  status_lte: String
+
+  """All values greater than the given value."""
+  status_gt: String
+
+  """All values greater than or equal the given value."""
+  status_gte: String
+
+  """All values containing the given string."""
+  status_contains: String
+
+  """All values not containing the given string."""
+  status_not_contains: String
+
+  """All values starting with the given string."""
+  status_starts_with: String
+
+  """All values not starting with the given string."""
+  status_not_starts_with: String
+
+  """All values ending with the given string."""
+  status_ends_with: String
+
+  """All values not ending with the given string."""
+  status_not_ends_with: String
   wakilId: PersonWhereInput
   case: CaseWhereInput
   clients_every: ClientWhereInput
@@ -2163,11 +2436,14 @@ type Case {
   issues(where: CaseIssueWhereInput, orderBy: CaseIssueOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CaseIssue!]
   korbans(where: CaseKorbanWhereInput, orderBy: CaseKorbanOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CaseKorban!]
   pelakus(where: CasePelakuWhereInput, orderBy: CasePelakuOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CasePelaku!]
-  pks(where: CasePkWhereInput, orderBy: CasePkOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CasePk!]
-  progresses(where: CaseProgressWhereInput, orderBy: CaseProgressOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CaseProgress!]
+  pk: CasePk
+  progresses: CaseProgress
   activities(where: CaseProgressActivityWhereInput, orderBy: CaseProgressActivityOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CaseProgressActivity!]
   transferreferrals(where: CaseTransferReferralWhereInput, orderBy: CaseTransferReferralOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CaseTransferReferral!]
   violatedrights(where: CaseViolatedRightWhereInput, orderBy: CaseViolatedRightOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CaseViolatedRight!]
+  logRequests(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LogRequest!]
+  transfer: CaseTransfer
+  referrals(where: CaseReferralWhereInput, orderBy: CaseReferralOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CaseReferral!]
 }
 
 type CaseClassification {
@@ -2471,6 +2747,9 @@ type CaseConsultation {
   createdAt: DateTime!
   createdBy: String
   isiKonsul: String
+  harapan: String
+  saranHukum: String
+  rencanaTindakLanjut: String
   judulAktifitas: String
   ppKonsul: String
   tglKonsul: DateTime
@@ -2481,7 +2760,7 @@ type CaseConsultation {
 
 type CaseConsultationApp {
   id: Int!
-  appConsultation: String
+  appConsultation: User
   caseConsultationId: CaseConsultation!
 }
 
@@ -2496,7 +2775,7 @@ type CaseConsultationAppConnection {
 }
 
 input CaseConsultationAppCreateInput {
-  appConsultation: String
+  appConsultation: UserCreateOneInput
   caseConsultationId: CaseConsultationCreateOneWithoutAppsInput!
 }
 
@@ -2506,7 +2785,7 @@ input CaseConsultationAppCreateManyWithoutCaseConsultationIdInput {
 }
 
 input CaseConsultationAppCreateWithoutCaseConsultationIdInput {
-  appConsultation: String
+  appConsultation: UserCreateOneInput
 }
 
 """An edge in a connection."""
@@ -2521,13 +2800,10 @@ type CaseConsultationAppEdge {
 enum CaseConsultationAppOrderByInput {
   id_ASC
   id_DESC
-  appConsultation_ASC
-  appConsultation_DESC
 }
 
 type CaseConsultationAppPreviousValues {
   id: Int!
-  appConsultation: String
 }
 
 input CaseConsultationAppScalarWhereInput {
@@ -2561,46 +2837,6 @@ input CaseConsultationAppScalarWhereInput {
 
   """All values greater than or equal the given value."""
   id_gte: Int
-  appConsultation: String
-
-  """All values that are not equal to given value."""
-  appConsultation_not: String
-
-  """All values that are contained in given list."""
-  appConsultation_in: [String!]
-
-  """All values that are not contained in given list."""
-  appConsultation_not_in: [String!]
-
-  """All values less than the given value."""
-  appConsultation_lt: String
-
-  """All values less than or equal the given value."""
-  appConsultation_lte: String
-
-  """All values greater than the given value."""
-  appConsultation_gt: String
-
-  """All values greater than or equal the given value."""
-  appConsultation_gte: String
-
-  """All values containing the given string."""
-  appConsultation_contains: String
-
-  """All values not containing the given string."""
-  appConsultation_not_contains: String
-
-  """All values starting with the given string."""
-  appConsultation_starts_with: String
-
-  """All values not starting with the given string."""
-  appConsultation_not_starts_with: String
-
-  """All values ending with the given string."""
-  appConsultation_ends_with: String
-
-  """All values not ending with the given string."""
-  appConsultation_not_ends_with: String
 }
 
 type CaseConsultationAppSubscriptionPayload {
@@ -2641,16 +2877,8 @@ input CaseConsultationAppSubscriptionWhereInput {
 }
 
 input CaseConsultationAppUpdateInput {
-  appConsultation: String
+  appConsultation: UserUpdateOneInput
   caseConsultationId: CaseConsultationUpdateOneRequiredWithoutAppsInput
-}
-
-input CaseConsultationAppUpdateManyDataInput {
-  appConsultation: String
-}
-
-input CaseConsultationAppUpdateManyMutationInput {
-  appConsultation: String
 }
 
 input CaseConsultationAppUpdateManyWithoutCaseConsultationIdInput {
@@ -2660,18 +2888,12 @@ input CaseConsultationAppUpdateManyWithoutCaseConsultationIdInput {
   disconnect: [CaseConsultationAppWhereUniqueInput!]
   delete: [CaseConsultationAppWhereUniqueInput!]
   update: [CaseConsultationAppUpdateWithWhereUniqueWithoutCaseConsultationIdInput!]
-  updateMany: [CaseConsultationAppUpdateManyWithWhereNestedInput!]
   deleteMany: [CaseConsultationAppScalarWhereInput!]
   upsert: [CaseConsultationAppUpsertWithWhereUniqueWithoutCaseConsultationIdInput!]
 }
 
-input CaseConsultationAppUpdateManyWithWhereNestedInput {
-  where: CaseConsultationAppScalarWhereInput!
-  data: CaseConsultationAppUpdateManyDataInput!
-}
-
 input CaseConsultationAppUpdateWithoutCaseConsultationIdDataInput {
-  appConsultation: String
+  appConsultation: UserUpdateOneInput
 }
 
 input CaseConsultationAppUpdateWithWhereUniqueWithoutCaseConsultationIdInput {
@@ -2716,46 +2938,7 @@ input CaseConsultationAppWhereInput {
 
   """All values greater than or equal the given value."""
   id_gte: Int
-  appConsultation: String
-
-  """All values that are not equal to given value."""
-  appConsultation_not: String
-
-  """All values that are contained in given list."""
-  appConsultation_in: [String!]
-
-  """All values that are not contained in given list."""
-  appConsultation_not_in: [String!]
-
-  """All values less than the given value."""
-  appConsultation_lt: String
-
-  """All values less than or equal the given value."""
-  appConsultation_lte: String
-
-  """All values greater than the given value."""
-  appConsultation_gt: String
-
-  """All values greater than or equal the given value."""
-  appConsultation_gte: String
-
-  """All values containing the given string."""
-  appConsultation_contains: String
-
-  """All values not containing the given string."""
-  appConsultation_not_contains: String
-
-  """All values starting with the given string."""
-  appConsultation_starts_with: String
-
-  """All values not starting with the given string."""
-  appConsultation_not_starts_with: String
-
-  """All values ending with the given string."""
-  appConsultation_ends_with: String
-
-  """All values not ending with the given string."""
-  appConsultation_not_ends_with: String
+  appConsultation: UserWhereInput
   caseConsultationId: CaseConsultationWhereInput
 }
 
@@ -2777,6 +2960,9 @@ input CaseConsultationCreateInput {
   appKonsul: String
   createdBy: String
   isiKonsul: String
+  harapan: String
+  saranHukum: String
+  rencanaTindakLanjut: String
   judulAktifitas: String
   ppKonsul: String
   tglKonsul: DateTime
@@ -2799,6 +2985,9 @@ input CaseConsultationCreateWithoutAppsInput {
   appKonsul: String
   createdBy: String
   isiKonsul: String
+  harapan: String
+  saranHukum: String
+  rencanaTindakLanjut: String
   judulAktifitas: String
   ppKonsul: String
   tglKonsul: DateTime
@@ -2810,6 +2999,9 @@ input CaseConsultationCreateWithoutCaseIdInput {
   appKonsul: String
   createdBy: String
   isiKonsul: String
+  harapan: String
+  saranHukum: String
+  rencanaTindakLanjut: String
   judulAktifitas: String
   ppKonsul: String
   tglKonsul: DateTime
@@ -2837,6 +3029,12 @@ enum CaseConsultationOrderByInput {
   createdBy_DESC
   isiKonsul_ASC
   isiKonsul_DESC
+  harapan_ASC
+  harapan_DESC
+  saranHukum_ASC
+  saranHukum_DESC
+  rencanaTindakLanjut_ASC
+  rencanaTindakLanjut_DESC
   judulAktifitas_ASC
   judulAktifitas_DESC
   ppKonsul_ASC
@@ -2855,6 +3053,9 @@ type CaseConsultationPreviousValues {
   createdAt: DateTime!
   createdBy: String
   isiKonsul: String
+  harapan: String
+  saranHukum: String
+  rencanaTindakLanjut: String
   judulAktifitas: String
   ppKonsul: String
   tglKonsul: DateTime
@@ -3035,6 +3236,126 @@ input CaseConsultationScalarWhereInput {
 
   """All values not ending with the given string."""
   isiKonsul_not_ends_with: String
+  harapan: String
+
+  """All values that are not equal to given value."""
+  harapan_not: String
+
+  """All values that are contained in given list."""
+  harapan_in: [String!]
+
+  """All values that are not contained in given list."""
+  harapan_not_in: [String!]
+
+  """All values less than the given value."""
+  harapan_lt: String
+
+  """All values less than or equal the given value."""
+  harapan_lte: String
+
+  """All values greater than the given value."""
+  harapan_gt: String
+
+  """All values greater than or equal the given value."""
+  harapan_gte: String
+
+  """All values containing the given string."""
+  harapan_contains: String
+
+  """All values not containing the given string."""
+  harapan_not_contains: String
+
+  """All values starting with the given string."""
+  harapan_starts_with: String
+
+  """All values not starting with the given string."""
+  harapan_not_starts_with: String
+
+  """All values ending with the given string."""
+  harapan_ends_with: String
+
+  """All values not ending with the given string."""
+  harapan_not_ends_with: String
+  saranHukum: String
+
+  """All values that are not equal to given value."""
+  saranHukum_not: String
+
+  """All values that are contained in given list."""
+  saranHukum_in: [String!]
+
+  """All values that are not contained in given list."""
+  saranHukum_not_in: [String!]
+
+  """All values less than the given value."""
+  saranHukum_lt: String
+
+  """All values less than or equal the given value."""
+  saranHukum_lte: String
+
+  """All values greater than the given value."""
+  saranHukum_gt: String
+
+  """All values greater than or equal the given value."""
+  saranHukum_gte: String
+
+  """All values containing the given string."""
+  saranHukum_contains: String
+
+  """All values not containing the given string."""
+  saranHukum_not_contains: String
+
+  """All values starting with the given string."""
+  saranHukum_starts_with: String
+
+  """All values not starting with the given string."""
+  saranHukum_not_starts_with: String
+
+  """All values ending with the given string."""
+  saranHukum_ends_with: String
+
+  """All values not ending with the given string."""
+  saranHukum_not_ends_with: String
+  rencanaTindakLanjut: String
+
+  """All values that are not equal to given value."""
+  rencanaTindakLanjut_not: String
+
+  """All values that are contained in given list."""
+  rencanaTindakLanjut_in: [String!]
+
+  """All values that are not contained in given list."""
+  rencanaTindakLanjut_not_in: [String!]
+
+  """All values less than the given value."""
+  rencanaTindakLanjut_lt: String
+
+  """All values less than or equal the given value."""
+  rencanaTindakLanjut_lte: String
+
+  """All values greater than the given value."""
+  rencanaTindakLanjut_gt: String
+
+  """All values greater than or equal the given value."""
+  rencanaTindakLanjut_gte: String
+
+  """All values containing the given string."""
+  rencanaTindakLanjut_contains: String
+
+  """All values not containing the given string."""
+  rencanaTindakLanjut_not_contains: String
+
+  """All values starting with the given string."""
+  rencanaTindakLanjut_starts_with: String
+
+  """All values not starting with the given string."""
+  rencanaTindakLanjut_not_starts_with: String
+
+  """All values ending with the given string."""
+  rencanaTindakLanjut_ends_with: String
+
+  """All values not ending with the given string."""
+  rencanaTindakLanjut_not_ends_with: String
   judulAktifitas: String
 
   """All values that are not equal to given value."""
@@ -3242,6 +3563,9 @@ input CaseConsultationUpdateInput {
   appKonsul: String
   createdBy: String
   isiKonsul: String
+  harapan: String
+  saranHukum: String
+  rencanaTindakLanjut: String
   judulAktifitas: String
   ppKonsul: String
   tglKonsul: DateTime
@@ -3254,6 +3578,9 @@ input CaseConsultationUpdateManyDataInput {
   appKonsul: String
   createdBy: String
   isiKonsul: String
+  harapan: String
+  saranHukum: String
+  rencanaTindakLanjut: String
   judulAktifitas: String
   ppKonsul: String
   tglKonsul: DateTime
@@ -3264,6 +3591,9 @@ input CaseConsultationUpdateManyMutationInput {
   appKonsul: String
   createdBy: String
   isiKonsul: String
+  harapan: String
+  saranHukum: String
+  rencanaTindakLanjut: String
   judulAktifitas: String
   ppKonsul: String
   tglKonsul: DateTime
@@ -3298,6 +3628,9 @@ input CaseConsultationUpdateWithoutAppsDataInput {
   appKonsul: String
   createdBy: String
   isiKonsul: String
+  harapan: String
+  saranHukum: String
+  rencanaTindakLanjut: String
   judulAktifitas: String
   ppKonsul: String
   tglKonsul: DateTime
@@ -3309,6 +3642,9 @@ input CaseConsultationUpdateWithoutCaseIdDataInput {
   appKonsul: String
   createdBy: String
   isiKonsul: String
+  harapan: String
+  saranHukum: String
+  rencanaTindakLanjut: String
   judulAktifitas: String
   ppKonsul: String
   tglKonsul: DateTime
@@ -3505,6 +3841,126 @@ input CaseConsultationWhereInput {
 
   """All values not ending with the given string."""
   isiKonsul_not_ends_with: String
+  harapan: String
+
+  """All values that are not equal to given value."""
+  harapan_not: String
+
+  """All values that are contained in given list."""
+  harapan_in: [String!]
+
+  """All values that are not contained in given list."""
+  harapan_not_in: [String!]
+
+  """All values less than the given value."""
+  harapan_lt: String
+
+  """All values less than or equal the given value."""
+  harapan_lte: String
+
+  """All values greater than the given value."""
+  harapan_gt: String
+
+  """All values greater than or equal the given value."""
+  harapan_gte: String
+
+  """All values containing the given string."""
+  harapan_contains: String
+
+  """All values not containing the given string."""
+  harapan_not_contains: String
+
+  """All values starting with the given string."""
+  harapan_starts_with: String
+
+  """All values not starting with the given string."""
+  harapan_not_starts_with: String
+
+  """All values ending with the given string."""
+  harapan_ends_with: String
+
+  """All values not ending with the given string."""
+  harapan_not_ends_with: String
+  saranHukum: String
+
+  """All values that are not equal to given value."""
+  saranHukum_not: String
+
+  """All values that are contained in given list."""
+  saranHukum_in: [String!]
+
+  """All values that are not contained in given list."""
+  saranHukum_not_in: [String!]
+
+  """All values less than the given value."""
+  saranHukum_lt: String
+
+  """All values less than or equal the given value."""
+  saranHukum_lte: String
+
+  """All values greater than the given value."""
+  saranHukum_gt: String
+
+  """All values greater than or equal the given value."""
+  saranHukum_gte: String
+
+  """All values containing the given string."""
+  saranHukum_contains: String
+
+  """All values not containing the given string."""
+  saranHukum_not_contains: String
+
+  """All values starting with the given string."""
+  saranHukum_starts_with: String
+
+  """All values not starting with the given string."""
+  saranHukum_not_starts_with: String
+
+  """All values ending with the given string."""
+  saranHukum_ends_with: String
+
+  """All values not ending with the given string."""
+  saranHukum_not_ends_with: String
+  rencanaTindakLanjut: String
+
+  """All values that are not equal to given value."""
+  rencanaTindakLanjut_not: String
+
+  """All values that are contained in given list."""
+  rencanaTindakLanjut_in: [String!]
+
+  """All values that are not contained in given list."""
+  rencanaTindakLanjut_not_in: [String!]
+
+  """All values less than the given value."""
+  rencanaTindakLanjut_lt: String
+
+  """All values less than or equal the given value."""
+  rencanaTindakLanjut_lte: String
+
+  """All values greater than the given value."""
+  rencanaTindakLanjut_gt: String
+
+  """All values greater than or equal the given value."""
+  rencanaTindakLanjut_gte: String
+
+  """All values containing the given string."""
+  rencanaTindakLanjut_contains: String
+
+  """All values not containing the given string."""
+  rencanaTindakLanjut_not_contains: String
+
+  """All values starting with the given string."""
+  rencanaTindakLanjut_starts_with: String
+
+  """All values not starting with the given string."""
+  rencanaTindakLanjut_not_starts_with: String
+
+  """All values ending with the given string."""
+  rencanaTindakLanjut_ends_with: String
+
+  """All values not ending with the given string."""
+  rencanaTindakLanjut_not_ends_with: String
   judulAktifitas: String
 
   """All values that are not equal to given value."""
@@ -3702,11 +4158,14 @@ input CaseCreateInput {
   issues: CaseIssueCreateManyWithoutCaseIdInput
   korbans: CaseKorbanCreateManyWithoutCaseIdInput
   pelakus: CasePelakuCreateManyWithoutCaseIdInput
-  pks: CasePkCreateManyWithoutCaseIdInput
-  progresses: CaseProgressCreateManyWithoutCaseIdInput
+  pk: CasePkCreateOneWithoutCaseIdInput
+  progresses: CaseProgressCreateOneWithoutCaseIdInput
   activities: CaseProgressActivityCreateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralCreateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightCreateManyWithoutCaseIdInput
+  logRequests: LogRequestCreateManyWithoutCaseIdInput
+  transfer: CaseTransferCreateOneWithoutCaseIdInput
+  referrals: CaseReferralCreateManyWithoutCaseIdInput
 }
 
 input CaseCreateOneWithoutActivitiesInput {
@@ -3744,18 +4203,33 @@ input CaseCreateOneWithoutKorbansInput {
   connect: CaseWhereUniqueInput
 }
 
+input CaseCreateOneWithoutLogRequestsInput {
+  create: CaseCreateWithoutLogRequestsInput
+  connect: CaseWhereUniqueInput
+}
+
 input CaseCreateOneWithoutPelakusInput {
   create: CaseCreateWithoutPelakusInput
   connect: CaseWhereUniqueInput
 }
 
-input CaseCreateOneWithoutPksInput {
-  create: CaseCreateWithoutPksInput
+input CaseCreateOneWithoutPkInput {
+  create: CaseCreateWithoutPkInput
   connect: CaseWhereUniqueInput
 }
 
 input CaseCreateOneWithoutProgressesInput {
   create: CaseCreateWithoutProgressesInput
+  connect: CaseWhereUniqueInput
+}
+
+input CaseCreateOneWithoutReferralsInput {
+  create: CaseCreateWithoutReferralsInput
+  connect: CaseWhereUniqueInput
+}
+
+input CaseCreateOneWithoutTransferInput {
+  create: CaseCreateWithoutTransferInput
   connect: CaseWhereUniqueInput
 }
 
@@ -3792,10 +4266,13 @@ input CaseCreateWithoutActivitiesInput {
   issues: CaseIssueCreateManyWithoutCaseIdInput
   korbans: CaseKorbanCreateManyWithoutCaseIdInput
   pelakus: CasePelakuCreateManyWithoutCaseIdInput
-  pks: CasePkCreateManyWithoutCaseIdInput
-  progresses: CaseProgressCreateManyWithoutCaseIdInput
+  pk: CasePkCreateOneWithoutCaseIdInput
+  progresses: CaseProgressCreateOneWithoutCaseIdInput
   transferreferrals: CaseTransferReferralCreateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightCreateManyWithoutCaseIdInput
+  logRequests: LogRequestCreateManyWithoutCaseIdInput
+  transfer: CaseTransferCreateOneWithoutCaseIdInput
+  referrals: CaseReferralCreateManyWithoutCaseIdInput
 }
 
 input CaseCreateWithoutApplicationInput {
@@ -3820,11 +4297,14 @@ input CaseCreateWithoutApplicationInput {
   issues: CaseIssueCreateManyWithoutCaseIdInput
   korbans: CaseKorbanCreateManyWithoutCaseIdInput
   pelakus: CasePelakuCreateManyWithoutCaseIdInput
-  pks: CasePkCreateManyWithoutCaseIdInput
-  progresses: CaseProgressCreateManyWithoutCaseIdInput
+  pk: CasePkCreateOneWithoutCaseIdInput
+  progresses: CaseProgressCreateOneWithoutCaseIdInput
   activities: CaseProgressActivityCreateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralCreateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightCreateManyWithoutCaseIdInput
+  logRequests: LogRequestCreateManyWithoutCaseIdInput
+  transfer: CaseTransferCreateOneWithoutCaseIdInput
+  referrals: CaseReferralCreateManyWithoutCaseIdInput
 }
 
 input CaseCreateWithoutClassificationsInput {
@@ -3849,11 +4329,14 @@ input CaseCreateWithoutClassificationsInput {
   issues: CaseIssueCreateManyWithoutCaseIdInput
   korbans: CaseKorbanCreateManyWithoutCaseIdInput
   pelakus: CasePelakuCreateManyWithoutCaseIdInput
-  pks: CasePkCreateManyWithoutCaseIdInput
-  progresses: CaseProgressCreateManyWithoutCaseIdInput
+  pk: CasePkCreateOneWithoutCaseIdInput
+  progresses: CaseProgressCreateOneWithoutCaseIdInput
   activities: CaseProgressActivityCreateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralCreateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightCreateManyWithoutCaseIdInput
+  logRequests: LogRequestCreateManyWithoutCaseIdInput
+  transfer: CaseTransferCreateOneWithoutCaseIdInput
+  referrals: CaseReferralCreateManyWithoutCaseIdInput
 }
 
 input CaseCreateWithoutConsultationsInput {
@@ -3878,11 +4361,14 @@ input CaseCreateWithoutConsultationsInput {
   issues: CaseIssueCreateManyWithoutCaseIdInput
   korbans: CaseKorbanCreateManyWithoutCaseIdInput
   pelakus: CasePelakuCreateManyWithoutCaseIdInput
-  pks: CasePkCreateManyWithoutCaseIdInput
-  progresses: CaseProgressCreateManyWithoutCaseIdInput
+  pk: CasePkCreateOneWithoutCaseIdInput
+  progresses: CaseProgressCreateOneWithoutCaseIdInput
   activities: CaseProgressActivityCreateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralCreateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightCreateManyWithoutCaseIdInput
+  logRequests: LogRequestCreateManyWithoutCaseIdInput
+  transfer: CaseTransferCreateOneWithoutCaseIdInput
+  referrals: CaseReferralCreateManyWithoutCaseIdInput
 }
 
 input CaseCreateWithoutDocumentsInput {
@@ -3907,11 +4393,14 @@ input CaseCreateWithoutDocumentsInput {
   issues: CaseIssueCreateManyWithoutCaseIdInput
   korbans: CaseKorbanCreateManyWithoutCaseIdInput
   pelakus: CasePelakuCreateManyWithoutCaseIdInput
-  pks: CasePkCreateManyWithoutCaseIdInput
-  progresses: CaseProgressCreateManyWithoutCaseIdInput
+  pk: CasePkCreateOneWithoutCaseIdInput
+  progresses: CaseProgressCreateOneWithoutCaseIdInput
   activities: CaseProgressActivityCreateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralCreateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightCreateManyWithoutCaseIdInput
+  logRequests: LogRequestCreateManyWithoutCaseIdInput
+  transfer: CaseTransferCreateOneWithoutCaseIdInput
+  referrals: CaseReferralCreateManyWithoutCaseIdInput
 }
 
 input CaseCreateWithoutIssuesInput {
@@ -3936,11 +4425,14 @@ input CaseCreateWithoutIssuesInput {
   documents: CaseDocumentCreateManyWithoutCaseIdInput
   korbans: CaseKorbanCreateManyWithoutCaseIdInput
   pelakus: CasePelakuCreateManyWithoutCaseIdInput
-  pks: CasePkCreateManyWithoutCaseIdInput
-  progresses: CaseProgressCreateManyWithoutCaseIdInput
+  pk: CasePkCreateOneWithoutCaseIdInput
+  progresses: CaseProgressCreateOneWithoutCaseIdInput
   activities: CaseProgressActivityCreateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralCreateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightCreateManyWithoutCaseIdInput
+  logRequests: LogRequestCreateManyWithoutCaseIdInput
+  transfer: CaseTransferCreateOneWithoutCaseIdInput
+  referrals: CaseReferralCreateManyWithoutCaseIdInput
 }
 
 input CaseCreateWithoutKorbansInput {
@@ -3965,11 +4457,46 @@ input CaseCreateWithoutKorbansInput {
   documents: CaseDocumentCreateManyWithoutCaseIdInput
   issues: CaseIssueCreateManyWithoutCaseIdInput
   pelakus: CasePelakuCreateManyWithoutCaseIdInput
-  pks: CasePkCreateManyWithoutCaseIdInput
-  progresses: CaseProgressCreateManyWithoutCaseIdInput
+  pk: CasePkCreateOneWithoutCaseIdInput
+  progresses: CaseProgressCreateOneWithoutCaseIdInput
   activities: CaseProgressActivityCreateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralCreateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightCreateManyWithoutCaseIdInput
+  logRequests: LogRequestCreateManyWithoutCaseIdInput
+  transfer: CaseTransferCreateOneWithoutCaseIdInput
+  referrals: CaseReferralCreateManyWithoutCaseIdInput
+}
+
+input CaseCreateWithoutLogRequestsInput {
+  applicationId: Int
+  caseClosed: Boolean!
+  caseClosedJenis: String
+  createdBy: String
+  hakTerlanggar: String
+  issue: String
+  judulKasus: String
+  klasifikasiDok: String
+  kronologiKasus: String
+  lockDitolak: Boolean!
+  statusPendampingan: String
+  targetAdvokasi: String
+  unlockPk: Boolean!
+  unlockTransfer: Boolean!
+  updatedBy: String
+  application: ApplicationCreateOneWithoutCaseInput!
+  classifications: CaseClassificationCreateManyWithoutCaseIdInput
+  consultations: CaseConsultationCreateManyWithoutCaseIdInput
+  documents: CaseDocumentCreateManyWithoutCaseIdInput
+  issues: CaseIssueCreateManyWithoutCaseIdInput
+  korbans: CaseKorbanCreateManyWithoutCaseIdInput
+  pelakus: CasePelakuCreateManyWithoutCaseIdInput
+  pk: CasePkCreateOneWithoutCaseIdInput
+  progresses: CaseProgressCreateOneWithoutCaseIdInput
+  activities: CaseProgressActivityCreateManyWithoutCaseIdInput
+  transferreferrals: CaseTransferReferralCreateManyWithoutCaseIdInput
+  violatedrights: CaseViolatedRightCreateManyWithoutCaseIdInput
+  transfer: CaseTransferCreateOneWithoutCaseIdInput
+  referrals: CaseReferralCreateManyWithoutCaseIdInput
 }
 
 input CaseCreateWithoutPelakusInput {
@@ -3994,14 +4521,17 @@ input CaseCreateWithoutPelakusInput {
   documents: CaseDocumentCreateManyWithoutCaseIdInput
   issues: CaseIssueCreateManyWithoutCaseIdInput
   korbans: CaseKorbanCreateManyWithoutCaseIdInput
-  pks: CasePkCreateManyWithoutCaseIdInput
-  progresses: CaseProgressCreateManyWithoutCaseIdInput
+  pk: CasePkCreateOneWithoutCaseIdInput
+  progresses: CaseProgressCreateOneWithoutCaseIdInput
   activities: CaseProgressActivityCreateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralCreateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightCreateManyWithoutCaseIdInput
+  logRequests: LogRequestCreateManyWithoutCaseIdInput
+  transfer: CaseTransferCreateOneWithoutCaseIdInput
+  referrals: CaseReferralCreateManyWithoutCaseIdInput
 }
 
-input CaseCreateWithoutPksInput {
+input CaseCreateWithoutPkInput {
   applicationId: Int
   caseClosed: Boolean!
   caseClosedJenis: String
@@ -4024,10 +4554,13 @@ input CaseCreateWithoutPksInput {
   issues: CaseIssueCreateManyWithoutCaseIdInput
   korbans: CaseKorbanCreateManyWithoutCaseIdInput
   pelakus: CasePelakuCreateManyWithoutCaseIdInput
-  progresses: CaseProgressCreateManyWithoutCaseIdInput
+  progresses: CaseProgressCreateOneWithoutCaseIdInput
   activities: CaseProgressActivityCreateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralCreateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightCreateManyWithoutCaseIdInput
+  logRequests: LogRequestCreateManyWithoutCaseIdInput
+  transfer: CaseTransferCreateOneWithoutCaseIdInput
+  referrals: CaseReferralCreateManyWithoutCaseIdInput
 }
 
 input CaseCreateWithoutProgressesInput {
@@ -4053,10 +4586,77 @@ input CaseCreateWithoutProgressesInput {
   issues: CaseIssueCreateManyWithoutCaseIdInput
   korbans: CaseKorbanCreateManyWithoutCaseIdInput
   pelakus: CasePelakuCreateManyWithoutCaseIdInput
-  pks: CasePkCreateManyWithoutCaseIdInput
+  pk: CasePkCreateOneWithoutCaseIdInput
   activities: CaseProgressActivityCreateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralCreateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightCreateManyWithoutCaseIdInput
+  logRequests: LogRequestCreateManyWithoutCaseIdInput
+  transfer: CaseTransferCreateOneWithoutCaseIdInput
+  referrals: CaseReferralCreateManyWithoutCaseIdInput
+}
+
+input CaseCreateWithoutReferralsInput {
+  applicationId: Int
+  caseClosed: Boolean!
+  caseClosedJenis: String
+  createdBy: String
+  hakTerlanggar: String
+  issue: String
+  judulKasus: String
+  klasifikasiDok: String
+  kronologiKasus: String
+  lockDitolak: Boolean!
+  statusPendampingan: String
+  targetAdvokasi: String
+  unlockPk: Boolean!
+  unlockTransfer: Boolean!
+  updatedBy: String
+  application: ApplicationCreateOneWithoutCaseInput!
+  classifications: CaseClassificationCreateManyWithoutCaseIdInput
+  consultations: CaseConsultationCreateManyWithoutCaseIdInput
+  documents: CaseDocumentCreateManyWithoutCaseIdInput
+  issues: CaseIssueCreateManyWithoutCaseIdInput
+  korbans: CaseKorbanCreateManyWithoutCaseIdInput
+  pelakus: CasePelakuCreateManyWithoutCaseIdInput
+  pk: CasePkCreateOneWithoutCaseIdInput
+  progresses: CaseProgressCreateOneWithoutCaseIdInput
+  activities: CaseProgressActivityCreateManyWithoutCaseIdInput
+  transferreferrals: CaseTransferReferralCreateManyWithoutCaseIdInput
+  violatedrights: CaseViolatedRightCreateManyWithoutCaseIdInput
+  logRequests: LogRequestCreateManyWithoutCaseIdInput
+  transfer: CaseTransferCreateOneWithoutCaseIdInput
+}
+
+input CaseCreateWithoutTransferInput {
+  applicationId: Int
+  caseClosed: Boolean!
+  caseClosedJenis: String
+  createdBy: String
+  hakTerlanggar: String
+  issue: String
+  judulKasus: String
+  klasifikasiDok: String
+  kronologiKasus: String
+  lockDitolak: Boolean!
+  statusPendampingan: String
+  targetAdvokasi: String
+  unlockPk: Boolean!
+  unlockTransfer: Boolean!
+  updatedBy: String
+  application: ApplicationCreateOneWithoutCaseInput!
+  classifications: CaseClassificationCreateManyWithoutCaseIdInput
+  consultations: CaseConsultationCreateManyWithoutCaseIdInput
+  documents: CaseDocumentCreateManyWithoutCaseIdInput
+  issues: CaseIssueCreateManyWithoutCaseIdInput
+  korbans: CaseKorbanCreateManyWithoutCaseIdInput
+  pelakus: CasePelakuCreateManyWithoutCaseIdInput
+  pk: CasePkCreateOneWithoutCaseIdInput
+  progresses: CaseProgressCreateOneWithoutCaseIdInput
+  activities: CaseProgressActivityCreateManyWithoutCaseIdInput
+  transferreferrals: CaseTransferReferralCreateManyWithoutCaseIdInput
+  violatedrights: CaseViolatedRightCreateManyWithoutCaseIdInput
+  logRequests: LogRequestCreateManyWithoutCaseIdInput
+  referrals: CaseReferralCreateManyWithoutCaseIdInput
 }
 
 input CaseCreateWithoutTransferreferralsInput {
@@ -4082,10 +4682,13 @@ input CaseCreateWithoutTransferreferralsInput {
   issues: CaseIssueCreateManyWithoutCaseIdInput
   korbans: CaseKorbanCreateManyWithoutCaseIdInput
   pelakus: CasePelakuCreateManyWithoutCaseIdInput
-  pks: CasePkCreateManyWithoutCaseIdInput
-  progresses: CaseProgressCreateManyWithoutCaseIdInput
+  pk: CasePkCreateOneWithoutCaseIdInput
+  progresses: CaseProgressCreateOneWithoutCaseIdInput
   activities: CaseProgressActivityCreateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightCreateManyWithoutCaseIdInput
+  logRequests: LogRequestCreateManyWithoutCaseIdInput
+  transfer: CaseTransferCreateOneWithoutCaseIdInput
+  referrals: CaseReferralCreateManyWithoutCaseIdInput
 }
 
 input CaseCreateWithoutViolatedrightsInput {
@@ -4111,10 +4714,13 @@ input CaseCreateWithoutViolatedrightsInput {
   issues: CaseIssueCreateManyWithoutCaseIdInput
   korbans: CaseKorbanCreateManyWithoutCaseIdInput
   pelakus: CasePelakuCreateManyWithoutCaseIdInput
-  pks: CasePkCreateManyWithoutCaseIdInput
-  progresses: CaseProgressCreateManyWithoutCaseIdInput
+  pk: CasePkCreateOneWithoutCaseIdInput
+  progresses: CaseProgressCreateOneWithoutCaseIdInput
   activities: CaseProgressActivityCreateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralCreateManyWithoutCaseIdInput
+  logRequests: LogRequestCreateManyWithoutCaseIdInput
+  transfer: CaseTransferCreateOneWithoutCaseIdInput
+  referrals: CaseReferralCreateManyWithoutCaseIdInput
 }
 
 type CaseDocument {
@@ -5730,10 +6336,10 @@ type CasePk {
   caseId: Case!
   createdAt: DateTime!
   createdBy: String
-  didampingi: Boolean!
+  didampingi: String
   legalMemo: String
   notulaRapat: String
-  ppPendamping: Int
+  ppPendamping: User
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedAt: DateTime!
@@ -5752,30 +6358,30 @@ type CasePkConnection {
 
 input CasePkCreateInput {
   createdBy: String
-  didampingi: Boolean!
+  didampingi: String
   legalMemo: String
   notulaRapat: String
-  ppPendamping: Int
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedBy: String
-  caseId: CaseCreateOneWithoutPksInput!
+  caseId: CaseCreateOneWithoutPkInput!
+  ppPendamping: UserCreateOneInput
 }
 
-input CasePkCreateManyWithoutCaseIdInput {
-  create: [CasePkCreateWithoutCaseIdInput!]
-  connect: [CasePkWhereUniqueInput!]
+input CasePkCreateOneWithoutCaseIdInput {
+  create: CasePkCreateWithoutCaseIdInput
+  connect: CasePkWhereUniqueInput
 }
 
 input CasePkCreateWithoutCaseIdInput {
   createdBy: String
-  didampingi: Boolean!
+  didampingi: String
   legalMemo: String
   notulaRapat: String
-  ppPendamping: Int
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedBy: String
+  ppPendamping: UserCreateOneInput
 }
 
 """An edge in a connection."""
@@ -5800,8 +6406,6 @@ enum CasePkOrderByInput {
   legalMemo_DESC
   notulaRapat_ASC
   notulaRapat_DESC
-  ppPendamping_ASC
-  ppPendamping_DESC
   statusAlasanTdk_ASC
   statusAlasanTdk_DESC
   tglRapat_ASC
@@ -5816,339 +6420,13 @@ type CasePkPreviousValues {
   id: Int!
   createdAt: DateTime!
   createdBy: String
-  didampingi: Boolean!
+  didampingi: String
   legalMemo: String
   notulaRapat: String
-  ppPendamping: Int
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedAt: DateTime!
   updatedBy: String
-}
-
-input CasePkScalarWhereInput {
-  """Logical AND on all given filters."""
-  AND: [CasePkScalarWhereInput!]
-
-  """Logical OR on all given filters."""
-  OR: [CasePkScalarWhereInput!]
-
-  """Logical NOT on all given filters combined by AND."""
-  NOT: [CasePkScalarWhereInput!]
-  id: Int
-
-  """All values that are not equal to given value."""
-  id_not: Int
-
-  """All values that are contained in given list."""
-  id_in: [Int!]
-
-  """All values that are not contained in given list."""
-  id_not_in: [Int!]
-
-  """All values less than the given value."""
-  id_lt: Int
-
-  """All values less than or equal the given value."""
-  id_lte: Int
-
-  """All values greater than the given value."""
-  id_gt: Int
-
-  """All values greater than or equal the given value."""
-  id_gte: Int
-  createdAt: DateTime
-
-  """All values that are not equal to given value."""
-  createdAt_not: DateTime
-
-  """All values that are contained in given list."""
-  createdAt_in: [DateTime!]
-
-  """All values that are not contained in given list."""
-  createdAt_not_in: [DateTime!]
-
-  """All values less than the given value."""
-  createdAt_lt: DateTime
-
-  """All values less than or equal the given value."""
-  createdAt_lte: DateTime
-
-  """All values greater than the given value."""
-  createdAt_gt: DateTime
-
-  """All values greater than or equal the given value."""
-  createdAt_gte: DateTime
-  createdBy: String
-
-  """All values that are not equal to given value."""
-  createdBy_not: String
-
-  """All values that are contained in given list."""
-  createdBy_in: [String!]
-
-  """All values that are not contained in given list."""
-  createdBy_not_in: [String!]
-
-  """All values less than the given value."""
-  createdBy_lt: String
-
-  """All values less than or equal the given value."""
-  createdBy_lte: String
-
-  """All values greater than the given value."""
-  createdBy_gt: String
-
-  """All values greater than or equal the given value."""
-  createdBy_gte: String
-
-  """All values containing the given string."""
-  createdBy_contains: String
-
-  """All values not containing the given string."""
-  createdBy_not_contains: String
-
-  """All values starting with the given string."""
-  createdBy_starts_with: String
-
-  """All values not starting with the given string."""
-  createdBy_not_starts_with: String
-
-  """All values ending with the given string."""
-  createdBy_ends_with: String
-
-  """All values not ending with the given string."""
-  createdBy_not_ends_with: String
-  didampingi: Boolean
-
-  """All values that are not equal to given value."""
-  didampingi_not: Boolean
-  legalMemo: String
-
-  """All values that are not equal to given value."""
-  legalMemo_not: String
-
-  """All values that are contained in given list."""
-  legalMemo_in: [String!]
-
-  """All values that are not contained in given list."""
-  legalMemo_not_in: [String!]
-
-  """All values less than the given value."""
-  legalMemo_lt: String
-
-  """All values less than or equal the given value."""
-  legalMemo_lte: String
-
-  """All values greater than the given value."""
-  legalMemo_gt: String
-
-  """All values greater than or equal the given value."""
-  legalMemo_gte: String
-
-  """All values containing the given string."""
-  legalMemo_contains: String
-
-  """All values not containing the given string."""
-  legalMemo_not_contains: String
-
-  """All values starting with the given string."""
-  legalMemo_starts_with: String
-
-  """All values not starting with the given string."""
-  legalMemo_not_starts_with: String
-
-  """All values ending with the given string."""
-  legalMemo_ends_with: String
-
-  """All values not ending with the given string."""
-  legalMemo_not_ends_with: String
-  notulaRapat: String
-
-  """All values that are not equal to given value."""
-  notulaRapat_not: String
-
-  """All values that are contained in given list."""
-  notulaRapat_in: [String!]
-
-  """All values that are not contained in given list."""
-  notulaRapat_not_in: [String!]
-
-  """All values less than the given value."""
-  notulaRapat_lt: String
-
-  """All values less than or equal the given value."""
-  notulaRapat_lte: String
-
-  """All values greater than the given value."""
-  notulaRapat_gt: String
-
-  """All values greater than or equal the given value."""
-  notulaRapat_gte: String
-
-  """All values containing the given string."""
-  notulaRapat_contains: String
-
-  """All values not containing the given string."""
-  notulaRapat_not_contains: String
-
-  """All values starting with the given string."""
-  notulaRapat_starts_with: String
-
-  """All values not starting with the given string."""
-  notulaRapat_not_starts_with: String
-
-  """All values ending with the given string."""
-  notulaRapat_ends_with: String
-
-  """All values not ending with the given string."""
-  notulaRapat_not_ends_with: String
-  ppPendamping: Int
-
-  """All values that are not equal to given value."""
-  ppPendamping_not: Int
-
-  """All values that are contained in given list."""
-  ppPendamping_in: [Int!]
-
-  """All values that are not contained in given list."""
-  ppPendamping_not_in: [Int!]
-
-  """All values less than the given value."""
-  ppPendamping_lt: Int
-
-  """All values less than or equal the given value."""
-  ppPendamping_lte: Int
-
-  """All values greater than the given value."""
-  ppPendamping_gt: Int
-
-  """All values greater than or equal the given value."""
-  ppPendamping_gte: Int
-  statusAlasanTdk: String
-
-  """All values that are not equal to given value."""
-  statusAlasanTdk_not: String
-
-  """All values that are contained in given list."""
-  statusAlasanTdk_in: [String!]
-
-  """All values that are not contained in given list."""
-  statusAlasanTdk_not_in: [String!]
-
-  """All values less than the given value."""
-  statusAlasanTdk_lt: String
-
-  """All values less than or equal the given value."""
-  statusAlasanTdk_lte: String
-
-  """All values greater than the given value."""
-  statusAlasanTdk_gt: String
-
-  """All values greater than or equal the given value."""
-  statusAlasanTdk_gte: String
-
-  """All values containing the given string."""
-  statusAlasanTdk_contains: String
-
-  """All values not containing the given string."""
-  statusAlasanTdk_not_contains: String
-
-  """All values starting with the given string."""
-  statusAlasanTdk_starts_with: String
-
-  """All values not starting with the given string."""
-  statusAlasanTdk_not_starts_with: String
-
-  """All values ending with the given string."""
-  statusAlasanTdk_ends_with: String
-
-  """All values not ending with the given string."""
-  statusAlasanTdk_not_ends_with: String
-  tglRapat: DateTime
-
-  """All values that are not equal to given value."""
-  tglRapat_not: DateTime
-
-  """All values that are contained in given list."""
-  tglRapat_in: [DateTime!]
-
-  """All values that are not contained in given list."""
-  tglRapat_not_in: [DateTime!]
-
-  """All values less than the given value."""
-  tglRapat_lt: DateTime
-
-  """All values less than or equal the given value."""
-  tglRapat_lte: DateTime
-
-  """All values greater than the given value."""
-  tglRapat_gt: DateTime
-
-  """All values greater than or equal the given value."""
-  tglRapat_gte: DateTime
-  updatedAt: DateTime
-
-  """All values that are not equal to given value."""
-  updatedAt_not: DateTime
-
-  """All values that are contained in given list."""
-  updatedAt_in: [DateTime!]
-
-  """All values that are not contained in given list."""
-  updatedAt_not_in: [DateTime!]
-
-  """All values less than the given value."""
-  updatedAt_lt: DateTime
-
-  """All values less than or equal the given value."""
-  updatedAt_lte: DateTime
-
-  """All values greater than the given value."""
-  updatedAt_gt: DateTime
-
-  """All values greater than or equal the given value."""
-  updatedAt_gte: DateTime
-  updatedBy: String
-
-  """All values that are not equal to given value."""
-  updatedBy_not: String
-
-  """All values that are contained in given list."""
-  updatedBy_in: [String!]
-
-  """All values that are not contained in given list."""
-  updatedBy_not_in: [String!]
-
-  """All values less than the given value."""
-  updatedBy_lt: String
-
-  """All values less than or equal the given value."""
-  updatedBy_lte: String
-
-  """All values greater than the given value."""
-  updatedBy_gt: String
-
-  """All values greater than or equal the given value."""
-  updatedBy_gte: String
-
-  """All values containing the given string."""
-  updatedBy_contains: String
-
-  """All values not containing the given string."""
-  updatedBy_not_contains: String
-
-  """All values starting with the given string."""
-  updatedBy_starts_with: String
-
-  """All values not starting with the given string."""
-  updatedBy_not_starts_with: String
-
-  """All values ending with the given string."""
-  updatedBy_ends_with: String
-
-  """All values not ending with the given string."""
-  updatedBy_not_ends_with: String
 }
 
 type CasePkSubscriptionPayload {
@@ -6190,73 +6468,47 @@ input CasePkSubscriptionWhereInput {
 
 input CasePkUpdateInput {
   createdBy: String
-  didampingi: Boolean
+  didampingi: String
   legalMemo: String
   notulaRapat: String
-  ppPendamping: Int
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedBy: String
-  caseId: CaseUpdateOneRequiredWithoutPksInput
-}
-
-input CasePkUpdateManyDataInput {
-  createdBy: String
-  didampingi: Boolean
-  legalMemo: String
-  notulaRapat: String
-  ppPendamping: Int
-  statusAlasanTdk: String
-  tglRapat: DateTime
-  updatedBy: String
+  caseId: CaseUpdateOneRequiredWithoutPkInput
+  ppPendamping: UserUpdateOneInput
 }
 
 input CasePkUpdateManyMutationInput {
   createdBy: String
-  didampingi: Boolean
+  didampingi: String
   legalMemo: String
   notulaRapat: String
-  ppPendamping: Int
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedBy: String
 }
 
-input CasePkUpdateManyWithoutCaseIdInput {
-  create: [CasePkCreateWithoutCaseIdInput!]
-  connect: [CasePkWhereUniqueInput!]
-  set: [CasePkWhereUniqueInput!]
-  disconnect: [CasePkWhereUniqueInput!]
-  delete: [CasePkWhereUniqueInput!]
-  update: [CasePkUpdateWithWhereUniqueWithoutCaseIdInput!]
-  updateMany: [CasePkUpdateManyWithWhereNestedInput!]
-  deleteMany: [CasePkScalarWhereInput!]
-  upsert: [CasePkUpsertWithWhereUniqueWithoutCaseIdInput!]
-}
-
-input CasePkUpdateManyWithWhereNestedInput {
-  where: CasePkScalarWhereInput!
-  data: CasePkUpdateManyDataInput!
+input CasePkUpdateOneWithoutCaseIdInput {
+  create: CasePkCreateWithoutCaseIdInput
+  connect: CasePkWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: CasePkUpdateWithoutCaseIdDataInput
+  upsert: CasePkUpsertWithoutCaseIdInput
 }
 
 input CasePkUpdateWithoutCaseIdDataInput {
   createdBy: String
-  didampingi: Boolean
+  didampingi: String
   legalMemo: String
   notulaRapat: String
-  ppPendamping: Int
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedBy: String
+  ppPendamping: UserUpdateOneInput
 }
 
-input CasePkUpdateWithWhereUniqueWithoutCaseIdInput {
-  where: CasePkWhereUniqueInput!
-  data: CasePkUpdateWithoutCaseIdDataInput!
-}
-
-input CasePkUpsertWithWhereUniqueWithoutCaseIdInput {
-  where: CasePkWhereUniqueInput!
+input CasePkUpsertWithoutCaseIdInput {
   update: CasePkUpdateWithoutCaseIdDataInput!
   create: CasePkCreateWithoutCaseIdInput!
 }
@@ -6354,10 +6606,46 @@ input CasePkWhereInput {
 
   """All values not ending with the given string."""
   createdBy_not_ends_with: String
-  didampingi: Boolean
+  didampingi: String
 
   """All values that are not equal to given value."""
-  didampingi_not: Boolean
+  didampingi_not: String
+
+  """All values that are contained in given list."""
+  didampingi_in: [String!]
+
+  """All values that are not contained in given list."""
+  didampingi_not_in: [String!]
+
+  """All values less than the given value."""
+  didampingi_lt: String
+
+  """All values less than or equal the given value."""
+  didampingi_lte: String
+
+  """All values greater than the given value."""
+  didampingi_gt: String
+
+  """All values greater than or equal the given value."""
+  didampingi_gte: String
+
+  """All values containing the given string."""
+  didampingi_contains: String
+
+  """All values not containing the given string."""
+  didampingi_not_contains: String
+
+  """All values starting with the given string."""
+  didampingi_starts_with: String
+
+  """All values not starting with the given string."""
+  didampingi_not_starts_with: String
+
+  """All values ending with the given string."""
+  didampingi_ends_with: String
+
+  """All values not ending with the given string."""
+  didampingi_not_ends_with: String
   legalMemo: String
 
   """All values that are not equal to given value."""
@@ -6438,28 +6726,6 @@ input CasePkWhereInput {
 
   """All values not ending with the given string."""
   notulaRapat_not_ends_with: String
-  ppPendamping: Int
-
-  """All values that are not equal to given value."""
-  ppPendamping_not: Int
-
-  """All values that are contained in given list."""
-  ppPendamping_in: [Int!]
-
-  """All values that are not contained in given list."""
-  ppPendamping_not_in: [Int!]
-
-  """All values less than the given value."""
-  ppPendamping_lt: Int
-
-  """All values less than or equal the given value."""
-  ppPendamping_lte: Int
-
-  """All values greater than the given value."""
-  ppPendamping_gt: Int
-
-  """All values greater than or equal the given value."""
-  ppPendamping_gte: Int
   statusAlasanTdk: String
 
   """All values that are not equal to given value."""
@@ -6585,6 +6851,7 @@ input CasePkWhereInput {
   """All values not ending with the given string."""
   updatedBy_not_ends_with: String
   caseId: CaseWhereInput
+  ppPendamping: UserWhereInput
 }
 
 input CasePkWhereUniqueInput {
@@ -8379,9 +8646,9 @@ input CaseProgressCreateInput {
   caseId: CaseCreateOneWithoutProgressesInput!
 }
 
-input CaseProgressCreateManyWithoutCaseIdInput {
-  create: [CaseProgressCreateWithoutCaseIdInput!]
-  connect: [CaseProgressWhereUniqueInput!]
+input CaseProgressCreateOneWithoutCaseIdInput {
+  create: CaseProgressCreateWithoutCaseIdInput
+  connect: CaseProgressWhereUniqueInput
 }
 
 input CaseProgressCreateWithoutCaseIdInput {
@@ -8425,243 +8692,6 @@ type CaseProgressPreviousValues {
   jenisPeradilan: String
   updatedAt: DateTime!
   updatedBy: String
-}
-
-input CaseProgressScalarWhereInput {
-  """Logical AND on all given filters."""
-  AND: [CaseProgressScalarWhereInput!]
-
-  """Logical OR on all given filters."""
-  OR: [CaseProgressScalarWhereInput!]
-
-  """Logical NOT on all given filters combined by AND."""
-  NOT: [CaseProgressScalarWhereInput!]
-  id: Int
-
-  """All values that are not equal to given value."""
-  id_not: Int
-
-  """All values that are contained in given list."""
-  id_in: [Int!]
-
-  """All values that are not contained in given list."""
-  id_not_in: [Int!]
-
-  """All values less than the given value."""
-  id_lt: Int
-
-  """All values less than or equal the given value."""
-  id_lte: Int
-
-  """All values greater than the given value."""
-  id_gt: Int
-
-  """All values greater than or equal the given value."""
-  id_gte: Int
-  catatan: String
-
-  """All values that are not equal to given value."""
-  catatan_not: String
-
-  """All values that are contained in given list."""
-  catatan_in: [String!]
-
-  """All values that are not contained in given list."""
-  catatan_not_in: [String!]
-
-  """All values less than the given value."""
-  catatan_lt: String
-
-  """All values less than or equal the given value."""
-  catatan_lte: String
-
-  """All values greater than the given value."""
-  catatan_gt: String
-
-  """All values greater than or equal the given value."""
-  catatan_gte: String
-
-  """All values containing the given string."""
-  catatan_contains: String
-
-  """All values not containing the given string."""
-  catatan_not_contains: String
-
-  """All values starting with the given string."""
-  catatan_starts_with: String
-
-  """All values not starting with the given string."""
-  catatan_not_starts_with: String
-
-  """All values ending with the given string."""
-  catatan_ends_with: String
-
-  """All values not ending with the given string."""
-  catatan_not_ends_with: String
-  createdAt: DateTime
-
-  """All values that are not equal to given value."""
-  createdAt_not: DateTime
-
-  """All values that are contained in given list."""
-  createdAt_in: [DateTime!]
-
-  """All values that are not contained in given list."""
-  createdAt_not_in: [DateTime!]
-
-  """All values less than the given value."""
-  createdAt_lt: DateTime
-
-  """All values less than or equal the given value."""
-  createdAt_lte: DateTime
-
-  """All values greater than the given value."""
-  createdAt_gt: DateTime
-
-  """All values greater than or equal the given value."""
-  createdAt_gte: DateTime
-  createdBy: String
-
-  """All values that are not equal to given value."""
-  createdBy_not: String
-
-  """All values that are contained in given list."""
-  createdBy_in: [String!]
-
-  """All values that are not contained in given list."""
-  createdBy_not_in: [String!]
-
-  """All values less than the given value."""
-  createdBy_lt: String
-
-  """All values less than or equal the given value."""
-  createdBy_lte: String
-
-  """All values greater than the given value."""
-  createdBy_gt: String
-
-  """All values greater than or equal the given value."""
-  createdBy_gte: String
-
-  """All values containing the given string."""
-  createdBy_contains: String
-
-  """All values not containing the given string."""
-  createdBy_not_contains: String
-
-  """All values starting with the given string."""
-  createdBy_starts_with: String
-
-  """All values not starting with the given string."""
-  createdBy_not_starts_with: String
-
-  """All values ending with the given string."""
-  createdBy_ends_with: String
-
-  """All values not ending with the given string."""
-  createdBy_not_ends_with: String
-  jenisPeradilan: String
-
-  """All values that are not equal to given value."""
-  jenisPeradilan_not: String
-
-  """All values that are contained in given list."""
-  jenisPeradilan_in: [String!]
-
-  """All values that are not contained in given list."""
-  jenisPeradilan_not_in: [String!]
-
-  """All values less than the given value."""
-  jenisPeradilan_lt: String
-
-  """All values less than or equal the given value."""
-  jenisPeradilan_lte: String
-
-  """All values greater than the given value."""
-  jenisPeradilan_gt: String
-
-  """All values greater than or equal the given value."""
-  jenisPeradilan_gte: String
-
-  """All values containing the given string."""
-  jenisPeradilan_contains: String
-
-  """All values not containing the given string."""
-  jenisPeradilan_not_contains: String
-
-  """All values starting with the given string."""
-  jenisPeradilan_starts_with: String
-
-  """All values not starting with the given string."""
-  jenisPeradilan_not_starts_with: String
-
-  """All values ending with the given string."""
-  jenisPeradilan_ends_with: String
-
-  """All values not ending with the given string."""
-  jenisPeradilan_not_ends_with: String
-  updatedAt: DateTime
-
-  """All values that are not equal to given value."""
-  updatedAt_not: DateTime
-
-  """All values that are contained in given list."""
-  updatedAt_in: [DateTime!]
-
-  """All values that are not contained in given list."""
-  updatedAt_not_in: [DateTime!]
-
-  """All values less than the given value."""
-  updatedAt_lt: DateTime
-
-  """All values less than or equal the given value."""
-  updatedAt_lte: DateTime
-
-  """All values greater than the given value."""
-  updatedAt_gt: DateTime
-
-  """All values greater than or equal the given value."""
-  updatedAt_gte: DateTime
-  updatedBy: String
-
-  """All values that are not equal to given value."""
-  updatedBy_not: String
-
-  """All values that are contained in given list."""
-  updatedBy_in: [String!]
-
-  """All values that are not contained in given list."""
-  updatedBy_not_in: [String!]
-
-  """All values less than the given value."""
-  updatedBy_lt: String
-
-  """All values less than or equal the given value."""
-  updatedBy_lte: String
-
-  """All values greater than the given value."""
-  updatedBy_gt: String
-
-  """All values greater than or equal the given value."""
-  updatedBy_gte: String
-
-  """All values containing the given string."""
-  updatedBy_contains: String
-
-  """All values not containing the given string."""
-  updatedBy_not_contains: String
-
-  """All values starting with the given string."""
-  updatedBy_starts_with: String
-
-  """All values not starting with the given string."""
-  updatedBy_not_starts_with: String
-
-  """All values ending with the given string."""
-  updatedBy_ends_with: String
-
-  """All values not ending with the given string."""
-  updatedBy_not_ends_with: String
 }
 
 type CaseProgressSubscriptionPayload {
@@ -8709,13 +8739,6 @@ input CaseProgressUpdateInput {
   caseId: CaseUpdateOneRequiredWithoutProgressesInput
 }
 
-input CaseProgressUpdateManyDataInput {
-  catatan: String
-  createdBy: String
-  jenisPeradilan: String
-  updatedBy: String
-}
-
 input CaseProgressUpdateManyMutationInput {
   catatan: String
   createdBy: String
@@ -8723,21 +8746,13 @@ input CaseProgressUpdateManyMutationInput {
   updatedBy: String
 }
 
-input CaseProgressUpdateManyWithoutCaseIdInput {
-  create: [CaseProgressCreateWithoutCaseIdInput!]
-  connect: [CaseProgressWhereUniqueInput!]
-  set: [CaseProgressWhereUniqueInput!]
-  disconnect: [CaseProgressWhereUniqueInput!]
-  delete: [CaseProgressWhereUniqueInput!]
-  update: [CaseProgressUpdateWithWhereUniqueWithoutCaseIdInput!]
-  updateMany: [CaseProgressUpdateManyWithWhereNestedInput!]
-  deleteMany: [CaseProgressScalarWhereInput!]
-  upsert: [CaseProgressUpsertWithWhereUniqueWithoutCaseIdInput!]
-}
-
-input CaseProgressUpdateManyWithWhereNestedInput {
-  where: CaseProgressScalarWhereInput!
-  data: CaseProgressUpdateManyDataInput!
+input CaseProgressUpdateOneWithoutCaseIdInput {
+  create: CaseProgressCreateWithoutCaseIdInput
+  connect: CaseProgressWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: CaseProgressUpdateWithoutCaseIdDataInput
+  upsert: CaseProgressUpsertWithoutCaseIdInput
 }
 
 input CaseProgressUpdateWithoutCaseIdDataInput {
@@ -8747,13 +8762,7 @@ input CaseProgressUpdateWithoutCaseIdDataInput {
   updatedBy: String
 }
 
-input CaseProgressUpdateWithWhereUniqueWithoutCaseIdInput {
-  where: CaseProgressWhereUniqueInput!
-  data: CaseProgressUpdateWithoutCaseIdDataInput!
-}
-
-input CaseProgressUpsertWithWhereUniqueWithoutCaseIdInput {
-  where: CaseProgressWhereUniqueInput!
+input CaseProgressUpsertWithoutCaseIdInput {
   update: CaseProgressUpdateWithoutCaseIdDataInput!
   create: CaseProgressCreateWithoutCaseIdInput!
 }
@@ -9000,6 +9009,536 @@ input CaseProgressWhereUniqueInput {
   id: Int
 }
 
+type CaseReferral {
+  id: Int!
+  caseId: Case!
+  client: Person!
+  tglTransfer: DateTime
+  catatan: String
+  network: Network
+  createdBy: String
+  updatedBy: String
+}
+
+"""A connection to a list of items."""
+type CaseReferralConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [CaseReferralEdge]!
+  aggregate: AggregateCaseReferral!
+}
+
+input CaseReferralCreateInput {
+  tglTransfer: DateTime
+  catatan: String
+  createdBy: String
+  updatedBy: String
+  caseId: CaseCreateOneWithoutReferralsInput!
+  client: PersonCreateOneInput!
+  network: NetworkCreateOneInput
+}
+
+input CaseReferralCreateManyWithoutCaseIdInput {
+  create: [CaseReferralCreateWithoutCaseIdInput!]
+  connect: [CaseReferralWhereUniqueInput!]
+}
+
+input CaseReferralCreateWithoutCaseIdInput {
+  tglTransfer: DateTime
+  catatan: String
+  createdBy: String
+  updatedBy: String
+  client: PersonCreateOneInput!
+  network: NetworkCreateOneInput
+}
+
+"""An edge in a connection."""
+type CaseReferralEdge {
+  """The item at the end of the edge."""
+  node: CaseReferral!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum CaseReferralOrderByInput {
+  id_ASC
+  id_DESC
+  tglTransfer_ASC
+  tglTransfer_DESC
+  catatan_ASC
+  catatan_DESC
+  createdBy_ASC
+  createdBy_DESC
+  updatedBy_ASC
+  updatedBy_DESC
+}
+
+type CaseReferralPreviousValues {
+  id: Int!
+  tglTransfer: DateTime
+  catatan: String
+  createdBy: String
+  updatedBy: String
+}
+
+input CaseReferralScalarWhereInput {
+  """Logical AND on all given filters."""
+  AND: [CaseReferralScalarWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [CaseReferralScalarWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [CaseReferralScalarWhereInput!]
+  id: Int
+
+  """All values that are not equal to given value."""
+  id_not: Int
+
+  """All values that are contained in given list."""
+  id_in: [Int!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [Int!]
+
+  """All values less than the given value."""
+  id_lt: Int
+
+  """All values less than or equal the given value."""
+  id_lte: Int
+
+  """All values greater than the given value."""
+  id_gt: Int
+
+  """All values greater than or equal the given value."""
+  id_gte: Int
+  tglTransfer: DateTime
+
+  """All values that are not equal to given value."""
+  tglTransfer_not: DateTime
+
+  """All values that are contained in given list."""
+  tglTransfer_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  tglTransfer_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  tglTransfer_lt: DateTime
+
+  """All values less than or equal the given value."""
+  tglTransfer_lte: DateTime
+
+  """All values greater than the given value."""
+  tglTransfer_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  tglTransfer_gte: DateTime
+  catatan: String
+
+  """All values that are not equal to given value."""
+  catatan_not: String
+
+  """All values that are contained in given list."""
+  catatan_in: [String!]
+
+  """All values that are not contained in given list."""
+  catatan_not_in: [String!]
+
+  """All values less than the given value."""
+  catatan_lt: String
+
+  """All values less than or equal the given value."""
+  catatan_lte: String
+
+  """All values greater than the given value."""
+  catatan_gt: String
+
+  """All values greater than or equal the given value."""
+  catatan_gte: String
+
+  """All values containing the given string."""
+  catatan_contains: String
+
+  """All values not containing the given string."""
+  catatan_not_contains: String
+
+  """All values starting with the given string."""
+  catatan_starts_with: String
+
+  """All values not starting with the given string."""
+  catatan_not_starts_with: String
+
+  """All values ending with the given string."""
+  catatan_ends_with: String
+
+  """All values not ending with the given string."""
+  catatan_not_ends_with: String
+  createdBy: String
+
+  """All values that are not equal to given value."""
+  createdBy_not: String
+
+  """All values that are contained in given list."""
+  createdBy_in: [String!]
+
+  """All values that are not contained in given list."""
+  createdBy_not_in: [String!]
+
+  """All values less than the given value."""
+  createdBy_lt: String
+
+  """All values less than or equal the given value."""
+  createdBy_lte: String
+
+  """All values greater than the given value."""
+  createdBy_gt: String
+
+  """All values greater than or equal the given value."""
+  createdBy_gte: String
+
+  """All values containing the given string."""
+  createdBy_contains: String
+
+  """All values not containing the given string."""
+  createdBy_not_contains: String
+
+  """All values starting with the given string."""
+  createdBy_starts_with: String
+
+  """All values not starting with the given string."""
+  createdBy_not_starts_with: String
+
+  """All values ending with the given string."""
+  createdBy_ends_with: String
+
+  """All values not ending with the given string."""
+  createdBy_not_ends_with: String
+  updatedBy: String
+
+  """All values that are not equal to given value."""
+  updatedBy_not: String
+
+  """All values that are contained in given list."""
+  updatedBy_in: [String!]
+
+  """All values that are not contained in given list."""
+  updatedBy_not_in: [String!]
+
+  """All values less than the given value."""
+  updatedBy_lt: String
+
+  """All values less than or equal the given value."""
+  updatedBy_lte: String
+
+  """All values greater than the given value."""
+  updatedBy_gt: String
+
+  """All values greater than or equal the given value."""
+  updatedBy_gte: String
+
+  """All values containing the given string."""
+  updatedBy_contains: String
+
+  """All values not containing the given string."""
+  updatedBy_not_contains: String
+
+  """All values starting with the given string."""
+  updatedBy_starts_with: String
+
+  """All values not starting with the given string."""
+  updatedBy_not_starts_with: String
+
+  """All values ending with the given string."""
+  updatedBy_ends_with: String
+
+  """All values not ending with the given string."""
+  updatedBy_not_ends_with: String
+}
+
+type CaseReferralSubscriptionPayload {
+  mutation: MutationType!
+  node: CaseReferral
+  updatedFields: [String!]
+  previousValues: CaseReferralPreviousValues
+}
+
+input CaseReferralSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [CaseReferralSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [CaseReferralSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [CaseReferralSubscriptionWhereInput!]
+
+  """The subscription event gets dispatched when it's listed in mutation_in"""
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: CaseReferralWhereInput
+}
+
+input CaseReferralUpdateInput {
+  tglTransfer: DateTime
+  catatan: String
+  createdBy: String
+  updatedBy: String
+  caseId: CaseUpdateOneRequiredWithoutReferralsInput
+  client: PersonUpdateOneRequiredInput
+  network: NetworkUpdateOneInput
+}
+
+input CaseReferralUpdateManyDataInput {
+  tglTransfer: DateTime
+  catatan: String
+  createdBy: String
+  updatedBy: String
+}
+
+input CaseReferralUpdateManyMutationInput {
+  tglTransfer: DateTime
+  catatan: String
+  createdBy: String
+  updatedBy: String
+}
+
+input CaseReferralUpdateManyWithoutCaseIdInput {
+  create: [CaseReferralCreateWithoutCaseIdInput!]
+  connect: [CaseReferralWhereUniqueInput!]
+  set: [CaseReferralWhereUniqueInput!]
+  disconnect: [CaseReferralWhereUniqueInput!]
+  delete: [CaseReferralWhereUniqueInput!]
+  update: [CaseReferralUpdateWithWhereUniqueWithoutCaseIdInput!]
+  updateMany: [CaseReferralUpdateManyWithWhereNestedInput!]
+  deleteMany: [CaseReferralScalarWhereInput!]
+  upsert: [CaseReferralUpsertWithWhereUniqueWithoutCaseIdInput!]
+}
+
+input CaseReferralUpdateManyWithWhereNestedInput {
+  where: CaseReferralScalarWhereInput!
+  data: CaseReferralUpdateManyDataInput!
+}
+
+input CaseReferralUpdateWithoutCaseIdDataInput {
+  tglTransfer: DateTime
+  catatan: String
+  createdBy: String
+  updatedBy: String
+  client: PersonUpdateOneRequiredInput
+  network: NetworkUpdateOneInput
+}
+
+input CaseReferralUpdateWithWhereUniqueWithoutCaseIdInput {
+  where: CaseReferralWhereUniqueInput!
+  data: CaseReferralUpdateWithoutCaseIdDataInput!
+}
+
+input CaseReferralUpsertWithWhereUniqueWithoutCaseIdInput {
+  where: CaseReferralWhereUniqueInput!
+  update: CaseReferralUpdateWithoutCaseIdDataInput!
+  create: CaseReferralCreateWithoutCaseIdInput!
+}
+
+input CaseReferralWhereInput {
+  """Logical AND on all given filters."""
+  AND: [CaseReferralWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [CaseReferralWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [CaseReferralWhereInput!]
+  id: Int
+
+  """All values that are not equal to given value."""
+  id_not: Int
+
+  """All values that are contained in given list."""
+  id_in: [Int!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [Int!]
+
+  """All values less than the given value."""
+  id_lt: Int
+
+  """All values less than or equal the given value."""
+  id_lte: Int
+
+  """All values greater than the given value."""
+  id_gt: Int
+
+  """All values greater than or equal the given value."""
+  id_gte: Int
+  tglTransfer: DateTime
+
+  """All values that are not equal to given value."""
+  tglTransfer_not: DateTime
+
+  """All values that are contained in given list."""
+  tglTransfer_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  tglTransfer_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  tglTransfer_lt: DateTime
+
+  """All values less than or equal the given value."""
+  tglTransfer_lte: DateTime
+
+  """All values greater than the given value."""
+  tglTransfer_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  tglTransfer_gte: DateTime
+  catatan: String
+
+  """All values that are not equal to given value."""
+  catatan_not: String
+
+  """All values that are contained in given list."""
+  catatan_in: [String!]
+
+  """All values that are not contained in given list."""
+  catatan_not_in: [String!]
+
+  """All values less than the given value."""
+  catatan_lt: String
+
+  """All values less than or equal the given value."""
+  catatan_lte: String
+
+  """All values greater than the given value."""
+  catatan_gt: String
+
+  """All values greater than or equal the given value."""
+  catatan_gte: String
+
+  """All values containing the given string."""
+  catatan_contains: String
+
+  """All values not containing the given string."""
+  catatan_not_contains: String
+
+  """All values starting with the given string."""
+  catatan_starts_with: String
+
+  """All values not starting with the given string."""
+  catatan_not_starts_with: String
+
+  """All values ending with the given string."""
+  catatan_ends_with: String
+
+  """All values not ending with the given string."""
+  catatan_not_ends_with: String
+  createdBy: String
+
+  """All values that are not equal to given value."""
+  createdBy_not: String
+
+  """All values that are contained in given list."""
+  createdBy_in: [String!]
+
+  """All values that are not contained in given list."""
+  createdBy_not_in: [String!]
+
+  """All values less than the given value."""
+  createdBy_lt: String
+
+  """All values less than or equal the given value."""
+  createdBy_lte: String
+
+  """All values greater than the given value."""
+  createdBy_gt: String
+
+  """All values greater than or equal the given value."""
+  createdBy_gte: String
+
+  """All values containing the given string."""
+  createdBy_contains: String
+
+  """All values not containing the given string."""
+  createdBy_not_contains: String
+
+  """All values starting with the given string."""
+  createdBy_starts_with: String
+
+  """All values not starting with the given string."""
+  createdBy_not_starts_with: String
+
+  """All values ending with the given string."""
+  createdBy_ends_with: String
+
+  """All values not ending with the given string."""
+  createdBy_not_ends_with: String
+  updatedBy: String
+
+  """All values that are not equal to given value."""
+  updatedBy_not: String
+
+  """All values that are contained in given list."""
+  updatedBy_in: [String!]
+
+  """All values that are not contained in given list."""
+  updatedBy_not_in: [String!]
+
+  """All values less than the given value."""
+  updatedBy_lt: String
+
+  """All values less than or equal the given value."""
+  updatedBy_lte: String
+
+  """All values greater than the given value."""
+  updatedBy_gt: String
+
+  """All values greater than or equal the given value."""
+  updatedBy_gte: String
+
+  """All values containing the given string."""
+  updatedBy_contains: String
+
+  """All values not containing the given string."""
+  updatedBy_not_contains: String
+
+  """All values starting with the given string."""
+  updatedBy_starts_with: String
+
+  """All values not starting with the given string."""
+  updatedBy_not_starts_with: String
+
+  """All values ending with the given string."""
+  updatedBy_ends_with: String
+
+  """All values not ending with the given string."""
+  updatedBy_not_ends_with: String
+  caseId: CaseWhereInput
+  client: PersonWhereInput
+  network: NetworkWhereInput
+}
+
+input CaseReferralWhereUniqueInput {
+  id: Int
+}
+
 type CaseSubscriptionPayload {
   mutation: MutationType!
   node: Case
@@ -9035,6 +9574,78 @@ input CaseSubscriptionWhereInput {
   """
   updatedFields_contains_some: [String!]
   node: CaseWhereInput
+}
+
+type CaseTransfer {
+  id: Int!
+  caseId: Case!
+  tglTransfer: DateTime
+  catatan: String
+  network: Network
+  createdBy: String
+  updatedBy: String
+}
+
+"""A connection to a list of items."""
+type CaseTransferConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [CaseTransferEdge]!
+  aggregate: AggregateCaseTransfer!
+}
+
+input CaseTransferCreateInput {
+  tglTransfer: DateTime
+  catatan: String
+  createdBy: String
+  updatedBy: String
+  caseId: CaseCreateOneWithoutTransferInput!
+  network: NetworkCreateOneInput
+}
+
+input CaseTransferCreateOneWithoutCaseIdInput {
+  create: CaseTransferCreateWithoutCaseIdInput
+  connect: CaseTransferWhereUniqueInput
+}
+
+input CaseTransferCreateWithoutCaseIdInput {
+  tglTransfer: DateTime
+  catatan: String
+  createdBy: String
+  updatedBy: String
+  network: NetworkCreateOneInput
+}
+
+"""An edge in a connection."""
+type CaseTransferEdge {
+  """The item at the end of the edge."""
+  node: CaseTransfer!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum CaseTransferOrderByInput {
+  id_ASC
+  id_DESC
+  tglTransfer_ASC
+  tglTransfer_DESC
+  catatan_ASC
+  catatan_DESC
+  createdBy_ASC
+  createdBy_DESC
+  updatedBy_ASC
+  updatedBy_DESC
+}
+
+type CaseTransferPreviousValues {
+  id: Int!
+  tglTransfer: DateTime
+  catatan: String
+  createdBy: String
+  updatedBy: String
 }
 
 type CaseTransferReferral {
@@ -9885,6 +10496,262 @@ input CaseTransferReferralWhereUniqueInput {
   id: Int
 }
 
+type CaseTransferSubscriptionPayload {
+  mutation: MutationType!
+  node: CaseTransfer
+  updatedFields: [String!]
+  previousValues: CaseTransferPreviousValues
+}
+
+input CaseTransferSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [CaseTransferSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [CaseTransferSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [CaseTransferSubscriptionWhereInput!]
+
+  """The subscription event gets dispatched when it's listed in mutation_in"""
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: CaseTransferWhereInput
+}
+
+input CaseTransferUpdateInput {
+  tglTransfer: DateTime
+  catatan: String
+  createdBy: String
+  updatedBy: String
+  caseId: CaseUpdateOneRequiredWithoutTransferInput
+  network: NetworkUpdateOneInput
+}
+
+input CaseTransferUpdateManyMutationInput {
+  tglTransfer: DateTime
+  catatan: String
+  createdBy: String
+  updatedBy: String
+}
+
+input CaseTransferUpdateOneWithoutCaseIdInput {
+  create: CaseTransferCreateWithoutCaseIdInput
+  connect: CaseTransferWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: CaseTransferUpdateWithoutCaseIdDataInput
+  upsert: CaseTransferUpsertWithoutCaseIdInput
+}
+
+input CaseTransferUpdateWithoutCaseIdDataInput {
+  tglTransfer: DateTime
+  catatan: String
+  createdBy: String
+  updatedBy: String
+  network: NetworkUpdateOneInput
+}
+
+input CaseTransferUpsertWithoutCaseIdInput {
+  update: CaseTransferUpdateWithoutCaseIdDataInput!
+  create: CaseTransferCreateWithoutCaseIdInput!
+}
+
+input CaseTransferWhereInput {
+  """Logical AND on all given filters."""
+  AND: [CaseTransferWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [CaseTransferWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [CaseTransferWhereInput!]
+  id: Int
+
+  """All values that are not equal to given value."""
+  id_not: Int
+
+  """All values that are contained in given list."""
+  id_in: [Int!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [Int!]
+
+  """All values less than the given value."""
+  id_lt: Int
+
+  """All values less than or equal the given value."""
+  id_lte: Int
+
+  """All values greater than the given value."""
+  id_gt: Int
+
+  """All values greater than or equal the given value."""
+  id_gte: Int
+  tglTransfer: DateTime
+
+  """All values that are not equal to given value."""
+  tglTransfer_not: DateTime
+
+  """All values that are contained in given list."""
+  tglTransfer_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  tglTransfer_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  tglTransfer_lt: DateTime
+
+  """All values less than or equal the given value."""
+  tglTransfer_lte: DateTime
+
+  """All values greater than the given value."""
+  tglTransfer_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  tglTransfer_gte: DateTime
+  catatan: String
+
+  """All values that are not equal to given value."""
+  catatan_not: String
+
+  """All values that are contained in given list."""
+  catatan_in: [String!]
+
+  """All values that are not contained in given list."""
+  catatan_not_in: [String!]
+
+  """All values less than the given value."""
+  catatan_lt: String
+
+  """All values less than or equal the given value."""
+  catatan_lte: String
+
+  """All values greater than the given value."""
+  catatan_gt: String
+
+  """All values greater than or equal the given value."""
+  catatan_gte: String
+
+  """All values containing the given string."""
+  catatan_contains: String
+
+  """All values not containing the given string."""
+  catatan_not_contains: String
+
+  """All values starting with the given string."""
+  catatan_starts_with: String
+
+  """All values not starting with the given string."""
+  catatan_not_starts_with: String
+
+  """All values ending with the given string."""
+  catatan_ends_with: String
+
+  """All values not ending with the given string."""
+  catatan_not_ends_with: String
+  createdBy: String
+
+  """All values that are not equal to given value."""
+  createdBy_not: String
+
+  """All values that are contained in given list."""
+  createdBy_in: [String!]
+
+  """All values that are not contained in given list."""
+  createdBy_not_in: [String!]
+
+  """All values less than the given value."""
+  createdBy_lt: String
+
+  """All values less than or equal the given value."""
+  createdBy_lte: String
+
+  """All values greater than the given value."""
+  createdBy_gt: String
+
+  """All values greater than or equal the given value."""
+  createdBy_gte: String
+
+  """All values containing the given string."""
+  createdBy_contains: String
+
+  """All values not containing the given string."""
+  createdBy_not_contains: String
+
+  """All values starting with the given string."""
+  createdBy_starts_with: String
+
+  """All values not starting with the given string."""
+  createdBy_not_starts_with: String
+
+  """All values ending with the given string."""
+  createdBy_ends_with: String
+
+  """All values not ending with the given string."""
+  createdBy_not_ends_with: String
+  updatedBy: String
+
+  """All values that are not equal to given value."""
+  updatedBy_not: String
+
+  """All values that are contained in given list."""
+  updatedBy_in: [String!]
+
+  """All values that are not contained in given list."""
+  updatedBy_not_in: [String!]
+
+  """All values less than the given value."""
+  updatedBy_lt: String
+
+  """All values less than or equal the given value."""
+  updatedBy_lte: String
+
+  """All values greater than the given value."""
+  updatedBy_gt: String
+
+  """All values greater than or equal the given value."""
+  updatedBy_gte: String
+
+  """All values containing the given string."""
+  updatedBy_contains: String
+
+  """All values not containing the given string."""
+  updatedBy_not_contains: String
+
+  """All values starting with the given string."""
+  updatedBy_starts_with: String
+
+  """All values not starting with the given string."""
+  updatedBy_not_starts_with: String
+
+  """All values ending with the given string."""
+  updatedBy_ends_with: String
+
+  """All values not ending with the given string."""
+  updatedBy_not_ends_with: String
+  caseId: CaseWhereInput
+  network: NetworkWhereInput
+}
+
+input CaseTransferWhereUniqueInput {
+  id: Int
+}
+
 input CaseUpdateInput {
   applicationId: Int
   caseClosed: Boolean
@@ -9908,11 +10775,14 @@ input CaseUpdateInput {
   issues: CaseIssueUpdateManyWithoutCaseIdInput
   korbans: CaseKorbanUpdateManyWithoutCaseIdInput
   pelakus: CasePelakuUpdateManyWithoutCaseIdInput
-  pks: CasePkUpdateManyWithoutCaseIdInput
-  progresses: CaseProgressUpdateManyWithoutCaseIdInput
+  pk: CasePkUpdateOneWithoutCaseIdInput
+  progresses: CaseProgressUpdateOneWithoutCaseIdInput
   activities: CaseProgressActivityUpdateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralUpdateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightUpdateManyWithoutCaseIdInput
+  logRequests: LogRequestUpdateManyWithoutCaseIdInput
+  transfer: CaseTransferUpdateOneWithoutCaseIdInput
+  referrals: CaseReferralUpdateManyWithoutCaseIdInput
 }
 
 input CaseUpdateManyMutationInput {
@@ -9938,13 +10808,6 @@ input CaseUpdateOneRequiredWithoutActivitiesInput {
   connect: CaseWhereUniqueInput
   update: CaseUpdateWithoutActivitiesDataInput
   upsert: CaseUpsertWithoutActivitiesInput
-}
-
-input CaseUpdateOneRequiredWithoutApplicationInput {
-  create: CaseCreateWithoutApplicationInput
-  connect: CaseWhereUniqueInput
-  update: CaseUpdateWithoutApplicationDataInput
-  upsert: CaseUpsertWithoutApplicationInput
 }
 
 input CaseUpdateOneRequiredWithoutClassificationsInput {
@@ -9989,11 +10852,11 @@ input CaseUpdateOneRequiredWithoutPelakusInput {
   upsert: CaseUpsertWithoutPelakusInput
 }
 
-input CaseUpdateOneRequiredWithoutPksInput {
-  create: CaseCreateWithoutPksInput
+input CaseUpdateOneRequiredWithoutPkInput {
+  create: CaseCreateWithoutPkInput
   connect: CaseWhereUniqueInput
-  update: CaseUpdateWithoutPksDataInput
-  upsert: CaseUpsertWithoutPksInput
+  update: CaseUpdateWithoutPkDataInput
+  upsert: CaseUpsertWithoutPkInput
 }
 
 input CaseUpdateOneRequiredWithoutProgressesInput {
@@ -10001,6 +10864,20 @@ input CaseUpdateOneRequiredWithoutProgressesInput {
   connect: CaseWhereUniqueInput
   update: CaseUpdateWithoutProgressesDataInput
   upsert: CaseUpsertWithoutProgressesInput
+}
+
+input CaseUpdateOneRequiredWithoutReferralsInput {
+  create: CaseCreateWithoutReferralsInput
+  connect: CaseWhereUniqueInput
+  update: CaseUpdateWithoutReferralsDataInput
+  upsert: CaseUpsertWithoutReferralsInput
+}
+
+input CaseUpdateOneRequiredWithoutTransferInput {
+  create: CaseCreateWithoutTransferInput
+  connect: CaseWhereUniqueInput
+  update: CaseUpdateWithoutTransferDataInput
+  upsert: CaseUpsertWithoutTransferInput
 }
 
 input CaseUpdateOneRequiredWithoutTransferreferralsInput {
@@ -10015,6 +10892,24 @@ input CaseUpdateOneRequiredWithoutViolatedrightsInput {
   connect: CaseWhereUniqueInput
   update: CaseUpdateWithoutViolatedrightsDataInput
   upsert: CaseUpsertWithoutViolatedrightsInput
+}
+
+input CaseUpdateOneWithoutApplicationInput {
+  create: CaseCreateWithoutApplicationInput
+  connect: CaseWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: CaseUpdateWithoutApplicationDataInput
+  upsert: CaseUpsertWithoutApplicationInput
+}
+
+input CaseUpdateOneWithoutLogRequestsInput {
+  create: CaseCreateWithoutLogRequestsInput
+  connect: CaseWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: CaseUpdateWithoutLogRequestsDataInput
+  upsert: CaseUpsertWithoutLogRequestsInput
 }
 
 input CaseUpdateWithoutActivitiesDataInput {
@@ -10040,10 +10935,13 @@ input CaseUpdateWithoutActivitiesDataInput {
   issues: CaseIssueUpdateManyWithoutCaseIdInput
   korbans: CaseKorbanUpdateManyWithoutCaseIdInput
   pelakus: CasePelakuUpdateManyWithoutCaseIdInput
-  pks: CasePkUpdateManyWithoutCaseIdInput
-  progresses: CaseProgressUpdateManyWithoutCaseIdInput
+  pk: CasePkUpdateOneWithoutCaseIdInput
+  progresses: CaseProgressUpdateOneWithoutCaseIdInput
   transferreferrals: CaseTransferReferralUpdateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightUpdateManyWithoutCaseIdInput
+  logRequests: LogRequestUpdateManyWithoutCaseIdInput
+  transfer: CaseTransferUpdateOneWithoutCaseIdInput
+  referrals: CaseReferralUpdateManyWithoutCaseIdInput
 }
 
 input CaseUpdateWithoutApplicationDataInput {
@@ -10068,11 +10966,14 @@ input CaseUpdateWithoutApplicationDataInput {
   issues: CaseIssueUpdateManyWithoutCaseIdInput
   korbans: CaseKorbanUpdateManyWithoutCaseIdInput
   pelakus: CasePelakuUpdateManyWithoutCaseIdInput
-  pks: CasePkUpdateManyWithoutCaseIdInput
-  progresses: CaseProgressUpdateManyWithoutCaseIdInput
+  pk: CasePkUpdateOneWithoutCaseIdInput
+  progresses: CaseProgressUpdateOneWithoutCaseIdInput
   activities: CaseProgressActivityUpdateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralUpdateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightUpdateManyWithoutCaseIdInput
+  logRequests: LogRequestUpdateManyWithoutCaseIdInput
+  transfer: CaseTransferUpdateOneWithoutCaseIdInput
+  referrals: CaseReferralUpdateManyWithoutCaseIdInput
 }
 
 input CaseUpdateWithoutClassificationsDataInput {
@@ -10097,11 +10998,14 @@ input CaseUpdateWithoutClassificationsDataInput {
   issues: CaseIssueUpdateManyWithoutCaseIdInput
   korbans: CaseKorbanUpdateManyWithoutCaseIdInput
   pelakus: CasePelakuUpdateManyWithoutCaseIdInput
-  pks: CasePkUpdateManyWithoutCaseIdInput
-  progresses: CaseProgressUpdateManyWithoutCaseIdInput
+  pk: CasePkUpdateOneWithoutCaseIdInput
+  progresses: CaseProgressUpdateOneWithoutCaseIdInput
   activities: CaseProgressActivityUpdateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralUpdateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightUpdateManyWithoutCaseIdInput
+  logRequests: LogRequestUpdateManyWithoutCaseIdInput
+  transfer: CaseTransferUpdateOneWithoutCaseIdInput
+  referrals: CaseReferralUpdateManyWithoutCaseIdInput
 }
 
 input CaseUpdateWithoutConsultationsDataInput {
@@ -10126,11 +11030,14 @@ input CaseUpdateWithoutConsultationsDataInput {
   issues: CaseIssueUpdateManyWithoutCaseIdInput
   korbans: CaseKorbanUpdateManyWithoutCaseIdInput
   pelakus: CasePelakuUpdateManyWithoutCaseIdInput
-  pks: CasePkUpdateManyWithoutCaseIdInput
-  progresses: CaseProgressUpdateManyWithoutCaseIdInput
+  pk: CasePkUpdateOneWithoutCaseIdInput
+  progresses: CaseProgressUpdateOneWithoutCaseIdInput
   activities: CaseProgressActivityUpdateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralUpdateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightUpdateManyWithoutCaseIdInput
+  logRequests: LogRequestUpdateManyWithoutCaseIdInput
+  transfer: CaseTransferUpdateOneWithoutCaseIdInput
+  referrals: CaseReferralUpdateManyWithoutCaseIdInput
 }
 
 input CaseUpdateWithoutDocumentsDataInput {
@@ -10155,11 +11062,14 @@ input CaseUpdateWithoutDocumentsDataInput {
   issues: CaseIssueUpdateManyWithoutCaseIdInput
   korbans: CaseKorbanUpdateManyWithoutCaseIdInput
   pelakus: CasePelakuUpdateManyWithoutCaseIdInput
-  pks: CasePkUpdateManyWithoutCaseIdInput
-  progresses: CaseProgressUpdateManyWithoutCaseIdInput
+  pk: CasePkUpdateOneWithoutCaseIdInput
+  progresses: CaseProgressUpdateOneWithoutCaseIdInput
   activities: CaseProgressActivityUpdateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralUpdateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightUpdateManyWithoutCaseIdInput
+  logRequests: LogRequestUpdateManyWithoutCaseIdInput
+  transfer: CaseTransferUpdateOneWithoutCaseIdInput
+  referrals: CaseReferralUpdateManyWithoutCaseIdInput
 }
 
 input CaseUpdateWithoutIssuesDataInput {
@@ -10184,11 +11094,14 @@ input CaseUpdateWithoutIssuesDataInput {
   documents: CaseDocumentUpdateManyWithoutCaseIdInput
   korbans: CaseKorbanUpdateManyWithoutCaseIdInput
   pelakus: CasePelakuUpdateManyWithoutCaseIdInput
-  pks: CasePkUpdateManyWithoutCaseIdInput
-  progresses: CaseProgressUpdateManyWithoutCaseIdInput
+  pk: CasePkUpdateOneWithoutCaseIdInput
+  progresses: CaseProgressUpdateOneWithoutCaseIdInput
   activities: CaseProgressActivityUpdateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralUpdateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightUpdateManyWithoutCaseIdInput
+  logRequests: LogRequestUpdateManyWithoutCaseIdInput
+  transfer: CaseTransferUpdateOneWithoutCaseIdInput
+  referrals: CaseReferralUpdateManyWithoutCaseIdInput
 }
 
 input CaseUpdateWithoutKorbansDataInput {
@@ -10213,11 +11126,46 @@ input CaseUpdateWithoutKorbansDataInput {
   documents: CaseDocumentUpdateManyWithoutCaseIdInput
   issues: CaseIssueUpdateManyWithoutCaseIdInput
   pelakus: CasePelakuUpdateManyWithoutCaseIdInput
-  pks: CasePkUpdateManyWithoutCaseIdInput
-  progresses: CaseProgressUpdateManyWithoutCaseIdInput
+  pk: CasePkUpdateOneWithoutCaseIdInput
+  progresses: CaseProgressUpdateOneWithoutCaseIdInput
   activities: CaseProgressActivityUpdateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralUpdateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightUpdateManyWithoutCaseIdInput
+  logRequests: LogRequestUpdateManyWithoutCaseIdInput
+  transfer: CaseTransferUpdateOneWithoutCaseIdInput
+  referrals: CaseReferralUpdateManyWithoutCaseIdInput
+}
+
+input CaseUpdateWithoutLogRequestsDataInput {
+  applicationId: Int
+  caseClosed: Boolean
+  caseClosedJenis: String
+  createdBy: String
+  hakTerlanggar: String
+  issue: String
+  judulKasus: String
+  klasifikasiDok: String
+  kronologiKasus: String
+  lockDitolak: Boolean
+  statusPendampingan: String
+  targetAdvokasi: String
+  unlockPk: Boolean
+  unlockTransfer: Boolean
+  updatedBy: String
+  application: ApplicationUpdateOneRequiredWithoutCaseInput
+  classifications: CaseClassificationUpdateManyWithoutCaseIdInput
+  consultations: CaseConsultationUpdateManyWithoutCaseIdInput
+  documents: CaseDocumentUpdateManyWithoutCaseIdInput
+  issues: CaseIssueUpdateManyWithoutCaseIdInput
+  korbans: CaseKorbanUpdateManyWithoutCaseIdInput
+  pelakus: CasePelakuUpdateManyWithoutCaseIdInput
+  pk: CasePkUpdateOneWithoutCaseIdInput
+  progresses: CaseProgressUpdateOneWithoutCaseIdInput
+  activities: CaseProgressActivityUpdateManyWithoutCaseIdInput
+  transferreferrals: CaseTransferReferralUpdateManyWithoutCaseIdInput
+  violatedrights: CaseViolatedRightUpdateManyWithoutCaseIdInput
+  transfer: CaseTransferUpdateOneWithoutCaseIdInput
+  referrals: CaseReferralUpdateManyWithoutCaseIdInput
 }
 
 input CaseUpdateWithoutPelakusDataInput {
@@ -10242,14 +11190,17 @@ input CaseUpdateWithoutPelakusDataInput {
   documents: CaseDocumentUpdateManyWithoutCaseIdInput
   issues: CaseIssueUpdateManyWithoutCaseIdInput
   korbans: CaseKorbanUpdateManyWithoutCaseIdInput
-  pks: CasePkUpdateManyWithoutCaseIdInput
-  progresses: CaseProgressUpdateManyWithoutCaseIdInput
+  pk: CasePkUpdateOneWithoutCaseIdInput
+  progresses: CaseProgressUpdateOneWithoutCaseIdInput
   activities: CaseProgressActivityUpdateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralUpdateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightUpdateManyWithoutCaseIdInput
+  logRequests: LogRequestUpdateManyWithoutCaseIdInput
+  transfer: CaseTransferUpdateOneWithoutCaseIdInput
+  referrals: CaseReferralUpdateManyWithoutCaseIdInput
 }
 
-input CaseUpdateWithoutPksDataInput {
+input CaseUpdateWithoutPkDataInput {
   applicationId: Int
   caseClosed: Boolean
   caseClosedJenis: String
@@ -10272,10 +11223,13 @@ input CaseUpdateWithoutPksDataInput {
   issues: CaseIssueUpdateManyWithoutCaseIdInput
   korbans: CaseKorbanUpdateManyWithoutCaseIdInput
   pelakus: CasePelakuUpdateManyWithoutCaseIdInput
-  progresses: CaseProgressUpdateManyWithoutCaseIdInput
+  progresses: CaseProgressUpdateOneWithoutCaseIdInput
   activities: CaseProgressActivityUpdateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralUpdateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightUpdateManyWithoutCaseIdInput
+  logRequests: LogRequestUpdateManyWithoutCaseIdInput
+  transfer: CaseTransferUpdateOneWithoutCaseIdInput
+  referrals: CaseReferralUpdateManyWithoutCaseIdInput
 }
 
 input CaseUpdateWithoutProgressesDataInput {
@@ -10301,10 +11255,77 @@ input CaseUpdateWithoutProgressesDataInput {
   issues: CaseIssueUpdateManyWithoutCaseIdInput
   korbans: CaseKorbanUpdateManyWithoutCaseIdInput
   pelakus: CasePelakuUpdateManyWithoutCaseIdInput
-  pks: CasePkUpdateManyWithoutCaseIdInput
+  pk: CasePkUpdateOneWithoutCaseIdInput
   activities: CaseProgressActivityUpdateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralUpdateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightUpdateManyWithoutCaseIdInput
+  logRequests: LogRequestUpdateManyWithoutCaseIdInput
+  transfer: CaseTransferUpdateOneWithoutCaseIdInput
+  referrals: CaseReferralUpdateManyWithoutCaseIdInput
+}
+
+input CaseUpdateWithoutReferralsDataInput {
+  applicationId: Int
+  caseClosed: Boolean
+  caseClosedJenis: String
+  createdBy: String
+  hakTerlanggar: String
+  issue: String
+  judulKasus: String
+  klasifikasiDok: String
+  kronologiKasus: String
+  lockDitolak: Boolean
+  statusPendampingan: String
+  targetAdvokasi: String
+  unlockPk: Boolean
+  unlockTransfer: Boolean
+  updatedBy: String
+  application: ApplicationUpdateOneRequiredWithoutCaseInput
+  classifications: CaseClassificationUpdateManyWithoutCaseIdInput
+  consultations: CaseConsultationUpdateManyWithoutCaseIdInput
+  documents: CaseDocumentUpdateManyWithoutCaseIdInput
+  issues: CaseIssueUpdateManyWithoutCaseIdInput
+  korbans: CaseKorbanUpdateManyWithoutCaseIdInput
+  pelakus: CasePelakuUpdateManyWithoutCaseIdInput
+  pk: CasePkUpdateOneWithoutCaseIdInput
+  progresses: CaseProgressUpdateOneWithoutCaseIdInput
+  activities: CaseProgressActivityUpdateManyWithoutCaseIdInput
+  transferreferrals: CaseTransferReferralUpdateManyWithoutCaseIdInput
+  violatedrights: CaseViolatedRightUpdateManyWithoutCaseIdInput
+  logRequests: LogRequestUpdateManyWithoutCaseIdInput
+  transfer: CaseTransferUpdateOneWithoutCaseIdInput
+}
+
+input CaseUpdateWithoutTransferDataInput {
+  applicationId: Int
+  caseClosed: Boolean
+  caseClosedJenis: String
+  createdBy: String
+  hakTerlanggar: String
+  issue: String
+  judulKasus: String
+  klasifikasiDok: String
+  kronologiKasus: String
+  lockDitolak: Boolean
+  statusPendampingan: String
+  targetAdvokasi: String
+  unlockPk: Boolean
+  unlockTransfer: Boolean
+  updatedBy: String
+  application: ApplicationUpdateOneRequiredWithoutCaseInput
+  classifications: CaseClassificationUpdateManyWithoutCaseIdInput
+  consultations: CaseConsultationUpdateManyWithoutCaseIdInput
+  documents: CaseDocumentUpdateManyWithoutCaseIdInput
+  issues: CaseIssueUpdateManyWithoutCaseIdInput
+  korbans: CaseKorbanUpdateManyWithoutCaseIdInput
+  pelakus: CasePelakuUpdateManyWithoutCaseIdInput
+  pk: CasePkUpdateOneWithoutCaseIdInput
+  progresses: CaseProgressUpdateOneWithoutCaseIdInput
+  activities: CaseProgressActivityUpdateManyWithoutCaseIdInput
+  transferreferrals: CaseTransferReferralUpdateManyWithoutCaseIdInput
+  violatedrights: CaseViolatedRightUpdateManyWithoutCaseIdInput
+  logRequests: LogRequestUpdateManyWithoutCaseIdInput
+  referrals: CaseReferralUpdateManyWithoutCaseIdInput
 }
 
 input CaseUpdateWithoutTransferreferralsDataInput {
@@ -10330,10 +11351,13 @@ input CaseUpdateWithoutTransferreferralsDataInput {
   issues: CaseIssueUpdateManyWithoutCaseIdInput
   korbans: CaseKorbanUpdateManyWithoutCaseIdInput
   pelakus: CasePelakuUpdateManyWithoutCaseIdInput
-  pks: CasePkUpdateManyWithoutCaseIdInput
-  progresses: CaseProgressUpdateManyWithoutCaseIdInput
+  pk: CasePkUpdateOneWithoutCaseIdInput
+  progresses: CaseProgressUpdateOneWithoutCaseIdInput
   activities: CaseProgressActivityUpdateManyWithoutCaseIdInput
   violatedrights: CaseViolatedRightUpdateManyWithoutCaseIdInput
+  logRequests: LogRequestUpdateManyWithoutCaseIdInput
+  transfer: CaseTransferUpdateOneWithoutCaseIdInput
+  referrals: CaseReferralUpdateManyWithoutCaseIdInput
 }
 
 input CaseUpdateWithoutViolatedrightsDataInput {
@@ -10359,10 +11383,13 @@ input CaseUpdateWithoutViolatedrightsDataInput {
   issues: CaseIssueUpdateManyWithoutCaseIdInput
   korbans: CaseKorbanUpdateManyWithoutCaseIdInput
   pelakus: CasePelakuUpdateManyWithoutCaseIdInput
-  pks: CasePkUpdateManyWithoutCaseIdInput
-  progresses: CaseProgressUpdateManyWithoutCaseIdInput
+  pk: CasePkUpdateOneWithoutCaseIdInput
+  progresses: CaseProgressUpdateOneWithoutCaseIdInput
   activities: CaseProgressActivityUpdateManyWithoutCaseIdInput
   transferreferrals: CaseTransferReferralUpdateManyWithoutCaseIdInput
+  logRequests: LogRequestUpdateManyWithoutCaseIdInput
+  transfer: CaseTransferUpdateOneWithoutCaseIdInput
+  referrals: CaseReferralUpdateManyWithoutCaseIdInput
 }
 
 input CaseUpsertWithoutActivitiesInput {
@@ -10400,19 +11427,34 @@ input CaseUpsertWithoutKorbansInput {
   create: CaseCreateWithoutKorbansInput!
 }
 
+input CaseUpsertWithoutLogRequestsInput {
+  update: CaseUpdateWithoutLogRequestsDataInput!
+  create: CaseCreateWithoutLogRequestsInput!
+}
+
 input CaseUpsertWithoutPelakusInput {
   update: CaseUpdateWithoutPelakusDataInput!
   create: CaseCreateWithoutPelakusInput!
 }
 
-input CaseUpsertWithoutPksInput {
-  update: CaseUpdateWithoutPksDataInput!
-  create: CaseCreateWithoutPksInput!
+input CaseUpsertWithoutPkInput {
+  update: CaseUpdateWithoutPkDataInput!
+  create: CaseCreateWithoutPkInput!
 }
 
 input CaseUpsertWithoutProgressesInput {
   update: CaseUpdateWithoutProgressesDataInput!
   create: CaseCreateWithoutProgressesInput!
+}
+
+input CaseUpsertWithoutReferralsInput {
+  update: CaseUpdateWithoutReferralsDataInput!
+  create: CaseCreateWithoutReferralsInput!
+}
+
+input CaseUpsertWithoutTransferInput {
+  update: CaseUpdateWithoutTransferDataInput!
+  create: CaseCreateWithoutTransferInput!
 }
 
 input CaseUpsertWithoutTransferreferralsInput {
@@ -11241,12 +12283,8 @@ input CaseWhereInput {
   pelakus_every: CasePelakuWhereInput
   pelakus_some: CasePelakuWhereInput
   pelakus_none: CasePelakuWhereInput
-  pks_every: CasePkWhereInput
-  pks_some: CasePkWhereInput
-  pks_none: CasePkWhereInput
-  progresses_every: CaseProgressWhereInput
-  progresses_some: CaseProgressWhereInput
-  progresses_none: CaseProgressWhereInput
+  pk: CasePkWhereInput
+  progresses: CaseProgressWhereInput
   activities_every: CaseProgressActivityWhereInput
   activities_some: CaseProgressActivityWhereInput
   activities_none: CaseProgressActivityWhereInput
@@ -11256,6 +12294,13 @@ input CaseWhereInput {
   violatedrights_every: CaseViolatedRightWhereInput
   violatedrights_some: CaseViolatedRightWhereInput
   violatedrights_none: CaseViolatedRightWhereInput
+  logRequests_every: LogRequestWhereInput
+  logRequests_some: LogRequestWhereInput
+  logRequests_none: LogRequestWhereInput
+  transfer: CaseTransferWhereInput
+  referrals_every: CaseReferralWhereInput
+  referrals_some: CaseReferralWhereInput
+  referrals_none: CaseReferralWhereInput
 }
 
 input CaseWhereUniqueInput {
@@ -11290,6 +12335,7 @@ type Client {
   updatedAt: DateTime!
   updatedBy: String
   usiaSaatKlien: Int
+  logRequests(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LogRequest!]
 }
 
 """A connection to a list of items."""
@@ -11327,6 +12373,7 @@ input ClientCreateInput {
   usiaSaatKlien: Int
   applicationId: ApplicationCreateOneWithoutClientsInput!
   personId: PersonCreateOneWithoutClientsInput!
+  logRequests: LogRequestCreateManyInput
 }
 
 input ClientCreateManyWithoutApplicationIdInput {
@@ -11363,6 +12410,7 @@ input ClientCreateWithoutApplicationIdInput {
   updatedBy: String
   usiaSaatKlien: Int
   personId: PersonCreateOneWithoutClientsInput!
+  logRequests: LogRequestCreateManyInput
 }
 
 input ClientCreateWithoutPersonIdInput {
@@ -11389,6 +12437,7 @@ input ClientCreateWithoutPersonIdInput {
   updatedBy: String
   usiaSaatKlien: Int
   applicationId: ApplicationCreateOneWithoutClientsInput!
+  logRequests: LogRequestCreateManyInput
 }
 
 """An edge in a connection."""
@@ -12374,6 +13423,7 @@ input ClientUpdateInput {
   usiaSaatKlien: Int
   applicationId: ApplicationUpdateOneRequiredWithoutClientsInput
   personId: PersonUpdateOneRequiredWithoutClientsInput
+  logRequests: LogRequestUpdateManyInput
 }
 
 input ClientUpdateManyDataInput {
@@ -12479,6 +13529,7 @@ input ClientUpdateWithoutApplicationIdDataInput {
   updatedBy: String
   usiaSaatKlien: Int
   personId: PersonUpdateOneRequiredWithoutClientsInput
+  logRequests: LogRequestUpdateManyInput
 }
 
 input ClientUpdateWithoutPersonIdDataInput {
@@ -12505,6 +13556,7 @@ input ClientUpdateWithoutPersonIdDataInput {
   updatedBy: String
   usiaSaatKlien: Int
   applicationId: ApplicationUpdateOneRequiredWithoutClientsInput
+  logRequests: LogRequestUpdateManyInput
 }
 
 input ClientUpdateWithWhereUniqueWithoutApplicationIdInput {
@@ -13360,6 +14412,9 @@ input ClientWhereInput {
   usiaSaatKlien_gte: Int
   applicationId: ApplicationWhereInput
   personId: PersonWhereInput
+  logRequests_every: LogRequestWhereInput
+  logRequests_some: LogRequestWhereInput
+  logRequests_none: LogRequestWhereInput
 }
 
 input ClientWhereUniqueInput {
@@ -14667,15 +15722,18 @@ scalar DateTime
 
 type LogRequest {
   ID: Int!
-  caseId: Int
+  caseId: Case
   isiRequest: String
+  applicationId: Application
   jenisRequest: String
-  networkId: Int
-  personId: Int
-  pp: Int
-  requestBy: Int
-  requestTo: Int
+  networkId: Network
+  personId: Person
+  pp(where: LogRequestAppWhereInput, orderBy: LogRequestAppOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LogRequestApp!]
+  statusRequest: String
+  requestBy: User
+  requestTo: User
   tanggapanRequest: String
+  tanggapanRequestIsi: String
   tglExpired: DateTime
   tglRequest: DateTime
   tglRespon: DateTime
@@ -14683,8 +15741,8 @@ type LogRequest {
 
 type LogRequestApp {
   id: Int!
-  appConsultation: String
-  logRequestId: Int
+  appConsultation: User!
+  logRequestId: LogRequest
 }
 
 """A connection to a list of items."""
@@ -14698,8 +15756,26 @@ type LogRequestAppConnection {
 }
 
 input LogRequestAppCreateInput {
-  appConsultation: String
-  logRequestId: Int
+  appConsultation: UserCreateOneWithoutAppConsultationInput!
+  logRequestId: LogRequestCreateOneWithoutPpInput
+}
+
+input LogRequestAppCreateManyWithoutAppConsultationInput {
+  create: [LogRequestAppCreateWithoutAppConsultationInput!]
+  connect: [LogRequestAppWhereUniqueInput!]
+}
+
+input LogRequestAppCreateManyWithoutLogRequestIdInput {
+  create: [LogRequestAppCreateWithoutLogRequestIdInput!]
+  connect: [LogRequestAppWhereUniqueInput!]
+}
+
+input LogRequestAppCreateWithoutAppConsultationInput {
+  logRequestId: LogRequestCreateOneWithoutPpInput
+}
+
+input LogRequestAppCreateWithoutLogRequestIdInput {
+  appConsultation: UserCreateOneWithoutAppConsultationInput!
 }
 
 """An edge in a connection."""
@@ -14714,16 +15790,43 @@ type LogRequestAppEdge {
 enum LogRequestAppOrderByInput {
   id_ASC
   id_DESC
-  appConsultation_ASC
-  appConsultation_DESC
-  logRequestId_ASC
-  logRequestId_DESC
 }
 
 type LogRequestAppPreviousValues {
   id: Int!
-  appConsultation: String
-  logRequestId: Int
+}
+
+input LogRequestAppScalarWhereInput {
+  """Logical AND on all given filters."""
+  AND: [LogRequestAppScalarWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [LogRequestAppScalarWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [LogRequestAppScalarWhereInput!]
+  id: Int
+
+  """All values that are not equal to given value."""
+  id_not: Int
+
+  """All values that are contained in given list."""
+  id_in: [Int!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [Int!]
+
+  """All values less than the given value."""
+  id_lt: Int
+
+  """All values less than or equal the given value."""
+  id_lte: Int
+
+  """All values greater than the given value."""
+  id_gt: Int
+
+  """All values greater than or equal the given value."""
+  id_gte: Int
 }
 
 type LogRequestAppSubscriptionPayload {
@@ -14764,13 +15867,60 @@ input LogRequestAppSubscriptionWhereInput {
 }
 
 input LogRequestAppUpdateInput {
-  appConsultation: String
-  logRequestId: Int
+  appConsultation: UserUpdateOneRequiredWithoutAppConsultationInput
+  logRequestId: LogRequestUpdateOneWithoutPpInput
 }
 
-input LogRequestAppUpdateManyMutationInput {
-  appConsultation: String
-  logRequestId: Int
+input LogRequestAppUpdateManyWithoutAppConsultationInput {
+  create: [LogRequestAppCreateWithoutAppConsultationInput!]
+  connect: [LogRequestAppWhereUniqueInput!]
+  set: [LogRequestAppWhereUniqueInput!]
+  disconnect: [LogRequestAppWhereUniqueInput!]
+  delete: [LogRequestAppWhereUniqueInput!]
+  update: [LogRequestAppUpdateWithWhereUniqueWithoutAppConsultationInput!]
+  deleteMany: [LogRequestAppScalarWhereInput!]
+  upsert: [LogRequestAppUpsertWithWhereUniqueWithoutAppConsultationInput!]
+}
+
+input LogRequestAppUpdateManyWithoutLogRequestIdInput {
+  create: [LogRequestAppCreateWithoutLogRequestIdInput!]
+  connect: [LogRequestAppWhereUniqueInput!]
+  set: [LogRequestAppWhereUniqueInput!]
+  disconnect: [LogRequestAppWhereUniqueInput!]
+  delete: [LogRequestAppWhereUniqueInput!]
+  update: [LogRequestAppUpdateWithWhereUniqueWithoutLogRequestIdInput!]
+  deleteMany: [LogRequestAppScalarWhereInput!]
+  upsert: [LogRequestAppUpsertWithWhereUniqueWithoutLogRequestIdInput!]
+}
+
+input LogRequestAppUpdateWithoutAppConsultationDataInput {
+  logRequestId: LogRequestUpdateOneWithoutPpInput
+}
+
+input LogRequestAppUpdateWithoutLogRequestIdDataInput {
+  appConsultation: UserUpdateOneRequiredWithoutAppConsultationInput
+}
+
+input LogRequestAppUpdateWithWhereUniqueWithoutAppConsultationInput {
+  where: LogRequestAppWhereUniqueInput!
+  data: LogRequestAppUpdateWithoutAppConsultationDataInput!
+}
+
+input LogRequestAppUpdateWithWhereUniqueWithoutLogRequestIdInput {
+  where: LogRequestAppWhereUniqueInput!
+  data: LogRequestAppUpdateWithoutLogRequestIdDataInput!
+}
+
+input LogRequestAppUpsertWithWhereUniqueWithoutAppConsultationInput {
+  where: LogRequestAppWhereUniqueInput!
+  update: LogRequestAppUpdateWithoutAppConsultationDataInput!
+  create: LogRequestAppCreateWithoutAppConsultationInput!
+}
+
+input LogRequestAppUpsertWithWhereUniqueWithoutLogRequestIdInput {
+  where: LogRequestAppWhereUniqueInput!
+  update: LogRequestAppUpdateWithoutLogRequestIdDataInput!
+  create: LogRequestAppCreateWithoutLogRequestIdInput!
 }
 
 input LogRequestAppWhereInput {
@@ -14804,68 +15954,8 @@ input LogRequestAppWhereInput {
 
   """All values greater than or equal the given value."""
   id_gte: Int
-  appConsultation: String
-
-  """All values that are not equal to given value."""
-  appConsultation_not: String
-
-  """All values that are contained in given list."""
-  appConsultation_in: [String!]
-
-  """All values that are not contained in given list."""
-  appConsultation_not_in: [String!]
-
-  """All values less than the given value."""
-  appConsultation_lt: String
-
-  """All values less than or equal the given value."""
-  appConsultation_lte: String
-
-  """All values greater than the given value."""
-  appConsultation_gt: String
-
-  """All values greater than or equal the given value."""
-  appConsultation_gte: String
-
-  """All values containing the given string."""
-  appConsultation_contains: String
-
-  """All values not containing the given string."""
-  appConsultation_not_contains: String
-
-  """All values starting with the given string."""
-  appConsultation_starts_with: String
-
-  """All values not starting with the given string."""
-  appConsultation_not_starts_with: String
-
-  """All values ending with the given string."""
-  appConsultation_ends_with: String
-
-  """All values not ending with the given string."""
-  appConsultation_not_ends_with: String
-  logRequestId: Int
-
-  """All values that are not equal to given value."""
-  logRequestId_not: Int
-
-  """All values that are contained in given list."""
-  logRequestId_in: [Int!]
-
-  """All values that are not contained in given list."""
-  logRequestId_not_in: [Int!]
-
-  """All values less than the given value."""
-  logRequestId_lt: Int
-
-  """All values less than or equal the given value."""
-  logRequestId_lte: Int
-
-  """All values greater than the given value."""
-  logRequestId_gt: Int
-
-  """All values greater than or equal the given value."""
-  logRequestId_gte: Int
+  appConsultation: UserWhereInput
+  logRequestId: LogRequestWhereInput
 }
 
 input LogRequestAppWhereUniqueInput {
@@ -14883,18 +15973,158 @@ type LogRequestConnection {
 }
 
 input LogRequestCreateInput {
-  caseId: Int
   isiRequest: String
   jenisRequest: String
-  networkId: Int
-  personId: Int
-  pp: Int
-  requestBy: Int
-  requestTo: Int
+  statusRequest: String
   tanggapanRequest: String
+  tanggapanRequestIsi: String
   tglExpired: DateTime
   tglRequest: DateTime
   tglRespon: DateTime
+  caseId: CaseCreateOneWithoutLogRequestsInput
+  applicationId: ApplicationCreateOneInput
+  networkId: NetworkCreateOneWithoutLogRequestsInput
+  personId: PersonCreateOneWithoutLogRequestsInput
+  pp: LogRequestAppCreateManyWithoutLogRequestIdInput
+  requestBy: UserCreateOneWithoutLogRequestByInput
+  requestTo: UserCreateOneWithoutLogRequestToInput
+}
+
+input LogRequestCreateManyInput {
+  create: [LogRequestCreateInput!]
+  connect: [LogRequestWhereUniqueInput!]
+}
+
+input LogRequestCreateManyWithoutCaseIdInput {
+  create: [LogRequestCreateWithoutCaseIdInput!]
+  connect: [LogRequestWhereUniqueInput!]
+}
+
+input LogRequestCreateManyWithoutNetworkIdInput {
+  create: [LogRequestCreateWithoutNetworkIdInput!]
+  connect: [LogRequestWhereUniqueInput!]
+}
+
+input LogRequestCreateManyWithoutPersonIdInput {
+  create: [LogRequestCreateWithoutPersonIdInput!]
+  connect: [LogRequestWhereUniqueInput!]
+}
+
+input LogRequestCreateManyWithoutRequestByInput {
+  create: [LogRequestCreateWithoutRequestByInput!]
+  connect: [LogRequestWhereUniqueInput!]
+}
+
+input LogRequestCreateManyWithoutRequestToInput {
+  create: [LogRequestCreateWithoutRequestToInput!]
+  connect: [LogRequestWhereUniqueInput!]
+}
+
+input LogRequestCreateOneWithoutPpInput {
+  create: LogRequestCreateWithoutPpInput
+  connect: LogRequestWhereUniqueInput
+}
+
+input LogRequestCreateWithoutCaseIdInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+  applicationId: ApplicationCreateOneInput
+  networkId: NetworkCreateOneWithoutLogRequestsInput
+  personId: PersonCreateOneWithoutLogRequestsInput
+  pp: LogRequestAppCreateManyWithoutLogRequestIdInput
+  requestBy: UserCreateOneWithoutLogRequestByInput
+  requestTo: UserCreateOneWithoutLogRequestToInput
+}
+
+input LogRequestCreateWithoutNetworkIdInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+  caseId: CaseCreateOneWithoutLogRequestsInput
+  applicationId: ApplicationCreateOneInput
+  personId: PersonCreateOneWithoutLogRequestsInput
+  pp: LogRequestAppCreateManyWithoutLogRequestIdInput
+  requestBy: UserCreateOneWithoutLogRequestByInput
+  requestTo: UserCreateOneWithoutLogRequestToInput
+}
+
+input LogRequestCreateWithoutPersonIdInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+  caseId: CaseCreateOneWithoutLogRequestsInput
+  applicationId: ApplicationCreateOneInput
+  networkId: NetworkCreateOneWithoutLogRequestsInput
+  pp: LogRequestAppCreateManyWithoutLogRequestIdInput
+  requestBy: UserCreateOneWithoutLogRequestByInput
+  requestTo: UserCreateOneWithoutLogRequestToInput
+}
+
+input LogRequestCreateWithoutPpInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+  caseId: CaseCreateOneWithoutLogRequestsInput
+  applicationId: ApplicationCreateOneInput
+  networkId: NetworkCreateOneWithoutLogRequestsInput
+  personId: PersonCreateOneWithoutLogRequestsInput
+  requestBy: UserCreateOneWithoutLogRequestByInput
+  requestTo: UserCreateOneWithoutLogRequestToInput
+}
+
+input LogRequestCreateWithoutRequestByInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+  caseId: CaseCreateOneWithoutLogRequestsInput
+  applicationId: ApplicationCreateOneInput
+  networkId: NetworkCreateOneWithoutLogRequestsInput
+  personId: PersonCreateOneWithoutLogRequestsInput
+  pp: LogRequestAppCreateManyWithoutLogRequestIdInput
+  requestTo: UserCreateOneWithoutLogRequestToInput
+}
+
+input LogRequestCreateWithoutRequestToInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+  caseId: CaseCreateOneWithoutLogRequestsInput
+  applicationId: ApplicationCreateOneInput
+  networkId: NetworkCreateOneWithoutLogRequestsInput
+  personId: PersonCreateOneWithoutLogRequestsInput
+  pp: LogRequestAppCreateManyWithoutLogRequestIdInput
+  requestBy: UserCreateOneWithoutLogRequestByInput
 }
 
 """An edge in a connection."""
@@ -14909,24 +16139,16 @@ type LogRequestEdge {
 enum LogRequestOrderByInput {
   ID_ASC
   ID_DESC
-  caseId_ASC
-  caseId_DESC
   isiRequest_ASC
   isiRequest_DESC
   jenisRequest_ASC
   jenisRequest_DESC
-  networkId_ASC
-  networkId_DESC
-  personId_ASC
-  personId_DESC
-  pp_ASC
-  pp_DESC
-  requestBy_ASC
-  requestBy_DESC
-  requestTo_ASC
-  requestTo_DESC
+  statusRequest_ASC
+  statusRequest_DESC
   tanggapanRequest_ASC
   tanggapanRequest_DESC
+  tanggapanRequestIsi_ASC
+  tanggapanRequestIsi_DESC
   tglExpired_ASC
   tglExpired_DESC
   tglRequest_ASC
@@ -14937,96 +16159,25 @@ enum LogRequestOrderByInput {
 
 type LogRequestPreviousValues {
   ID: Int!
-  caseId: Int
   isiRequest: String
   jenisRequest: String
-  networkId: Int
-  personId: Int
-  pp: Int
-  requestBy: Int
-  requestTo: Int
+  statusRequest: String
   tanggapanRequest: String
+  tanggapanRequestIsi: String
   tglExpired: DateTime
   tglRequest: DateTime
   tglRespon: DateTime
 }
 
-type LogRequestSubscriptionPayload {
-  mutation: MutationType!
-  node: LogRequest
-  updatedFields: [String!]
-  previousValues: LogRequestPreviousValues
-}
-
-input LogRequestSubscriptionWhereInput {
+input LogRequestScalarWhereInput {
   """Logical AND on all given filters."""
-  AND: [LogRequestSubscriptionWhereInput!]
+  AND: [LogRequestScalarWhereInput!]
 
   """Logical OR on all given filters."""
-  OR: [LogRequestSubscriptionWhereInput!]
+  OR: [LogRequestScalarWhereInput!]
 
   """Logical NOT on all given filters combined by AND."""
-  NOT: [LogRequestSubscriptionWhereInput!]
-
-  """The subscription event gets dispatched when it's listed in mutation_in"""
-  mutation_in: [MutationType!]
-
-  """
-  The subscription event gets only dispatched when one of the updated fields names is included in this list
-  """
-  updatedFields_contains: String
-
-  """
-  The subscription event gets only dispatched when all of the field names included in this list have been updated
-  """
-  updatedFields_contains_every: [String!]
-
-  """
-  The subscription event gets only dispatched when some of the field names included in this list have been updated
-  """
-  updatedFields_contains_some: [String!]
-  node: LogRequestWhereInput
-}
-
-input LogRequestUpdateInput {
-  caseId: Int
-  isiRequest: String
-  jenisRequest: String
-  networkId: Int
-  personId: Int
-  pp: Int
-  requestBy: Int
-  requestTo: Int
-  tanggapanRequest: String
-  tglExpired: DateTime
-  tglRequest: DateTime
-  tglRespon: DateTime
-}
-
-input LogRequestUpdateManyMutationInput {
-  caseId: Int
-  isiRequest: String
-  jenisRequest: String
-  networkId: Int
-  personId: Int
-  pp: Int
-  requestBy: Int
-  requestTo: Int
-  tanggapanRequest: String
-  tglExpired: DateTime
-  tglRequest: DateTime
-  tglRespon: DateTime
-}
-
-input LogRequestWhereInput {
-  """Logical AND on all given filters."""
-  AND: [LogRequestWhereInput!]
-
-  """Logical OR on all given filters."""
-  OR: [LogRequestWhereInput!]
-
-  """Logical NOT on all given filters combined by AND."""
-  NOT: [LogRequestWhereInput!]
+  NOT: [LogRequestScalarWhereInput!]
   ID: Int
 
   """All values that are not equal to given value."""
@@ -15049,28 +16200,6 @@ input LogRequestWhereInput {
 
   """All values greater than or equal the given value."""
   ID_gte: Int
-  caseId: Int
-
-  """All values that are not equal to given value."""
-  caseId_not: Int
-
-  """All values that are contained in given list."""
-  caseId_in: [Int!]
-
-  """All values that are not contained in given list."""
-  caseId_not_in: [Int!]
-
-  """All values less than the given value."""
-  caseId_lt: Int
-
-  """All values less than or equal the given value."""
-  caseId_lte: Int
-
-  """All values greater than the given value."""
-  caseId_gt: Int
-
-  """All values greater than or equal the given value."""
-  caseId_gte: Int
   isiRequest: String
 
   """All values that are not equal to given value."""
@@ -15151,116 +16280,46 @@ input LogRequestWhereInput {
 
   """All values not ending with the given string."""
   jenisRequest_not_ends_with: String
-  networkId: Int
+  statusRequest: String
 
   """All values that are not equal to given value."""
-  networkId_not: Int
+  statusRequest_not: String
 
   """All values that are contained in given list."""
-  networkId_in: [Int!]
+  statusRequest_in: [String!]
 
   """All values that are not contained in given list."""
-  networkId_not_in: [Int!]
+  statusRequest_not_in: [String!]
 
   """All values less than the given value."""
-  networkId_lt: Int
+  statusRequest_lt: String
 
   """All values less than or equal the given value."""
-  networkId_lte: Int
+  statusRequest_lte: String
 
   """All values greater than the given value."""
-  networkId_gt: Int
+  statusRequest_gt: String
 
   """All values greater than or equal the given value."""
-  networkId_gte: Int
-  personId: Int
+  statusRequest_gte: String
 
-  """All values that are not equal to given value."""
-  personId_not: Int
+  """All values containing the given string."""
+  statusRequest_contains: String
 
-  """All values that are contained in given list."""
-  personId_in: [Int!]
+  """All values not containing the given string."""
+  statusRequest_not_contains: String
 
-  """All values that are not contained in given list."""
-  personId_not_in: [Int!]
+  """All values starting with the given string."""
+  statusRequest_starts_with: String
 
-  """All values less than the given value."""
-  personId_lt: Int
+  """All values not starting with the given string."""
+  statusRequest_not_starts_with: String
 
-  """All values less than or equal the given value."""
-  personId_lte: Int
+  """All values ending with the given string."""
+  statusRequest_ends_with: String
 
-  """All values greater than the given value."""
-  personId_gt: Int
-
-  """All values greater than or equal the given value."""
-  personId_gte: Int
-  pp: Int
-
-  """All values that are not equal to given value."""
-  pp_not: Int
-
-  """All values that are contained in given list."""
-  pp_in: [Int!]
-
-  """All values that are not contained in given list."""
-  pp_not_in: [Int!]
-
-  """All values less than the given value."""
-  pp_lt: Int
-
-  """All values less than or equal the given value."""
-  pp_lte: Int
-
-  """All values greater than the given value."""
-  pp_gt: Int
-
-  """All values greater than or equal the given value."""
-  pp_gte: Int
-  requestBy: Int
-
-  """All values that are not equal to given value."""
-  requestBy_not: Int
-
-  """All values that are contained in given list."""
-  requestBy_in: [Int!]
-
-  """All values that are not contained in given list."""
-  requestBy_not_in: [Int!]
-
-  """All values less than the given value."""
-  requestBy_lt: Int
-
-  """All values less than or equal the given value."""
-  requestBy_lte: Int
-
-  """All values greater than the given value."""
-  requestBy_gt: Int
-
-  """All values greater than or equal the given value."""
-  requestBy_gte: Int
-  requestTo: Int
-
-  """All values that are not equal to given value."""
-  requestTo_not: Int
-
-  """All values that are contained in given list."""
-  requestTo_in: [Int!]
-
-  """All values that are not contained in given list."""
-  requestTo_not_in: [Int!]
-
-  """All values less than the given value."""
-  requestTo_lt: Int
-
-  """All values less than or equal the given value."""
-  requestTo_lte: Int
-
-  """All values greater than the given value."""
-  requestTo_gt: Int
-
-  """All values greater than or equal the given value."""
-  requestTo_gte: Int
+  """All values not ending with the given string."""
+  statusRequest_not_ends_with: String
   tanggapanRequest: String
 
   """All values that are not equal to given value."""
@@ -15301,6 +16360,46 @@ input LogRequestWhereInput {
 
   """All values not ending with the given string."""
   tanggapanRequest_not_ends_with: String
+  tanggapanRequestIsi: String
+
+  """All values that are not equal to given value."""
+  tanggapanRequestIsi_not: String
+
+  """All values that are contained in given list."""
+  tanggapanRequestIsi_in: [String!]
+
+  """All values that are not contained in given list."""
+  tanggapanRequestIsi_not_in: [String!]
+
+  """All values less than the given value."""
+  tanggapanRequestIsi_lt: String
+
+  """All values less than or equal the given value."""
+  tanggapanRequestIsi_lte: String
+
+  """All values greater than the given value."""
+  tanggapanRequestIsi_gt: String
+
+  """All values greater than or equal the given value."""
+  tanggapanRequestIsi_gte: String
+
+  """All values containing the given string."""
+  tanggapanRequestIsi_contains: String
+
+  """All values not containing the given string."""
+  tanggapanRequestIsi_not_contains: String
+
+  """All values starting with the given string."""
+  tanggapanRequestIsi_starts_with: String
+
+  """All values not starting with the given string."""
+  tanggapanRequestIsi_not_starts_with: String
+
+  """All values ending with the given string."""
+  tanggapanRequestIsi_ends_with: String
+
+  """All values not ending with the given string."""
+  tanggapanRequestIsi_not_ends_with: String
   tglExpired: DateTime
 
   """All values that are not equal to given value."""
@@ -15367,6 +16466,668 @@ input LogRequestWhereInput {
 
   """All values greater than or equal the given value."""
   tglRespon_gte: DateTime
+}
+
+type LogRequestSubscriptionPayload {
+  mutation: MutationType!
+  node: LogRequest
+  updatedFields: [String!]
+  previousValues: LogRequestPreviousValues
+}
+
+input LogRequestSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [LogRequestSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [LogRequestSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [LogRequestSubscriptionWhereInput!]
+
+  """The subscription event gets dispatched when it's listed in mutation_in"""
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: LogRequestWhereInput
+}
+
+input LogRequestUpdateDataInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+  caseId: CaseUpdateOneWithoutLogRequestsInput
+  applicationId: ApplicationUpdateOneInput
+  networkId: NetworkUpdateOneWithoutLogRequestsInput
+  personId: PersonUpdateOneWithoutLogRequestsInput
+  pp: LogRequestAppUpdateManyWithoutLogRequestIdInput
+  requestBy: UserUpdateOneWithoutLogRequestByInput
+  requestTo: UserUpdateOneWithoutLogRequestToInput
+}
+
+input LogRequestUpdateInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+  caseId: CaseUpdateOneWithoutLogRequestsInput
+  applicationId: ApplicationUpdateOneInput
+  networkId: NetworkUpdateOneWithoutLogRequestsInput
+  personId: PersonUpdateOneWithoutLogRequestsInput
+  pp: LogRequestAppUpdateManyWithoutLogRequestIdInput
+  requestBy: UserUpdateOneWithoutLogRequestByInput
+  requestTo: UserUpdateOneWithoutLogRequestToInput
+}
+
+input LogRequestUpdateManyDataInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+}
+
+input LogRequestUpdateManyInput {
+  create: [LogRequestCreateInput!]
+  connect: [LogRequestWhereUniqueInput!]
+  set: [LogRequestWhereUniqueInput!]
+  disconnect: [LogRequestWhereUniqueInput!]
+  delete: [LogRequestWhereUniqueInput!]
+  update: [LogRequestUpdateWithWhereUniqueNestedInput!]
+  updateMany: [LogRequestUpdateManyWithWhereNestedInput!]
+  deleteMany: [LogRequestScalarWhereInput!]
+  upsert: [LogRequestUpsertWithWhereUniqueNestedInput!]
+}
+
+input LogRequestUpdateManyMutationInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+}
+
+input LogRequestUpdateManyWithoutCaseIdInput {
+  create: [LogRequestCreateWithoutCaseIdInput!]
+  connect: [LogRequestWhereUniqueInput!]
+  set: [LogRequestWhereUniqueInput!]
+  disconnect: [LogRequestWhereUniqueInput!]
+  delete: [LogRequestWhereUniqueInput!]
+  update: [LogRequestUpdateWithWhereUniqueWithoutCaseIdInput!]
+  updateMany: [LogRequestUpdateManyWithWhereNestedInput!]
+  deleteMany: [LogRequestScalarWhereInput!]
+  upsert: [LogRequestUpsertWithWhereUniqueWithoutCaseIdInput!]
+}
+
+input LogRequestUpdateManyWithoutNetworkIdInput {
+  create: [LogRequestCreateWithoutNetworkIdInput!]
+  connect: [LogRequestWhereUniqueInput!]
+  set: [LogRequestWhereUniqueInput!]
+  disconnect: [LogRequestWhereUniqueInput!]
+  delete: [LogRequestWhereUniqueInput!]
+  update: [LogRequestUpdateWithWhereUniqueWithoutNetworkIdInput!]
+  updateMany: [LogRequestUpdateManyWithWhereNestedInput!]
+  deleteMany: [LogRequestScalarWhereInput!]
+  upsert: [LogRequestUpsertWithWhereUniqueWithoutNetworkIdInput!]
+}
+
+input LogRequestUpdateManyWithoutPersonIdInput {
+  create: [LogRequestCreateWithoutPersonIdInput!]
+  connect: [LogRequestWhereUniqueInput!]
+  set: [LogRequestWhereUniqueInput!]
+  disconnect: [LogRequestWhereUniqueInput!]
+  delete: [LogRequestWhereUniqueInput!]
+  update: [LogRequestUpdateWithWhereUniqueWithoutPersonIdInput!]
+  updateMany: [LogRequestUpdateManyWithWhereNestedInput!]
+  deleteMany: [LogRequestScalarWhereInput!]
+  upsert: [LogRequestUpsertWithWhereUniqueWithoutPersonIdInput!]
+}
+
+input LogRequestUpdateManyWithoutRequestByInput {
+  create: [LogRequestCreateWithoutRequestByInput!]
+  connect: [LogRequestWhereUniqueInput!]
+  set: [LogRequestWhereUniqueInput!]
+  disconnect: [LogRequestWhereUniqueInput!]
+  delete: [LogRequestWhereUniqueInput!]
+  update: [LogRequestUpdateWithWhereUniqueWithoutRequestByInput!]
+  updateMany: [LogRequestUpdateManyWithWhereNestedInput!]
+  deleteMany: [LogRequestScalarWhereInput!]
+  upsert: [LogRequestUpsertWithWhereUniqueWithoutRequestByInput!]
+}
+
+input LogRequestUpdateManyWithoutRequestToInput {
+  create: [LogRequestCreateWithoutRequestToInput!]
+  connect: [LogRequestWhereUniqueInput!]
+  set: [LogRequestWhereUniqueInput!]
+  disconnect: [LogRequestWhereUniqueInput!]
+  delete: [LogRequestWhereUniqueInput!]
+  update: [LogRequestUpdateWithWhereUniqueWithoutRequestToInput!]
+  updateMany: [LogRequestUpdateManyWithWhereNestedInput!]
+  deleteMany: [LogRequestScalarWhereInput!]
+  upsert: [LogRequestUpsertWithWhereUniqueWithoutRequestToInput!]
+}
+
+input LogRequestUpdateManyWithWhereNestedInput {
+  where: LogRequestScalarWhereInput!
+  data: LogRequestUpdateManyDataInput!
+}
+
+input LogRequestUpdateOneWithoutPpInput {
+  create: LogRequestCreateWithoutPpInput
+  connect: LogRequestWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: LogRequestUpdateWithoutPpDataInput
+  upsert: LogRequestUpsertWithoutPpInput
+}
+
+input LogRequestUpdateWithoutCaseIdDataInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+  applicationId: ApplicationUpdateOneInput
+  networkId: NetworkUpdateOneWithoutLogRequestsInput
+  personId: PersonUpdateOneWithoutLogRequestsInput
+  pp: LogRequestAppUpdateManyWithoutLogRequestIdInput
+  requestBy: UserUpdateOneWithoutLogRequestByInput
+  requestTo: UserUpdateOneWithoutLogRequestToInput
+}
+
+input LogRequestUpdateWithoutNetworkIdDataInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+  caseId: CaseUpdateOneWithoutLogRequestsInput
+  applicationId: ApplicationUpdateOneInput
+  personId: PersonUpdateOneWithoutLogRequestsInput
+  pp: LogRequestAppUpdateManyWithoutLogRequestIdInput
+  requestBy: UserUpdateOneWithoutLogRequestByInput
+  requestTo: UserUpdateOneWithoutLogRequestToInput
+}
+
+input LogRequestUpdateWithoutPersonIdDataInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+  caseId: CaseUpdateOneWithoutLogRequestsInput
+  applicationId: ApplicationUpdateOneInput
+  networkId: NetworkUpdateOneWithoutLogRequestsInput
+  pp: LogRequestAppUpdateManyWithoutLogRequestIdInput
+  requestBy: UserUpdateOneWithoutLogRequestByInput
+  requestTo: UserUpdateOneWithoutLogRequestToInput
+}
+
+input LogRequestUpdateWithoutPpDataInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+  caseId: CaseUpdateOneWithoutLogRequestsInput
+  applicationId: ApplicationUpdateOneInput
+  networkId: NetworkUpdateOneWithoutLogRequestsInput
+  personId: PersonUpdateOneWithoutLogRequestsInput
+  requestBy: UserUpdateOneWithoutLogRequestByInput
+  requestTo: UserUpdateOneWithoutLogRequestToInput
+}
+
+input LogRequestUpdateWithoutRequestByDataInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+  caseId: CaseUpdateOneWithoutLogRequestsInput
+  applicationId: ApplicationUpdateOneInput
+  networkId: NetworkUpdateOneWithoutLogRequestsInput
+  personId: PersonUpdateOneWithoutLogRequestsInput
+  pp: LogRequestAppUpdateManyWithoutLogRequestIdInput
+  requestTo: UserUpdateOneWithoutLogRequestToInput
+}
+
+input LogRequestUpdateWithoutRequestToDataInput {
+  isiRequest: String
+  jenisRequest: String
+  statusRequest: String
+  tanggapanRequest: String
+  tanggapanRequestIsi: String
+  tglExpired: DateTime
+  tglRequest: DateTime
+  tglRespon: DateTime
+  caseId: CaseUpdateOneWithoutLogRequestsInput
+  applicationId: ApplicationUpdateOneInput
+  networkId: NetworkUpdateOneWithoutLogRequestsInput
+  personId: PersonUpdateOneWithoutLogRequestsInput
+  pp: LogRequestAppUpdateManyWithoutLogRequestIdInput
+  requestBy: UserUpdateOneWithoutLogRequestByInput
+}
+
+input LogRequestUpdateWithWhereUniqueNestedInput {
+  where: LogRequestWhereUniqueInput!
+  data: LogRequestUpdateDataInput!
+}
+
+input LogRequestUpdateWithWhereUniqueWithoutCaseIdInput {
+  where: LogRequestWhereUniqueInput!
+  data: LogRequestUpdateWithoutCaseIdDataInput!
+}
+
+input LogRequestUpdateWithWhereUniqueWithoutNetworkIdInput {
+  where: LogRequestWhereUniqueInput!
+  data: LogRequestUpdateWithoutNetworkIdDataInput!
+}
+
+input LogRequestUpdateWithWhereUniqueWithoutPersonIdInput {
+  where: LogRequestWhereUniqueInput!
+  data: LogRequestUpdateWithoutPersonIdDataInput!
+}
+
+input LogRequestUpdateWithWhereUniqueWithoutRequestByInput {
+  where: LogRequestWhereUniqueInput!
+  data: LogRequestUpdateWithoutRequestByDataInput!
+}
+
+input LogRequestUpdateWithWhereUniqueWithoutRequestToInput {
+  where: LogRequestWhereUniqueInput!
+  data: LogRequestUpdateWithoutRequestToDataInput!
+}
+
+input LogRequestUpsertWithoutPpInput {
+  update: LogRequestUpdateWithoutPpDataInput!
+  create: LogRequestCreateWithoutPpInput!
+}
+
+input LogRequestUpsertWithWhereUniqueNestedInput {
+  where: LogRequestWhereUniqueInput!
+  update: LogRequestUpdateDataInput!
+  create: LogRequestCreateInput!
+}
+
+input LogRequestUpsertWithWhereUniqueWithoutCaseIdInput {
+  where: LogRequestWhereUniqueInput!
+  update: LogRequestUpdateWithoutCaseIdDataInput!
+  create: LogRequestCreateWithoutCaseIdInput!
+}
+
+input LogRequestUpsertWithWhereUniqueWithoutNetworkIdInput {
+  where: LogRequestWhereUniqueInput!
+  update: LogRequestUpdateWithoutNetworkIdDataInput!
+  create: LogRequestCreateWithoutNetworkIdInput!
+}
+
+input LogRequestUpsertWithWhereUniqueWithoutPersonIdInput {
+  where: LogRequestWhereUniqueInput!
+  update: LogRequestUpdateWithoutPersonIdDataInput!
+  create: LogRequestCreateWithoutPersonIdInput!
+}
+
+input LogRequestUpsertWithWhereUniqueWithoutRequestByInput {
+  where: LogRequestWhereUniqueInput!
+  update: LogRequestUpdateWithoutRequestByDataInput!
+  create: LogRequestCreateWithoutRequestByInput!
+}
+
+input LogRequestUpsertWithWhereUniqueWithoutRequestToInput {
+  where: LogRequestWhereUniqueInput!
+  update: LogRequestUpdateWithoutRequestToDataInput!
+  create: LogRequestCreateWithoutRequestToInput!
+}
+
+input LogRequestWhereInput {
+  """Logical AND on all given filters."""
+  AND: [LogRequestWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [LogRequestWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [LogRequestWhereInput!]
+  ID: Int
+
+  """All values that are not equal to given value."""
+  ID_not: Int
+
+  """All values that are contained in given list."""
+  ID_in: [Int!]
+
+  """All values that are not contained in given list."""
+  ID_not_in: [Int!]
+
+  """All values less than the given value."""
+  ID_lt: Int
+
+  """All values less than or equal the given value."""
+  ID_lte: Int
+
+  """All values greater than the given value."""
+  ID_gt: Int
+
+  """All values greater than or equal the given value."""
+  ID_gte: Int
+  isiRequest: String
+
+  """All values that are not equal to given value."""
+  isiRequest_not: String
+
+  """All values that are contained in given list."""
+  isiRequest_in: [String!]
+
+  """All values that are not contained in given list."""
+  isiRequest_not_in: [String!]
+
+  """All values less than the given value."""
+  isiRequest_lt: String
+
+  """All values less than or equal the given value."""
+  isiRequest_lte: String
+
+  """All values greater than the given value."""
+  isiRequest_gt: String
+
+  """All values greater than or equal the given value."""
+  isiRequest_gte: String
+
+  """All values containing the given string."""
+  isiRequest_contains: String
+
+  """All values not containing the given string."""
+  isiRequest_not_contains: String
+
+  """All values starting with the given string."""
+  isiRequest_starts_with: String
+
+  """All values not starting with the given string."""
+  isiRequest_not_starts_with: String
+
+  """All values ending with the given string."""
+  isiRequest_ends_with: String
+
+  """All values not ending with the given string."""
+  isiRequest_not_ends_with: String
+  jenisRequest: String
+
+  """All values that are not equal to given value."""
+  jenisRequest_not: String
+
+  """All values that are contained in given list."""
+  jenisRequest_in: [String!]
+
+  """All values that are not contained in given list."""
+  jenisRequest_not_in: [String!]
+
+  """All values less than the given value."""
+  jenisRequest_lt: String
+
+  """All values less than or equal the given value."""
+  jenisRequest_lte: String
+
+  """All values greater than the given value."""
+  jenisRequest_gt: String
+
+  """All values greater than or equal the given value."""
+  jenisRequest_gte: String
+
+  """All values containing the given string."""
+  jenisRequest_contains: String
+
+  """All values not containing the given string."""
+  jenisRequest_not_contains: String
+
+  """All values starting with the given string."""
+  jenisRequest_starts_with: String
+
+  """All values not starting with the given string."""
+  jenisRequest_not_starts_with: String
+
+  """All values ending with the given string."""
+  jenisRequest_ends_with: String
+
+  """All values not ending with the given string."""
+  jenisRequest_not_ends_with: String
+  statusRequest: String
+
+  """All values that are not equal to given value."""
+  statusRequest_not: String
+
+  """All values that are contained in given list."""
+  statusRequest_in: [String!]
+
+  """All values that are not contained in given list."""
+  statusRequest_not_in: [String!]
+
+  """All values less than the given value."""
+  statusRequest_lt: String
+
+  """All values less than or equal the given value."""
+  statusRequest_lte: String
+
+  """All values greater than the given value."""
+  statusRequest_gt: String
+
+  """All values greater than or equal the given value."""
+  statusRequest_gte: String
+
+  """All values containing the given string."""
+  statusRequest_contains: String
+
+  """All values not containing the given string."""
+  statusRequest_not_contains: String
+
+  """All values starting with the given string."""
+  statusRequest_starts_with: String
+
+  """All values not starting with the given string."""
+  statusRequest_not_starts_with: String
+
+  """All values ending with the given string."""
+  statusRequest_ends_with: String
+
+  """All values not ending with the given string."""
+  statusRequest_not_ends_with: String
+  tanggapanRequest: String
+
+  """All values that are not equal to given value."""
+  tanggapanRequest_not: String
+
+  """All values that are contained in given list."""
+  tanggapanRequest_in: [String!]
+
+  """All values that are not contained in given list."""
+  tanggapanRequest_not_in: [String!]
+
+  """All values less than the given value."""
+  tanggapanRequest_lt: String
+
+  """All values less than or equal the given value."""
+  tanggapanRequest_lte: String
+
+  """All values greater than the given value."""
+  tanggapanRequest_gt: String
+
+  """All values greater than or equal the given value."""
+  tanggapanRequest_gte: String
+
+  """All values containing the given string."""
+  tanggapanRequest_contains: String
+
+  """All values not containing the given string."""
+  tanggapanRequest_not_contains: String
+
+  """All values starting with the given string."""
+  tanggapanRequest_starts_with: String
+
+  """All values not starting with the given string."""
+  tanggapanRequest_not_starts_with: String
+
+  """All values ending with the given string."""
+  tanggapanRequest_ends_with: String
+
+  """All values not ending with the given string."""
+  tanggapanRequest_not_ends_with: String
+  tanggapanRequestIsi: String
+
+  """All values that are not equal to given value."""
+  tanggapanRequestIsi_not: String
+
+  """All values that are contained in given list."""
+  tanggapanRequestIsi_in: [String!]
+
+  """All values that are not contained in given list."""
+  tanggapanRequestIsi_not_in: [String!]
+
+  """All values less than the given value."""
+  tanggapanRequestIsi_lt: String
+
+  """All values less than or equal the given value."""
+  tanggapanRequestIsi_lte: String
+
+  """All values greater than the given value."""
+  tanggapanRequestIsi_gt: String
+
+  """All values greater than or equal the given value."""
+  tanggapanRequestIsi_gte: String
+
+  """All values containing the given string."""
+  tanggapanRequestIsi_contains: String
+
+  """All values not containing the given string."""
+  tanggapanRequestIsi_not_contains: String
+
+  """All values starting with the given string."""
+  tanggapanRequestIsi_starts_with: String
+
+  """All values not starting with the given string."""
+  tanggapanRequestIsi_not_starts_with: String
+
+  """All values ending with the given string."""
+  tanggapanRequestIsi_ends_with: String
+
+  """All values not ending with the given string."""
+  tanggapanRequestIsi_not_ends_with: String
+  tglExpired: DateTime
+
+  """All values that are not equal to given value."""
+  tglExpired_not: DateTime
+
+  """All values that are contained in given list."""
+  tglExpired_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  tglExpired_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  tglExpired_lt: DateTime
+
+  """All values less than or equal the given value."""
+  tglExpired_lte: DateTime
+
+  """All values greater than the given value."""
+  tglExpired_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  tglExpired_gte: DateTime
+  tglRequest: DateTime
+
+  """All values that are not equal to given value."""
+  tglRequest_not: DateTime
+
+  """All values that are contained in given list."""
+  tglRequest_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  tglRequest_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  tglRequest_lt: DateTime
+
+  """All values less than or equal the given value."""
+  tglRequest_lte: DateTime
+
+  """All values greater than the given value."""
+  tglRequest_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  tglRequest_gte: DateTime
+  tglRespon: DateTime
+
+  """All values that are not equal to given value."""
+  tglRespon_not: DateTime
+
+  """All values that are contained in given list."""
+  tglRespon_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  tglRespon_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  tglRespon_lt: DateTime
+
+  """All values less than or equal the given value."""
+  tglRespon_lte: DateTime
+
+  """All values greater than the given value."""
+  tglRespon_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  tglRespon_gte: DateTime
+  caseId: CaseWhereInput
+  applicationId: ApplicationWhereInput
+  networkId: NetworkWhereInput
+  personId: PersonWhereInput
+  pp_every: LogRequestAppWhereInput
+  pp_some: LogRequestAppWhereInput
+  pp_none: LogRequestAppWhereInput
+  requestBy: UserWhereInput
+  requestTo: UserWhereInput
 }
 
 input LogRequestWhereUniqueInput {
@@ -16113,7 +17874,6 @@ input MtVocabWhereUniqueInput {
 }
 
 type Mutation {
-  createApplication(data: ApplicationCreateInput!): Application!
   createCase(data: CaseCreateInput!): Case!
   createCaseClassification(data: CaseClassificationCreateInput!): CaseClassification!
   createCaseConsultation(data: CaseConsultationCreateInput!): CaseConsultation!
@@ -16128,22 +17888,25 @@ type Mutation {
   createCaseProgressActivityLit(data: CaseProgressActivityLitCreateInput!): CaseProgressActivityLit!
   createCaseProgressActivityNonlit(data: CaseProgressActivityNonlitCreateInput!): CaseProgressActivityNonlit!
   createCaseTransferReferral(data: CaseTransferReferralCreateInput!): CaseTransferReferral!
+  createCaseTransfer(data: CaseTransferCreateInput!): CaseTransfer!
+  createCaseReferral(data: CaseReferralCreateInput!): CaseReferral!
   createCaseViolatedRight(data: CaseViolatedRightCreateInput!): CaseViolatedRight!
   createClient(data: ClientCreateInput!): Client!
   createDaftarPengacara(data: DaftarPengacaraCreateInput!): DaftarPengacara!
   createDataDict(data: DataDictCreateInput!): DataDict!
   createDataDictLocal(data: DataDictLocalCreateInput!): DataDictLocal!
-  createLogRequest(data: LogRequestCreateInput!): LogRequest!
   createLogRequestApp(data: LogRequestAppCreateInput!): LogRequestApp!
   createMtVocab(data: MtVocabCreateInput!): MtVocab!
   createMtVocabGroup(data: MtVocabGroupCreateInput!): MtVocabGroup!
-  createNetwork(data: NetworkCreateInput!): Network!
-  createPerson(data: PersonCreateInput!): Person!
   createPersonDocument(data: PersonDocumentCreateInput!): PersonDocument!
   createRole(data: RoleCreateInput!): Role!
-  createUser(data: UserCreateInput!): User!
   createUserProfile(data: UserProfileCreateInput!): UserProfile!
-  updateApplication(data: ApplicationUpdateInput!, where: ApplicationWhereUniqueInput!): Application
+  createApplication(data: ApplicationCreateInput!): Application!
+  createLogRequest(data: LogRequestCreateInput!): LogRequest!
+  createRolesType(data: RolesTypeCreateInput!): RolesType!
+  createNetwork(data: NetworkCreateInput!): Network!
+  createUser(data: UserCreateInput!): User!
+  createPerson(data: PersonCreateInput!): Person!
   updateCase(data: CaseUpdateInput!, where: CaseWhereUniqueInput!): Case
   updateCaseClassification(data: CaseClassificationUpdateInput!, where: CaseClassificationWhereUniqueInput!): CaseClassification
   updateCaseConsultation(data: CaseConsultationUpdateInput!, where: CaseConsultationWhereUniqueInput!): CaseConsultation
@@ -16158,22 +17921,25 @@ type Mutation {
   updateCaseProgressActivityLit(data: CaseProgressActivityLitUpdateInput!, where: CaseProgressActivityLitWhereUniqueInput!): CaseProgressActivityLit
   updateCaseProgressActivityNonlit(data: CaseProgressActivityNonlitUpdateInput!, where: CaseProgressActivityNonlitWhereUniqueInput!): CaseProgressActivityNonlit
   updateCaseTransferReferral(data: CaseTransferReferralUpdateInput!, where: CaseTransferReferralWhereUniqueInput!): CaseTransferReferral
+  updateCaseTransfer(data: CaseTransferUpdateInput!, where: CaseTransferWhereUniqueInput!): CaseTransfer
+  updateCaseReferral(data: CaseReferralUpdateInput!, where: CaseReferralWhereUniqueInput!): CaseReferral
   updateCaseViolatedRight(data: CaseViolatedRightUpdateInput!, where: CaseViolatedRightWhereUniqueInput!): CaseViolatedRight
   updateClient(data: ClientUpdateInput!, where: ClientWhereUniqueInput!): Client
   updateDaftarPengacara(data: DaftarPengacaraUpdateInput!, where: DaftarPengacaraWhereUniqueInput!): DaftarPengacara
   updateDataDict(data: DataDictUpdateInput!, where: DataDictWhereUniqueInput!): DataDict
   updateDataDictLocal(data: DataDictLocalUpdateInput!, where: DataDictLocalWhereUniqueInput!): DataDictLocal
-  updateLogRequest(data: LogRequestUpdateInput!, where: LogRequestWhereUniqueInput!): LogRequest
   updateLogRequestApp(data: LogRequestAppUpdateInput!, where: LogRequestAppWhereUniqueInput!): LogRequestApp
   updateMtVocab(data: MtVocabUpdateInput!, where: MtVocabWhereUniqueInput!): MtVocab
   updateMtVocabGroup(data: MtVocabGroupUpdateInput!, where: MtVocabGroupWhereUniqueInput!): MtVocabGroup
-  updateNetwork(data: NetworkUpdateInput!, where: NetworkWhereUniqueInput!): Network
-  updatePerson(data: PersonUpdateInput!, where: PersonWhereUniqueInput!): Person
   updatePersonDocument(data: PersonDocumentUpdateInput!, where: PersonDocumentWhereUniqueInput!): PersonDocument
   updateRole(data: RoleUpdateInput!, where: RoleWhereUniqueInput!): Role
-  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
   updateUserProfile(data: UserProfileUpdateInput!, where: UserProfileWhereUniqueInput!): UserProfile
-  deleteApplication(where: ApplicationWhereUniqueInput!): Application
+  updateApplication(data: ApplicationUpdateInput!, where: ApplicationWhereUniqueInput!): Application
+  updateLogRequest(data: LogRequestUpdateInput!, where: LogRequestWhereUniqueInput!): LogRequest
+  updateRolesType(data: RolesTypeUpdateInput!, where: RolesTypeWhereUniqueInput!): RolesType
+  updateNetwork(data: NetworkUpdateInput!, where: NetworkWhereUniqueInput!): Network
+  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
+  updatePerson(data: PersonUpdateInput!, where: PersonWhereUniqueInput!): Person
   deleteCase(where: CaseWhereUniqueInput!): Case
   deleteCaseClassification(where: CaseClassificationWhereUniqueInput!): CaseClassification
   deleteCaseConsultation(where: CaseConsultationWhereUniqueInput!): CaseConsultation
@@ -16188,22 +17954,25 @@ type Mutation {
   deleteCaseProgressActivityLit(where: CaseProgressActivityLitWhereUniqueInput!): CaseProgressActivityLit
   deleteCaseProgressActivityNonlit(where: CaseProgressActivityNonlitWhereUniqueInput!): CaseProgressActivityNonlit
   deleteCaseTransferReferral(where: CaseTransferReferralWhereUniqueInput!): CaseTransferReferral
+  deleteCaseTransfer(where: CaseTransferWhereUniqueInput!): CaseTransfer
+  deleteCaseReferral(where: CaseReferralWhereUniqueInput!): CaseReferral
   deleteCaseViolatedRight(where: CaseViolatedRightWhereUniqueInput!): CaseViolatedRight
   deleteClient(where: ClientWhereUniqueInput!): Client
   deleteDaftarPengacara(where: DaftarPengacaraWhereUniqueInput!): DaftarPengacara
   deleteDataDict(where: DataDictWhereUniqueInput!): DataDict
   deleteDataDictLocal(where: DataDictLocalWhereUniqueInput!): DataDictLocal
-  deleteLogRequest(where: LogRequestWhereUniqueInput!): LogRequest
   deleteLogRequestApp(where: LogRequestAppWhereUniqueInput!): LogRequestApp
   deleteMtVocab(where: MtVocabWhereUniqueInput!): MtVocab
   deleteMtVocabGroup(where: MtVocabGroupWhereUniqueInput!): MtVocabGroup
-  deleteNetwork(where: NetworkWhereUniqueInput!): Network
-  deletePerson(where: PersonWhereUniqueInput!): Person
   deletePersonDocument(where: PersonDocumentWhereUniqueInput!): PersonDocument
   deleteRole(where: RoleWhereUniqueInput!): Role
-  deleteUser(where: UserWhereUniqueInput!): User
   deleteUserProfile(where: UserProfileWhereUniqueInput!): UserProfile
-  upsertApplication(where: ApplicationWhereUniqueInput!, create: ApplicationCreateInput!, update: ApplicationUpdateInput!): Application!
+  deleteApplication(where: ApplicationWhereUniqueInput!): Application
+  deleteLogRequest(where: LogRequestWhereUniqueInput!): LogRequest
+  deleteRolesType(where: RolesTypeWhereUniqueInput!): RolesType
+  deleteNetwork(where: NetworkWhereUniqueInput!): Network
+  deleteUser(where: UserWhereUniqueInput!): User
+  deletePerson(where: PersonWhereUniqueInput!): Person
   upsertCase(where: CaseWhereUniqueInput!, create: CaseCreateInput!, update: CaseUpdateInput!): Case!
   upsertCaseClassification(where: CaseClassificationWhereUniqueInput!, create: CaseClassificationCreateInput!, update: CaseClassificationUpdateInput!): CaseClassification!
   upsertCaseConsultation(where: CaseConsultationWhereUniqueInput!, create: CaseConsultationCreateInput!, update: CaseConsultationUpdateInput!): CaseConsultation!
@@ -16218,26 +17987,28 @@ type Mutation {
   upsertCaseProgressActivityLit(where: CaseProgressActivityLitWhereUniqueInput!, create: CaseProgressActivityLitCreateInput!, update: CaseProgressActivityLitUpdateInput!): CaseProgressActivityLit!
   upsertCaseProgressActivityNonlit(where: CaseProgressActivityNonlitWhereUniqueInput!, create: CaseProgressActivityNonlitCreateInput!, update: CaseProgressActivityNonlitUpdateInput!): CaseProgressActivityNonlit!
   upsertCaseTransferReferral(where: CaseTransferReferralWhereUniqueInput!, create: CaseTransferReferralCreateInput!, update: CaseTransferReferralUpdateInput!): CaseTransferReferral!
+  upsertCaseTransfer(where: CaseTransferWhereUniqueInput!, create: CaseTransferCreateInput!, update: CaseTransferUpdateInput!): CaseTransfer!
+  upsertCaseReferral(where: CaseReferralWhereUniqueInput!, create: CaseReferralCreateInput!, update: CaseReferralUpdateInput!): CaseReferral!
   upsertCaseViolatedRight(where: CaseViolatedRightWhereUniqueInput!, create: CaseViolatedRightCreateInput!, update: CaseViolatedRightUpdateInput!): CaseViolatedRight!
   upsertClient(where: ClientWhereUniqueInput!, create: ClientCreateInput!, update: ClientUpdateInput!): Client!
   upsertDaftarPengacara(where: DaftarPengacaraWhereUniqueInput!, create: DaftarPengacaraCreateInput!, update: DaftarPengacaraUpdateInput!): DaftarPengacara!
   upsertDataDict(where: DataDictWhereUniqueInput!, create: DataDictCreateInput!, update: DataDictUpdateInput!): DataDict!
   upsertDataDictLocal(where: DataDictLocalWhereUniqueInput!, create: DataDictLocalCreateInput!, update: DataDictLocalUpdateInput!): DataDictLocal!
-  upsertLogRequest(where: LogRequestWhereUniqueInput!, create: LogRequestCreateInput!, update: LogRequestUpdateInput!): LogRequest!
   upsertLogRequestApp(where: LogRequestAppWhereUniqueInput!, create: LogRequestAppCreateInput!, update: LogRequestAppUpdateInput!): LogRequestApp!
   upsertMtVocab(where: MtVocabWhereUniqueInput!, create: MtVocabCreateInput!, update: MtVocabUpdateInput!): MtVocab!
   upsertMtVocabGroup(where: MtVocabGroupWhereUniqueInput!, create: MtVocabGroupCreateInput!, update: MtVocabGroupUpdateInput!): MtVocabGroup!
-  upsertNetwork(where: NetworkWhereUniqueInput!, create: NetworkCreateInput!, update: NetworkUpdateInput!): Network!
-  upsertPerson(where: PersonWhereUniqueInput!, create: PersonCreateInput!, update: PersonUpdateInput!): Person!
   upsertPersonDocument(where: PersonDocumentWhereUniqueInput!, create: PersonDocumentCreateInput!, update: PersonDocumentUpdateInput!): PersonDocument!
   upsertRole(where: RoleWhereUniqueInput!, create: RoleCreateInput!, update: RoleUpdateInput!): Role!
-  upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
   upsertUserProfile(where: UserProfileWhereUniqueInput!, create: UserProfileCreateInput!, update: UserProfileUpdateInput!): UserProfile!
-  updateManyApplications(data: ApplicationUpdateManyMutationInput!, where: ApplicationWhereInput): BatchPayload!
+  upsertApplication(where: ApplicationWhereUniqueInput!, create: ApplicationCreateInput!, update: ApplicationUpdateInput!): Application!
+  upsertLogRequest(where: LogRequestWhereUniqueInput!, create: LogRequestCreateInput!, update: LogRequestUpdateInput!): LogRequest!
+  upsertRolesType(where: RolesTypeWhereUniqueInput!, create: RolesTypeCreateInput!, update: RolesTypeUpdateInput!): RolesType!
+  upsertNetwork(where: NetworkWhereUniqueInput!, create: NetworkCreateInput!, update: NetworkUpdateInput!): Network!
+  upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
+  upsertPerson(where: PersonWhereUniqueInput!, create: PersonCreateInput!, update: PersonUpdateInput!): Person!
   updateManyCases(data: CaseUpdateManyMutationInput!, where: CaseWhereInput): BatchPayload!
   updateManyCaseClassifications(data: CaseClassificationUpdateManyMutationInput!, where: CaseClassificationWhereInput): BatchPayload!
   updateManyCaseConsultations(data: CaseConsultationUpdateManyMutationInput!, where: CaseConsultationWhereInput): BatchPayload!
-  updateManyCaseConsultationApps(data: CaseConsultationAppUpdateManyMutationInput!, where: CaseConsultationAppWhereInput): BatchPayload!
   updateManyCaseDocuments(data: CaseDocumentUpdateManyMutationInput!, where: CaseDocumentWhereInput): BatchPayload!
   updateManyCaseIssues(data: CaseIssueUpdateManyMutationInput!, where: CaseIssueWhereInput): BatchPayload!
   updateManyCasePks(data: CasePkUpdateManyMutationInput!, where: CasePkWhereInput): BatchPayload!
@@ -16246,22 +18017,23 @@ type Mutation {
   updateManyCaseProgressActivityLits(data: CaseProgressActivityLitUpdateManyMutationInput!, where: CaseProgressActivityLitWhereInput): BatchPayload!
   updateManyCaseProgressActivityNonlits(data: CaseProgressActivityNonlitUpdateManyMutationInput!, where: CaseProgressActivityNonlitWhereInput): BatchPayload!
   updateManyCaseTransferReferrals(data: CaseTransferReferralUpdateManyMutationInput!, where: CaseTransferReferralWhereInput): BatchPayload!
+  updateManyCaseTransfers(data: CaseTransferUpdateManyMutationInput!, where: CaseTransferWhereInput): BatchPayload!
+  updateManyCaseReferrals(data: CaseReferralUpdateManyMutationInput!, where: CaseReferralWhereInput): BatchPayload!
   updateManyCaseViolatedRights(data: CaseViolatedRightUpdateManyMutationInput!, where: CaseViolatedRightWhereInput): BatchPayload!
   updateManyClients(data: ClientUpdateManyMutationInput!, where: ClientWhereInput): BatchPayload!
   updateManyDaftarPengacaras(data: DaftarPengacaraUpdateManyMutationInput!, where: DaftarPengacaraWhereInput): BatchPayload!
   updateManyDataDicts(data: DataDictUpdateManyMutationInput!, where: DataDictWhereInput): BatchPayload!
   updateManyDataDictLocals(data: DataDictLocalUpdateManyMutationInput!, where: DataDictLocalWhereInput): BatchPayload!
-  updateManyLogRequests(data: LogRequestUpdateManyMutationInput!, where: LogRequestWhereInput): BatchPayload!
-  updateManyLogRequestApps(data: LogRequestAppUpdateManyMutationInput!, where: LogRequestAppWhereInput): BatchPayload!
   updateManyMtVocabs(data: MtVocabUpdateManyMutationInput!, where: MtVocabWhereInput): BatchPayload!
   updateManyMtVocabGroups(data: MtVocabGroupUpdateManyMutationInput!, where: MtVocabGroupWhereInput): BatchPayload!
-  updateManyNetworks(data: NetworkUpdateManyMutationInput!, where: NetworkWhereInput): BatchPayload!
-  updateManyPersons(data: PersonUpdateManyMutationInput!, where: PersonWhereInput): BatchPayload!
   updateManyPersonDocuments(data: PersonDocumentUpdateManyMutationInput!, where: PersonDocumentWhereInput): BatchPayload!
-  updateManyRoles(data: RoleUpdateManyMutationInput!, where: RoleWhereInput): BatchPayload!
-  updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
   updateManyUserProfiles(data: UserProfileUpdateManyMutationInput!, where: UserProfileWhereInput): BatchPayload!
-  deleteManyApplications(where: ApplicationWhereInput): BatchPayload!
+  updateManyApplications(data: ApplicationUpdateManyMutationInput!, where: ApplicationWhereInput): BatchPayload!
+  updateManyLogRequests(data: LogRequestUpdateManyMutationInput!, where: LogRequestWhereInput): BatchPayload!
+  updateManyRolesTypes(data: RolesTypeUpdateManyMutationInput!, where: RolesTypeWhereInput): BatchPayload!
+  updateManyNetworks(data: NetworkUpdateManyMutationInput!, where: NetworkWhereInput): BatchPayload!
+  updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
+  updateManyPersons(data: PersonUpdateManyMutationInput!, where: PersonWhereInput): BatchPayload!
   deleteManyCases(where: CaseWhereInput): BatchPayload!
   deleteManyCaseClassifications(where: CaseClassificationWhereInput): BatchPayload!
   deleteManyCaseConsultations(where: CaseConsultationWhereInput): BatchPayload!
@@ -16276,21 +18048,25 @@ type Mutation {
   deleteManyCaseProgressActivityLits(where: CaseProgressActivityLitWhereInput): BatchPayload!
   deleteManyCaseProgressActivityNonlits(where: CaseProgressActivityNonlitWhereInput): BatchPayload!
   deleteManyCaseTransferReferrals(where: CaseTransferReferralWhereInput): BatchPayload!
+  deleteManyCaseTransfers(where: CaseTransferWhereInput): BatchPayload!
+  deleteManyCaseReferrals(where: CaseReferralWhereInput): BatchPayload!
   deleteManyCaseViolatedRights(where: CaseViolatedRightWhereInput): BatchPayload!
   deleteManyClients(where: ClientWhereInput): BatchPayload!
   deleteManyDaftarPengacaras(where: DaftarPengacaraWhereInput): BatchPayload!
   deleteManyDataDicts(where: DataDictWhereInput): BatchPayload!
   deleteManyDataDictLocals(where: DataDictLocalWhereInput): BatchPayload!
-  deleteManyLogRequests(where: LogRequestWhereInput): BatchPayload!
   deleteManyLogRequestApps(where: LogRequestAppWhereInput): BatchPayload!
   deleteManyMtVocabs(where: MtVocabWhereInput): BatchPayload!
   deleteManyMtVocabGroups(where: MtVocabGroupWhereInput): BatchPayload!
-  deleteManyNetworks(where: NetworkWhereInput): BatchPayload!
-  deleteManyPersons(where: PersonWhereInput): BatchPayload!
   deleteManyPersonDocuments(where: PersonDocumentWhereInput): BatchPayload!
   deleteManyRoles(where: RoleWhereInput): BatchPayload!
-  deleteManyUsers(where: UserWhereInput): BatchPayload!
   deleteManyUserProfiles(where: UserProfileWhereInput): BatchPayload!
+  deleteManyApplications(where: ApplicationWhereInput): BatchPayload!
+  deleteManyLogRequests(where: LogRequestWhereInput): BatchPayload!
+  deleteManyRolesTypes(where: RolesTypeWhereInput): BatchPayload!
+  deleteManyNetworks(where: NetworkWhereInput): BatchPayload!
+  deleteManyUsers(where: UserWhereInput): BatchPayload!
+  deleteManyPersons(where: PersonWhereInput): BatchPayload!
 }
 
 enum MutationType {
@@ -16311,6 +18087,7 @@ type Network {
   regencyId: Int
   type: String
   updatedAt: DateTime!
+  logRequests(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LogRequest!]
 }
 
 """A connection to a list of items."""
@@ -16324,6 +18101,28 @@ type NetworkConnection {
 }
 
 input NetworkCreateInput {
+  address: String
+  contactPerson: String
+  email: String
+  name: String
+  noContact: String
+  provinceId: Int
+  regencyId: Int
+  type: String
+  logRequests: LogRequestCreateManyWithoutNetworkIdInput
+}
+
+input NetworkCreateOneInput {
+  create: NetworkCreateInput
+  connect: NetworkWhereUniqueInput
+}
+
+input NetworkCreateOneWithoutLogRequestsInput {
+  create: NetworkCreateWithoutLogRequestsInput
+  connect: NetworkWhereUniqueInput
+}
+
+input NetworkCreateWithoutLogRequestsInput {
   address: String
   contactPerson: String
   email: String
@@ -16419,6 +18218,18 @@ input NetworkSubscriptionWhereInput {
   node: NetworkWhereInput
 }
 
+input NetworkUpdateDataInput {
+  address: String
+  contactPerson: String
+  email: String
+  name: String
+  noContact: String
+  provinceId: Int
+  regencyId: Int
+  type: String
+  logRequests: LogRequestUpdateManyWithoutNetworkIdInput
+}
+
 input NetworkUpdateInput {
   address: String
   contactPerson: String
@@ -16428,6 +18239,7 @@ input NetworkUpdateInput {
   provinceId: Int
   regencyId: Int
   type: String
+  logRequests: LogRequestUpdateManyWithoutNetworkIdInput
 }
 
 input NetworkUpdateManyMutationInput {
@@ -16439,6 +18251,45 @@ input NetworkUpdateManyMutationInput {
   provinceId: Int
   regencyId: Int
   type: String
+}
+
+input NetworkUpdateOneInput {
+  create: NetworkCreateInput
+  connect: NetworkWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: NetworkUpdateDataInput
+  upsert: NetworkUpsertNestedInput
+}
+
+input NetworkUpdateOneWithoutLogRequestsInput {
+  create: NetworkCreateWithoutLogRequestsInput
+  connect: NetworkWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: NetworkUpdateWithoutLogRequestsDataInput
+  upsert: NetworkUpsertWithoutLogRequestsInput
+}
+
+input NetworkUpdateWithoutLogRequestsDataInput {
+  address: String
+  contactPerson: String
+  email: String
+  name: String
+  noContact: String
+  provinceId: Int
+  regencyId: Int
+  type: String
+}
+
+input NetworkUpsertNestedInput {
+  update: NetworkUpdateDataInput!
+  create: NetworkCreateInput!
+}
+
+input NetworkUpsertWithoutLogRequestsInput {
+  update: NetworkUpdateWithoutLogRequestsDataInput!
+  create: NetworkCreateWithoutLogRequestsInput!
 }
 
 input NetworkWhereInput {
@@ -16800,6 +18651,9 @@ input NetworkWhereInput {
 
   """All values greater than or equal the given value."""
   updatedAt_gte: DateTime
+  logRequests_every: LogRequestWhereInput
+  logRequests_some: LogRequestWhereInput
+  logRequests_none: LogRequestWhereInput
 }
 
 input NetworkWhereUniqueInput {
@@ -16864,6 +18718,7 @@ type Person {
   casepelakus(where: CasePelakuWhereInput, orderBy: CasePelakuOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CasePelaku!]
   clients(where: ClientWhereInput, orderBy: ClientOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Client!]
   documents(where: PersonDocumentWhereInput, orderBy: PersonDocumentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PersonDocument!]
+  logRequests(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LogRequest!]
 }
 
 """A connection to a list of items."""
@@ -16910,6 +18765,12 @@ input PersonCreateInput {
   casepelakus: CasePelakuCreateManyWithoutPersonIdInput
   clients: ClientCreateManyWithoutPersonIdInput
   documents: PersonDocumentCreateManyWithoutPersonIdInput
+  logRequests: LogRequestCreateManyWithoutPersonIdInput
+}
+
+input PersonCreateOneInput {
+  create: PersonCreateInput
+  connect: PersonWhereUniqueInput
 }
 
 input PersonCreateOneWithoutApplicationsInput {
@@ -16934,6 +18795,11 @@ input PersonCreateOneWithoutClientsInput {
 
 input PersonCreateOneWithoutDocumentsInput {
   create: PersonCreateWithoutDocumentsInput
+  connect: PersonWhereUniqueInput
+}
+
+input PersonCreateOneWithoutLogRequestsInput {
+  create: PersonCreateWithoutLogRequestsInput
   connect: PersonWhereUniqueInput
 }
 
@@ -16970,6 +18836,7 @@ input PersonCreateWithoutApplicationsInput {
   casepelakus: CasePelakuCreateManyWithoutPersonIdInput
   clients: ClientCreateManyWithoutPersonIdInput
   documents: PersonDocumentCreateManyWithoutPersonIdInput
+  logRequests: LogRequestCreateManyWithoutPersonIdInput
 }
 
 input PersonCreateWithoutCasekorbansInput {
@@ -17005,6 +18872,7 @@ input PersonCreateWithoutCasekorbansInput {
   casepelakus: CasePelakuCreateManyWithoutPersonIdInput
   clients: ClientCreateManyWithoutPersonIdInput
   documents: PersonDocumentCreateManyWithoutPersonIdInput
+  logRequests: LogRequestCreateManyWithoutPersonIdInput
 }
 
 input PersonCreateWithoutCasepelakusInput {
@@ -17040,6 +18908,7 @@ input PersonCreateWithoutCasepelakusInput {
   casekorbans: CaseKorbanCreateManyWithoutPersonIdInput
   clients: ClientCreateManyWithoutPersonIdInput
   documents: PersonDocumentCreateManyWithoutPersonIdInput
+  logRequests: LogRequestCreateManyWithoutPersonIdInput
 }
 
 input PersonCreateWithoutClientsInput {
@@ -17075,6 +18944,7 @@ input PersonCreateWithoutClientsInput {
   casekorbans: CaseKorbanCreateManyWithoutPersonIdInput
   casepelakus: CasePelakuCreateManyWithoutPersonIdInput
   documents: PersonDocumentCreateManyWithoutPersonIdInput
+  logRequests: LogRequestCreateManyWithoutPersonIdInput
 }
 
 input PersonCreateWithoutDocumentsInput {
@@ -17110,6 +18980,43 @@ input PersonCreateWithoutDocumentsInput {
   casekorbans: CaseKorbanCreateManyWithoutPersonIdInput
   casepelakus: CasePelakuCreateManyWithoutPersonIdInput
   clients: ClientCreateManyWithoutPersonIdInput
+  logRequests: LogRequestCreateManyWithoutPersonIdInput
+}
+
+input PersonCreateWithoutLogRequestsInput {
+  agama: String
+  alamatDomisili: String
+  alamatId: String
+  alatBantu: String
+  alias: String
+  createdBy: String
+  disabilitas: Boolean!
+  distrikDomisili: String
+  distrikId: String
+  domisiliSama: Boolean!
+  email: String
+  golDarah: String
+  jenisDisabilitas: String
+  jenisDomisili: String
+  jenisId: String
+  jenisKelamin: String
+  jmlAnggota: Int
+  namaLengkap: String
+  nomorId: String
+  pekerjaan: String
+  pendidikan: String
+  statusPernikahan: String
+  telepon: String
+  tglLahir: DateTime
+  tmpLahir: String
+  unitSatuan: String
+  updatedBy: String
+  wargaNegara: String
+  applications: ApplicationCreateManyWithoutWakilIdInput
+  casekorbans: CaseKorbanCreateManyWithoutPersonIdInput
+  casepelakus: CasePelakuCreateManyWithoutPersonIdInput
+  clients: ClientCreateManyWithoutPersonIdInput
+  documents: PersonDocumentCreateManyWithoutPersonIdInput
 }
 
 type PersonDocument {
@@ -17709,6 +19616,43 @@ input PersonSubscriptionWhereInput {
   node: PersonWhereInput
 }
 
+input PersonUpdateDataInput {
+  agama: String
+  alamatDomisili: String
+  alamatId: String
+  alatBantu: String
+  alias: String
+  createdBy: String
+  disabilitas: Boolean
+  distrikDomisili: String
+  distrikId: String
+  domisiliSama: Boolean
+  email: String
+  golDarah: String
+  jenisDisabilitas: String
+  jenisDomisili: String
+  jenisId: String
+  jenisKelamin: String
+  jmlAnggota: Int
+  namaLengkap: String
+  nomorId: String
+  pekerjaan: String
+  pendidikan: String
+  statusPernikahan: String
+  telepon: String
+  tglLahir: DateTime
+  tmpLahir: String
+  unitSatuan: String
+  updatedBy: String
+  wargaNegara: String
+  applications: ApplicationUpdateManyWithoutWakilIdInput
+  casekorbans: CaseKorbanUpdateManyWithoutPersonIdInput
+  casepelakus: CasePelakuUpdateManyWithoutPersonIdInput
+  clients: ClientUpdateManyWithoutPersonIdInput
+  documents: PersonDocumentUpdateManyWithoutPersonIdInput
+  logRequests: LogRequestUpdateManyWithoutPersonIdInput
+}
+
 input PersonUpdateInput {
   agama: String
   alamatDomisili: String
@@ -17743,6 +19687,7 @@ input PersonUpdateInput {
   casepelakus: CasePelakuUpdateManyWithoutPersonIdInput
   clients: ClientUpdateManyWithoutPersonIdInput
   documents: PersonDocumentUpdateManyWithoutPersonIdInput
+  logRequests: LogRequestUpdateManyWithoutPersonIdInput
 }
 
 input PersonUpdateManyMutationInput {
@@ -17774,6 +19719,13 @@ input PersonUpdateManyMutationInput {
   unitSatuan: String
   updatedBy: String
   wargaNegara: String
+}
+
+input PersonUpdateOneRequiredInput {
+  create: PersonCreateInput
+  connect: PersonWhereUniqueInput
+  update: PersonUpdateDataInput
+  upsert: PersonUpsertNestedInput
 }
 
 input PersonUpdateOneRequiredWithoutApplicationsInput {
@@ -17815,6 +19767,15 @@ input PersonUpdateOneWithoutCasepelakusInput {
   upsert: PersonUpsertWithoutCasepelakusInput
 }
 
+input PersonUpdateOneWithoutLogRequestsInput {
+  create: PersonCreateWithoutLogRequestsInput
+  connect: PersonWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: PersonUpdateWithoutLogRequestsDataInput
+  upsert: PersonUpsertWithoutLogRequestsInput
+}
+
 input PersonUpdateWithoutApplicationsDataInput {
   agama: String
   alamatDomisili: String
@@ -17848,6 +19809,7 @@ input PersonUpdateWithoutApplicationsDataInput {
   casepelakus: CasePelakuUpdateManyWithoutPersonIdInput
   clients: ClientUpdateManyWithoutPersonIdInput
   documents: PersonDocumentUpdateManyWithoutPersonIdInput
+  logRequests: LogRequestUpdateManyWithoutPersonIdInput
 }
 
 input PersonUpdateWithoutCasekorbansDataInput {
@@ -17883,6 +19845,7 @@ input PersonUpdateWithoutCasekorbansDataInput {
   casepelakus: CasePelakuUpdateManyWithoutPersonIdInput
   clients: ClientUpdateManyWithoutPersonIdInput
   documents: PersonDocumentUpdateManyWithoutPersonIdInput
+  logRequests: LogRequestUpdateManyWithoutPersonIdInput
 }
 
 input PersonUpdateWithoutCasepelakusDataInput {
@@ -17918,6 +19881,7 @@ input PersonUpdateWithoutCasepelakusDataInput {
   casekorbans: CaseKorbanUpdateManyWithoutPersonIdInput
   clients: ClientUpdateManyWithoutPersonIdInput
   documents: PersonDocumentUpdateManyWithoutPersonIdInput
+  logRequests: LogRequestUpdateManyWithoutPersonIdInput
 }
 
 input PersonUpdateWithoutClientsDataInput {
@@ -17953,6 +19917,7 @@ input PersonUpdateWithoutClientsDataInput {
   casekorbans: CaseKorbanUpdateManyWithoutPersonIdInput
   casepelakus: CasePelakuUpdateManyWithoutPersonIdInput
   documents: PersonDocumentUpdateManyWithoutPersonIdInput
+  logRequests: LogRequestUpdateManyWithoutPersonIdInput
 }
 
 input PersonUpdateWithoutDocumentsDataInput {
@@ -17988,6 +19953,48 @@ input PersonUpdateWithoutDocumentsDataInput {
   casekorbans: CaseKorbanUpdateManyWithoutPersonIdInput
   casepelakus: CasePelakuUpdateManyWithoutPersonIdInput
   clients: ClientUpdateManyWithoutPersonIdInput
+  logRequests: LogRequestUpdateManyWithoutPersonIdInput
+}
+
+input PersonUpdateWithoutLogRequestsDataInput {
+  agama: String
+  alamatDomisili: String
+  alamatId: String
+  alatBantu: String
+  alias: String
+  createdBy: String
+  disabilitas: Boolean
+  distrikDomisili: String
+  distrikId: String
+  domisiliSama: Boolean
+  email: String
+  golDarah: String
+  jenisDisabilitas: String
+  jenisDomisili: String
+  jenisId: String
+  jenisKelamin: String
+  jmlAnggota: Int
+  namaLengkap: String
+  nomorId: String
+  pekerjaan: String
+  pendidikan: String
+  statusPernikahan: String
+  telepon: String
+  tglLahir: DateTime
+  tmpLahir: String
+  unitSatuan: String
+  updatedBy: String
+  wargaNegara: String
+  applications: ApplicationUpdateManyWithoutWakilIdInput
+  casekorbans: CaseKorbanUpdateManyWithoutPersonIdInput
+  casepelakus: CasePelakuUpdateManyWithoutPersonIdInput
+  clients: ClientUpdateManyWithoutPersonIdInput
+  documents: PersonDocumentUpdateManyWithoutPersonIdInput
+}
+
+input PersonUpsertNestedInput {
+  update: PersonUpdateDataInput!
+  create: PersonCreateInput!
 }
 
 input PersonUpsertWithoutApplicationsInput {
@@ -18013,6 +20020,11 @@ input PersonUpsertWithoutClientsInput {
 input PersonUpsertWithoutDocumentsInput {
   update: PersonUpdateWithoutDocumentsDataInput!
   create: PersonCreateWithoutDocumentsInput!
+}
+
+input PersonUpsertWithoutLogRequestsInput {
+  update: PersonUpdateWithoutLogRequestsDataInput!
+  create: PersonCreateWithoutLogRequestsInput!
 }
 
 input PersonWhereInput {
@@ -19117,6 +21129,9 @@ input PersonWhereInput {
   documents_every: PersonDocumentWhereInput
   documents_some: PersonDocumentWhereInput
   documents_none: PersonDocumentWhereInput
+  logRequests_every: LogRequestWhereInput
+  logRequests_some: LogRequestWhereInput
+  logRequests_none: LogRequestWhereInput
 }
 
 input PersonWhereUniqueInput {
@@ -19124,7 +21139,6 @@ input PersonWhereUniqueInput {
 }
 
 type Query {
-  applications(where: ApplicationWhereInput, orderBy: ApplicationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Application]!
   cases(where: CaseWhereInput, orderBy: CaseOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Case]!
   caseClassifications(where: CaseClassificationWhereInput, orderBy: CaseClassificationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CaseClassification]!
   caseConsultations(where: CaseConsultationWhereInput, orderBy: CaseConsultationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CaseConsultation]!
@@ -19139,22 +21153,25 @@ type Query {
   caseProgressActivityLits(where: CaseProgressActivityLitWhereInput, orderBy: CaseProgressActivityLitOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CaseProgressActivityLit]!
   caseProgressActivityNonlits(where: CaseProgressActivityNonlitWhereInput, orderBy: CaseProgressActivityNonlitOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CaseProgressActivityNonlit]!
   caseTransferReferrals(where: CaseTransferReferralWhereInput, orderBy: CaseTransferReferralOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CaseTransferReferral]!
+  caseTransfers(where: CaseTransferWhereInput, orderBy: CaseTransferOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CaseTransfer]!
+  caseReferrals(where: CaseReferralWhereInput, orderBy: CaseReferralOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CaseReferral]!
   caseViolatedRights(where: CaseViolatedRightWhereInput, orderBy: CaseViolatedRightOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CaseViolatedRight]!
   clients(where: ClientWhereInput, orderBy: ClientOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Client]!
   daftarPengacaras(where: DaftarPengacaraWhereInput, orderBy: DaftarPengacaraOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [DaftarPengacara]!
   dataDicts(where: DataDictWhereInput, orderBy: DataDictOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [DataDict]!
   dataDictLocals(where: DataDictLocalWhereInput, orderBy: DataDictLocalOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [DataDictLocal]!
-  logRequests(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LogRequest]!
   logRequestApps(where: LogRequestAppWhereInput, orderBy: LogRequestAppOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LogRequestApp]!
   mtVocabs(where: MtVocabWhereInput, orderBy: MtVocabOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [MtVocab]!
   mtVocabGroups(where: MtVocabGroupWhereInput, orderBy: MtVocabGroupOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [MtVocabGroup]!
-  networks(where: NetworkWhereInput, orderBy: NetworkOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Network]!
-  persons(where: PersonWhereInput, orderBy: PersonOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Person]!
   personDocuments(where: PersonDocumentWhereInput, orderBy: PersonDocumentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PersonDocument]!
   roles(where: RoleWhereInput, orderBy: RoleOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Role]!
-  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
   userProfiles(where: UserProfileWhereInput, orderBy: UserProfileOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [UserProfile]!
-  application(where: ApplicationWhereUniqueInput!): Application
+  applications(where: ApplicationWhereInput, orderBy: ApplicationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Application]!
+  logRequests(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LogRequest]!
+  rolesTypes(where: RolesTypeWhereInput, orderBy: RolesTypeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [RolesType]!
+  networks(where: NetworkWhereInput, orderBy: NetworkOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Network]!
+  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
+  persons(where: PersonWhereInput, orderBy: PersonOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Person]!
   case(where: CaseWhereUniqueInput!): Case
   caseClassification(where: CaseClassificationWhereUniqueInput!): CaseClassification
   caseConsultation(where: CaseConsultationWhereUniqueInput!): CaseConsultation
@@ -19169,22 +21186,25 @@ type Query {
   caseProgressActivityLit(where: CaseProgressActivityLitWhereUniqueInput!): CaseProgressActivityLit
   caseProgressActivityNonlit(where: CaseProgressActivityNonlitWhereUniqueInput!): CaseProgressActivityNonlit
   caseTransferReferral(where: CaseTransferReferralWhereUniqueInput!): CaseTransferReferral
+  caseTransfer(where: CaseTransferWhereUniqueInput!): CaseTransfer
+  caseReferral(where: CaseReferralWhereUniqueInput!): CaseReferral
   caseViolatedRight(where: CaseViolatedRightWhereUniqueInput!): CaseViolatedRight
   client(where: ClientWhereUniqueInput!): Client
   daftarPengacara(where: DaftarPengacaraWhereUniqueInput!): DaftarPengacara
   dataDict(where: DataDictWhereUniqueInput!): DataDict
   dataDictLocal(where: DataDictLocalWhereUniqueInput!): DataDictLocal
-  logRequest(where: LogRequestWhereUniqueInput!): LogRequest
   logRequestApp(where: LogRequestAppWhereUniqueInput!): LogRequestApp
   mtVocab(where: MtVocabWhereUniqueInput!): MtVocab
   mtVocabGroup(where: MtVocabGroupWhereUniqueInput!): MtVocabGroup
-  network(where: NetworkWhereUniqueInput!): Network
-  person(where: PersonWhereUniqueInput!): Person
   personDocument(where: PersonDocumentWhereUniqueInput!): PersonDocument
   role(where: RoleWhereUniqueInput!): Role
-  user(where: UserWhereUniqueInput!): User
   userProfile(where: UserProfileWhereUniqueInput!): UserProfile
-  applicationsConnection(where: ApplicationWhereInput, orderBy: ApplicationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ApplicationConnection!
+  application(where: ApplicationWhereUniqueInput!): Application
+  logRequest(where: LogRequestWhereUniqueInput!): LogRequest
+  rolesType(where: RolesTypeWhereUniqueInput!): RolesType
+  network(where: NetworkWhereUniqueInput!): Network
+  user(where: UserWhereUniqueInput!): User
+  person(where: PersonWhereUniqueInput!): Person
   casesConnection(where: CaseWhereInput, orderBy: CaseOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CaseConnection!
   caseClassificationsConnection(where: CaseClassificationWhereInput, orderBy: CaseClassificationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CaseClassificationConnection!
   caseConsultationsConnection(where: CaseConsultationWhereInput, orderBy: CaseConsultationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CaseConsultationConnection!
@@ -19199,21 +21219,25 @@ type Query {
   caseProgressActivityLitsConnection(where: CaseProgressActivityLitWhereInput, orderBy: CaseProgressActivityLitOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CaseProgressActivityLitConnection!
   caseProgressActivityNonlitsConnection(where: CaseProgressActivityNonlitWhereInput, orderBy: CaseProgressActivityNonlitOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CaseProgressActivityNonlitConnection!
   caseTransferReferralsConnection(where: CaseTransferReferralWhereInput, orderBy: CaseTransferReferralOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CaseTransferReferralConnection!
+  caseTransfersConnection(where: CaseTransferWhereInput, orderBy: CaseTransferOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CaseTransferConnection!
+  caseReferralsConnection(where: CaseReferralWhereInput, orderBy: CaseReferralOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CaseReferralConnection!
   caseViolatedRightsConnection(where: CaseViolatedRightWhereInput, orderBy: CaseViolatedRightOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CaseViolatedRightConnection!
   clientsConnection(where: ClientWhereInput, orderBy: ClientOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ClientConnection!
   daftarPengacarasConnection(where: DaftarPengacaraWhereInput, orderBy: DaftarPengacaraOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): DaftarPengacaraConnection!
   dataDictsConnection(where: DataDictWhereInput, orderBy: DataDictOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): DataDictConnection!
   dataDictLocalsConnection(where: DataDictLocalWhereInput, orderBy: DataDictLocalOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): DataDictLocalConnection!
-  logRequestsConnection(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): LogRequestConnection!
   logRequestAppsConnection(where: LogRequestAppWhereInput, orderBy: LogRequestAppOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): LogRequestAppConnection!
   mtVocabsConnection(where: MtVocabWhereInput, orderBy: MtVocabOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): MtVocabConnection!
   mtVocabGroupsConnection(where: MtVocabGroupWhereInput, orderBy: MtVocabGroupOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): MtVocabGroupConnection!
-  networksConnection(where: NetworkWhereInput, orderBy: NetworkOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): NetworkConnection!
-  personsConnection(where: PersonWhereInput, orderBy: PersonOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PersonConnection!
   personDocumentsConnection(where: PersonDocumentWhereInput, orderBy: PersonDocumentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PersonDocumentConnection!
   rolesConnection(where: RoleWhereInput, orderBy: RoleOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): RoleConnection!
-  usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
   userProfilesConnection(where: UserProfileWhereInput, orderBy: UserProfileOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserProfileConnection!
+  applicationsConnection(where: ApplicationWhereInput, orderBy: ApplicationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ApplicationConnection!
+  logRequestsConnection(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): LogRequestConnection!
+  rolesTypesConnection(where: RolesTypeWhereInput, orderBy: RolesTypeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): RolesTypeConnection!
+  networksConnection(where: NetworkWhereInput, orderBy: NetworkOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): NetworkConnection!
+  usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
+  personsConnection(where: PersonWhereInput, orderBy: PersonOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PersonConnection!
 
   """Fetches an object given its ID"""
   node(
@@ -19223,9 +21247,10 @@ type Query {
 }
 
 type Role {
+  createdAt: DateTime!
   id: Int!
-  type: Int
-  userId: Int
+  userId(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User!]
+  type: RolesType!
 }
 
 """A connection to a list of items."""
@@ -19239,8 +21264,17 @@ type RoleConnection {
 }
 
 input RoleCreateInput {
-  type: Int
-  userId: Int
+  userId: UserCreateManyWithoutRoles_typeInput
+  type: RolesTypeCreateOneInput!
+}
+
+input RoleCreateManyWithoutUserIdInput {
+  create: [RoleCreateWithoutUserIdInput!]
+  connect: [RoleWhereUniqueInput!]
+}
+
+input RoleCreateWithoutUserIdInput {
+  type: RolesTypeCreateOneInput!
 }
 
 """An edge in a connection."""
@@ -19253,18 +21287,279 @@ type RoleEdge {
 }
 
 enum RoleOrderByInput {
+  createdAt_ASC
+  createdAt_DESC
   id_ASC
   id_DESC
-  type_ASC
-  type_DESC
-  userId_ASC
-  userId_DESC
 }
 
 type RolePreviousValues {
+  createdAt: DateTime!
   id: Int!
-  type: Int
-  userId: Int
+}
+
+input RoleScalarWhereInput {
+  """Logical AND on all given filters."""
+  AND: [RoleScalarWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [RoleScalarWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [RoleScalarWhereInput!]
+  createdAt: DateTime
+
+  """All values that are not equal to given value."""
+  createdAt_not: DateTime
+
+  """All values that are contained in given list."""
+  createdAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  createdAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  createdAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  createdAt_lte: DateTime
+
+  """All values greater than the given value."""
+  createdAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  createdAt_gte: DateTime
+  id: Int
+
+  """All values that are not equal to given value."""
+  id_not: Int
+
+  """All values that are contained in given list."""
+  id_in: [Int!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [Int!]
+
+  """All values less than the given value."""
+  id_lt: Int
+
+  """All values less than or equal the given value."""
+  id_lte: Int
+
+  """All values greater than the given value."""
+  id_gt: Int
+
+  """All values greater than or equal the given value."""
+  id_gte: Int
+}
+
+type RolesType {
+  createdAt: DateTime!
+  id: Int!
+  description: String
+}
+
+"""A connection to a list of items."""
+type RolesTypeConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [RolesTypeEdge]!
+  aggregate: AggregateRolesType!
+}
+
+input RolesTypeCreateInput {
+  description: String
+}
+
+input RolesTypeCreateOneInput {
+  create: RolesTypeCreateInput
+  connect: RolesTypeWhereUniqueInput
+}
+
+"""An edge in a connection."""
+type RolesTypeEdge {
+  """The item at the end of the edge."""
+  node: RolesType!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum RolesTypeOrderByInput {
+  createdAt_ASC
+  createdAt_DESC
+  id_ASC
+  id_DESC
+  description_ASC
+  description_DESC
+}
+
+type RolesTypePreviousValues {
+  createdAt: DateTime!
+  id: Int!
+  description: String
+}
+
+type RolesTypeSubscriptionPayload {
+  mutation: MutationType!
+  node: RolesType
+  updatedFields: [String!]
+  previousValues: RolesTypePreviousValues
+}
+
+input RolesTypeSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [RolesTypeSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [RolesTypeSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [RolesTypeSubscriptionWhereInput!]
+
+  """The subscription event gets dispatched when it's listed in mutation_in"""
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: RolesTypeWhereInput
+}
+
+input RolesTypeUpdateDataInput {
+  description: String
+}
+
+input RolesTypeUpdateInput {
+  description: String
+}
+
+input RolesTypeUpdateManyMutationInput {
+  description: String
+}
+
+input RolesTypeUpdateOneRequiredInput {
+  create: RolesTypeCreateInput
+  connect: RolesTypeWhereUniqueInput
+  update: RolesTypeUpdateDataInput
+  upsert: RolesTypeUpsertNestedInput
+}
+
+input RolesTypeUpsertNestedInput {
+  update: RolesTypeUpdateDataInput!
+  create: RolesTypeCreateInput!
+}
+
+input RolesTypeWhereInput {
+  """Logical AND on all given filters."""
+  AND: [RolesTypeWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [RolesTypeWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [RolesTypeWhereInput!]
+  createdAt: DateTime
+
+  """All values that are not equal to given value."""
+  createdAt_not: DateTime
+
+  """All values that are contained in given list."""
+  createdAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  createdAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  createdAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  createdAt_lte: DateTime
+
+  """All values greater than the given value."""
+  createdAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  createdAt_gte: DateTime
+  id: Int
+
+  """All values that are not equal to given value."""
+  id_not: Int
+
+  """All values that are contained in given list."""
+  id_in: [Int!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [Int!]
+
+  """All values less than the given value."""
+  id_lt: Int
+
+  """All values less than or equal the given value."""
+  id_lte: Int
+
+  """All values greater than the given value."""
+  id_gt: Int
+
+  """All values greater than or equal the given value."""
+  id_gte: Int
+  description: String
+
+  """All values that are not equal to given value."""
+  description_not: String
+
+  """All values that are contained in given list."""
+  description_in: [String!]
+
+  """All values that are not contained in given list."""
+  description_not_in: [String!]
+
+  """All values less than the given value."""
+  description_lt: String
+
+  """All values less than or equal the given value."""
+  description_lte: String
+
+  """All values greater than the given value."""
+  description_gt: String
+
+  """All values greater than or equal the given value."""
+  description_gte: String
+
+  """All values containing the given string."""
+  description_contains: String
+
+  """All values not containing the given string."""
+  description_not_contains: String
+
+  """All values starting with the given string."""
+  description_starts_with: String
+
+  """All values not starting with the given string."""
+  description_not_starts_with: String
+
+  """All values ending with the given string."""
+  description_ends_with: String
+
+  """All values not ending with the given string."""
+  description_not_ends_with: String
+}
+
+input RolesTypeWhereUniqueInput {
+  id: Int
 }
 
 type RoleSubscriptionPayload {
@@ -19305,13 +21600,34 @@ input RoleSubscriptionWhereInput {
 }
 
 input RoleUpdateInput {
-  type: Int
-  userId: Int
+  userId: UserUpdateManyWithoutRoles_typeInput
+  type: RolesTypeUpdateOneRequiredInput
 }
 
-input RoleUpdateManyMutationInput {
-  type: Int
-  userId: Int
+input RoleUpdateManyWithoutUserIdInput {
+  create: [RoleCreateWithoutUserIdInput!]
+  connect: [RoleWhereUniqueInput!]
+  set: [RoleWhereUniqueInput!]
+  disconnect: [RoleWhereUniqueInput!]
+  delete: [RoleWhereUniqueInput!]
+  update: [RoleUpdateWithWhereUniqueWithoutUserIdInput!]
+  deleteMany: [RoleScalarWhereInput!]
+  upsert: [RoleUpsertWithWhereUniqueWithoutUserIdInput!]
+}
+
+input RoleUpdateWithoutUserIdDataInput {
+  type: RolesTypeUpdateOneRequiredInput
+}
+
+input RoleUpdateWithWhereUniqueWithoutUserIdInput {
+  where: RoleWhereUniqueInput!
+  data: RoleUpdateWithoutUserIdDataInput!
+}
+
+input RoleUpsertWithWhereUniqueWithoutUserIdInput {
+  where: RoleWhereUniqueInput!
+  update: RoleUpdateWithoutUserIdDataInput!
+  create: RoleCreateWithoutUserIdInput!
 }
 
 input RoleWhereInput {
@@ -19323,6 +21639,28 @@ input RoleWhereInput {
 
   """Logical NOT on all given filters combined by AND."""
   NOT: [RoleWhereInput!]
+  createdAt: DateTime
+
+  """All values that are not equal to given value."""
+  createdAt_not: DateTime
+
+  """All values that are contained in given list."""
+  createdAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  createdAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  createdAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  createdAt_lte: DateTime
+
+  """All values greater than the given value."""
+  createdAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  createdAt_gte: DateTime
   id: Int
 
   """All values that are not equal to given value."""
@@ -19345,50 +21683,10 @@ input RoleWhereInput {
 
   """All values greater than or equal the given value."""
   id_gte: Int
-  type: Int
-
-  """All values that are not equal to given value."""
-  type_not: Int
-
-  """All values that are contained in given list."""
-  type_in: [Int!]
-
-  """All values that are not contained in given list."""
-  type_not_in: [Int!]
-
-  """All values less than the given value."""
-  type_lt: Int
-
-  """All values less than or equal the given value."""
-  type_lte: Int
-
-  """All values greater than the given value."""
-  type_gt: Int
-
-  """All values greater than or equal the given value."""
-  type_gte: Int
-  userId: Int
-
-  """All values that are not equal to given value."""
-  userId_not: Int
-
-  """All values that are contained in given list."""
-  userId_in: [Int!]
-
-  """All values that are not contained in given list."""
-  userId_not_in: [Int!]
-
-  """All values less than the given value."""
-  userId_lt: Int
-
-  """All values less than or equal the given value."""
-  userId_lte: Int
-
-  """All values greater than the given value."""
-  userId_gt: Int
-
-  """All values greater than or equal the given value."""
-  userId_gte: Int
+  userId_every: UserWhereInput
+  userId_some: UserWhereInput
+  userId_none: UserWhereInput
+  type: RolesTypeWhereInput
 }
 
 input RoleWhereUniqueInput {
@@ -19396,7 +21694,6 @@ input RoleWhereUniqueInput {
 }
 
 type Subscription {
-  application(where: ApplicationSubscriptionWhereInput): ApplicationSubscriptionPayload
   case(where: CaseSubscriptionWhereInput): CaseSubscriptionPayload
   caseClassification(where: CaseClassificationSubscriptionWhereInput): CaseClassificationSubscriptionPayload
   caseConsultation(where: CaseConsultationSubscriptionWhereInput): CaseConsultationSubscriptionPayload
@@ -19411,21 +21708,25 @@ type Subscription {
   caseProgressActivityLit(where: CaseProgressActivityLitSubscriptionWhereInput): CaseProgressActivityLitSubscriptionPayload
   caseProgressActivityNonlit(where: CaseProgressActivityNonlitSubscriptionWhereInput): CaseProgressActivityNonlitSubscriptionPayload
   caseTransferReferral(where: CaseTransferReferralSubscriptionWhereInput): CaseTransferReferralSubscriptionPayload
+  caseTransfer(where: CaseTransferSubscriptionWhereInput): CaseTransferSubscriptionPayload
+  caseReferral(where: CaseReferralSubscriptionWhereInput): CaseReferralSubscriptionPayload
   caseViolatedRight(where: CaseViolatedRightSubscriptionWhereInput): CaseViolatedRightSubscriptionPayload
   client(where: ClientSubscriptionWhereInput): ClientSubscriptionPayload
   daftarPengacara(where: DaftarPengacaraSubscriptionWhereInput): DaftarPengacaraSubscriptionPayload
   dataDict(where: DataDictSubscriptionWhereInput): DataDictSubscriptionPayload
   dataDictLocal(where: DataDictLocalSubscriptionWhereInput): DataDictLocalSubscriptionPayload
-  logRequest(where: LogRequestSubscriptionWhereInput): LogRequestSubscriptionPayload
   logRequestApp(where: LogRequestAppSubscriptionWhereInput): LogRequestAppSubscriptionPayload
   mtVocab(where: MtVocabSubscriptionWhereInput): MtVocabSubscriptionPayload
   mtVocabGroup(where: MtVocabGroupSubscriptionWhereInput): MtVocabGroupSubscriptionPayload
-  network(where: NetworkSubscriptionWhereInput): NetworkSubscriptionPayload
-  person(where: PersonSubscriptionWhereInput): PersonSubscriptionPayload
   personDocument(where: PersonDocumentSubscriptionWhereInput): PersonDocumentSubscriptionPayload
   role(where: RoleSubscriptionWhereInput): RoleSubscriptionPayload
-  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
   userProfile(where: UserProfileSubscriptionWhereInput): UserProfileSubscriptionPayload
+  application(where: ApplicationSubscriptionWhereInput): ApplicationSubscriptionPayload
+  logRequest(where: LogRequestSubscriptionWhereInput): LogRequestSubscriptionPayload
+  rolesType(where: RolesTypeSubscriptionWhereInput): RolesTypeSubscriptionPayload
+  network(where: NetworkSubscriptionWhereInput): NetworkSubscriptionPayload
+  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
+  person(where: PersonSubscriptionWhereInput): PersonSubscriptionPayload
 }
 
 type User {
@@ -19445,6 +21746,10 @@ type User {
   updatedAt: DateTime!
   username: String
   profile: UserProfile!
+  roles_type(where: RoleWhereInput, orderBy: RoleOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Role!]
+  logRequestBy(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LogRequest!]
+  logRequestTo(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LogRequest!]
+  appConsultation(where: LogRequestAppWhereInput, orderBy: LogRequestAppOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LogRequestApp!]
 }
 
 """A connection to a list of items."""
@@ -19471,11 +21776,97 @@ input UserCreateInput {
   status: String
   username: String
   profile: UserProfileCreateOneWithoutUserIdInput!
+  roles_type: RoleCreateManyWithoutUserIdInput
+  logRequestBy: LogRequestCreateManyWithoutRequestByInput
+  logRequestTo: LogRequestCreateManyWithoutRequestToInput
+  appConsultation: LogRequestAppCreateManyWithoutAppConsultationInput
+}
+
+input UserCreateManyWithoutRoles_typeInput {
+  create: [UserCreateWithoutRoles_typeInput!]
+  connect: [UserWhereUniqueInput!]
+}
+
+input UserCreateOneInput {
+  create: UserCreateInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateOneWithoutAppConsultationInput {
+  create: UserCreateWithoutAppConsultationInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateOneWithoutLogRequestByInput {
+  create: UserCreateWithoutLogRequestByInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateOneWithoutLogRequestToInput {
+  create: UserCreateWithoutLogRequestToInput
+  connect: UserWhereUniqueInput
 }
 
 input UserCreateOneWithoutProfileInput {
   create: UserCreateWithoutProfileInput
   connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutAppConsultationInput {
+  address: String
+  avatar: String
+  deletedAt: DateTime
+  email: String
+  name: String
+  password: String
+  phone: String
+  position: String
+  rememberToken: String
+  roles: String
+  status: String
+  username: String
+  profile: UserProfileCreateOneWithoutUserIdInput!
+  roles_type: RoleCreateManyWithoutUserIdInput
+  logRequestBy: LogRequestCreateManyWithoutRequestByInput
+  logRequestTo: LogRequestCreateManyWithoutRequestToInput
+}
+
+input UserCreateWithoutLogRequestByInput {
+  address: String
+  avatar: String
+  deletedAt: DateTime
+  email: String
+  name: String
+  password: String
+  phone: String
+  position: String
+  rememberToken: String
+  roles: String
+  status: String
+  username: String
+  profile: UserProfileCreateOneWithoutUserIdInput!
+  roles_type: RoleCreateManyWithoutUserIdInput
+  logRequestTo: LogRequestCreateManyWithoutRequestToInput
+  appConsultation: LogRequestAppCreateManyWithoutAppConsultationInput
+}
+
+input UserCreateWithoutLogRequestToInput {
+  address: String
+  avatar: String
+  deletedAt: DateTime
+  email: String
+  name: String
+  password: String
+  phone: String
+  position: String
+  rememberToken: String
+  roles: String
+  status: String
+  username: String
+  profile: UserProfileCreateOneWithoutUserIdInput!
+  roles_type: RoleCreateManyWithoutUserIdInput
+  logRequestBy: LogRequestCreateManyWithoutRequestByInput
+  appConsultation: LogRequestAppCreateManyWithoutAppConsultationInput
 }
 
 input UserCreateWithoutProfileInput {
@@ -19491,6 +21882,29 @@ input UserCreateWithoutProfileInput {
   roles: String
   status: String
   username: String
+  roles_type: RoleCreateManyWithoutUserIdInput
+  logRequestBy: LogRequestCreateManyWithoutRequestByInput
+  logRequestTo: LogRequestCreateManyWithoutRequestToInput
+  appConsultation: LogRequestAppCreateManyWithoutAppConsultationInput
+}
+
+input UserCreateWithoutRoles_typeInput {
+  address: String
+  avatar: String
+  deletedAt: DateTime
+  email: String
+  name: String
+  password: String
+  phone: String
+  position: String
+  rememberToken: String
+  roles: String
+  status: String
+  username: String
+  profile: UserProfileCreateOneWithoutUserIdInput!
+  logRequestBy: LogRequestCreateManyWithoutRequestByInput
+  logRequestTo: LogRequestCreateManyWithoutRequestToInput
+  appConsultation: LogRequestAppCreateManyWithoutAppConsultationInput
 }
 
 """An edge in a connection."""
@@ -19894,6 +22308,545 @@ input UserProfileWhereUniqueInput {
   id: Int
 }
 
+input UserScalarWhereInput {
+  """Logical AND on all given filters."""
+  AND: [UserScalarWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [UserScalarWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [UserScalarWhereInput!]
+  address: String
+
+  """All values that are not equal to given value."""
+  address_not: String
+
+  """All values that are contained in given list."""
+  address_in: [String!]
+
+  """All values that are not contained in given list."""
+  address_not_in: [String!]
+
+  """All values less than the given value."""
+  address_lt: String
+
+  """All values less than or equal the given value."""
+  address_lte: String
+
+  """All values greater than the given value."""
+  address_gt: String
+
+  """All values greater than or equal the given value."""
+  address_gte: String
+
+  """All values containing the given string."""
+  address_contains: String
+
+  """All values not containing the given string."""
+  address_not_contains: String
+
+  """All values starting with the given string."""
+  address_starts_with: String
+
+  """All values not starting with the given string."""
+  address_not_starts_with: String
+
+  """All values ending with the given string."""
+  address_ends_with: String
+
+  """All values not ending with the given string."""
+  address_not_ends_with: String
+  avatar: String
+
+  """All values that are not equal to given value."""
+  avatar_not: String
+
+  """All values that are contained in given list."""
+  avatar_in: [String!]
+
+  """All values that are not contained in given list."""
+  avatar_not_in: [String!]
+
+  """All values less than the given value."""
+  avatar_lt: String
+
+  """All values less than or equal the given value."""
+  avatar_lte: String
+
+  """All values greater than the given value."""
+  avatar_gt: String
+
+  """All values greater than or equal the given value."""
+  avatar_gte: String
+
+  """All values containing the given string."""
+  avatar_contains: String
+
+  """All values not containing the given string."""
+  avatar_not_contains: String
+
+  """All values starting with the given string."""
+  avatar_starts_with: String
+
+  """All values not starting with the given string."""
+  avatar_not_starts_with: String
+
+  """All values ending with the given string."""
+  avatar_ends_with: String
+
+  """All values not ending with the given string."""
+  avatar_not_ends_with: String
+  createdAt: DateTime
+
+  """All values that are not equal to given value."""
+  createdAt_not: DateTime
+
+  """All values that are contained in given list."""
+  createdAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  createdAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  createdAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  createdAt_lte: DateTime
+
+  """All values greater than the given value."""
+  createdAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  createdAt_gte: DateTime
+  deletedAt: DateTime
+
+  """All values that are not equal to given value."""
+  deletedAt_not: DateTime
+
+  """All values that are contained in given list."""
+  deletedAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  deletedAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  deletedAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  deletedAt_lte: DateTime
+
+  """All values greater than the given value."""
+  deletedAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  deletedAt_gte: DateTime
+  email: String
+
+  """All values that are not equal to given value."""
+  email_not: String
+
+  """All values that are contained in given list."""
+  email_in: [String!]
+
+  """All values that are not contained in given list."""
+  email_not_in: [String!]
+
+  """All values less than the given value."""
+  email_lt: String
+
+  """All values less than or equal the given value."""
+  email_lte: String
+
+  """All values greater than the given value."""
+  email_gt: String
+
+  """All values greater than or equal the given value."""
+  email_gte: String
+
+  """All values containing the given string."""
+  email_contains: String
+
+  """All values not containing the given string."""
+  email_not_contains: String
+
+  """All values starting with the given string."""
+  email_starts_with: String
+
+  """All values not starting with the given string."""
+  email_not_starts_with: String
+
+  """All values ending with the given string."""
+  email_ends_with: String
+
+  """All values not ending with the given string."""
+  email_not_ends_with: String
+  id: Int
+
+  """All values that are not equal to given value."""
+  id_not: Int
+
+  """All values that are contained in given list."""
+  id_in: [Int!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [Int!]
+
+  """All values less than the given value."""
+  id_lt: Int
+
+  """All values less than or equal the given value."""
+  id_lte: Int
+
+  """All values greater than the given value."""
+  id_gt: Int
+
+  """All values greater than or equal the given value."""
+  id_gte: Int
+  name: String
+
+  """All values that are not equal to given value."""
+  name_not: String
+
+  """All values that are contained in given list."""
+  name_in: [String!]
+
+  """All values that are not contained in given list."""
+  name_not_in: [String!]
+
+  """All values less than the given value."""
+  name_lt: String
+
+  """All values less than or equal the given value."""
+  name_lte: String
+
+  """All values greater than the given value."""
+  name_gt: String
+
+  """All values greater than or equal the given value."""
+  name_gte: String
+
+  """All values containing the given string."""
+  name_contains: String
+
+  """All values not containing the given string."""
+  name_not_contains: String
+
+  """All values starting with the given string."""
+  name_starts_with: String
+
+  """All values not starting with the given string."""
+  name_not_starts_with: String
+
+  """All values ending with the given string."""
+  name_ends_with: String
+
+  """All values not ending with the given string."""
+  name_not_ends_with: String
+  password: String
+
+  """All values that are not equal to given value."""
+  password_not: String
+
+  """All values that are contained in given list."""
+  password_in: [String!]
+
+  """All values that are not contained in given list."""
+  password_not_in: [String!]
+
+  """All values less than the given value."""
+  password_lt: String
+
+  """All values less than or equal the given value."""
+  password_lte: String
+
+  """All values greater than the given value."""
+  password_gt: String
+
+  """All values greater than or equal the given value."""
+  password_gte: String
+
+  """All values containing the given string."""
+  password_contains: String
+
+  """All values not containing the given string."""
+  password_not_contains: String
+
+  """All values starting with the given string."""
+  password_starts_with: String
+
+  """All values not starting with the given string."""
+  password_not_starts_with: String
+
+  """All values ending with the given string."""
+  password_ends_with: String
+
+  """All values not ending with the given string."""
+  password_not_ends_with: String
+  phone: String
+
+  """All values that are not equal to given value."""
+  phone_not: String
+
+  """All values that are contained in given list."""
+  phone_in: [String!]
+
+  """All values that are not contained in given list."""
+  phone_not_in: [String!]
+
+  """All values less than the given value."""
+  phone_lt: String
+
+  """All values less than or equal the given value."""
+  phone_lte: String
+
+  """All values greater than the given value."""
+  phone_gt: String
+
+  """All values greater than or equal the given value."""
+  phone_gte: String
+
+  """All values containing the given string."""
+  phone_contains: String
+
+  """All values not containing the given string."""
+  phone_not_contains: String
+
+  """All values starting with the given string."""
+  phone_starts_with: String
+
+  """All values not starting with the given string."""
+  phone_not_starts_with: String
+
+  """All values ending with the given string."""
+  phone_ends_with: String
+
+  """All values not ending with the given string."""
+  phone_not_ends_with: String
+  position: String
+
+  """All values that are not equal to given value."""
+  position_not: String
+
+  """All values that are contained in given list."""
+  position_in: [String!]
+
+  """All values that are not contained in given list."""
+  position_not_in: [String!]
+
+  """All values less than the given value."""
+  position_lt: String
+
+  """All values less than or equal the given value."""
+  position_lte: String
+
+  """All values greater than the given value."""
+  position_gt: String
+
+  """All values greater than or equal the given value."""
+  position_gte: String
+
+  """All values containing the given string."""
+  position_contains: String
+
+  """All values not containing the given string."""
+  position_not_contains: String
+
+  """All values starting with the given string."""
+  position_starts_with: String
+
+  """All values not starting with the given string."""
+  position_not_starts_with: String
+
+  """All values ending with the given string."""
+  position_ends_with: String
+
+  """All values not ending with the given string."""
+  position_not_ends_with: String
+  rememberToken: String
+
+  """All values that are not equal to given value."""
+  rememberToken_not: String
+
+  """All values that are contained in given list."""
+  rememberToken_in: [String!]
+
+  """All values that are not contained in given list."""
+  rememberToken_not_in: [String!]
+
+  """All values less than the given value."""
+  rememberToken_lt: String
+
+  """All values less than or equal the given value."""
+  rememberToken_lte: String
+
+  """All values greater than the given value."""
+  rememberToken_gt: String
+
+  """All values greater than or equal the given value."""
+  rememberToken_gte: String
+
+  """All values containing the given string."""
+  rememberToken_contains: String
+
+  """All values not containing the given string."""
+  rememberToken_not_contains: String
+
+  """All values starting with the given string."""
+  rememberToken_starts_with: String
+
+  """All values not starting with the given string."""
+  rememberToken_not_starts_with: String
+
+  """All values ending with the given string."""
+  rememberToken_ends_with: String
+
+  """All values not ending with the given string."""
+  rememberToken_not_ends_with: String
+  roles: String
+
+  """All values that are not equal to given value."""
+  roles_not: String
+
+  """All values that are contained in given list."""
+  roles_in: [String!]
+
+  """All values that are not contained in given list."""
+  roles_not_in: [String!]
+
+  """All values less than the given value."""
+  roles_lt: String
+
+  """All values less than or equal the given value."""
+  roles_lte: String
+
+  """All values greater than the given value."""
+  roles_gt: String
+
+  """All values greater than or equal the given value."""
+  roles_gte: String
+
+  """All values containing the given string."""
+  roles_contains: String
+
+  """All values not containing the given string."""
+  roles_not_contains: String
+
+  """All values starting with the given string."""
+  roles_starts_with: String
+
+  """All values not starting with the given string."""
+  roles_not_starts_with: String
+
+  """All values ending with the given string."""
+  roles_ends_with: String
+
+  """All values not ending with the given string."""
+  roles_not_ends_with: String
+  status: String
+
+  """All values that are not equal to given value."""
+  status_not: String
+
+  """All values that are contained in given list."""
+  status_in: [String!]
+
+  """All values that are not contained in given list."""
+  status_not_in: [String!]
+
+  """All values less than the given value."""
+  status_lt: String
+
+  """All values less than or equal the given value."""
+  status_lte: String
+
+  """All values greater than the given value."""
+  status_gt: String
+
+  """All values greater than or equal the given value."""
+  status_gte: String
+
+  """All values containing the given string."""
+  status_contains: String
+
+  """All values not containing the given string."""
+  status_not_contains: String
+
+  """All values starting with the given string."""
+  status_starts_with: String
+
+  """All values not starting with the given string."""
+  status_not_starts_with: String
+
+  """All values ending with the given string."""
+  status_ends_with: String
+
+  """All values not ending with the given string."""
+  status_not_ends_with: String
+  updatedAt: DateTime
+
+  """All values that are not equal to given value."""
+  updatedAt_not: DateTime
+
+  """All values that are contained in given list."""
+  updatedAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  updatedAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  updatedAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  updatedAt_lte: DateTime
+
+  """All values greater than the given value."""
+  updatedAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  updatedAt_gte: DateTime
+  username: String
+
+  """All values that are not equal to given value."""
+  username_not: String
+
+  """All values that are contained in given list."""
+  username_in: [String!]
+
+  """All values that are not contained in given list."""
+  username_not_in: [String!]
+
+  """All values less than the given value."""
+  username_lt: String
+
+  """All values less than or equal the given value."""
+  username_lte: String
+
+  """All values greater than the given value."""
+  username_gt: String
+
+  """All values greater than or equal the given value."""
+  username_gte: String
+
+  """All values containing the given string."""
+  username_contains: String
+
+  """All values not containing the given string."""
+  username_not_contains: String
+
+  """All values starting with the given string."""
+  username_starts_with: String
+
+  """All values not starting with the given string."""
+  username_not_starts_with: String
+
+  """All values ending with the given string."""
+  username_ends_with: String
+
+  """All values not ending with the given string."""
+  username_not_ends_with: String
+}
+
 type UserSubscriptionPayload {
   mutation: MutationType!
   node: User
@@ -19931,6 +22884,26 @@ input UserSubscriptionWhereInput {
   node: UserWhereInput
 }
 
+input UserUpdateDataInput {
+  address: String
+  avatar: String
+  deletedAt: DateTime
+  email: String
+  name: String
+  password: String
+  phone: String
+  position: String
+  rememberToken: String
+  roles: String
+  status: String
+  username: String
+  profile: UserProfileUpdateOneRequiredWithoutUserIdInput
+  roles_type: RoleUpdateManyWithoutUserIdInput
+  logRequestBy: LogRequestUpdateManyWithoutRequestByInput
+  logRequestTo: LogRequestUpdateManyWithoutRequestToInput
+  appConsultation: LogRequestAppUpdateManyWithoutAppConsultationInput
+}
+
 input UserUpdateInput {
   address: String
   avatar: String
@@ -19945,6 +22918,25 @@ input UserUpdateInput {
   status: String
   username: String
   profile: UserProfileUpdateOneRequiredWithoutUserIdInput
+  roles_type: RoleUpdateManyWithoutUserIdInput
+  logRequestBy: LogRequestUpdateManyWithoutRequestByInput
+  logRequestTo: LogRequestUpdateManyWithoutRequestToInput
+  appConsultation: LogRequestAppUpdateManyWithoutAppConsultationInput
+}
+
+input UserUpdateManyDataInput {
+  address: String
+  avatar: String
+  deletedAt: DateTime
+  email: String
+  name: String
+  password: String
+  phone: String
+  position: String
+  rememberToken: String
+  roles: String
+  status: String
+  username: String
 }
 
 input UserUpdateManyMutationInput {
@@ -19962,11 +22954,119 @@ input UserUpdateManyMutationInput {
   username: String
 }
 
+input UserUpdateManyWithoutRoles_typeInput {
+  create: [UserCreateWithoutRoles_typeInput!]
+  connect: [UserWhereUniqueInput!]
+  set: [UserWhereUniqueInput!]
+  disconnect: [UserWhereUniqueInput!]
+  delete: [UserWhereUniqueInput!]
+  update: [UserUpdateWithWhereUniqueWithoutRoles_typeInput!]
+  updateMany: [UserUpdateManyWithWhereNestedInput!]
+  deleteMany: [UserScalarWhereInput!]
+  upsert: [UserUpsertWithWhereUniqueWithoutRoles_typeInput!]
+}
+
+input UserUpdateManyWithWhereNestedInput {
+  where: UserScalarWhereInput!
+  data: UserUpdateManyDataInput!
+}
+
+input UserUpdateOneInput {
+  create: UserCreateInput
+  connect: UserWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: UserUpdateDataInput
+  upsert: UserUpsertNestedInput
+}
+
+input UserUpdateOneRequiredWithoutAppConsultationInput {
+  create: UserCreateWithoutAppConsultationInput
+  connect: UserWhereUniqueInput
+  update: UserUpdateWithoutAppConsultationDataInput
+  upsert: UserUpsertWithoutAppConsultationInput
+}
+
 input UserUpdateOneRequiredWithoutProfileInput {
   create: UserCreateWithoutProfileInput
   connect: UserWhereUniqueInput
   update: UserUpdateWithoutProfileDataInput
   upsert: UserUpsertWithoutProfileInput
+}
+
+input UserUpdateOneWithoutLogRequestByInput {
+  create: UserCreateWithoutLogRequestByInput
+  connect: UserWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: UserUpdateWithoutLogRequestByDataInput
+  upsert: UserUpsertWithoutLogRequestByInput
+}
+
+input UserUpdateOneWithoutLogRequestToInput {
+  create: UserCreateWithoutLogRequestToInput
+  connect: UserWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: UserUpdateWithoutLogRequestToDataInput
+  upsert: UserUpsertWithoutLogRequestToInput
+}
+
+input UserUpdateWithoutAppConsultationDataInput {
+  address: String
+  avatar: String
+  deletedAt: DateTime
+  email: String
+  name: String
+  password: String
+  phone: String
+  position: String
+  rememberToken: String
+  roles: String
+  status: String
+  username: String
+  profile: UserProfileUpdateOneRequiredWithoutUserIdInput
+  roles_type: RoleUpdateManyWithoutUserIdInput
+  logRequestBy: LogRequestUpdateManyWithoutRequestByInput
+  logRequestTo: LogRequestUpdateManyWithoutRequestToInput
+}
+
+input UserUpdateWithoutLogRequestByDataInput {
+  address: String
+  avatar: String
+  deletedAt: DateTime
+  email: String
+  name: String
+  password: String
+  phone: String
+  position: String
+  rememberToken: String
+  roles: String
+  status: String
+  username: String
+  profile: UserProfileUpdateOneRequiredWithoutUserIdInput
+  roles_type: RoleUpdateManyWithoutUserIdInput
+  logRequestTo: LogRequestUpdateManyWithoutRequestToInput
+  appConsultation: LogRequestAppUpdateManyWithoutAppConsultationInput
+}
+
+input UserUpdateWithoutLogRequestToDataInput {
+  address: String
+  avatar: String
+  deletedAt: DateTime
+  email: String
+  name: String
+  password: String
+  phone: String
+  position: String
+  rememberToken: String
+  roles: String
+  status: String
+  username: String
+  profile: UserProfileUpdateOneRequiredWithoutUserIdInput
+  roles_type: RoleUpdateManyWithoutUserIdInput
+  logRequestBy: LogRequestUpdateManyWithoutRequestByInput
+  appConsultation: LogRequestAppUpdateManyWithoutAppConsultationInput
 }
 
 input UserUpdateWithoutProfileDataInput {
@@ -19982,11 +23082,65 @@ input UserUpdateWithoutProfileDataInput {
   roles: String
   status: String
   username: String
+  roles_type: RoleUpdateManyWithoutUserIdInput
+  logRequestBy: LogRequestUpdateManyWithoutRequestByInput
+  logRequestTo: LogRequestUpdateManyWithoutRequestToInput
+  appConsultation: LogRequestAppUpdateManyWithoutAppConsultationInput
+}
+
+input UserUpdateWithoutRoles_typeDataInput {
+  address: String
+  avatar: String
+  deletedAt: DateTime
+  email: String
+  name: String
+  password: String
+  phone: String
+  position: String
+  rememberToken: String
+  roles: String
+  status: String
+  username: String
+  profile: UserProfileUpdateOneRequiredWithoutUserIdInput
+  logRequestBy: LogRequestUpdateManyWithoutRequestByInput
+  logRequestTo: LogRequestUpdateManyWithoutRequestToInput
+  appConsultation: LogRequestAppUpdateManyWithoutAppConsultationInput
+}
+
+input UserUpdateWithWhereUniqueWithoutRoles_typeInput {
+  where: UserWhereUniqueInput!
+  data: UserUpdateWithoutRoles_typeDataInput!
+}
+
+input UserUpsertNestedInput {
+  update: UserUpdateDataInput!
+  create: UserCreateInput!
+}
+
+input UserUpsertWithoutAppConsultationInput {
+  update: UserUpdateWithoutAppConsultationDataInput!
+  create: UserCreateWithoutAppConsultationInput!
+}
+
+input UserUpsertWithoutLogRequestByInput {
+  update: UserUpdateWithoutLogRequestByDataInput!
+  create: UserCreateWithoutLogRequestByInput!
+}
+
+input UserUpsertWithoutLogRequestToInput {
+  update: UserUpdateWithoutLogRequestToDataInput!
+  create: UserCreateWithoutLogRequestToInput!
 }
 
 input UserUpsertWithoutProfileInput {
   update: UserUpdateWithoutProfileDataInput!
   create: UserCreateWithoutProfileInput!
+}
+
+input UserUpsertWithWhereUniqueWithoutRoles_typeInput {
+  where: UserWhereUniqueInput!
+  update: UserUpdateWithoutRoles_typeDataInput!
+  create: UserCreateWithoutRoles_typeInput!
 }
 
 input UserWhereInput {
@@ -20527,6 +23681,18 @@ input UserWhereInput {
   """All values not ending with the given string."""
   username_not_ends_with: String
   profile: UserProfileWhereInput
+  roles_type_every: RoleWhereInput
+  roles_type_some: RoleWhereInput
+  roles_type_none: RoleWhereInput
+  logRequestBy_every: LogRequestWhereInput
+  logRequestBy_some: LogRequestWhereInput
+  logRequestBy_none: LogRequestWhereInput
+  logRequestTo_every: LogRequestWhereInput
+  logRequestTo_some: LogRequestWhereInput
+  logRequestTo_none: LogRequestWhereInput
+  appConsultation_every: LogRequestAppWhereInput
+  appConsultation_some: LogRequestAppWhereInput
+  appConsultation_none: LogRequestAppWhereInput
 }
 
 input UserWhereUniqueInput {
@@ -20577,7 +23743,11 @@ export type ApplicationOrderByInput =   'id_ASC' |
   'waktuPernahKlien_ASC' |
   'waktuPernahKlien_DESC' |
   'whyLbh_ASC' |
-  'whyLbh_DESC'
+  'whyLbh_DESC' |
+  'tahap_ASC' |
+  'tahap_DESC' |
+  'status_ASC' |
+  'status_DESC'
 
 export type CaseClassificationOrderByInput =   'id_ASC' |
   'id_DESC' |
@@ -20585,9 +23755,7 @@ export type CaseClassificationOrderByInput =   'id_ASC' |
   'kodeMt_DESC'
 
 export type CaseConsultationAppOrderByInput =   'id_ASC' |
-  'id_DESC' |
-  'appConsultation_ASC' |
-  'appConsultation_DESC'
+  'id_DESC'
 
 export type CaseConsultationOrderByInput =   'id_ASC' |
   'id_DESC' |
@@ -20599,6 +23767,12 @@ export type CaseConsultationOrderByInput =   'id_ASC' |
   'createdBy_DESC' |
   'isiKonsul_ASC' |
   'isiKonsul_DESC' |
+  'harapan_ASC' |
+  'harapan_DESC' |
+  'saranHukum_ASC' |
+  'saranHukum_DESC' |
+  'rencanaTindakLanjut_ASC' |
+  'rencanaTindakLanjut_DESC' |
   'judulAktifitas_ASC' |
   'judulAktifitas_DESC' |
   'ppKonsul_ASC' |
@@ -20689,8 +23863,6 @@ export type CasePkOrderByInput =   'id_ASC' |
   'legalMemo_DESC' |
   'notulaRapat_ASC' |
   'notulaRapat_DESC' |
-  'ppPendamping_ASC' |
-  'ppPendamping_DESC' |
   'statusAlasanTdk_ASC' |
   'statusAlasanTdk_DESC' |
   'tglRapat_ASC' |
@@ -20747,6 +23919,28 @@ export type CaseProgressOrderByInput =   'id_ASC' |
   'jenisPeradilan_DESC' |
   'updatedAt_ASC' |
   'updatedAt_DESC' |
+  'updatedBy_ASC' |
+  'updatedBy_DESC'
+
+export type CaseReferralOrderByInput =   'id_ASC' |
+  'id_DESC' |
+  'tglTransfer_ASC' |
+  'tglTransfer_DESC' |
+  'catatan_ASC' |
+  'catatan_DESC' |
+  'createdBy_ASC' |
+  'createdBy_DESC' |
+  'updatedBy_ASC' |
+  'updatedBy_DESC'
+
+export type CaseTransferOrderByInput =   'id_ASC' |
+  'id_DESC' |
+  'tglTransfer_ASC' |
+  'tglTransfer_DESC' |
+  'catatan_ASC' |
+  'catatan_DESC' |
+  'createdBy_ASC' |
+  'createdBy_DESC' |
   'updatedBy_ASC' |
   'updatedBy_DESC'
 
@@ -20869,32 +24063,20 @@ export type DataDictOrderByInput =   'fieldNumber_ASC' |
   'visibleSelectQuery_DESC'
 
 export type LogRequestAppOrderByInput =   'id_ASC' |
-  'id_DESC' |
-  'appConsultation_ASC' |
-  'appConsultation_DESC' |
-  'logRequestId_ASC' |
-  'logRequestId_DESC'
+  'id_DESC'
 
 export type LogRequestOrderByInput =   'ID_ASC' |
   'ID_DESC' |
-  'caseId_ASC' |
-  'caseId_DESC' |
   'isiRequest_ASC' |
   'isiRequest_DESC' |
   'jenisRequest_ASC' |
   'jenisRequest_DESC' |
-  'networkId_ASC' |
-  'networkId_DESC' |
-  'personId_ASC' |
-  'personId_DESC' |
-  'pp_ASC' |
-  'pp_DESC' |
-  'requestBy_ASC' |
-  'requestBy_DESC' |
-  'requestTo_ASC' |
-  'requestTo_DESC' |
+  'statusRequest_ASC' |
+  'statusRequest_DESC' |
   'tanggapanRequest_ASC' |
   'tanggapanRequest_DESC' |
+  'tanggapanRequestIsi_ASC' |
+  'tanggapanRequestIsi_DESC' |
   'tglExpired_ASC' |
   'tglExpired_DESC' |
   'tglRequest_ASC' |
@@ -21023,12 +24205,17 @@ export type PersonOrderByInput =   'id_ASC' |
   'wargaNegara_ASC' |
   'wargaNegara_DESC'
 
-export type RoleOrderByInput =   'id_ASC' |
+export type RoleOrderByInput =   'createdAt_ASC' |
+  'createdAt_DESC' |
+  'id_ASC' |
+  'id_DESC'
+
+export type RolesTypeOrderByInput =   'createdAt_ASC' |
+  'createdAt_DESC' |
+  'id_ASC' |
   'id_DESC' |
-  'type_ASC' |
-  'type_DESC' |
-  'userId_ASC' |
-  'userId_DESC'
+  'description_ASC' |
+  'description_DESC'
 
 export type UserOrderByInput =   'address_ASC' |
   'address_DESC' |
@@ -21091,14 +24278,21 @@ export interface ApplicationCreateInput {
   updatedBy?: String | null
   waktuPernahKlien?: String | null
   whyLbh?: String | null
+  tahap?: String | null
+  status?: String | null
   wakilId: PersonCreateOneWithoutApplicationsInput
-  case: CaseCreateOneWithoutApplicationInput
+  case?: CaseCreateOneWithoutApplicationInput | null
   clients?: ClientCreateManyWithoutApplicationIdInput | null
 }
 
 export interface ApplicationCreateManyWithoutWakilIdInput {
   create?: ApplicationCreateWithoutWakilIdInput[] | ApplicationCreateWithoutWakilIdInput | null
   connect?: ApplicationWhereUniqueInput[] | ApplicationWhereUniqueInput | null
+}
+
+export interface ApplicationCreateOneInput {
+  create?: ApplicationCreateInput | null
+  connect?: ApplicationWhereUniqueInput | null
 }
 
 export interface ApplicationCreateOneWithoutCaseInput {
@@ -21128,6 +24322,8 @@ export interface ApplicationCreateWithoutCaseInput {
   updatedBy?: String | null
   waktuPernahKlien?: String | null
   whyLbh?: String | null
+  tahap?: String | null
+  status?: String | null
   wakilId: PersonCreateOneWithoutApplicationsInput
   clients?: ClientCreateManyWithoutApplicationIdInput | null
 }
@@ -21149,8 +24345,10 @@ export interface ApplicationCreateWithoutClientsInput {
   updatedBy?: String | null
   waktuPernahKlien?: String | null
   whyLbh?: String | null
+  tahap?: String | null
+  status?: String | null
   wakilId: PersonCreateOneWithoutApplicationsInput
-  case: CaseCreateOneWithoutApplicationInput
+  case?: CaseCreateOneWithoutApplicationInput | null
 }
 
 export interface ApplicationCreateWithoutWakilIdInput {
@@ -21170,7 +24368,9 @@ export interface ApplicationCreateWithoutWakilIdInput {
   updatedBy?: String | null
   waktuPernahKlien?: String | null
   whyLbh?: String | null
-  case: CaseCreateOneWithoutApplicationInput
+  tahap?: String | null
+  status?: String | null
+  case?: CaseCreateOneWithoutApplicationInput | null
   clients?: ClientCreateManyWithoutApplicationIdInput | null
 }
 
@@ -21390,6 +24590,34 @@ export interface ApplicationScalarWhereInput {
   whyLbh_not_starts_with?: String | null
   whyLbh_ends_with?: String | null
   whyLbh_not_ends_with?: String | null
+  tahap?: String | null
+  tahap_not?: String | null
+  tahap_in?: String[] | String | null
+  tahap_not_in?: String[] | String | null
+  tahap_lt?: String | null
+  tahap_lte?: String | null
+  tahap_gt?: String | null
+  tahap_gte?: String | null
+  tahap_contains?: String | null
+  tahap_not_contains?: String | null
+  tahap_starts_with?: String | null
+  tahap_not_starts_with?: String | null
+  tahap_ends_with?: String | null
+  tahap_not_ends_with?: String | null
+  status?: String | null
+  status_not?: String | null
+  status_in?: String[] | String | null
+  status_not_in?: String[] | String | null
+  status_lt?: String | null
+  status_lte?: String | null
+  status_gt?: String | null
+  status_gte?: String | null
+  status_contains?: String | null
+  status_not_contains?: String | null
+  status_starts_with?: String | null
+  status_not_starts_with?: String | null
+  status_ends_with?: String | null
+  status_not_ends_with?: String | null
 }
 
 export interface ApplicationSubscriptionWhereInput {
@@ -21401,6 +24629,30 @@ export interface ApplicationSubscriptionWhereInput {
   updatedFields_contains_every?: String[] | String | null
   updatedFields_contains_some?: String[] | String | null
   node?: ApplicationWhereInput | null
+}
+
+export interface ApplicationUpdateDataInput {
+  createdBy?: String | null
+  dudukPerara?: String | null
+  infoLbh?: String | null
+  jumlahPenerimaManfaat?: Int | null
+  konfirmasiData?: Boolean | null
+  noReg?: String | null
+  pernahKlien?: String | null
+  pernahPpLain?: String | null
+  ppLain?: String | null
+  regDate?: DateTime | null
+  relasiWakilClient?: String | null
+  setujuAdvokasi?: Boolean | null
+  statusPerwakilan?: String | null
+  updatedBy?: String | null
+  waktuPernahKlien?: String | null
+  whyLbh?: String | null
+  tahap?: String | null
+  status?: String | null
+  wakilId?: PersonUpdateOneRequiredWithoutApplicationsInput | null
+  case?: CaseUpdateOneWithoutApplicationInput | null
+  clients?: ClientUpdateManyWithoutApplicationIdInput | null
 }
 
 export interface ApplicationUpdateInput {
@@ -21420,8 +24672,10 @@ export interface ApplicationUpdateInput {
   updatedBy?: String | null
   waktuPernahKlien?: String | null
   whyLbh?: String | null
+  tahap?: String | null
+  status?: String | null
   wakilId?: PersonUpdateOneRequiredWithoutApplicationsInput | null
-  case?: CaseUpdateOneRequiredWithoutApplicationInput | null
+  case?: CaseUpdateOneWithoutApplicationInput | null
   clients?: ClientUpdateManyWithoutApplicationIdInput | null
 }
 
@@ -21442,6 +24696,8 @@ export interface ApplicationUpdateManyDataInput {
   updatedBy?: String | null
   waktuPernahKlien?: String | null
   whyLbh?: String | null
+  tahap?: String | null
+  status?: String | null
 }
 
 export interface ApplicationUpdateManyMutationInput {
@@ -21461,6 +24717,8 @@ export interface ApplicationUpdateManyMutationInput {
   updatedBy?: String | null
   waktuPernahKlien?: String | null
   whyLbh?: String | null
+  tahap?: String | null
+  status?: String | null
 }
 
 export interface ApplicationUpdateManyWithoutWakilIdInput {
@@ -21478,6 +24736,15 @@ export interface ApplicationUpdateManyWithoutWakilIdInput {
 export interface ApplicationUpdateManyWithWhereNestedInput {
   where: ApplicationScalarWhereInput
   data: ApplicationUpdateManyDataInput
+}
+
+export interface ApplicationUpdateOneInput {
+  create?: ApplicationCreateInput | null
+  connect?: ApplicationWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
+  update?: ApplicationUpdateDataInput | null
+  upsert?: ApplicationUpsertNestedInput | null
 }
 
 export interface ApplicationUpdateOneRequiredWithoutCaseInput {
@@ -21511,6 +24778,8 @@ export interface ApplicationUpdateWithoutCaseDataInput {
   updatedBy?: String | null
   waktuPernahKlien?: String | null
   whyLbh?: String | null
+  tahap?: String | null
+  status?: String | null
   wakilId?: PersonUpdateOneRequiredWithoutApplicationsInput | null
   clients?: ClientUpdateManyWithoutApplicationIdInput | null
 }
@@ -21532,8 +24801,10 @@ export interface ApplicationUpdateWithoutClientsDataInput {
   updatedBy?: String | null
   waktuPernahKlien?: String | null
   whyLbh?: String | null
+  tahap?: String | null
+  status?: String | null
   wakilId?: PersonUpdateOneRequiredWithoutApplicationsInput | null
-  case?: CaseUpdateOneRequiredWithoutApplicationInput | null
+  case?: CaseUpdateOneWithoutApplicationInput | null
 }
 
 export interface ApplicationUpdateWithoutWakilIdDataInput {
@@ -21553,13 +24824,20 @@ export interface ApplicationUpdateWithoutWakilIdDataInput {
   updatedBy?: String | null
   waktuPernahKlien?: String | null
   whyLbh?: String | null
-  case?: CaseUpdateOneRequiredWithoutApplicationInput | null
+  tahap?: String | null
+  status?: String | null
+  case?: CaseUpdateOneWithoutApplicationInput | null
   clients?: ClientUpdateManyWithoutApplicationIdInput | null
 }
 
 export interface ApplicationUpdateWithWhereUniqueWithoutWakilIdInput {
   where: ApplicationWhereUniqueInput
   data: ApplicationUpdateWithoutWakilIdDataInput
+}
+
+export interface ApplicationUpsertNestedInput {
+  update: ApplicationUpdateDataInput
+  create: ApplicationCreateInput
 }
 
 export interface ApplicationUpsertWithoutCaseInput {
@@ -21794,6 +25072,34 @@ export interface ApplicationWhereInput {
   whyLbh_not_starts_with?: String | null
   whyLbh_ends_with?: String | null
   whyLbh_not_ends_with?: String | null
+  tahap?: String | null
+  tahap_not?: String | null
+  tahap_in?: String[] | String | null
+  tahap_not_in?: String[] | String | null
+  tahap_lt?: String | null
+  tahap_lte?: String | null
+  tahap_gt?: String | null
+  tahap_gte?: String | null
+  tahap_contains?: String | null
+  tahap_not_contains?: String | null
+  tahap_starts_with?: String | null
+  tahap_not_starts_with?: String | null
+  tahap_ends_with?: String | null
+  tahap_not_ends_with?: String | null
+  status?: String | null
+  status_not?: String | null
+  status_in?: String[] | String | null
+  status_not_in?: String[] | String | null
+  status_lt?: String | null
+  status_lte?: String | null
+  status_gt?: String | null
+  status_gte?: String | null
+  status_contains?: String | null
+  status_not_contains?: String | null
+  status_starts_with?: String | null
+  status_not_starts_with?: String | null
+  status_ends_with?: String | null
+  status_not_ends_with?: String | null
   wakilId?: PersonWhereInput | null
   case?: CaseWhereInput | null
   clients_every?: ClientWhereInput | null
@@ -21937,7 +25243,7 @@ export interface CaseClassificationWhereUniqueInput {
 }
 
 export interface CaseConsultationAppCreateInput {
-  appConsultation?: String | null
+  appConsultation?: UserCreateOneInput | null
   caseConsultationId: CaseConsultationCreateOneWithoutAppsInput
 }
 
@@ -21947,7 +25253,7 @@ export interface CaseConsultationAppCreateManyWithoutCaseConsultationIdInput {
 }
 
 export interface CaseConsultationAppCreateWithoutCaseConsultationIdInput {
-  appConsultation?: String | null
+  appConsultation?: UserCreateOneInput | null
 }
 
 export interface CaseConsultationAppScalarWhereInput {
@@ -21962,20 +25268,6 @@ export interface CaseConsultationAppScalarWhereInput {
   id_lte?: Int | null
   id_gt?: Int | null
   id_gte?: Int | null
-  appConsultation?: String | null
-  appConsultation_not?: String | null
-  appConsultation_in?: String[] | String | null
-  appConsultation_not_in?: String[] | String | null
-  appConsultation_lt?: String | null
-  appConsultation_lte?: String | null
-  appConsultation_gt?: String | null
-  appConsultation_gte?: String | null
-  appConsultation_contains?: String | null
-  appConsultation_not_contains?: String | null
-  appConsultation_starts_with?: String | null
-  appConsultation_not_starts_with?: String | null
-  appConsultation_ends_with?: String | null
-  appConsultation_not_ends_with?: String | null
 }
 
 export interface CaseConsultationAppSubscriptionWhereInput {
@@ -21990,16 +25282,8 @@ export interface CaseConsultationAppSubscriptionWhereInput {
 }
 
 export interface CaseConsultationAppUpdateInput {
-  appConsultation?: String | null
+  appConsultation?: UserUpdateOneInput | null
   caseConsultationId?: CaseConsultationUpdateOneRequiredWithoutAppsInput | null
-}
-
-export interface CaseConsultationAppUpdateManyDataInput {
-  appConsultation?: String | null
-}
-
-export interface CaseConsultationAppUpdateManyMutationInput {
-  appConsultation?: String | null
 }
 
 export interface CaseConsultationAppUpdateManyWithoutCaseConsultationIdInput {
@@ -22009,18 +25293,12 @@ export interface CaseConsultationAppUpdateManyWithoutCaseConsultationIdInput {
   disconnect?: CaseConsultationAppWhereUniqueInput[] | CaseConsultationAppWhereUniqueInput | null
   delete?: CaseConsultationAppWhereUniqueInput[] | CaseConsultationAppWhereUniqueInput | null
   update?: CaseConsultationAppUpdateWithWhereUniqueWithoutCaseConsultationIdInput[] | CaseConsultationAppUpdateWithWhereUniqueWithoutCaseConsultationIdInput | null
-  updateMany?: CaseConsultationAppUpdateManyWithWhereNestedInput[] | CaseConsultationAppUpdateManyWithWhereNestedInput | null
   deleteMany?: CaseConsultationAppScalarWhereInput[] | CaseConsultationAppScalarWhereInput | null
   upsert?: CaseConsultationAppUpsertWithWhereUniqueWithoutCaseConsultationIdInput[] | CaseConsultationAppUpsertWithWhereUniqueWithoutCaseConsultationIdInput | null
 }
 
-export interface CaseConsultationAppUpdateManyWithWhereNestedInput {
-  where: CaseConsultationAppScalarWhereInput
-  data: CaseConsultationAppUpdateManyDataInput
-}
-
 export interface CaseConsultationAppUpdateWithoutCaseConsultationIdDataInput {
-  appConsultation?: String | null
+  appConsultation?: UserUpdateOneInput | null
 }
 
 export interface CaseConsultationAppUpdateWithWhereUniqueWithoutCaseConsultationIdInput {
@@ -22046,20 +25324,7 @@ export interface CaseConsultationAppWhereInput {
   id_lte?: Int | null
   id_gt?: Int | null
   id_gte?: Int | null
-  appConsultation?: String | null
-  appConsultation_not?: String | null
-  appConsultation_in?: String[] | String | null
-  appConsultation_not_in?: String[] | String | null
-  appConsultation_lt?: String | null
-  appConsultation_lte?: String | null
-  appConsultation_gt?: String | null
-  appConsultation_gte?: String | null
-  appConsultation_contains?: String | null
-  appConsultation_not_contains?: String | null
-  appConsultation_starts_with?: String | null
-  appConsultation_not_starts_with?: String | null
-  appConsultation_ends_with?: String | null
-  appConsultation_not_ends_with?: String | null
+  appConsultation?: UserWhereInput | null
   caseConsultationId?: CaseConsultationWhereInput | null
 }
 
@@ -22071,6 +25336,9 @@ export interface CaseConsultationCreateInput {
   appKonsul?: String | null
   createdBy?: String | null
   isiKonsul?: String | null
+  harapan?: String | null
+  saranHukum?: String | null
+  rencanaTindakLanjut?: String | null
   judulAktifitas?: String | null
   ppKonsul?: String | null
   tglKonsul?: DateTime | null
@@ -22093,6 +25361,9 @@ export interface CaseConsultationCreateWithoutAppsInput {
   appKonsul?: String | null
   createdBy?: String | null
   isiKonsul?: String | null
+  harapan?: String | null
+  saranHukum?: String | null
+  rencanaTindakLanjut?: String | null
   judulAktifitas?: String | null
   ppKonsul?: String | null
   tglKonsul?: DateTime | null
@@ -22104,6 +25375,9 @@ export interface CaseConsultationCreateWithoutCaseIdInput {
   appKonsul?: String | null
   createdBy?: String | null
   isiKonsul?: String | null
+  harapan?: String | null
+  saranHukum?: String | null
+  rencanaTindakLanjut?: String | null
   judulAktifitas?: String | null
   ppKonsul?: String | null
   tglKonsul?: DateTime | null
@@ -22173,6 +25447,48 @@ export interface CaseConsultationScalarWhereInput {
   isiKonsul_not_starts_with?: String | null
   isiKonsul_ends_with?: String | null
   isiKonsul_not_ends_with?: String | null
+  harapan?: String | null
+  harapan_not?: String | null
+  harapan_in?: String[] | String | null
+  harapan_not_in?: String[] | String | null
+  harapan_lt?: String | null
+  harapan_lte?: String | null
+  harapan_gt?: String | null
+  harapan_gte?: String | null
+  harapan_contains?: String | null
+  harapan_not_contains?: String | null
+  harapan_starts_with?: String | null
+  harapan_not_starts_with?: String | null
+  harapan_ends_with?: String | null
+  harapan_not_ends_with?: String | null
+  saranHukum?: String | null
+  saranHukum_not?: String | null
+  saranHukum_in?: String[] | String | null
+  saranHukum_not_in?: String[] | String | null
+  saranHukum_lt?: String | null
+  saranHukum_lte?: String | null
+  saranHukum_gt?: String | null
+  saranHukum_gte?: String | null
+  saranHukum_contains?: String | null
+  saranHukum_not_contains?: String | null
+  saranHukum_starts_with?: String | null
+  saranHukum_not_starts_with?: String | null
+  saranHukum_ends_with?: String | null
+  saranHukum_not_ends_with?: String | null
+  rencanaTindakLanjut?: String | null
+  rencanaTindakLanjut_not?: String | null
+  rencanaTindakLanjut_in?: String[] | String | null
+  rencanaTindakLanjut_not_in?: String[] | String | null
+  rencanaTindakLanjut_lt?: String | null
+  rencanaTindakLanjut_lte?: String | null
+  rencanaTindakLanjut_gt?: String | null
+  rencanaTindakLanjut_gte?: String | null
+  rencanaTindakLanjut_contains?: String | null
+  rencanaTindakLanjut_not_contains?: String | null
+  rencanaTindakLanjut_starts_with?: String | null
+  rencanaTindakLanjut_not_starts_with?: String | null
+  rencanaTindakLanjut_ends_with?: String | null
+  rencanaTindakLanjut_not_ends_with?: String | null
   judulAktifitas?: String | null
   judulAktifitas_not?: String | null
   judulAktifitas_in?: String[] | String | null
@@ -22248,6 +25564,9 @@ export interface CaseConsultationUpdateInput {
   appKonsul?: String | null
   createdBy?: String | null
   isiKonsul?: String | null
+  harapan?: String | null
+  saranHukum?: String | null
+  rencanaTindakLanjut?: String | null
   judulAktifitas?: String | null
   ppKonsul?: String | null
   tglKonsul?: DateTime | null
@@ -22260,6 +25579,9 @@ export interface CaseConsultationUpdateManyDataInput {
   appKonsul?: String | null
   createdBy?: String | null
   isiKonsul?: String | null
+  harapan?: String | null
+  saranHukum?: String | null
+  rencanaTindakLanjut?: String | null
   judulAktifitas?: String | null
   ppKonsul?: String | null
   tglKonsul?: DateTime | null
@@ -22270,6 +25592,9 @@ export interface CaseConsultationUpdateManyMutationInput {
   appKonsul?: String | null
   createdBy?: String | null
   isiKonsul?: String | null
+  harapan?: String | null
+  saranHukum?: String | null
+  rencanaTindakLanjut?: String | null
   judulAktifitas?: String | null
   ppKonsul?: String | null
   tglKonsul?: DateTime | null
@@ -22304,6 +25629,9 @@ export interface CaseConsultationUpdateWithoutAppsDataInput {
   appKonsul?: String | null
   createdBy?: String | null
   isiKonsul?: String | null
+  harapan?: String | null
+  saranHukum?: String | null
+  rencanaTindakLanjut?: String | null
   judulAktifitas?: String | null
   ppKonsul?: String | null
   tglKonsul?: DateTime | null
@@ -22315,6 +25643,9 @@ export interface CaseConsultationUpdateWithoutCaseIdDataInput {
   appKonsul?: String | null
   createdBy?: String | null
   isiKonsul?: String | null
+  harapan?: String | null
+  saranHukum?: String | null
+  rencanaTindakLanjut?: String | null
   judulAktifitas?: String | null
   ppKonsul?: String | null
   tglKonsul?: DateTime | null
@@ -22400,6 +25731,48 @@ export interface CaseConsultationWhereInput {
   isiKonsul_not_starts_with?: String | null
   isiKonsul_ends_with?: String | null
   isiKonsul_not_ends_with?: String | null
+  harapan?: String | null
+  harapan_not?: String | null
+  harapan_in?: String[] | String | null
+  harapan_not_in?: String[] | String | null
+  harapan_lt?: String | null
+  harapan_lte?: String | null
+  harapan_gt?: String | null
+  harapan_gte?: String | null
+  harapan_contains?: String | null
+  harapan_not_contains?: String | null
+  harapan_starts_with?: String | null
+  harapan_not_starts_with?: String | null
+  harapan_ends_with?: String | null
+  harapan_not_ends_with?: String | null
+  saranHukum?: String | null
+  saranHukum_not?: String | null
+  saranHukum_in?: String[] | String | null
+  saranHukum_not_in?: String[] | String | null
+  saranHukum_lt?: String | null
+  saranHukum_lte?: String | null
+  saranHukum_gt?: String | null
+  saranHukum_gte?: String | null
+  saranHukum_contains?: String | null
+  saranHukum_not_contains?: String | null
+  saranHukum_starts_with?: String | null
+  saranHukum_not_starts_with?: String | null
+  saranHukum_ends_with?: String | null
+  saranHukum_not_ends_with?: String | null
+  rencanaTindakLanjut?: String | null
+  rencanaTindakLanjut_not?: String | null
+  rencanaTindakLanjut_in?: String[] | String | null
+  rencanaTindakLanjut_not_in?: String[] | String | null
+  rencanaTindakLanjut_lt?: String | null
+  rencanaTindakLanjut_lte?: String | null
+  rencanaTindakLanjut_gt?: String | null
+  rencanaTindakLanjut_gte?: String | null
+  rencanaTindakLanjut_contains?: String | null
+  rencanaTindakLanjut_not_contains?: String | null
+  rencanaTindakLanjut_starts_with?: String | null
+  rencanaTindakLanjut_not_starts_with?: String | null
+  rencanaTindakLanjut_ends_with?: String | null
+  rencanaTindakLanjut_not_ends_with?: String | null
   judulAktifitas?: String | null
   judulAktifitas_not?: String | null
   judulAktifitas_in?: String[] | String | null
@@ -22491,11 +25864,14 @@ export interface CaseCreateInput {
   issues?: CaseIssueCreateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanCreateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuCreateManyWithoutCaseIdInput | null
-  pks?: CasePkCreateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressCreateManyWithoutCaseIdInput | null
+  pk?: CasePkCreateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressCreateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityCreateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestCreateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferCreateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralCreateManyWithoutCaseIdInput | null
 }
 
 export interface CaseCreateOneWithoutActivitiesInput {
@@ -22533,18 +25909,33 @@ export interface CaseCreateOneWithoutKorbansInput {
   connect?: CaseWhereUniqueInput | null
 }
 
+export interface CaseCreateOneWithoutLogRequestsInput {
+  create?: CaseCreateWithoutLogRequestsInput | null
+  connect?: CaseWhereUniqueInput | null
+}
+
 export interface CaseCreateOneWithoutPelakusInput {
   create?: CaseCreateWithoutPelakusInput | null
   connect?: CaseWhereUniqueInput | null
 }
 
-export interface CaseCreateOneWithoutPksInput {
-  create?: CaseCreateWithoutPksInput | null
+export interface CaseCreateOneWithoutPkInput {
+  create?: CaseCreateWithoutPkInput | null
   connect?: CaseWhereUniqueInput | null
 }
 
 export interface CaseCreateOneWithoutProgressesInput {
   create?: CaseCreateWithoutProgressesInput | null
+  connect?: CaseWhereUniqueInput | null
+}
+
+export interface CaseCreateOneWithoutReferralsInput {
+  create?: CaseCreateWithoutReferralsInput | null
+  connect?: CaseWhereUniqueInput | null
+}
+
+export interface CaseCreateOneWithoutTransferInput {
+  create?: CaseCreateWithoutTransferInput | null
   connect?: CaseWhereUniqueInput | null
 }
 
@@ -22581,10 +25972,13 @@ export interface CaseCreateWithoutActivitiesInput {
   issues?: CaseIssueCreateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanCreateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuCreateManyWithoutCaseIdInput | null
-  pks?: CasePkCreateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressCreateManyWithoutCaseIdInput | null
+  pk?: CasePkCreateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressCreateOneWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestCreateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferCreateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralCreateManyWithoutCaseIdInput | null
 }
 
 export interface CaseCreateWithoutApplicationInput {
@@ -22609,11 +26003,14 @@ export interface CaseCreateWithoutApplicationInput {
   issues?: CaseIssueCreateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanCreateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuCreateManyWithoutCaseIdInput | null
-  pks?: CasePkCreateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressCreateManyWithoutCaseIdInput | null
+  pk?: CasePkCreateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressCreateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityCreateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestCreateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferCreateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralCreateManyWithoutCaseIdInput | null
 }
 
 export interface CaseCreateWithoutClassificationsInput {
@@ -22638,11 +26035,14 @@ export interface CaseCreateWithoutClassificationsInput {
   issues?: CaseIssueCreateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanCreateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuCreateManyWithoutCaseIdInput | null
-  pks?: CasePkCreateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressCreateManyWithoutCaseIdInput | null
+  pk?: CasePkCreateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressCreateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityCreateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestCreateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferCreateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralCreateManyWithoutCaseIdInput | null
 }
 
 export interface CaseCreateWithoutConsultationsInput {
@@ -22667,11 +26067,14 @@ export interface CaseCreateWithoutConsultationsInput {
   issues?: CaseIssueCreateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanCreateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuCreateManyWithoutCaseIdInput | null
-  pks?: CasePkCreateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressCreateManyWithoutCaseIdInput | null
+  pk?: CasePkCreateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressCreateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityCreateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestCreateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferCreateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralCreateManyWithoutCaseIdInput | null
 }
 
 export interface CaseCreateWithoutDocumentsInput {
@@ -22696,11 +26099,14 @@ export interface CaseCreateWithoutDocumentsInput {
   issues?: CaseIssueCreateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanCreateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuCreateManyWithoutCaseIdInput | null
-  pks?: CasePkCreateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressCreateManyWithoutCaseIdInput | null
+  pk?: CasePkCreateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressCreateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityCreateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestCreateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferCreateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralCreateManyWithoutCaseIdInput | null
 }
 
 export interface CaseCreateWithoutIssuesInput {
@@ -22725,11 +26131,14 @@ export interface CaseCreateWithoutIssuesInput {
   documents?: CaseDocumentCreateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanCreateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuCreateManyWithoutCaseIdInput | null
-  pks?: CasePkCreateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressCreateManyWithoutCaseIdInput | null
+  pk?: CasePkCreateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressCreateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityCreateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestCreateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferCreateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralCreateManyWithoutCaseIdInput | null
 }
 
 export interface CaseCreateWithoutKorbansInput {
@@ -22754,11 +26163,46 @@ export interface CaseCreateWithoutKorbansInput {
   documents?: CaseDocumentCreateManyWithoutCaseIdInput | null
   issues?: CaseIssueCreateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuCreateManyWithoutCaseIdInput | null
-  pks?: CasePkCreateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressCreateManyWithoutCaseIdInput | null
+  pk?: CasePkCreateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressCreateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityCreateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestCreateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferCreateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralCreateManyWithoutCaseIdInput | null
+}
+
+export interface CaseCreateWithoutLogRequestsInput {
+  applicationId?: Int | null
+  caseClosed: Boolean
+  caseClosedJenis?: String | null
+  createdBy?: String | null
+  hakTerlanggar?: String | null
+  issue?: String | null
+  judulKasus?: String | null
+  klasifikasiDok?: String | null
+  kronologiKasus?: String | null
+  lockDitolak: Boolean
+  statusPendampingan?: String | null
+  targetAdvokasi?: String | null
+  unlockPk: Boolean
+  unlockTransfer: Boolean
+  updatedBy?: String | null
+  application: ApplicationCreateOneWithoutCaseInput
+  classifications?: CaseClassificationCreateManyWithoutCaseIdInput | null
+  consultations?: CaseConsultationCreateManyWithoutCaseIdInput | null
+  documents?: CaseDocumentCreateManyWithoutCaseIdInput | null
+  issues?: CaseIssueCreateManyWithoutCaseIdInput | null
+  korbans?: CaseKorbanCreateManyWithoutCaseIdInput | null
+  pelakus?: CasePelakuCreateManyWithoutCaseIdInput | null
+  pk?: CasePkCreateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressCreateOneWithoutCaseIdInput | null
+  activities?: CaseProgressActivityCreateManyWithoutCaseIdInput | null
+  transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput | null
+  violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferCreateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralCreateManyWithoutCaseIdInput | null
 }
 
 export interface CaseCreateWithoutPelakusInput {
@@ -22783,14 +26227,17 @@ export interface CaseCreateWithoutPelakusInput {
   documents?: CaseDocumentCreateManyWithoutCaseIdInput | null
   issues?: CaseIssueCreateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanCreateManyWithoutCaseIdInput | null
-  pks?: CasePkCreateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressCreateManyWithoutCaseIdInput | null
+  pk?: CasePkCreateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressCreateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityCreateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestCreateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferCreateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralCreateManyWithoutCaseIdInput | null
 }
 
-export interface CaseCreateWithoutPksInput {
+export interface CaseCreateWithoutPkInput {
   applicationId?: Int | null
   caseClosed: Boolean
   caseClosedJenis?: String | null
@@ -22813,10 +26260,13 @@ export interface CaseCreateWithoutPksInput {
   issues?: CaseIssueCreateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanCreateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuCreateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressCreateManyWithoutCaseIdInput | null
+  progresses?: CaseProgressCreateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityCreateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestCreateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferCreateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralCreateManyWithoutCaseIdInput | null
 }
 
 export interface CaseCreateWithoutProgressesInput {
@@ -22842,10 +26292,77 @@ export interface CaseCreateWithoutProgressesInput {
   issues?: CaseIssueCreateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanCreateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuCreateManyWithoutCaseIdInput | null
-  pks?: CasePkCreateManyWithoutCaseIdInput | null
+  pk?: CasePkCreateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityCreateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestCreateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferCreateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralCreateManyWithoutCaseIdInput | null
+}
+
+export interface CaseCreateWithoutReferralsInput {
+  applicationId?: Int | null
+  caseClosed: Boolean
+  caseClosedJenis?: String | null
+  createdBy?: String | null
+  hakTerlanggar?: String | null
+  issue?: String | null
+  judulKasus?: String | null
+  klasifikasiDok?: String | null
+  kronologiKasus?: String | null
+  lockDitolak: Boolean
+  statusPendampingan?: String | null
+  targetAdvokasi?: String | null
+  unlockPk: Boolean
+  unlockTransfer: Boolean
+  updatedBy?: String | null
+  application: ApplicationCreateOneWithoutCaseInput
+  classifications?: CaseClassificationCreateManyWithoutCaseIdInput | null
+  consultations?: CaseConsultationCreateManyWithoutCaseIdInput | null
+  documents?: CaseDocumentCreateManyWithoutCaseIdInput | null
+  issues?: CaseIssueCreateManyWithoutCaseIdInput | null
+  korbans?: CaseKorbanCreateManyWithoutCaseIdInput | null
+  pelakus?: CasePelakuCreateManyWithoutCaseIdInput | null
+  pk?: CasePkCreateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressCreateOneWithoutCaseIdInput | null
+  activities?: CaseProgressActivityCreateManyWithoutCaseIdInput | null
+  transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput | null
+  violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestCreateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferCreateOneWithoutCaseIdInput | null
+}
+
+export interface CaseCreateWithoutTransferInput {
+  applicationId?: Int | null
+  caseClosed: Boolean
+  caseClosedJenis?: String | null
+  createdBy?: String | null
+  hakTerlanggar?: String | null
+  issue?: String | null
+  judulKasus?: String | null
+  klasifikasiDok?: String | null
+  kronologiKasus?: String | null
+  lockDitolak: Boolean
+  statusPendampingan?: String | null
+  targetAdvokasi?: String | null
+  unlockPk: Boolean
+  unlockTransfer: Boolean
+  updatedBy?: String | null
+  application: ApplicationCreateOneWithoutCaseInput
+  classifications?: CaseClassificationCreateManyWithoutCaseIdInput | null
+  consultations?: CaseConsultationCreateManyWithoutCaseIdInput | null
+  documents?: CaseDocumentCreateManyWithoutCaseIdInput | null
+  issues?: CaseIssueCreateManyWithoutCaseIdInput | null
+  korbans?: CaseKorbanCreateManyWithoutCaseIdInput | null
+  pelakus?: CasePelakuCreateManyWithoutCaseIdInput | null
+  pk?: CasePkCreateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressCreateOneWithoutCaseIdInput | null
+  activities?: CaseProgressActivityCreateManyWithoutCaseIdInput | null
+  transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput | null
+  violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestCreateManyWithoutCaseIdInput | null
+  referrals?: CaseReferralCreateManyWithoutCaseIdInput | null
 }
 
 export interface CaseCreateWithoutTransferreferralsInput {
@@ -22871,10 +26388,13 @@ export interface CaseCreateWithoutTransferreferralsInput {
   issues?: CaseIssueCreateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanCreateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuCreateManyWithoutCaseIdInput | null
-  pks?: CasePkCreateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressCreateManyWithoutCaseIdInput | null
+  pk?: CasePkCreateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressCreateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityCreateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightCreateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestCreateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferCreateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralCreateManyWithoutCaseIdInput | null
 }
 
 export interface CaseCreateWithoutViolatedrightsInput {
@@ -22900,10 +26420,13 @@ export interface CaseCreateWithoutViolatedrightsInput {
   issues?: CaseIssueCreateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanCreateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuCreateManyWithoutCaseIdInput | null
-  pks?: CasePkCreateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressCreateManyWithoutCaseIdInput | null
+  pk?: CasePkCreateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressCreateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityCreateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralCreateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestCreateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferCreateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralCreateManyWithoutCaseIdInput | null
 }
 
 export interface CaseDocumentCreateInput {
@@ -23622,148 +27145,30 @@ export interface CasePelakuWhereUniqueInput {
 
 export interface CasePkCreateInput {
   createdBy?: String | null
-  didampingi: Boolean
+  didampingi?: String | null
   legalMemo?: String | null
   notulaRapat?: String | null
-  ppPendamping?: Int | null
   statusAlasanTdk?: String | null
   tglRapat?: DateTime | null
   updatedBy?: String | null
-  caseId: CaseCreateOneWithoutPksInput
+  caseId: CaseCreateOneWithoutPkInput
+  ppPendamping?: UserCreateOneInput | null
 }
 
-export interface CasePkCreateManyWithoutCaseIdInput {
-  create?: CasePkCreateWithoutCaseIdInput[] | CasePkCreateWithoutCaseIdInput | null
-  connect?: CasePkWhereUniqueInput[] | CasePkWhereUniqueInput | null
+export interface CasePkCreateOneWithoutCaseIdInput {
+  create?: CasePkCreateWithoutCaseIdInput | null
+  connect?: CasePkWhereUniqueInput | null
 }
 
 export interface CasePkCreateWithoutCaseIdInput {
   createdBy?: String | null
-  didampingi: Boolean
+  didampingi?: String | null
   legalMemo?: String | null
   notulaRapat?: String | null
-  ppPendamping?: Int | null
   statusAlasanTdk?: String | null
   tglRapat?: DateTime | null
   updatedBy?: String | null
-}
-
-export interface CasePkScalarWhereInput {
-  AND?: CasePkScalarWhereInput[] | CasePkScalarWhereInput | null
-  OR?: CasePkScalarWhereInput[] | CasePkScalarWhereInput | null
-  NOT?: CasePkScalarWhereInput[] | CasePkScalarWhereInput | null
-  id?: Int | null
-  id_not?: Int | null
-  id_in?: Int[] | Int | null
-  id_not_in?: Int[] | Int | null
-  id_lt?: Int | null
-  id_lte?: Int | null
-  id_gt?: Int | null
-  id_gte?: Int | null
-  createdAt?: DateTime | null
-  createdAt_not?: DateTime | null
-  createdAt_in?: DateTime[] | DateTime | null
-  createdAt_not_in?: DateTime[] | DateTime | null
-  createdAt_lt?: DateTime | null
-  createdAt_lte?: DateTime | null
-  createdAt_gt?: DateTime | null
-  createdAt_gte?: DateTime | null
-  createdBy?: String | null
-  createdBy_not?: String | null
-  createdBy_in?: String[] | String | null
-  createdBy_not_in?: String[] | String | null
-  createdBy_lt?: String | null
-  createdBy_lte?: String | null
-  createdBy_gt?: String | null
-  createdBy_gte?: String | null
-  createdBy_contains?: String | null
-  createdBy_not_contains?: String | null
-  createdBy_starts_with?: String | null
-  createdBy_not_starts_with?: String | null
-  createdBy_ends_with?: String | null
-  createdBy_not_ends_with?: String | null
-  didampingi?: Boolean | null
-  didampingi_not?: Boolean | null
-  legalMemo?: String | null
-  legalMemo_not?: String | null
-  legalMemo_in?: String[] | String | null
-  legalMemo_not_in?: String[] | String | null
-  legalMemo_lt?: String | null
-  legalMemo_lte?: String | null
-  legalMemo_gt?: String | null
-  legalMemo_gte?: String | null
-  legalMemo_contains?: String | null
-  legalMemo_not_contains?: String | null
-  legalMemo_starts_with?: String | null
-  legalMemo_not_starts_with?: String | null
-  legalMemo_ends_with?: String | null
-  legalMemo_not_ends_with?: String | null
-  notulaRapat?: String | null
-  notulaRapat_not?: String | null
-  notulaRapat_in?: String[] | String | null
-  notulaRapat_not_in?: String[] | String | null
-  notulaRapat_lt?: String | null
-  notulaRapat_lte?: String | null
-  notulaRapat_gt?: String | null
-  notulaRapat_gte?: String | null
-  notulaRapat_contains?: String | null
-  notulaRapat_not_contains?: String | null
-  notulaRapat_starts_with?: String | null
-  notulaRapat_not_starts_with?: String | null
-  notulaRapat_ends_with?: String | null
-  notulaRapat_not_ends_with?: String | null
-  ppPendamping?: Int | null
-  ppPendamping_not?: Int | null
-  ppPendamping_in?: Int[] | Int | null
-  ppPendamping_not_in?: Int[] | Int | null
-  ppPendamping_lt?: Int | null
-  ppPendamping_lte?: Int | null
-  ppPendamping_gt?: Int | null
-  ppPendamping_gte?: Int | null
-  statusAlasanTdk?: String | null
-  statusAlasanTdk_not?: String | null
-  statusAlasanTdk_in?: String[] | String | null
-  statusAlasanTdk_not_in?: String[] | String | null
-  statusAlasanTdk_lt?: String | null
-  statusAlasanTdk_lte?: String | null
-  statusAlasanTdk_gt?: String | null
-  statusAlasanTdk_gte?: String | null
-  statusAlasanTdk_contains?: String | null
-  statusAlasanTdk_not_contains?: String | null
-  statusAlasanTdk_starts_with?: String | null
-  statusAlasanTdk_not_starts_with?: String | null
-  statusAlasanTdk_ends_with?: String | null
-  statusAlasanTdk_not_ends_with?: String | null
-  tglRapat?: DateTime | null
-  tglRapat_not?: DateTime | null
-  tglRapat_in?: DateTime[] | DateTime | null
-  tglRapat_not_in?: DateTime[] | DateTime | null
-  tglRapat_lt?: DateTime | null
-  tglRapat_lte?: DateTime | null
-  tglRapat_gt?: DateTime | null
-  tglRapat_gte?: DateTime | null
-  updatedAt?: DateTime | null
-  updatedAt_not?: DateTime | null
-  updatedAt_in?: DateTime[] | DateTime | null
-  updatedAt_not_in?: DateTime[] | DateTime | null
-  updatedAt_lt?: DateTime | null
-  updatedAt_lte?: DateTime | null
-  updatedAt_gt?: DateTime | null
-  updatedAt_gte?: DateTime | null
-  updatedBy?: String | null
-  updatedBy_not?: String | null
-  updatedBy_in?: String[] | String | null
-  updatedBy_not_in?: String[] | String | null
-  updatedBy_lt?: String | null
-  updatedBy_lte?: String | null
-  updatedBy_gt?: String | null
-  updatedBy_gte?: String | null
-  updatedBy_contains?: String | null
-  updatedBy_not_contains?: String | null
-  updatedBy_starts_with?: String | null
-  updatedBy_not_starts_with?: String | null
-  updatedBy_ends_with?: String | null
-  updatedBy_not_ends_with?: String | null
+  ppPendamping?: UserCreateOneInput | null
 }
 
 export interface CasePkSubscriptionWhereInput {
@@ -23779,73 +27184,47 @@ export interface CasePkSubscriptionWhereInput {
 
 export interface CasePkUpdateInput {
   createdBy?: String | null
-  didampingi?: Boolean | null
+  didampingi?: String | null
   legalMemo?: String | null
   notulaRapat?: String | null
-  ppPendamping?: Int | null
   statusAlasanTdk?: String | null
   tglRapat?: DateTime | null
   updatedBy?: String | null
-  caseId?: CaseUpdateOneRequiredWithoutPksInput | null
-}
-
-export interface CasePkUpdateManyDataInput {
-  createdBy?: String | null
-  didampingi?: Boolean | null
-  legalMemo?: String | null
-  notulaRapat?: String | null
-  ppPendamping?: Int | null
-  statusAlasanTdk?: String | null
-  tglRapat?: DateTime | null
-  updatedBy?: String | null
+  caseId?: CaseUpdateOneRequiredWithoutPkInput | null
+  ppPendamping?: UserUpdateOneInput | null
 }
 
 export interface CasePkUpdateManyMutationInput {
   createdBy?: String | null
-  didampingi?: Boolean | null
+  didampingi?: String | null
   legalMemo?: String | null
   notulaRapat?: String | null
-  ppPendamping?: Int | null
   statusAlasanTdk?: String | null
   tglRapat?: DateTime | null
   updatedBy?: String | null
 }
 
-export interface CasePkUpdateManyWithoutCaseIdInput {
-  create?: CasePkCreateWithoutCaseIdInput[] | CasePkCreateWithoutCaseIdInput | null
-  connect?: CasePkWhereUniqueInput[] | CasePkWhereUniqueInput | null
-  set?: CasePkWhereUniqueInput[] | CasePkWhereUniqueInput | null
-  disconnect?: CasePkWhereUniqueInput[] | CasePkWhereUniqueInput | null
-  delete?: CasePkWhereUniqueInput[] | CasePkWhereUniqueInput | null
-  update?: CasePkUpdateWithWhereUniqueWithoutCaseIdInput[] | CasePkUpdateWithWhereUniqueWithoutCaseIdInput | null
-  updateMany?: CasePkUpdateManyWithWhereNestedInput[] | CasePkUpdateManyWithWhereNestedInput | null
-  deleteMany?: CasePkScalarWhereInput[] | CasePkScalarWhereInput | null
-  upsert?: CasePkUpsertWithWhereUniqueWithoutCaseIdInput[] | CasePkUpsertWithWhereUniqueWithoutCaseIdInput | null
-}
-
-export interface CasePkUpdateManyWithWhereNestedInput {
-  where: CasePkScalarWhereInput
-  data: CasePkUpdateManyDataInput
+export interface CasePkUpdateOneWithoutCaseIdInput {
+  create?: CasePkCreateWithoutCaseIdInput | null
+  connect?: CasePkWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
+  update?: CasePkUpdateWithoutCaseIdDataInput | null
+  upsert?: CasePkUpsertWithoutCaseIdInput | null
 }
 
 export interface CasePkUpdateWithoutCaseIdDataInput {
   createdBy?: String | null
-  didampingi?: Boolean | null
+  didampingi?: String | null
   legalMemo?: String | null
   notulaRapat?: String | null
-  ppPendamping?: Int | null
   statusAlasanTdk?: String | null
   tglRapat?: DateTime | null
   updatedBy?: String | null
+  ppPendamping?: UserUpdateOneInput | null
 }
 
-export interface CasePkUpdateWithWhereUniqueWithoutCaseIdInput {
-  where: CasePkWhereUniqueInput
-  data: CasePkUpdateWithoutCaseIdDataInput
-}
-
-export interface CasePkUpsertWithWhereUniqueWithoutCaseIdInput {
-  where: CasePkWhereUniqueInput
+export interface CasePkUpsertWithoutCaseIdInput {
   update: CasePkUpdateWithoutCaseIdDataInput
   create: CasePkCreateWithoutCaseIdInput
 }
@@ -23884,8 +27263,20 @@ export interface CasePkWhereInput {
   createdBy_not_starts_with?: String | null
   createdBy_ends_with?: String | null
   createdBy_not_ends_with?: String | null
-  didampingi?: Boolean | null
-  didampingi_not?: Boolean | null
+  didampingi?: String | null
+  didampingi_not?: String | null
+  didampingi_in?: String[] | String | null
+  didampingi_not_in?: String[] | String | null
+  didampingi_lt?: String | null
+  didampingi_lte?: String | null
+  didampingi_gt?: String | null
+  didampingi_gte?: String | null
+  didampingi_contains?: String | null
+  didampingi_not_contains?: String | null
+  didampingi_starts_with?: String | null
+  didampingi_not_starts_with?: String | null
+  didampingi_ends_with?: String | null
+  didampingi_not_ends_with?: String | null
   legalMemo?: String | null
   legalMemo_not?: String | null
   legalMemo_in?: String[] | String | null
@@ -23914,14 +27305,6 @@ export interface CasePkWhereInput {
   notulaRapat_not_starts_with?: String | null
   notulaRapat_ends_with?: String | null
   notulaRapat_not_ends_with?: String | null
-  ppPendamping?: Int | null
-  ppPendamping_not?: Int | null
-  ppPendamping_in?: Int[] | Int | null
-  ppPendamping_not_in?: Int[] | Int | null
-  ppPendamping_lt?: Int | null
-  ppPendamping_lte?: Int | null
-  ppPendamping_gt?: Int | null
-  ppPendamping_gte?: Int | null
   statusAlasanTdk?: String | null
   statusAlasanTdk_not?: String | null
   statusAlasanTdk_in?: String[] | String | null
@@ -23967,6 +27350,7 @@ export interface CasePkWhereInput {
   updatedBy_ends_with?: String | null
   updatedBy_not_ends_with?: String | null
   caseId?: CaseWhereInput | null
+  ppPendamping?: UserWhereInput | null
 }
 
 export interface CasePkWhereUniqueInput {
@@ -24770,9 +28154,9 @@ export interface CaseProgressCreateInput {
   caseId: CaseCreateOneWithoutProgressesInput
 }
 
-export interface CaseProgressCreateManyWithoutCaseIdInput {
-  create?: CaseProgressCreateWithoutCaseIdInput[] | CaseProgressCreateWithoutCaseIdInput | null
-  connect?: CaseProgressWhereUniqueInput[] | CaseProgressWhereUniqueInput | null
+export interface CaseProgressCreateOneWithoutCaseIdInput {
+  create?: CaseProgressCreateWithoutCaseIdInput | null
+  connect?: CaseProgressWhereUniqueInput | null
 }
 
 export interface CaseProgressCreateWithoutCaseIdInput {
@@ -24780,92 +28164,6 @@ export interface CaseProgressCreateWithoutCaseIdInput {
   createdBy?: String | null
   jenisPeradilan?: String | null
   updatedBy?: String | null
-}
-
-export interface CaseProgressScalarWhereInput {
-  AND?: CaseProgressScalarWhereInput[] | CaseProgressScalarWhereInput | null
-  OR?: CaseProgressScalarWhereInput[] | CaseProgressScalarWhereInput | null
-  NOT?: CaseProgressScalarWhereInput[] | CaseProgressScalarWhereInput | null
-  id?: Int | null
-  id_not?: Int | null
-  id_in?: Int[] | Int | null
-  id_not_in?: Int[] | Int | null
-  id_lt?: Int | null
-  id_lte?: Int | null
-  id_gt?: Int | null
-  id_gte?: Int | null
-  catatan?: String | null
-  catatan_not?: String | null
-  catatan_in?: String[] | String | null
-  catatan_not_in?: String[] | String | null
-  catatan_lt?: String | null
-  catatan_lte?: String | null
-  catatan_gt?: String | null
-  catatan_gte?: String | null
-  catatan_contains?: String | null
-  catatan_not_contains?: String | null
-  catatan_starts_with?: String | null
-  catatan_not_starts_with?: String | null
-  catatan_ends_with?: String | null
-  catatan_not_ends_with?: String | null
-  createdAt?: DateTime | null
-  createdAt_not?: DateTime | null
-  createdAt_in?: DateTime[] | DateTime | null
-  createdAt_not_in?: DateTime[] | DateTime | null
-  createdAt_lt?: DateTime | null
-  createdAt_lte?: DateTime | null
-  createdAt_gt?: DateTime | null
-  createdAt_gte?: DateTime | null
-  createdBy?: String | null
-  createdBy_not?: String | null
-  createdBy_in?: String[] | String | null
-  createdBy_not_in?: String[] | String | null
-  createdBy_lt?: String | null
-  createdBy_lte?: String | null
-  createdBy_gt?: String | null
-  createdBy_gte?: String | null
-  createdBy_contains?: String | null
-  createdBy_not_contains?: String | null
-  createdBy_starts_with?: String | null
-  createdBy_not_starts_with?: String | null
-  createdBy_ends_with?: String | null
-  createdBy_not_ends_with?: String | null
-  jenisPeradilan?: String | null
-  jenisPeradilan_not?: String | null
-  jenisPeradilan_in?: String[] | String | null
-  jenisPeradilan_not_in?: String[] | String | null
-  jenisPeradilan_lt?: String | null
-  jenisPeradilan_lte?: String | null
-  jenisPeradilan_gt?: String | null
-  jenisPeradilan_gte?: String | null
-  jenisPeradilan_contains?: String | null
-  jenisPeradilan_not_contains?: String | null
-  jenisPeradilan_starts_with?: String | null
-  jenisPeradilan_not_starts_with?: String | null
-  jenisPeradilan_ends_with?: String | null
-  jenisPeradilan_not_ends_with?: String | null
-  updatedAt?: DateTime | null
-  updatedAt_not?: DateTime | null
-  updatedAt_in?: DateTime[] | DateTime | null
-  updatedAt_not_in?: DateTime[] | DateTime | null
-  updatedAt_lt?: DateTime | null
-  updatedAt_lte?: DateTime | null
-  updatedAt_gt?: DateTime | null
-  updatedAt_gte?: DateTime | null
-  updatedBy?: String | null
-  updatedBy_not?: String | null
-  updatedBy_in?: String[] | String | null
-  updatedBy_not_in?: String[] | String | null
-  updatedBy_lt?: String | null
-  updatedBy_lte?: String | null
-  updatedBy_gt?: String | null
-  updatedBy_gte?: String | null
-  updatedBy_contains?: String | null
-  updatedBy_not_contains?: String | null
-  updatedBy_starts_with?: String | null
-  updatedBy_not_starts_with?: String | null
-  updatedBy_ends_with?: String | null
-  updatedBy_not_ends_with?: String | null
 }
 
 export interface CaseProgressSubscriptionWhereInput {
@@ -24887,13 +28185,6 @@ export interface CaseProgressUpdateInput {
   caseId?: CaseUpdateOneRequiredWithoutProgressesInput | null
 }
 
-export interface CaseProgressUpdateManyDataInput {
-  catatan?: String | null
-  createdBy?: String | null
-  jenisPeradilan?: String | null
-  updatedBy?: String | null
-}
-
 export interface CaseProgressUpdateManyMutationInput {
   catatan?: String | null
   createdBy?: String | null
@@ -24901,21 +28192,13 @@ export interface CaseProgressUpdateManyMutationInput {
   updatedBy?: String | null
 }
 
-export interface CaseProgressUpdateManyWithoutCaseIdInput {
-  create?: CaseProgressCreateWithoutCaseIdInput[] | CaseProgressCreateWithoutCaseIdInput | null
-  connect?: CaseProgressWhereUniqueInput[] | CaseProgressWhereUniqueInput | null
-  set?: CaseProgressWhereUniqueInput[] | CaseProgressWhereUniqueInput | null
-  disconnect?: CaseProgressWhereUniqueInput[] | CaseProgressWhereUniqueInput | null
-  delete?: CaseProgressWhereUniqueInput[] | CaseProgressWhereUniqueInput | null
-  update?: CaseProgressUpdateWithWhereUniqueWithoutCaseIdInput[] | CaseProgressUpdateWithWhereUniqueWithoutCaseIdInput | null
-  updateMany?: CaseProgressUpdateManyWithWhereNestedInput[] | CaseProgressUpdateManyWithWhereNestedInput | null
-  deleteMany?: CaseProgressScalarWhereInput[] | CaseProgressScalarWhereInput | null
-  upsert?: CaseProgressUpsertWithWhereUniqueWithoutCaseIdInput[] | CaseProgressUpsertWithWhereUniqueWithoutCaseIdInput | null
-}
-
-export interface CaseProgressUpdateManyWithWhereNestedInput {
-  where: CaseProgressScalarWhereInput
-  data: CaseProgressUpdateManyDataInput
+export interface CaseProgressUpdateOneWithoutCaseIdInput {
+  create?: CaseProgressCreateWithoutCaseIdInput | null
+  connect?: CaseProgressWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
+  update?: CaseProgressUpdateWithoutCaseIdDataInput | null
+  upsert?: CaseProgressUpsertWithoutCaseIdInput | null
 }
 
 export interface CaseProgressUpdateWithoutCaseIdDataInput {
@@ -24925,13 +28208,7 @@ export interface CaseProgressUpdateWithoutCaseIdDataInput {
   updatedBy?: String | null
 }
 
-export interface CaseProgressUpdateWithWhereUniqueWithoutCaseIdInput {
-  where: CaseProgressWhereUniqueInput
-  data: CaseProgressUpdateWithoutCaseIdDataInput
-}
-
-export interface CaseProgressUpsertWithWhereUniqueWithoutCaseIdInput {
-  where: CaseProgressWhereUniqueInput
+export interface CaseProgressUpsertWithoutCaseIdInput {
   update: CaseProgressUpdateWithoutCaseIdDataInput
   create: CaseProgressCreateWithoutCaseIdInput
 }
@@ -25027,6 +28304,237 @@ export interface CaseProgressWhereUniqueInput {
   id?: Int | null
 }
 
+export interface CaseReferralCreateInput {
+  tglTransfer?: DateTime | null
+  catatan?: String | null
+  createdBy?: String | null
+  updatedBy?: String | null
+  caseId: CaseCreateOneWithoutReferralsInput
+  client: PersonCreateOneInput
+  network?: NetworkCreateOneInput | null
+}
+
+export interface CaseReferralCreateManyWithoutCaseIdInput {
+  create?: CaseReferralCreateWithoutCaseIdInput[] | CaseReferralCreateWithoutCaseIdInput | null
+  connect?: CaseReferralWhereUniqueInput[] | CaseReferralWhereUniqueInput | null
+}
+
+export interface CaseReferralCreateWithoutCaseIdInput {
+  tglTransfer?: DateTime | null
+  catatan?: String | null
+  createdBy?: String | null
+  updatedBy?: String | null
+  client: PersonCreateOneInput
+  network?: NetworkCreateOneInput | null
+}
+
+export interface CaseReferralScalarWhereInput {
+  AND?: CaseReferralScalarWhereInput[] | CaseReferralScalarWhereInput | null
+  OR?: CaseReferralScalarWhereInput[] | CaseReferralScalarWhereInput | null
+  NOT?: CaseReferralScalarWhereInput[] | CaseReferralScalarWhereInput | null
+  id?: Int | null
+  id_not?: Int | null
+  id_in?: Int[] | Int | null
+  id_not_in?: Int[] | Int | null
+  id_lt?: Int | null
+  id_lte?: Int | null
+  id_gt?: Int | null
+  id_gte?: Int | null
+  tglTransfer?: DateTime | null
+  tglTransfer_not?: DateTime | null
+  tglTransfer_in?: DateTime[] | DateTime | null
+  tglTransfer_not_in?: DateTime[] | DateTime | null
+  tglTransfer_lt?: DateTime | null
+  tglTransfer_lte?: DateTime | null
+  tglTransfer_gt?: DateTime | null
+  tglTransfer_gte?: DateTime | null
+  catatan?: String | null
+  catatan_not?: String | null
+  catatan_in?: String[] | String | null
+  catatan_not_in?: String[] | String | null
+  catatan_lt?: String | null
+  catatan_lte?: String | null
+  catatan_gt?: String | null
+  catatan_gte?: String | null
+  catatan_contains?: String | null
+  catatan_not_contains?: String | null
+  catatan_starts_with?: String | null
+  catatan_not_starts_with?: String | null
+  catatan_ends_with?: String | null
+  catatan_not_ends_with?: String | null
+  createdBy?: String | null
+  createdBy_not?: String | null
+  createdBy_in?: String[] | String | null
+  createdBy_not_in?: String[] | String | null
+  createdBy_lt?: String | null
+  createdBy_lte?: String | null
+  createdBy_gt?: String | null
+  createdBy_gte?: String | null
+  createdBy_contains?: String | null
+  createdBy_not_contains?: String | null
+  createdBy_starts_with?: String | null
+  createdBy_not_starts_with?: String | null
+  createdBy_ends_with?: String | null
+  createdBy_not_ends_with?: String | null
+  updatedBy?: String | null
+  updatedBy_not?: String | null
+  updatedBy_in?: String[] | String | null
+  updatedBy_not_in?: String[] | String | null
+  updatedBy_lt?: String | null
+  updatedBy_lte?: String | null
+  updatedBy_gt?: String | null
+  updatedBy_gte?: String | null
+  updatedBy_contains?: String | null
+  updatedBy_not_contains?: String | null
+  updatedBy_starts_with?: String | null
+  updatedBy_not_starts_with?: String | null
+  updatedBy_ends_with?: String | null
+  updatedBy_not_ends_with?: String | null
+}
+
+export interface CaseReferralSubscriptionWhereInput {
+  AND?: CaseReferralSubscriptionWhereInput[] | CaseReferralSubscriptionWhereInput | null
+  OR?: CaseReferralSubscriptionWhereInput[] | CaseReferralSubscriptionWhereInput | null
+  NOT?: CaseReferralSubscriptionWhereInput[] | CaseReferralSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
+  updatedFields_contains?: String | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
+  node?: CaseReferralWhereInput | null
+}
+
+export interface CaseReferralUpdateInput {
+  tglTransfer?: DateTime | null
+  catatan?: String | null
+  createdBy?: String | null
+  updatedBy?: String | null
+  caseId?: CaseUpdateOneRequiredWithoutReferralsInput | null
+  client?: PersonUpdateOneRequiredInput | null
+  network?: NetworkUpdateOneInput | null
+}
+
+export interface CaseReferralUpdateManyDataInput {
+  tglTransfer?: DateTime | null
+  catatan?: String | null
+  createdBy?: String | null
+  updatedBy?: String | null
+}
+
+export interface CaseReferralUpdateManyMutationInput {
+  tglTransfer?: DateTime | null
+  catatan?: String | null
+  createdBy?: String | null
+  updatedBy?: String | null
+}
+
+export interface CaseReferralUpdateManyWithoutCaseIdInput {
+  create?: CaseReferralCreateWithoutCaseIdInput[] | CaseReferralCreateWithoutCaseIdInput | null
+  connect?: CaseReferralWhereUniqueInput[] | CaseReferralWhereUniqueInput | null
+  set?: CaseReferralWhereUniqueInput[] | CaseReferralWhereUniqueInput | null
+  disconnect?: CaseReferralWhereUniqueInput[] | CaseReferralWhereUniqueInput | null
+  delete?: CaseReferralWhereUniqueInput[] | CaseReferralWhereUniqueInput | null
+  update?: CaseReferralUpdateWithWhereUniqueWithoutCaseIdInput[] | CaseReferralUpdateWithWhereUniqueWithoutCaseIdInput | null
+  updateMany?: CaseReferralUpdateManyWithWhereNestedInput[] | CaseReferralUpdateManyWithWhereNestedInput | null
+  deleteMany?: CaseReferralScalarWhereInput[] | CaseReferralScalarWhereInput | null
+  upsert?: CaseReferralUpsertWithWhereUniqueWithoutCaseIdInput[] | CaseReferralUpsertWithWhereUniqueWithoutCaseIdInput | null
+}
+
+export interface CaseReferralUpdateManyWithWhereNestedInput {
+  where: CaseReferralScalarWhereInput
+  data: CaseReferralUpdateManyDataInput
+}
+
+export interface CaseReferralUpdateWithoutCaseIdDataInput {
+  tglTransfer?: DateTime | null
+  catatan?: String | null
+  createdBy?: String | null
+  updatedBy?: String | null
+  client?: PersonUpdateOneRequiredInput | null
+  network?: NetworkUpdateOneInput | null
+}
+
+export interface CaseReferralUpdateWithWhereUniqueWithoutCaseIdInput {
+  where: CaseReferralWhereUniqueInput
+  data: CaseReferralUpdateWithoutCaseIdDataInput
+}
+
+export interface CaseReferralUpsertWithWhereUniqueWithoutCaseIdInput {
+  where: CaseReferralWhereUniqueInput
+  update: CaseReferralUpdateWithoutCaseIdDataInput
+  create: CaseReferralCreateWithoutCaseIdInput
+}
+
+export interface CaseReferralWhereInput {
+  AND?: CaseReferralWhereInput[] | CaseReferralWhereInput | null
+  OR?: CaseReferralWhereInput[] | CaseReferralWhereInput | null
+  NOT?: CaseReferralWhereInput[] | CaseReferralWhereInput | null
+  id?: Int | null
+  id_not?: Int | null
+  id_in?: Int[] | Int | null
+  id_not_in?: Int[] | Int | null
+  id_lt?: Int | null
+  id_lte?: Int | null
+  id_gt?: Int | null
+  id_gte?: Int | null
+  tglTransfer?: DateTime | null
+  tglTransfer_not?: DateTime | null
+  tglTransfer_in?: DateTime[] | DateTime | null
+  tglTransfer_not_in?: DateTime[] | DateTime | null
+  tglTransfer_lt?: DateTime | null
+  tglTransfer_lte?: DateTime | null
+  tglTransfer_gt?: DateTime | null
+  tglTransfer_gte?: DateTime | null
+  catatan?: String | null
+  catatan_not?: String | null
+  catatan_in?: String[] | String | null
+  catatan_not_in?: String[] | String | null
+  catatan_lt?: String | null
+  catatan_lte?: String | null
+  catatan_gt?: String | null
+  catatan_gte?: String | null
+  catatan_contains?: String | null
+  catatan_not_contains?: String | null
+  catatan_starts_with?: String | null
+  catatan_not_starts_with?: String | null
+  catatan_ends_with?: String | null
+  catatan_not_ends_with?: String | null
+  createdBy?: String | null
+  createdBy_not?: String | null
+  createdBy_in?: String[] | String | null
+  createdBy_not_in?: String[] | String | null
+  createdBy_lt?: String | null
+  createdBy_lte?: String | null
+  createdBy_gt?: String | null
+  createdBy_gte?: String | null
+  createdBy_contains?: String | null
+  createdBy_not_contains?: String | null
+  createdBy_starts_with?: String | null
+  createdBy_not_starts_with?: String | null
+  createdBy_ends_with?: String | null
+  createdBy_not_ends_with?: String | null
+  updatedBy?: String | null
+  updatedBy_not?: String | null
+  updatedBy_in?: String[] | String | null
+  updatedBy_not_in?: String[] | String | null
+  updatedBy_lt?: String | null
+  updatedBy_lte?: String | null
+  updatedBy_gt?: String | null
+  updatedBy_gte?: String | null
+  updatedBy_contains?: String | null
+  updatedBy_not_contains?: String | null
+  updatedBy_starts_with?: String | null
+  updatedBy_not_starts_with?: String | null
+  updatedBy_ends_with?: String | null
+  updatedBy_not_ends_with?: String | null
+  caseId?: CaseWhereInput | null
+  client?: PersonWhereInput | null
+  network?: NetworkWhereInput | null
+}
+
+export interface CaseReferralWhereUniqueInput {
+  id?: Int | null
+}
+
 export interface CaseSubscriptionWhereInput {
   AND?: CaseSubscriptionWhereInput[] | CaseSubscriptionWhereInput | null
   OR?: CaseSubscriptionWhereInput[] | CaseSubscriptionWhereInput | null
@@ -25036,6 +28544,28 @@ export interface CaseSubscriptionWhereInput {
   updatedFields_contains_every?: String[] | String | null
   updatedFields_contains_some?: String[] | String | null
   node?: CaseWhereInput | null
+}
+
+export interface CaseTransferCreateInput {
+  tglTransfer?: DateTime | null
+  catatan?: String | null
+  createdBy?: String | null
+  updatedBy?: String | null
+  caseId: CaseCreateOneWithoutTransferInput
+  network?: NetworkCreateOneInput | null
+}
+
+export interface CaseTransferCreateOneWithoutCaseIdInput {
+  create?: CaseTransferCreateWithoutCaseIdInput | null
+  connect?: CaseTransferWhereUniqueInput | null
+}
+
+export interface CaseTransferCreateWithoutCaseIdInput {
+  tglTransfer?: DateTime | null
+  catatan?: String | null
+  createdBy?: String | null
+  updatedBy?: String | null
+  network?: NetworkCreateOneInput | null
 }
 
 export interface CaseTransferReferralCreateInput {
@@ -25381,6 +28911,125 @@ export interface CaseTransferReferralWhereUniqueInput {
   id?: Int | null
 }
 
+export interface CaseTransferSubscriptionWhereInput {
+  AND?: CaseTransferSubscriptionWhereInput[] | CaseTransferSubscriptionWhereInput | null
+  OR?: CaseTransferSubscriptionWhereInput[] | CaseTransferSubscriptionWhereInput | null
+  NOT?: CaseTransferSubscriptionWhereInput[] | CaseTransferSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
+  updatedFields_contains?: String | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
+  node?: CaseTransferWhereInput | null
+}
+
+export interface CaseTransferUpdateInput {
+  tglTransfer?: DateTime | null
+  catatan?: String | null
+  createdBy?: String | null
+  updatedBy?: String | null
+  caseId?: CaseUpdateOneRequiredWithoutTransferInput | null
+  network?: NetworkUpdateOneInput | null
+}
+
+export interface CaseTransferUpdateManyMutationInput {
+  tglTransfer?: DateTime | null
+  catatan?: String | null
+  createdBy?: String | null
+  updatedBy?: String | null
+}
+
+export interface CaseTransferUpdateOneWithoutCaseIdInput {
+  create?: CaseTransferCreateWithoutCaseIdInput | null
+  connect?: CaseTransferWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
+  update?: CaseTransferUpdateWithoutCaseIdDataInput | null
+  upsert?: CaseTransferUpsertWithoutCaseIdInput | null
+}
+
+export interface CaseTransferUpdateWithoutCaseIdDataInput {
+  tglTransfer?: DateTime | null
+  catatan?: String | null
+  createdBy?: String | null
+  updatedBy?: String | null
+  network?: NetworkUpdateOneInput | null
+}
+
+export interface CaseTransferUpsertWithoutCaseIdInput {
+  update: CaseTransferUpdateWithoutCaseIdDataInput
+  create: CaseTransferCreateWithoutCaseIdInput
+}
+
+export interface CaseTransferWhereInput {
+  AND?: CaseTransferWhereInput[] | CaseTransferWhereInput | null
+  OR?: CaseTransferWhereInput[] | CaseTransferWhereInput | null
+  NOT?: CaseTransferWhereInput[] | CaseTransferWhereInput | null
+  id?: Int | null
+  id_not?: Int | null
+  id_in?: Int[] | Int | null
+  id_not_in?: Int[] | Int | null
+  id_lt?: Int | null
+  id_lte?: Int | null
+  id_gt?: Int | null
+  id_gte?: Int | null
+  tglTransfer?: DateTime | null
+  tglTransfer_not?: DateTime | null
+  tglTransfer_in?: DateTime[] | DateTime | null
+  tglTransfer_not_in?: DateTime[] | DateTime | null
+  tglTransfer_lt?: DateTime | null
+  tglTransfer_lte?: DateTime | null
+  tglTransfer_gt?: DateTime | null
+  tglTransfer_gte?: DateTime | null
+  catatan?: String | null
+  catatan_not?: String | null
+  catatan_in?: String[] | String | null
+  catatan_not_in?: String[] | String | null
+  catatan_lt?: String | null
+  catatan_lte?: String | null
+  catatan_gt?: String | null
+  catatan_gte?: String | null
+  catatan_contains?: String | null
+  catatan_not_contains?: String | null
+  catatan_starts_with?: String | null
+  catatan_not_starts_with?: String | null
+  catatan_ends_with?: String | null
+  catatan_not_ends_with?: String | null
+  createdBy?: String | null
+  createdBy_not?: String | null
+  createdBy_in?: String[] | String | null
+  createdBy_not_in?: String[] | String | null
+  createdBy_lt?: String | null
+  createdBy_lte?: String | null
+  createdBy_gt?: String | null
+  createdBy_gte?: String | null
+  createdBy_contains?: String | null
+  createdBy_not_contains?: String | null
+  createdBy_starts_with?: String | null
+  createdBy_not_starts_with?: String | null
+  createdBy_ends_with?: String | null
+  createdBy_not_ends_with?: String | null
+  updatedBy?: String | null
+  updatedBy_not?: String | null
+  updatedBy_in?: String[] | String | null
+  updatedBy_not_in?: String[] | String | null
+  updatedBy_lt?: String | null
+  updatedBy_lte?: String | null
+  updatedBy_gt?: String | null
+  updatedBy_gte?: String | null
+  updatedBy_contains?: String | null
+  updatedBy_not_contains?: String | null
+  updatedBy_starts_with?: String | null
+  updatedBy_not_starts_with?: String | null
+  updatedBy_ends_with?: String | null
+  updatedBy_not_ends_with?: String | null
+  caseId?: CaseWhereInput | null
+  network?: NetworkWhereInput | null
+}
+
+export interface CaseTransferWhereUniqueInput {
+  id?: Int | null
+}
+
 export interface CaseUpdateInput {
   applicationId?: Int | null
   caseClosed?: Boolean | null
@@ -25404,11 +29053,14 @@ export interface CaseUpdateInput {
   issues?: CaseIssueUpdateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanUpdateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuUpdateManyWithoutCaseIdInput | null
-  pks?: CasePkUpdateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressUpdateManyWithoutCaseIdInput | null
+  pk?: CasePkUpdateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressUpdateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferUpdateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralUpdateManyWithoutCaseIdInput | null
 }
 
 export interface CaseUpdateManyMutationInput {
@@ -25434,13 +29086,6 @@ export interface CaseUpdateOneRequiredWithoutActivitiesInput {
   connect?: CaseWhereUniqueInput | null
   update?: CaseUpdateWithoutActivitiesDataInput | null
   upsert?: CaseUpsertWithoutActivitiesInput | null
-}
-
-export interface CaseUpdateOneRequiredWithoutApplicationInput {
-  create?: CaseCreateWithoutApplicationInput | null
-  connect?: CaseWhereUniqueInput | null
-  update?: CaseUpdateWithoutApplicationDataInput | null
-  upsert?: CaseUpsertWithoutApplicationInput | null
 }
 
 export interface CaseUpdateOneRequiredWithoutClassificationsInput {
@@ -25485,11 +29130,11 @@ export interface CaseUpdateOneRequiredWithoutPelakusInput {
   upsert?: CaseUpsertWithoutPelakusInput | null
 }
 
-export interface CaseUpdateOneRequiredWithoutPksInput {
-  create?: CaseCreateWithoutPksInput | null
+export interface CaseUpdateOneRequiredWithoutPkInput {
+  create?: CaseCreateWithoutPkInput | null
   connect?: CaseWhereUniqueInput | null
-  update?: CaseUpdateWithoutPksDataInput | null
-  upsert?: CaseUpsertWithoutPksInput | null
+  update?: CaseUpdateWithoutPkDataInput | null
+  upsert?: CaseUpsertWithoutPkInput | null
 }
 
 export interface CaseUpdateOneRequiredWithoutProgressesInput {
@@ -25497,6 +29142,20 @@ export interface CaseUpdateOneRequiredWithoutProgressesInput {
   connect?: CaseWhereUniqueInput | null
   update?: CaseUpdateWithoutProgressesDataInput | null
   upsert?: CaseUpsertWithoutProgressesInput | null
+}
+
+export interface CaseUpdateOneRequiredWithoutReferralsInput {
+  create?: CaseCreateWithoutReferralsInput | null
+  connect?: CaseWhereUniqueInput | null
+  update?: CaseUpdateWithoutReferralsDataInput | null
+  upsert?: CaseUpsertWithoutReferralsInput | null
+}
+
+export interface CaseUpdateOneRequiredWithoutTransferInput {
+  create?: CaseCreateWithoutTransferInput | null
+  connect?: CaseWhereUniqueInput | null
+  update?: CaseUpdateWithoutTransferDataInput | null
+  upsert?: CaseUpsertWithoutTransferInput | null
 }
 
 export interface CaseUpdateOneRequiredWithoutTransferreferralsInput {
@@ -25511,6 +29170,24 @@ export interface CaseUpdateOneRequiredWithoutViolatedrightsInput {
   connect?: CaseWhereUniqueInput | null
   update?: CaseUpdateWithoutViolatedrightsDataInput | null
   upsert?: CaseUpsertWithoutViolatedrightsInput | null
+}
+
+export interface CaseUpdateOneWithoutApplicationInput {
+  create?: CaseCreateWithoutApplicationInput | null
+  connect?: CaseWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
+  update?: CaseUpdateWithoutApplicationDataInput | null
+  upsert?: CaseUpsertWithoutApplicationInput | null
+}
+
+export interface CaseUpdateOneWithoutLogRequestsInput {
+  create?: CaseCreateWithoutLogRequestsInput | null
+  connect?: CaseWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
+  update?: CaseUpdateWithoutLogRequestsDataInput | null
+  upsert?: CaseUpsertWithoutLogRequestsInput | null
 }
 
 export interface CaseUpdateWithoutActivitiesDataInput {
@@ -25536,10 +29213,13 @@ export interface CaseUpdateWithoutActivitiesDataInput {
   issues?: CaseIssueUpdateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanUpdateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuUpdateManyWithoutCaseIdInput | null
-  pks?: CasePkUpdateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressUpdateManyWithoutCaseIdInput | null
+  pk?: CasePkUpdateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressUpdateOneWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferUpdateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralUpdateManyWithoutCaseIdInput | null
 }
 
 export interface CaseUpdateWithoutApplicationDataInput {
@@ -25564,11 +29244,14 @@ export interface CaseUpdateWithoutApplicationDataInput {
   issues?: CaseIssueUpdateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanUpdateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuUpdateManyWithoutCaseIdInput | null
-  pks?: CasePkUpdateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressUpdateManyWithoutCaseIdInput | null
+  pk?: CasePkUpdateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressUpdateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferUpdateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralUpdateManyWithoutCaseIdInput | null
 }
 
 export interface CaseUpdateWithoutClassificationsDataInput {
@@ -25593,11 +29276,14 @@ export interface CaseUpdateWithoutClassificationsDataInput {
   issues?: CaseIssueUpdateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanUpdateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuUpdateManyWithoutCaseIdInput | null
-  pks?: CasePkUpdateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressUpdateManyWithoutCaseIdInput | null
+  pk?: CasePkUpdateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressUpdateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferUpdateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralUpdateManyWithoutCaseIdInput | null
 }
 
 export interface CaseUpdateWithoutConsultationsDataInput {
@@ -25622,11 +29308,14 @@ export interface CaseUpdateWithoutConsultationsDataInput {
   issues?: CaseIssueUpdateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanUpdateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuUpdateManyWithoutCaseIdInput | null
-  pks?: CasePkUpdateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressUpdateManyWithoutCaseIdInput | null
+  pk?: CasePkUpdateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressUpdateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferUpdateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralUpdateManyWithoutCaseIdInput | null
 }
 
 export interface CaseUpdateWithoutDocumentsDataInput {
@@ -25651,11 +29340,14 @@ export interface CaseUpdateWithoutDocumentsDataInput {
   issues?: CaseIssueUpdateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanUpdateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuUpdateManyWithoutCaseIdInput | null
-  pks?: CasePkUpdateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressUpdateManyWithoutCaseIdInput | null
+  pk?: CasePkUpdateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressUpdateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferUpdateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralUpdateManyWithoutCaseIdInput | null
 }
 
 export interface CaseUpdateWithoutIssuesDataInput {
@@ -25680,11 +29372,14 @@ export interface CaseUpdateWithoutIssuesDataInput {
   documents?: CaseDocumentUpdateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanUpdateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuUpdateManyWithoutCaseIdInput | null
-  pks?: CasePkUpdateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressUpdateManyWithoutCaseIdInput | null
+  pk?: CasePkUpdateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressUpdateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferUpdateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralUpdateManyWithoutCaseIdInput | null
 }
 
 export interface CaseUpdateWithoutKorbansDataInput {
@@ -25709,11 +29404,46 @@ export interface CaseUpdateWithoutKorbansDataInput {
   documents?: CaseDocumentUpdateManyWithoutCaseIdInput | null
   issues?: CaseIssueUpdateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuUpdateManyWithoutCaseIdInput | null
-  pks?: CasePkUpdateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressUpdateManyWithoutCaseIdInput | null
+  pk?: CasePkUpdateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressUpdateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferUpdateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralUpdateManyWithoutCaseIdInput | null
+}
+
+export interface CaseUpdateWithoutLogRequestsDataInput {
+  applicationId?: Int | null
+  caseClosed?: Boolean | null
+  caseClosedJenis?: String | null
+  createdBy?: String | null
+  hakTerlanggar?: String | null
+  issue?: String | null
+  judulKasus?: String | null
+  klasifikasiDok?: String | null
+  kronologiKasus?: String | null
+  lockDitolak?: Boolean | null
+  statusPendampingan?: String | null
+  targetAdvokasi?: String | null
+  unlockPk?: Boolean | null
+  unlockTransfer?: Boolean | null
+  updatedBy?: String | null
+  application?: ApplicationUpdateOneRequiredWithoutCaseInput | null
+  classifications?: CaseClassificationUpdateManyWithoutCaseIdInput | null
+  consultations?: CaseConsultationUpdateManyWithoutCaseIdInput | null
+  documents?: CaseDocumentUpdateManyWithoutCaseIdInput | null
+  issues?: CaseIssueUpdateManyWithoutCaseIdInput | null
+  korbans?: CaseKorbanUpdateManyWithoutCaseIdInput | null
+  pelakus?: CasePelakuUpdateManyWithoutCaseIdInput | null
+  pk?: CasePkUpdateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressUpdateOneWithoutCaseIdInput | null
+  activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput | null
+  transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput | null
+  violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferUpdateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralUpdateManyWithoutCaseIdInput | null
 }
 
 export interface CaseUpdateWithoutPelakusDataInput {
@@ -25738,14 +29468,17 @@ export interface CaseUpdateWithoutPelakusDataInput {
   documents?: CaseDocumentUpdateManyWithoutCaseIdInput | null
   issues?: CaseIssueUpdateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanUpdateManyWithoutCaseIdInput | null
-  pks?: CasePkUpdateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressUpdateManyWithoutCaseIdInput | null
+  pk?: CasePkUpdateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressUpdateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferUpdateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralUpdateManyWithoutCaseIdInput | null
 }
 
-export interface CaseUpdateWithoutPksDataInput {
+export interface CaseUpdateWithoutPkDataInput {
   applicationId?: Int | null
   caseClosed?: Boolean | null
   caseClosedJenis?: String | null
@@ -25768,10 +29501,13 @@ export interface CaseUpdateWithoutPksDataInput {
   issues?: CaseIssueUpdateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanUpdateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuUpdateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressUpdateManyWithoutCaseIdInput | null
+  progresses?: CaseProgressUpdateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferUpdateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralUpdateManyWithoutCaseIdInput | null
 }
 
 export interface CaseUpdateWithoutProgressesDataInput {
@@ -25797,10 +29533,77 @@ export interface CaseUpdateWithoutProgressesDataInput {
   issues?: CaseIssueUpdateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanUpdateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuUpdateManyWithoutCaseIdInput | null
-  pks?: CasePkUpdateManyWithoutCaseIdInput | null
+  pk?: CasePkUpdateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferUpdateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralUpdateManyWithoutCaseIdInput | null
+}
+
+export interface CaseUpdateWithoutReferralsDataInput {
+  applicationId?: Int | null
+  caseClosed?: Boolean | null
+  caseClosedJenis?: String | null
+  createdBy?: String | null
+  hakTerlanggar?: String | null
+  issue?: String | null
+  judulKasus?: String | null
+  klasifikasiDok?: String | null
+  kronologiKasus?: String | null
+  lockDitolak?: Boolean | null
+  statusPendampingan?: String | null
+  targetAdvokasi?: String | null
+  unlockPk?: Boolean | null
+  unlockTransfer?: Boolean | null
+  updatedBy?: String | null
+  application?: ApplicationUpdateOneRequiredWithoutCaseInput | null
+  classifications?: CaseClassificationUpdateManyWithoutCaseIdInput | null
+  consultations?: CaseConsultationUpdateManyWithoutCaseIdInput | null
+  documents?: CaseDocumentUpdateManyWithoutCaseIdInput | null
+  issues?: CaseIssueUpdateManyWithoutCaseIdInput | null
+  korbans?: CaseKorbanUpdateManyWithoutCaseIdInput | null
+  pelakus?: CasePelakuUpdateManyWithoutCaseIdInput | null
+  pk?: CasePkUpdateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressUpdateOneWithoutCaseIdInput | null
+  activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput | null
+  transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput | null
+  violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferUpdateOneWithoutCaseIdInput | null
+}
+
+export interface CaseUpdateWithoutTransferDataInput {
+  applicationId?: Int | null
+  caseClosed?: Boolean | null
+  caseClosedJenis?: String | null
+  createdBy?: String | null
+  hakTerlanggar?: String | null
+  issue?: String | null
+  judulKasus?: String | null
+  klasifikasiDok?: String | null
+  kronologiKasus?: String | null
+  lockDitolak?: Boolean | null
+  statusPendampingan?: String | null
+  targetAdvokasi?: String | null
+  unlockPk?: Boolean | null
+  unlockTransfer?: Boolean | null
+  updatedBy?: String | null
+  application?: ApplicationUpdateOneRequiredWithoutCaseInput | null
+  classifications?: CaseClassificationUpdateManyWithoutCaseIdInput | null
+  consultations?: CaseConsultationUpdateManyWithoutCaseIdInput | null
+  documents?: CaseDocumentUpdateManyWithoutCaseIdInput | null
+  issues?: CaseIssueUpdateManyWithoutCaseIdInput | null
+  korbans?: CaseKorbanUpdateManyWithoutCaseIdInput | null
+  pelakus?: CasePelakuUpdateManyWithoutCaseIdInput | null
+  pk?: CasePkUpdateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressUpdateOneWithoutCaseIdInput | null
+  activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput | null
+  transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput | null
+  violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutCaseIdInput | null
+  referrals?: CaseReferralUpdateManyWithoutCaseIdInput | null
 }
 
 export interface CaseUpdateWithoutTransferreferralsDataInput {
@@ -25826,10 +29629,13 @@ export interface CaseUpdateWithoutTransferreferralsDataInput {
   issues?: CaseIssueUpdateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanUpdateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuUpdateManyWithoutCaseIdInput | null
-  pks?: CasePkUpdateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressUpdateManyWithoutCaseIdInput | null
+  pk?: CasePkUpdateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressUpdateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput | null
   violatedrights?: CaseViolatedRightUpdateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferUpdateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralUpdateManyWithoutCaseIdInput | null
 }
 
 export interface CaseUpdateWithoutViolatedrightsDataInput {
@@ -25855,10 +29661,13 @@ export interface CaseUpdateWithoutViolatedrightsDataInput {
   issues?: CaseIssueUpdateManyWithoutCaseIdInput | null
   korbans?: CaseKorbanUpdateManyWithoutCaseIdInput | null
   pelakus?: CasePelakuUpdateManyWithoutCaseIdInput | null
-  pks?: CasePkUpdateManyWithoutCaseIdInput | null
-  progresses?: CaseProgressUpdateManyWithoutCaseIdInput | null
+  pk?: CasePkUpdateOneWithoutCaseIdInput | null
+  progresses?: CaseProgressUpdateOneWithoutCaseIdInput | null
   activities?: CaseProgressActivityUpdateManyWithoutCaseIdInput | null
   transferreferrals?: CaseTransferReferralUpdateManyWithoutCaseIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutCaseIdInput | null
+  transfer?: CaseTransferUpdateOneWithoutCaseIdInput | null
+  referrals?: CaseReferralUpdateManyWithoutCaseIdInput | null
 }
 
 export interface CaseUpsertWithoutActivitiesInput {
@@ -25896,19 +29705,34 @@ export interface CaseUpsertWithoutKorbansInput {
   create: CaseCreateWithoutKorbansInput
 }
 
+export interface CaseUpsertWithoutLogRequestsInput {
+  update: CaseUpdateWithoutLogRequestsDataInput
+  create: CaseCreateWithoutLogRequestsInput
+}
+
 export interface CaseUpsertWithoutPelakusInput {
   update: CaseUpdateWithoutPelakusDataInput
   create: CaseCreateWithoutPelakusInput
 }
 
-export interface CaseUpsertWithoutPksInput {
-  update: CaseUpdateWithoutPksDataInput
-  create: CaseCreateWithoutPksInput
+export interface CaseUpsertWithoutPkInput {
+  update: CaseUpdateWithoutPkDataInput
+  create: CaseCreateWithoutPkInput
 }
 
 export interface CaseUpsertWithoutProgressesInput {
   update: CaseUpdateWithoutProgressesDataInput
   create: CaseCreateWithoutProgressesInput
+}
+
+export interface CaseUpsertWithoutReferralsInput {
+  update: CaseUpdateWithoutReferralsDataInput
+  create: CaseCreateWithoutReferralsInput
+}
+
+export interface CaseUpsertWithoutTransferInput {
+  update: CaseUpdateWithoutTransferDataInput
+  create: CaseCreateWithoutTransferInput
 }
 
 export interface CaseUpsertWithoutTransferreferralsInput {
@@ -26255,12 +30079,8 @@ export interface CaseWhereInput {
   pelakus_every?: CasePelakuWhereInput | null
   pelakus_some?: CasePelakuWhereInput | null
   pelakus_none?: CasePelakuWhereInput | null
-  pks_every?: CasePkWhereInput | null
-  pks_some?: CasePkWhereInput | null
-  pks_none?: CasePkWhereInput | null
-  progresses_every?: CaseProgressWhereInput | null
-  progresses_some?: CaseProgressWhereInput | null
-  progresses_none?: CaseProgressWhereInput | null
+  pk?: CasePkWhereInput | null
+  progresses?: CaseProgressWhereInput | null
   activities_every?: CaseProgressActivityWhereInput | null
   activities_some?: CaseProgressActivityWhereInput | null
   activities_none?: CaseProgressActivityWhereInput | null
@@ -26270,6 +30090,13 @@ export interface CaseWhereInput {
   violatedrights_every?: CaseViolatedRightWhereInput | null
   violatedrights_some?: CaseViolatedRightWhereInput | null
   violatedrights_none?: CaseViolatedRightWhereInput | null
+  logRequests_every?: LogRequestWhereInput | null
+  logRequests_some?: LogRequestWhereInput | null
+  logRequests_none?: LogRequestWhereInput | null
+  transfer?: CaseTransferWhereInput | null
+  referrals_every?: CaseReferralWhereInput | null
+  referrals_some?: CaseReferralWhereInput | null
+  referrals_none?: CaseReferralWhereInput | null
 }
 
 export interface CaseWhereUniqueInput {
@@ -26301,6 +30128,7 @@ export interface ClientCreateInput {
   usiaSaatKlien?: Int | null
   applicationId: ApplicationCreateOneWithoutClientsInput
   personId: PersonCreateOneWithoutClientsInput
+  logRequests?: LogRequestCreateManyInput | null
 }
 
 export interface ClientCreateManyWithoutApplicationIdInput {
@@ -26337,6 +30165,7 @@ export interface ClientCreateWithoutApplicationIdInput {
   updatedBy?: String | null
   usiaSaatKlien?: Int | null
   personId: PersonCreateOneWithoutClientsInput
+  logRequests?: LogRequestCreateManyInput | null
 }
 
 export interface ClientCreateWithoutPersonIdInput {
@@ -26363,6 +30192,7 @@ export interface ClientCreateWithoutPersonIdInput {
   updatedBy?: String | null
   usiaSaatKlien?: Int | null
   applicationId: ApplicationCreateOneWithoutClientsInput
+  logRequests?: LogRequestCreateManyInput | null
 }
 
 export interface ClientScalarWhereInput {
@@ -26697,6 +30527,7 @@ export interface ClientUpdateInput {
   usiaSaatKlien?: Int | null
   applicationId?: ApplicationUpdateOneRequiredWithoutClientsInput | null
   personId?: PersonUpdateOneRequiredWithoutClientsInput | null
+  logRequests?: LogRequestUpdateManyInput | null
 }
 
 export interface ClientUpdateManyDataInput {
@@ -26802,6 +30633,7 @@ export interface ClientUpdateWithoutApplicationIdDataInput {
   updatedBy?: String | null
   usiaSaatKlien?: Int | null
   personId?: PersonUpdateOneRequiredWithoutClientsInput | null
+  logRequests?: LogRequestUpdateManyInput | null
 }
 
 export interface ClientUpdateWithoutPersonIdDataInput {
@@ -26828,6 +30660,7 @@ export interface ClientUpdateWithoutPersonIdDataInput {
   updatedBy?: String | null
   usiaSaatKlien?: Int | null
   applicationId?: ApplicationUpdateOneRequiredWithoutClientsInput | null
+  logRequests?: LogRequestUpdateManyInput | null
 }
 
 export interface ClientUpdateWithWhereUniqueWithoutApplicationIdInput {
@@ -27148,6 +30981,9 @@ export interface ClientWhereInput {
   usiaSaatKlien_gte?: Int | null
   applicationId?: ApplicationWhereInput | null
   personId?: PersonWhereInput | null
+  logRequests_every?: LogRequestWhereInput | null
+  logRequests_some?: LogRequestWhereInput | null
+  logRequests_none?: LogRequestWhereInput | null
 }
 
 export interface ClientWhereUniqueInput {
@@ -27680,8 +31516,40 @@ export interface DataDictWhereUniqueInput {
 }
 
 export interface LogRequestAppCreateInput {
-  appConsultation?: String | null
-  logRequestId?: Int | null
+  appConsultation: UserCreateOneWithoutAppConsultationInput
+  logRequestId?: LogRequestCreateOneWithoutPpInput | null
+}
+
+export interface LogRequestAppCreateManyWithoutAppConsultationInput {
+  create?: LogRequestAppCreateWithoutAppConsultationInput[] | LogRequestAppCreateWithoutAppConsultationInput | null
+  connect?: LogRequestAppWhereUniqueInput[] | LogRequestAppWhereUniqueInput | null
+}
+
+export interface LogRequestAppCreateManyWithoutLogRequestIdInput {
+  create?: LogRequestAppCreateWithoutLogRequestIdInput[] | LogRequestAppCreateWithoutLogRequestIdInput | null
+  connect?: LogRequestAppWhereUniqueInput[] | LogRequestAppWhereUniqueInput | null
+}
+
+export interface LogRequestAppCreateWithoutAppConsultationInput {
+  logRequestId?: LogRequestCreateOneWithoutPpInput | null
+}
+
+export interface LogRequestAppCreateWithoutLogRequestIdInput {
+  appConsultation: UserCreateOneWithoutAppConsultationInput
+}
+
+export interface LogRequestAppScalarWhereInput {
+  AND?: LogRequestAppScalarWhereInput[] | LogRequestAppScalarWhereInput | null
+  OR?: LogRequestAppScalarWhereInput[] | LogRequestAppScalarWhereInput | null
+  NOT?: LogRequestAppScalarWhereInput[] | LogRequestAppScalarWhereInput | null
+  id?: Int | null
+  id_not?: Int | null
+  id_in?: Int[] | Int | null
+  id_not_in?: Int[] | Int | null
+  id_lt?: Int | null
+  id_lte?: Int | null
+  id_gt?: Int | null
+  id_gte?: Int | null
 }
 
 export interface LogRequestAppSubscriptionWhereInput {
@@ -27696,13 +31564,60 @@ export interface LogRequestAppSubscriptionWhereInput {
 }
 
 export interface LogRequestAppUpdateInput {
-  appConsultation?: String | null
-  logRequestId?: Int | null
+  appConsultation?: UserUpdateOneRequiredWithoutAppConsultationInput | null
+  logRequestId?: LogRequestUpdateOneWithoutPpInput | null
 }
 
-export interface LogRequestAppUpdateManyMutationInput {
-  appConsultation?: String | null
-  logRequestId?: Int | null
+export interface LogRequestAppUpdateManyWithoutAppConsultationInput {
+  create?: LogRequestAppCreateWithoutAppConsultationInput[] | LogRequestAppCreateWithoutAppConsultationInput | null
+  connect?: LogRequestAppWhereUniqueInput[] | LogRequestAppWhereUniqueInput | null
+  set?: LogRequestAppWhereUniqueInput[] | LogRequestAppWhereUniqueInput | null
+  disconnect?: LogRequestAppWhereUniqueInput[] | LogRequestAppWhereUniqueInput | null
+  delete?: LogRequestAppWhereUniqueInput[] | LogRequestAppWhereUniqueInput | null
+  update?: LogRequestAppUpdateWithWhereUniqueWithoutAppConsultationInput[] | LogRequestAppUpdateWithWhereUniqueWithoutAppConsultationInput | null
+  deleteMany?: LogRequestAppScalarWhereInput[] | LogRequestAppScalarWhereInput | null
+  upsert?: LogRequestAppUpsertWithWhereUniqueWithoutAppConsultationInput[] | LogRequestAppUpsertWithWhereUniqueWithoutAppConsultationInput | null
+}
+
+export interface LogRequestAppUpdateManyWithoutLogRequestIdInput {
+  create?: LogRequestAppCreateWithoutLogRequestIdInput[] | LogRequestAppCreateWithoutLogRequestIdInput | null
+  connect?: LogRequestAppWhereUniqueInput[] | LogRequestAppWhereUniqueInput | null
+  set?: LogRequestAppWhereUniqueInput[] | LogRequestAppWhereUniqueInput | null
+  disconnect?: LogRequestAppWhereUniqueInput[] | LogRequestAppWhereUniqueInput | null
+  delete?: LogRequestAppWhereUniqueInput[] | LogRequestAppWhereUniqueInput | null
+  update?: LogRequestAppUpdateWithWhereUniqueWithoutLogRequestIdInput[] | LogRequestAppUpdateWithWhereUniqueWithoutLogRequestIdInput | null
+  deleteMany?: LogRequestAppScalarWhereInput[] | LogRequestAppScalarWhereInput | null
+  upsert?: LogRequestAppUpsertWithWhereUniqueWithoutLogRequestIdInput[] | LogRequestAppUpsertWithWhereUniqueWithoutLogRequestIdInput | null
+}
+
+export interface LogRequestAppUpdateWithoutAppConsultationDataInput {
+  logRequestId?: LogRequestUpdateOneWithoutPpInput | null
+}
+
+export interface LogRequestAppUpdateWithoutLogRequestIdDataInput {
+  appConsultation?: UserUpdateOneRequiredWithoutAppConsultationInput | null
+}
+
+export interface LogRequestAppUpdateWithWhereUniqueWithoutAppConsultationInput {
+  where: LogRequestAppWhereUniqueInput
+  data: LogRequestAppUpdateWithoutAppConsultationDataInput
+}
+
+export interface LogRequestAppUpdateWithWhereUniqueWithoutLogRequestIdInput {
+  where: LogRequestAppWhereUniqueInput
+  data: LogRequestAppUpdateWithoutLogRequestIdDataInput
+}
+
+export interface LogRequestAppUpsertWithWhereUniqueWithoutAppConsultationInput {
+  where: LogRequestAppWhereUniqueInput
+  update: LogRequestAppUpdateWithoutAppConsultationDataInput
+  create: LogRequestAppCreateWithoutAppConsultationInput
+}
+
+export interface LogRequestAppUpsertWithWhereUniqueWithoutLogRequestIdInput {
+  where: LogRequestAppWhereUniqueInput
+  update: LogRequestAppUpdateWithoutLogRequestIdDataInput
+  create: LogRequestAppCreateWithoutLogRequestIdInput
 }
 
 export interface LogRequestAppWhereInput {
@@ -27717,28 +31632,8 @@ export interface LogRequestAppWhereInput {
   id_lte?: Int | null
   id_gt?: Int | null
   id_gte?: Int | null
-  appConsultation?: String | null
-  appConsultation_not?: String | null
-  appConsultation_in?: String[] | String | null
-  appConsultation_not_in?: String[] | String | null
-  appConsultation_lt?: String | null
-  appConsultation_lte?: String | null
-  appConsultation_gt?: String | null
-  appConsultation_gte?: String | null
-  appConsultation_contains?: String | null
-  appConsultation_not_contains?: String | null
-  appConsultation_starts_with?: String | null
-  appConsultation_not_starts_with?: String | null
-  appConsultation_ends_with?: String | null
-  appConsultation_not_ends_with?: String | null
-  logRequestId?: Int | null
-  logRequestId_not?: Int | null
-  logRequestId_in?: Int[] | Int | null
-  logRequestId_not_in?: Int[] | Int | null
-  logRequestId_lt?: Int | null
-  logRequestId_lte?: Int | null
-  logRequestId_gt?: Int | null
-  logRequestId_gte?: Int | null
+  appConsultation?: UserWhereInput | null
+  logRequestId?: LogRequestWhereInput | null
 }
 
 export interface LogRequestAppWhereUniqueInput {
@@ -27746,65 +31641,164 @@ export interface LogRequestAppWhereUniqueInput {
 }
 
 export interface LogRequestCreateInput {
-  caseId?: Int | null
   isiRequest?: String | null
   jenisRequest?: String | null
-  networkId?: Int | null
-  personId?: Int | null
-  pp?: Int | null
-  requestBy?: Int | null
-  requestTo?: Int | null
+  statusRequest?: String | null
   tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
   tglExpired?: DateTime | null
   tglRequest?: DateTime | null
   tglRespon?: DateTime | null
+  caseId?: CaseCreateOneWithoutLogRequestsInput | null
+  applicationId?: ApplicationCreateOneInput | null
+  networkId?: NetworkCreateOneWithoutLogRequestsInput | null
+  personId?: PersonCreateOneWithoutLogRequestsInput | null
+  pp?: LogRequestAppCreateManyWithoutLogRequestIdInput | null
+  requestBy?: UserCreateOneWithoutLogRequestByInput | null
+  requestTo?: UserCreateOneWithoutLogRequestToInput | null
 }
 
-export interface LogRequestSubscriptionWhereInput {
-  AND?: LogRequestSubscriptionWhereInput[] | LogRequestSubscriptionWhereInput | null
-  OR?: LogRequestSubscriptionWhereInput[] | LogRequestSubscriptionWhereInput | null
-  NOT?: LogRequestSubscriptionWhereInput[] | LogRequestSubscriptionWhereInput | null
-  mutation_in?: MutationType[] | MutationType | null
-  updatedFields_contains?: String | null
-  updatedFields_contains_every?: String[] | String | null
-  updatedFields_contains_some?: String[] | String | null
-  node?: LogRequestWhereInput | null
+export interface LogRequestCreateManyInput {
+  create?: LogRequestCreateInput[] | LogRequestCreateInput | null
+  connect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
 }
 
-export interface LogRequestUpdateInput {
-  caseId?: Int | null
+export interface LogRequestCreateManyWithoutCaseIdInput {
+  create?: LogRequestCreateWithoutCaseIdInput[] | LogRequestCreateWithoutCaseIdInput | null
+  connect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+}
+
+export interface LogRequestCreateManyWithoutNetworkIdInput {
+  create?: LogRequestCreateWithoutNetworkIdInput[] | LogRequestCreateWithoutNetworkIdInput | null
+  connect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+}
+
+export interface LogRequestCreateManyWithoutPersonIdInput {
+  create?: LogRequestCreateWithoutPersonIdInput[] | LogRequestCreateWithoutPersonIdInput | null
+  connect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+}
+
+export interface LogRequestCreateManyWithoutRequestByInput {
+  create?: LogRequestCreateWithoutRequestByInput[] | LogRequestCreateWithoutRequestByInput | null
+  connect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+}
+
+export interface LogRequestCreateManyWithoutRequestToInput {
+  create?: LogRequestCreateWithoutRequestToInput[] | LogRequestCreateWithoutRequestToInput | null
+  connect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+}
+
+export interface LogRequestCreateOneWithoutPpInput {
+  create?: LogRequestCreateWithoutPpInput | null
+  connect?: LogRequestWhereUniqueInput | null
+}
+
+export interface LogRequestCreateWithoutCaseIdInput {
   isiRequest?: String | null
   jenisRequest?: String | null
-  networkId?: Int | null
-  personId?: Int | null
-  pp?: Int | null
-  requestBy?: Int | null
-  requestTo?: Int | null
+  statusRequest?: String | null
   tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
   tglExpired?: DateTime | null
   tglRequest?: DateTime | null
   tglRespon?: DateTime | null
+  applicationId?: ApplicationCreateOneInput | null
+  networkId?: NetworkCreateOneWithoutLogRequestsInput | null
+  personId?: PersonCreateOneWithoutLogRequestsInput | null
+  pp?: LogRequestAppCreateManyWithoutLogRequestIdInput | null
+  requestBy?: UserCreateOneWithoutLogRequestByInput | null
+  requestTo?: UserCreateOneWithoutLogRequestToInput | null
 }
 
-export interface LogRequestUpdateManyMutationInput {
-  caseId?: Int | null
+export interface LogRequestCreateWithoutNetworkIdInput {
   isiRequest?: String | null
   jenisRequest?: String | null
-  networkId?: Int | null
-  personId?: Int | null
-  pp?: Int | null
-  requestBy?: Int | null
-  requestTo?: Int | null
+  statusRequest?: String | null
   tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
   tglExpired?: DateTime | null
   tglRequest?: DateTime | null
   tglRespon?: DateTime | null
+  caseId?: CaseCreateOneWithoutLogRequestsInput | null
+  applicationId?: ApplicationCreateOneInput | null
+  personId?: PersonCreateOneWithoutLogRequestsInput | null
+  pp?: LogRequestAppCreateManyWithoutLogRequestIdInput | null
+  requestBy?: UserCreateOneWithoutLogRequestByInput | null
+  requestTo?: UserCreateOneWithoutLogRequestToInput | null
 }
 
-export interface LogRequestWhereInput {
-  AND?: LogRequestWhereInput[] | LogRequestWhereInput | null
-  OR?: LogRequestWhereInput[] | LogRequestWhereInput | null
-  NOT?: LogRequestWhereInput[] | LogRequestWhereInput | null
+export interface LogRequestCreateWithoutPersonIdInput {
+  isiRequest?: String | null
+  jenisRequest?: String | null
+  statusRequest?: String | null
+  tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
+  tglExpired?: DateTime | null
+  tglRequest?: DateTime | null
+  tglRespon?: DateTime | null
+  caseId?: CaseCreateOneWithoutLogRequestsInput | null
+  applicationId?: ApplicationCreateOneInput | null
+  networkId?: NetworkCreateOneWithoutLogRequestsInput | null
+  pp?: LogRequestAppCreateManyWithoutLogRequestIdInput | null
+  requestBy?: UserCreateOneWithoutLogRequestByInput | null
+  requestTo?: UserCreateOneWithoutLogRequestToInput | null
+}
+
+export interface LogRequestCreateWithoutPpInput {
+  isiRequest?: String | null
+  jenisRequest?: String | null
+  statusRequest?: String | null
+  tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
+  tglExpired?: DateTime | null
+  tglRequest?: DateTime | null
+  tglRespon?: DateTime | null
+  caseId?: CaseCreateOneWithoutLogRequestsInput | null
+  applicationId?: ApplicationCreateOneInput | null
+  networkId?: NetworkCreateOneWithoutLogRequestsInput | null
+  personId?: PersonCreateOneWithoutLogRequestsInput | null
+  requestBy?: UserCreateOneWithoutLogRequestByInput | null
+  requestTo?: UserCreateOneWithoutLogRequestToInput | null
+}
+
+export interface LogRequestCreateWithoutRequestByInput {
+  isiRequest?: String | null
+  jenisRequest?: String | null
+  statusRequest?: String | null
+  tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
+  tglExpired?: DateTime | null
+  tglRequest?: DateTime | null
+  tglRespon?: DateTime | null
+  caseId?: CaseCreateOneWithoutLogRequestsInput | null
+  applicationId?: ApplicationCreateOneInput | null
+  networkId?: NetworkCreateOneWithoutLogRequestsInput | null
+  personId?: PersonCreateOneWithoutLogRequestsInput | null
+  pp?: LogRequestAppCreateManyWithoutLogRequestIdInput | null
+  requestTo?: UserCreateOneWithoutLogRequestToInput | null
+}
+
+export interface LogRequestCreateWithoutRequestToInput {
+  isiRequest?: String | null
+  jenisRequest?: String | null
+  statusRequest?: String | null
+  tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
+  tglExpired?: DateTime | null
+  tglRequest?: DateTime | null
+  tglRespon?: DateTime | null
+  caseId?: CaseCreateOneWithoutLogRequestsInput | null
+  applicationId?: ApplicationCreateOneInput | null
+  networkId?: NetworkCreateOneWithoutLogRequestsInput | null
+  personId?: PersonCreateOneWithoutLogRequestsInput | null
+  pp?: LogRequestAppCreateManyWithoutLogRequestIdInput | null
+  requestBy?: UserCreateOneWithoutLogRequestByInput | null
+}
+
+export interface LogRequestScalarWhereInput {
+  AND?: LogRequestScalarWhereInput[] | LogRequestScalarWhereInput | null
+  OR?: LogRequestScalarWhereInput[] | LogRequestScalarWhereInput | null
+  NOT?: LogRequestScalarWhereInput[] | LogRequestScalarWhereInput | null
   ID?: Int | null
   ID_not?: Int | null
   ID_in?: Int[] | Int | null
@@ -27813,14 +31807,6 @@ export interface LogRequestWhereInput {
   ID_lte?: Int | null
   ID_gt?: Int | null
   ID_gte?: Int | null
-  caseId?: Int | null
-  caseId_not?: Int | null
-  caseId_in?: Int[] | Int | null
-  caseId_not_in?: Int[] | Int | null
-  caseId_lt?: Int | null
-  caseId_lte?: Int | null
-  caseId_gt?: Int | null
-  caseId_gte?: Int | null
   isiRequest?: String | null
   isiRequest_not?: String | null
   isiRequest_in?: String[] | String | null
@@ -27849,46 +31835,20 @@ export interface LogRequestWhereInput {
   jenisRequest_not_starts_with?: String | null
   jenisRequest_ends_with?: String | null
   jenisRequest_not_ends_with?: String | null
-  networkId?: Int | null
-  networkId_not?: Int | null
-  networkId_in?: Int[] | Int | null
-  networkId_not_in?: Int[] | Int | null
-  networkId_lt?: Int | null
-  networkId_lte?: Int | null
-  networkId_gt?: Int | null
-  networkId_gte?: Int | null
-  personId?: Int | null
-  personId_not?: Int | null
-  personId_in?: Int[] | Int | null
-  personId_not_in?: Int[] | Int | null
-  personId_lt?: Int | null
-  personId_lte?: Int | null
-  personId_gt?: Int | null
-  personId_gte?: Int | null
-  pp?: Int | null
-  pp_not?: Int | null
-  pp_in?: Int[] | Int | null
-  pp_not_in?: Int[] | Int | null
-  pp_lt?: Int | null
-  pp_lte?: Int | null
-  pp_gt?: Int | null
-  pp_gte?: Int | null
-  requestBy?: Int | null
-  requestBy_not?: Int | null
-  requestBy_in?: Int[] | Int | null
-  requestBy_not_in?: Int[] | Int | null
-  requestBy_lt?: Int | null
-  requestBy_lte?: Int | null
-  requestBy_gt?: Int | null
-  requestBy_gte?: Int | null
-  requestTo?: Int | null
-  requestTo_not?: Int | null
-  requestTo_in?: Int[] | Int | null
-  requestTo_not_in?: Int[] | Int | null
-  requestTo_lt?: Int | null
-  requestTo_lte?: Int | null
-  requestTo_gt?: Int | null
-  requestTo_gte?: Int | null
+  statusRequest?: String | null
+  statusRequest_not?: String | null
+  statusRequest_in?: String[] | String | null
+  statusRequest_not_in?: String[] | String | null
+  statusRequest_lt?: String | null
+  statusRequest_lte?: String | null
+  statusRequest_gt?: String | null
+  statusRequest_gte?: String | null
+  statusRequest_contains?: String | null
+  statusRequest_not_contains?: String | null
+  statusRequest_starts_with?: String | null
+  statusRequest_not_starts_with?: String | null
+  statusRequest_ends_with?: String | null
+  statusRequest_not_ends_with?: String | null
   tanggapanRequest?: String | null
   tanggapanRequest_not?: String | null
   tanggapanRequest_in?: String[] | String | null
@@ -27903,6 +31863,20 @@ export interface LogRequestWhereInput {
   tanggapanRequest_not_starts_with?: String | null
   tanggapanRequest_ends_with?: String | null
   tanggapanRequest_not_ends_with?: String | null
+  tanggapanRequestIsi?: String | null
+  tanggapanRequestIsi_not?: String | null
+  tanggapanRequestIsi_in?: String[] | String | null
+  tanggapanRequestIsi_not_in?: String[] | String | null
+  tanggapanRequestIsi_lt?: String | null
+  tanggapanRequestIsi_lte?: String | null
+  tanggapanRequestIsi_gt?: String | null
+  tanggapanRequestIsi_gte?: String | null
+  tanggapanRequestIsi_contains?: String | null
+  tanggapanRequestIsi_not_contains?: String | null
+  tanggapanRequestIsi_starts_with?: String | null
+  tanggapanRequestIsi_not_starts_with?: String | null
+  tanggapanRequestIsi_ends_with?: String | null
+  tanggapanRequestIsi_not_ends_with?: String | null
   tglExpired?: DateTime | null
   tglExpired_not?: DateTime | null
   tglExpired_in?: DateTime[] | DateTime | null
@@ -27927,6 +31901,451 @@ export interface LogRequestWhereInput {
   tglRespon_lte?: DateTime | null
   tglRespon_gt?: DateTime | null
   tglRespon_gte?: DateTime | null
+}
+
+export interface LogRequestSubscriptionWhereInput {
+  AND?: LogRequestSubscriptionWhereInput[] | LogRequestSubscriptionWhereInput | null
+  OR?: LogRequestSubscriptionWhereInput[] | LogRequestSubscriptionWhereInput | null
+  NOT?: LogRequestSubscriptionWhereInput[] | LogRequestSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
+  updatedFields_contains?: String | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
+  node?: LogRequestWhereInput | null
+}
+
+export interface LogRequestUpdateDataInput {
+  isiRequest?: String | null
+  jenisRequest?: String | null
+  statusRequest?: String | null
+  tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
+  tglExpired?: DateTime | null
+  tglRequest?: DateTime | null
+  tglRespon?: DateTime | null
+  caseId?: CaseUpdateOneWithoutLogRequestsInput | null
+  applicationId?: ApplicationUpdateOneInput | null
+  networkId?: NetworkUpdateOneWithoutLogRequestsInput | null
+  personId?: PersonUpdateOneWithoutLogRequestsInput | null
+  pp?: LogRequestAppUpdateManyWithoutLogRequestIdInput | null
+  requestBy?: UserUpdateOneWithoutLogRequestByInput | null
+  requestTo?: UserUpdateOneWithoutLogRequestToInput | null
+}
+
+export interface LogRequestUpdateInput {
+  isiRequest?: String | null
+  jenisRequest?: String | null
+  statusRequest?: String | null
+  tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
+  tglExpired?: DateTime | null
+  tglRequest?: DateTime | null
+  tglRespon?: DateTime | null
+  caseId?: CaseUpdateOneWithoutLogRequestsInput | null
+  applicationId?: ApplicationUpdateOneInput | null
+  networkId?: NetworkUpdateOneWithoutLogRequestsInput | null
+  personId?: PersonUpdateOneWithoutLogRequestsInput | null
+  pp?: LogRequestAppUpdateManyWithoutLogRequestIdInput | null
+  requestBy?: UserUpdateOneWithoutLogRequestByInput | null
+  requestTo?: UserUpdateOneWithoutLogRequestToInput | null
+}
+
+export interface LogRequestUpdateManyDataInput {
+  isiRequest?: String | null
+  jenisRequest?: String | null
+  statusRequest?: String | null
+  tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
+  tglExpired?: DateTime | null
+  tglRequest?: DateTime | null
+  tglRespon?: DateTime | null
+}
+
+export interface LogRequestUpdateManyInput {
+  create?: LogRequestCreateInput[] | LogRequestCreateInput | null
+  connect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  set?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  disconnect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  delete?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  update?: LogRequestUpdateWithWhereUniqueNestedInput[] | LogRequestUpdateWithWhereUniqueNestedInput | null
+  updateMany?: LogRequestUpdateManyWithWhereNestedInput[] | LogRequestUpdateManyWithWhereNestedInput | null
+  deleteMany?: LogRequestScalarWhereInput[] | LogRequestScalarWhereInput | null
+  upsert?: LogRequestUpsertWithWhereUniqueNestedInput[] | LogRequestUpsertWithWhereUniqueNestedInput | null
+}
+
+export interface LogRequestUpdateManyMutationInput {
+  isiRequest?: String | null
+  jenisRequest?: String | null
+  statusRequest?: String | null
+  tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
+  tglExpired?: DateTime | null
+  tglRequest?: DateTime | null
+  tglRespon?: DateTime | null
+}
+
+export interface LogRequestUpdateManyWithoutCaseIdInput {
+  create?: LogRequestCreateWithoutCaseIdInput[] | LogRequestCreateWithoutCaseIdInput | null
+  connect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  set?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  disconnect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  delete?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  update?: LogRequestUpdateWithWhereUniqueWithoutCaseIdInput[] | LogRequestUpdateWithWhereUniqueWithoutCaseIdInput | null
+  updateMany?: LogRequestUpdateManyWithWhereNestedInput[] | LogRequestUpdateManyWithWhereNestedInput | null
+  deleteMany?: LogRequestScalarWhereInput[] | LogRequestScalarWhereInput | null
+  upsert?: LogRequestUpsertWithWhereUniqueWithoutCaseIdInput[] | LogRequestUpsertWithWhereUniqueWithoutCaseIdInput | null
+}
+
+export interface LogRequestUpdateManyWithoutNetworkIdInput {
+  create?: LogRequestCreateWithoutNetworkIdInput[] | LogRequestCreateWithoutNetworkIdInput | null
+  connect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  set?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  disconnect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  delete?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  update?: LogRequestUpdateWithWhereUniqueWithoutNetworkIdInput[] | LogRequestUpdateWithWhereUniqueWithoutNetworkIdInput | null
+  updateMany?: LogRequestUpdateManyWithWhereNestedInput[] | LogRequestUpdateManyWithWhereNestedInput | null
+  deleteMany?: LogRequestScalarWhereInput[] | LogRequestScalarWhereInput | null
+  upsert?: LogRequestUpsertWithWhereUniqueWithoutNetworkIdInput[] | LogRequestUpsertWithWhereUniqueWithoutNetworkIdInput | null
+}
+
+export interface LogRequestUpdateManyWithoutPersonIdInput {
+  create?: LogRequestCreateWithoutPersonIdInput[] | LogRequestCreateWithoutPersonIdInput | null
+  connect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  set?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  disconnect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  delete?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  update?: LogRequestUpdateWithWhereUniqueWithoutPersonIdInput[] | LogRequestUpdateWithWhereUniqueWithoutPersonIdInput | null
+  updateMany?: LogRequestUpdateManyWithWhereNestedInput[] | LogRequestUpdateManyWithWhereNestedInput | null
+  deleteMany?: LogRequestScalarWhereInput[] | LogRequestScalarWhereInput | null
+  upsert?: LogRequestUpsertWithWhereUniqueWithoutPersonIdInput[] | LogRequestUpsertWithWhereUniqueWithoutPersonIdInput | null
+}
+
+export interface LogRequestUpdateManyWithoutRequestByInput {
+  create?: LogRequestCreateWithoutRequestByInput[] | LogRequestCreateWithoutRequestByInput | null
+  connect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  set?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  disconnect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  delete?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  update?: LogRequestUpdateWithWhereUniqueWithoutRequestByInput[] | LogRequestUpdateWithWhereUniqueWithoutRequestByInput | null
+  updateMany?: LogRequestUpdateManyWithWhereNestedInput[] | LogRequestUpdateManyWithWhereNestedInput | null
+  deleteMany?: LogRequestScalarWhereInput[] | LogRequestScalarWhereInput | null
+  upsert?: LogRequestUpsertWithWhereUniqueWithoutRequestByInput[] | LogRequestUpsertWithWhereUniqueWithoutRequestByInput | null
+}
+
+export interface LogRequestUpdateManyWithoutRequestToInput {
+  create?: LogRequestCreateWithoutRequestToInput[] | LogRequestCreateWithoutRequestToInput | null
+  connect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  set?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  disconnect?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  delete?: LogRequestWhereUniqueInput[] | LogRequestWhereUniqueInput | null
+  update?: LogRequestUpdateWithWhereUniqueWithoutRequestToInput[] | LogRequestUpdateWithWhereUniqueWithoutRequestToInput | null
+  updateMany?: LogRequestUpdateManyWithWhereNestedInput[] | LogRequestUpdateManyWithWhereNestedInput | null
+  deleteMany?: LogRequestScalarWhereInput[] | LogRequestScalarWhereInput | null
+  upsert?: LogRequestUpsertWithWhereUniqueWithoutRequestToInput[] | LogRequestUpsertWithWhereUniqueWithoutRequestToInput | null
+}
+
+export interface LogRequestUpdateManyWithWhereNestedInput {
+  where: LogRequestScalarWhereInput
+  data: LogRequestUpdateManyDataInput
+}
+
+export interface LogRequestUpdateOneWithoutPpInput {
+  create?: LogRequestCreateWithoutPpInput | null
+  connect?: LogRequestWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
+  update?: LogRequestUpdateWithoutPpDataInput | null
+  upsert?: LogRequestUpsertWithoutPpInput | null
+}
+
+export interface LogRequestUpdateWithoutCaseIdDataInput {
+  isiRequest?: String | null
+  jenisRequest?: String | null
+  statusRequest?: String | null
+  tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
+  tglExpired?: DateTime | null
+  tglRequest?: DateTime | null
+  tglRespon?: DateTime | null
+  applicationId?: ApplicationUpdateOneInput | null
+  networkId?: NetworkUpdateOneWithoutLogRequestsInput | null
+  personId?: PersonUpdateOneWithoutLogRequestsInput | null
+  pp?: LogRequestAppUpdateManyWithoutLogRequestIdInput | null
+  requestBy?: UserUpdateOneWithoutLogRequestByInput | null
+  requestTo?: UserUpdateOneWithoutLogRequestToInput | null
+}
+
+export interface LogRequestUpdateWithoutNetworkIdDataInput {
+  isiRequest?: String | null
+  jenisRequest?: String | null
+  statusRequest?: String | null
+  tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
+  tglExpired?: DateTime | null
+  tglRequest?: DateTime | null
+  tglRespon?: DateTime | null
+  caseId?: CaseUpdateOneWithoutLogRequestsInput | null
+  applicationId?: ApplicationUpdateOneInput | null
+  personId?: PersonUpdateOneWithoutLogRequestsInput | null
+  pp?: LogRequestAppUpdateManyWithoutLogRequestIdInput | null
+  requestBy?: UserUpdateOneWithoutLogRequestByInput | null
+  requestTo?: UserUpdateOneWithoutLogRequestToInput | null
+}
+
+export interface LogRequestUpdateWithoutPersonIdDataInput {
+  isiRequest?: String | null
+  jenisRequest?: String | null
+  statusRequest?: String | null
+  tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
+  tglExpired?: DateTime | null
+  tglRequest?: DateTime | null
+  tglRespon?: DateTime | null
+  caseId?: CaseUpdateOneWithoutLogRequestsInput | null
+  applicationId?: ApplicationUpdateOneInput | null
+  networkId?: NetworkUpdateOneWithoutLogRequestsInput | null
+  pp?: LogRequestAppUpdateManyWithoutLogRequestIdInput | null
+  requestBy?: UserUpdateOneWithoutLogRequestByInput | null
+  requestTo?: UserUpdateOneWithoutLogRequestToInput | null
+}
+
+export interface LogRequestUpdateWithoutPpDataInput {
+  isiRequest?: String | null
+  jenisRequest?: String | null
+  statusRequest?: String | null
+  tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
+  tglExpired?: DateTime | null
+  tglRequest?: DateTime | null
+  tglRespon?: DateTime | null
+  caseId?: CaseUpdateOneWithoutLogRequestsInput | null
+  applicationId?: ApplicationUpdateOneInput | null
+  networkId?: NetworkUpdateOneWithoutLogRequestsInput | null
+  personId?: PersonUpdateOneWithoutLogRequestsInput | null
+  requestBy?: UserUpdateOneWithoutLogRequestByInput | null
+  requestTo?: UserUpdateOneWithoutLogRequestToInput | null
+}
+
+export interface LogRequestUpdateWithoutRequestByDataInput {
+  isiRequest?: String | null
+  jenisRequest?: String | null
+  statusRequest?: String | null
+  tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
+  tglExpired?: DateTime | null
+  tglRequest?: DateTime | null
+  tglRespon?: DateTime | null
+  caseId?: CaseUpdateOneWithoutLogRequestsInput | null
+  applicationId?: ApplicationUpdateOneInput | null
+  networkId?: NetworkUpdateOneWithoutLogRequestsInput | null
+  personId?: PersonUpdateOneWithoutLogRequestsInput | null
+  pp?: LogRequestAppUpdateManyWithoutLogRequestIdInput | null
+  requestTo?: UserUpdateOneWithoutLogRequestToInput | null
+}
+
+export interface LogRequestUpdateWithoutRequestToDataInput {
+  isiRequest?: String | null
+  jenisRequest?: String | null
+  statusRequest?: String | null
+  tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
+  tglExpired?: DateTime | null
+  tglRequest?: DateTime | null
+  tglRespon?: DateTime | null
+  caseId?: CaseUpdateOneWithoutLogRequestsInput | null
+  applicationId?: ApplicationUpdateOneInput | null
+  networkId?: NetworkUpdateOneWithoutLogRequestsInput | null
+  personId?: PersonUpdateOneWithoutLogRequestsInput | null
+  pp?: LogRequestAppUpdateManyWithoutLogRequestIdInput | null
+  requestBy?: UserUpdateOneWithoutLogRequestByInput | null
+}
+
+export interface LogRequestUpdateWithWhereUniqueNestedInput {
+  where: LogRequestWhereUniqueInput
+  data: LogRequestUpdateDataInput
+}
+
+export interface LogRequestUpdateWithWhereUniqueWithoutCaseIdInput {
+  where: LogRequestWhereUniqueInput
+  data: LogRequestUpdateWithoutCaseIdDataInput
+}
+
+export interface LogRequestUpdateWithWhereUniqueWithoutNetworkIdInput {
+  where: LogRequestWhereUniqueInput
+  data: LogRequestUpdateWithoutNetworkIdDataInput
+}
+
+export interface LogRequestUpdateWithWhereUniqueWithoutPersonIdInput {
+  where: LogRequestWhereUniqueInput
+  data: LogRequestUpdateWithoutPersonIdDataInput
+}
+
+export interface LogRequestUpdateWithWhereUniqueWithoutRequestByInput {
+  where: LogRequestWhereUniqueInput
+  data: LogRequestUpdateWithoutRequestByDataInput
+}
+
+export interface LogRequestUpdateWithWhereUniqueWithoutRequestToInput {
+  where: LogRequestWhereUniqueInput
+  data: LogRequestUpdateWithoutRequestToDataInput
+}
+
+export interface LogRequestUpsertWithoutPpInput {
+  update: LogRequestUpdateWithoutPpDataInput
+  create: LogRequestCreateWithoutPpInput
+}
+
+export interface LogRequestUpsertWithWhereUniqueNestedInput {
+  where: LogRequestWhereUniqueInput
+  update: LogRequestUpdateDataInput
+  create: LogRequestCreateInput
+}
+
+export interface LogRequestUpsertWithWhereUniqueWithoutCaseIdInput {
+  where: LogRequestWhereUniqueInput
+  update: LogRequestUpdateWithoutCaseIdDataInput
+  create: LogRequestCreateWithoutCaseIdInput
+}
+
+export interface LogRequestUpsertWithWhereUniqueWithoutNetworkIdInput {
+  where: LogRequestWhereUniqueInput
+  update: LogRequestUpdateWithoutNetworkIdDataInput
+  create: LogRequestCreateWithoutNetworkIdInput
+}
+
+export interface LogRequestUpsertWithWhereUniqueWithoutPersonIdInput {
+  where: LogRequestWhereUniqueInput
+  update: LogRequestUpdateWithoutPersonIdDataInput
+  create: LogRequestCreateWithoutPersonIdInput
+}
+
+export interface LogRequestUpsertWithWhereUniqueWithoutRequestByInput {
+  where: LogRequestWhereUniqueInput
+  update: LogRequestUpdateWithoutRequestByDataInput
+  create: LogRequestCreateWithoutRequestByInput
+}
+
+export interface LogRequestUpsertWithWhereUniqueWithoutRequestToInput {
+  where: LogRequestWhereUniqueInput
+  update: LogRequestUpdateWithoutRequestToDataInput
+  create: LogRequestCreateWithoutRequestToInput
+}
+
+export interface LogRequestWhereInput {
+  AND?: LogRequestWhereInput[] | LogRequestWhereInput | null
+  OR?: LogRequestWhereInput[] | LogRequestWhereInput | null
+  NOT?: LogRequestWhereInput[] | LogRequestWhereInput | null
+  ID?: Int | null
+  ID_not?: Int | null
+  ID_in?: Int[] | Int | null
+  ID_not_in?: Int[] | Int | null
+  ID_lt?: Int | null
+  ID_lte?: Int | null
+  ID_gt?: Int | null
+  ID_gte?: Int | null
+  isiRequest?: String | null
+  isiRequest_not?: String | null
+  isiRequest_in?: String[] | String | null
+  isiRequest_not_in?: String[] | String | null
+  isiRequest_lt?: String | null
+  isiRequest_lte?: String | null
+  isiRequest_gt?: String | null
+  isiRequest_gte?: String | null
+  isiRequest_contains?: String | null
+  isiRequest_not_contains?: String | null
+  isiRequest_starts_with?: String | null
+  isiRequest_not_starts_with?: String | null
+  isiRequest_ends_with?: String | null
+  isiRequest_not_ends_with?: String | null
+  jenisRequest?: String | null
+  jenisRequest_not?: String | null
+  jenisRequest_in?: String[] | String | null
+  jenisRequest_not_in?: String[] | String | null
+  jenisRequest_lt?: String | null
+  jenisRequest_lte?: String | null
+  jenisRequest_gt?: String | null
+  jenisRequest_gte?: String | null
+  jenisRequest_contains?: String | null
+  jenisRequest_not_contains?: String | null
+  jenisRequest_starts_with?: String | null
+  jenisRequest_not_starts_with?: String | null
+  jenisRequest_ends_with?: String | null
+  jenisRequest_not_ends_with?: String | null
+  statusRequest?: String | null
+  statusRequest_not?: String | null
+  statusRequest_in?: String[] | String | null
+  statusRequest_not_in?: String[] | String | null
+  statusRequest_lt?: String | null
+  statusRequest_lte?: String | null
+  statusRequest_gt?: String | null
+  statusRequest_gte?: String | null
+  statusRequest_contains?: String | null
+  statusRequest_not_contains?: String | null
+  statusRequest_starts_with?: String | null
+  statusRequest_not_starts_with?: String | null
+  statusRequest_ends_with?: String | null
+  statusRequest_not_ends_with?: String | null
+  tanggapanRequest?: String | null
+  tanggapanRequest_not?: String | null
+  tanggapanRequest_in?: String[] | String | null
+  tanggapanRequest_not_in?: String[] | String | null
+  tanggapanRequest_lt?: String | null
+  tanggapanRequest_lte?: String | null
+  tanggapanRequest_gt?: String | null
+  tanggapanRequest_gte?: String | null
+  tanggapanRequest_contains?: String | null
+  tanggapanRequest_not_contains?: String | null
+  tanggapanRequest_starts_with?: String | null
+  tanggapanRequest_not_starts_with?: String | null
+  tanggapanRequest_ends_with?: String | null
+  tanggapanRequest_not_ends_with?: String | null
+  tanggapanRequestIsi?: String | null
+  tanggapanRequestIsi_not?: String | null
+  tanggapanRequestIsi_in?: String[] | String | null
+  tanggapanRequestIsi_not_in?: String[] | String | null
+  tanggapanRequestIsi_lt?: String | null
+  tanggapanRequestIsi_lte?: String | null
+  tanggapanRequestIsi_gt?: String | null
+  tanggapanRequestIsi_gte?: String | null
+  tanggapanRequestIsi_contains?: String | null
+  tanggapanRequestIsi_not_contains?: String | null
+  tanggapanRequestIsi_starts_with?: String | null
+  tanggapanRequestIsi_not_starts_with?: String | null
+  tanggapanRequestIsi_ends_with?: String | null
+  tanggapanRequestIsi_not_ends_with?: String | null
+  tglExpired?: DateTime | null
+  tglExpired_not?: DateTime | null
+  tglExpired_in?: DateTime[] | DateTime | null
+  tglExpired_not_in?: DateTime[] | DateTime | null
+  tglExpired_lt?: DateTime | null
+  tglExpired_lte?: DateTime | null
+  tglExpired_gt?: DateTime | null
+  tglExpired_gte?: DateTime | null
+  tglRequest?: DateTime | null
+  tglRequest_not?: DateTime | null
+  tglRequest_in?: DateTime[] | DateTime | null
+  tglRequest_not_in?: DateTime[] | DateTime | null
+  tglRequest_lt?: DateTime | null
+  tglRequest_lte?: DateTime | null
+  tglRequest_gt?: DateTime | null
+  tglRequest_gte?: DateTime | null
+  tglRespon?: DateTime | null
+  tglRespon_not?: DateTime | null
+  tglRespon_in?: DateTime[] | DateTime | null
+  tglRespon_not_in?: DateTime[] | DateTime | null
+  tglRespon_lt?: DateTime | null
+  tglRespon_lte?: DateTime | null
+  tglRespon_gt?: DateTime | null
+  tglRespon_gte?: DateTime | null
+  caseId?: CaseWhereInput | null
+  applicationId?: ApplicationWhereInput | null
+  networkId?: NetworkWhereInput | null
+  personId?: PersonWhereInput | null
+  pp_every?: LogRequestAppWhereInput | null
+  pp_some?: LogRequestAppWhereInput | null
+  pp_none?: LogRequestAppWhereInput | null
+  requestBy?: UserWhereInput | null
+  requestTo?: UserWhereInput | null
 }
 
 export interface LogRequestWhereUniqueInput {
@@ -28262,6 +32681,28 @@ export interface NetworkCreateInput {
   provinceId?: Int | null
   regencyId?: Int | null
   type?: String | null
+  logRequests?: LogRequestCreateManyWithoutNetworkIdInput | null
+}
+
+export interface NetworkCreateOneInput {
+  create?: NetworkCreateInput | null
+  connect?: NetworkWhereUniqueInput | null
+}
+
+export interface NetworkCreateOneWithoutLogRequestsInput {
+  create?: NetworkCreateWithoutLogRequestsInput | null
+  connect?: NetworkWhereUniqueInput | null
+}
+
+export interface NetworkCreateWithoutLogRequestsInput {
+  address?: String | null
+  contactPerson?: String | null
+  email?: String | null
+  name?: String | null
+  noContact?: String | null
+  provinceId?: Int | null
+  regencyId?: Int | null
+  type?: String | null
 }
 
 export interface NetworkSubscriptionWhereInput {
@@ -28275,6 +32716,18 @@ export interface NetworkSubscriptionWhereInput {
   node?: NetworkWhereInput | null
 }
 
+export interface NetworkUpdateDataInput {
+  address?: String | null
+  contactPerson?: String | null
+  email?: String | null
+  name?: String | null
+  noContact?: String | null
+  provinceId?: Int | null
+  regencyId?: Int | null
+  type?: String | null
+  logRequests?: LogRequestUpdateManyWithoutNetworkIdInput | null
+}
+
 export interface NetworkUpdateInput {
   address?: String | null
   contactPerson?: String | null
@@ -28284,6 +32737,7 @@ export interface NetworkUpdateInput {
   provinceId?: Int | null
   regencyId?: Int | null
   type?: String | null
+  logRequests?: LogRequestUpdateManyWithoutNetworkIdInput | null
 }
 
 export interface NetworkUpdateManyMutationInput {
@@ -28295,6 +32749,45 @@ export interface NetworkUpdateManyMutationInput {
   provinceId?: Int | null
   regencyId?: Int | null
   type?: String | null
+}
+
+export interface NetworkUpdateOneInput {
+  create?: NetworkCreateInput | null
+  connect?: NetworkWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
+  update?: NetworkUpdateDataInput | null
+  upsert?: NetworkUpsertNestedInput | null
+}
+
+export interface NetworkUpdateOneWithoutLogRequestsInput {
+  create?: NetworkCreateWithoutLogRequestsInput | null
+  connect?: NetworkWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
+  update?: NetworkUpdateWithoutLogRequestsDataInput | null
+  upsert?: NetworkUpsertWithoutLogRequestsInput | null
+}
+
+export interface NetworkUpdateWithoutLogRequestsDataInput {
+  address?: String | null
+  contactPerson?: String | null
+  email?: String | null
+  name?: String | null
+  noContact?: String | null
+  provinceId?: Int | null
+  regencyId?: Int | null
+  type?: String | null
+}
+
+export interface NetworkUpsertNestedInput {
+  update: NetworkUpdateDataInput
+  create: NetworkCreateInput
+}
+
+export interface NetworkUpsertWithoutLogRequestsInput {
+  update: NetworkUpdateWithoutLogRequestsDataInput
+  create: NetworkCreateWithoutLogRequestsInput
 }
 
 export interface NetworkWhereInput {
@@ -28425,6 +32918,9 @@ export interface NetworkWhereInput {
   updatedAt_lte?: DateTime | null
   updatedAt_gt?: DateTime | null
   updatedAt_gte?: DateTime | null
+  logRequests_every?: LogRequestWhereInput | null
+  logRequests_some?: LogRequestWhereInput | null
+  logRequests_none?: LogRequestWhereInput | null
 }
 
 export interface NetworkWhereUniqueInput {
@@ -28465,6 +32961,12 @@ export interface PersonCreateInput {
   casepelakus?: CasePelakuCreateManyWithoutPersonIdInput | null
   clients?: ClientCreateManyWithoutPersonIdInput | null
   documents?: PersonDocumentCreateManyWithoutPersonIdInput | null
+  logRequests?: LogRequestCreateManyWithoutPersonIdInput | null
+}
+
+export interface PersonCreateOneInput {
+  create?: PersonCreateInput | null
+  connect?: PersonWhereUniqueInput | null
 }
 
 export interface PersonCreateOneWithoutApplicationsInput {
@@ -28489,6 +32991,11 @@ export interface PersonCreateOneWithoutClientsInput {
 
 export interface PersonCreateOneWithoutDocumentsInput {
   create?: PersonCreateWithoutDocumentsInput | null
+  connect?: PersonWhereUniqueInput | null
+}
+
+export interface PersonCreateOneWithoutLogRequestsInput {
+  create?: PersonCreateWithoutLogRequestsInput | null
   connect?: PersonWhereUniqueInput | null
 }
 
@@ -28525,6 +33032,7 @@ export interface PersonCreateWithoutApplicationsInput {
   casepelakus?: CasePelakuCreateManyWithoutPersonIdInput | null
   clients?: ClientCreateManyWithoutPersonIdInput | null
   documents?: PersonDocumentCreateManyWithoutPersonIdInput | null
+  logRequests?: LogRequestCreateManyWithoutPersonIdInput | null
 }
 
 export interface PersonCreateWithoutCasekorbansInput {
@@ -28560,6 +33068,7 @@ export interface PersonCreateWithoutCasekorbansInput {
   casepelakus?: CasePelakuCreateManyWithoutPersonIdInput | null
   clients?: ClientCreateManyWithoutPersonIdInput | null
   documents?: PersonDocumentCreateManyWithoutPersonIdInput | null
+  logRequests?: LogRequestCreateManyWithoutPersonIdInput | null
 }
 
 export interface PersonCreateWithoutCasepelakusInput {
@@ -28595,6 +33104,7 @@ export interface PersonCreateWithoutCasepelakusInput {
   casekorbans?: CaseKorbanCreateManyWithoutPersonIdInput | null
   clients?: ClientCreateManyWithoutPersonIdInput | null
   documents?: PersonDocumentCreateManyWithoutPersonIdInput | null
+  logRequests?: LogRequestCreateManyWithoutPersonIdInput | null
 }
 
 export interface PersonCreateWithoutClientsInput {
@@ -28630,6 +33140,7 @@ export interface PersonCreateWithoutClientsInput {
   casekorbans?: CaseKorbanCreateManyWithoutPersonIdInput | null
   casepelakus?: CasePelakuCreateManyWithoutPersonIdInput | null
   documents?: PersonDocumentCreateManyWithoutPersonIdInput | null
+  logRequests?: LogRequestCreateManyWithoutPersonIdInput | null
 }
 
 export interface PersonCreateWithoutDocumentsInput {
@@ -28665,6 +33176,43 @@ export interface PersonCreateWithoutDocumentsInput {
   casekorbans?: CaseKorbanCreateManyWithoutPersonIdInput | null
   casepelakus?: CasePelakuCreateManyWithoutPersonIdInput | null
   clients?: ClientCreateManyWithoutPersonIdInput | null
+  logRequests?: LogRequestCreateManyWithoutPersonIdInput | null
+}
+
+export interface PersonCreateWithoutLogRequestsInput {
+  agama?: String | null
+  alamatDomisili?: String | null
+  alamatId?: String | null
+  alatBantu?: String | null
+  alias?: String | null
+  createdBy?: String | null
+  disabilitas: Boolean
+  distrikDomisili?: String | null
+  distrikId?: String | null
+  domisiliSama: Boolean
+  email?: String | null
+  golDarah?: String | null
+  jenisDisabilitas?: String | null
+  jenisDomisili?: String | null
+  jenisId?: String | null
+  jenisKelamin?: String | null
+  jmlAnggota?: Int | null
+  namaLengkap?: String | null
+  nomorId?: String | null
+  pekerjaan?: String | null
+  pendidikan?: String | null
+  statusPernikahan?: String | null
+  telepon?: String | null
+  tglLahir?: DateTime | null
+  tmpLahir?: String | null
+  unitSatuan?: String | null
+  updatedBy?: String | null
+  wargaNegara?: String | null
+  applications?: ApplicationCreateManyWithoutWakilIdInput | null
+  casekorbans?: CaseKorbanCreateManyWithoutPersonIdInput | null
+  casepelakus?: CasePelakuCreateManyWithoutPersonIdInput | null
+  clients?: ClientCreateManyWithoutPersonIdInput | null
+  documents?: PersonDocumentCreateManyWithoutPersonIdInput | null
 }
 
 export interface PersonDocumentCreateInput {
@@ -28873,6 +33421,43 @@ export interface PersonSubscriptionWhereInput {
   node?: PersonWhereInput | null
 }
 
+export interface PersonUpdateDataInput {
+  agama?: String | null
+  alamatDomisili?: String | null
+  alamatId?: String | null
+  alatBantu?: String | null
+  alias?: String | null
+  createdBy?: String | null
+  disabilitas?: Boolean | null
+  distrikDomisili?: String | null
+  distrikId?: String | null
+  domisiliSama?: Boolean | null
+  email?: String | null
+  golDarah?: String | null
+  jenisDisabilitas?: String | null
+  jenisDomisili?: String | null
+  jenisId?: String | null
+  jenisKelamin?: String | null
+  jmlAnggota?: Int | null
+  namaLengkap?: String | null
+  nomorId?: String | null
+  pekerjaan?: String | null
+  pendidikan?: String | null
+  statusPernikahan?: String | null
+  telepon?: String | null
+  tglLahir?: DateTime | null
+  tmpLahir?: String | null
+  unitSatuan?: String | null
+  updatedBy?: String | null
+  wargaNegara?: String | null
+  applications?: ApplicationUpdateManyWithoutWakilIdInput | null
+  casekorbans?: CaseKorbanUpdateManyWithoutPersonIdInput | null
+  casepelakus?: CasePelakuUpdateManyWithoutPersonIdInput | null
+  clients?: ClientUpdateManyWithoutPersonIdInput | null
+  documents?: PersonDocumentUpdateManyWithoutPersonIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutPersonIdInput | null
+}
+
 export interface PersonUpdateInput {
   agama?: String | null
   alamatDomisili?: String | null
@@ -28907,6 +33492,7 @@ export interface PersonUpdateInput {
   casepelakus?: CasePelakuUpdateManyWithoutPersonIdInput | null
   clients?: ClientUpdateManyWithoutPersonIdInput | null
   documents?: PersonDocumentUpdateManyWithoutPersonIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutPersonIdInput | null
 }
 
 export interface PersonUpdateManyMutationInput {
@@ -28938,6 +33524,13 @@ export interface PersonUpdateManyMutationInput {
   unitSatuan?: String | null
   updatedBy?: String | null
   wargaNegara?: String | null
+}
+
+export interface PersonUpdateOneRequiredInput {
+  create?: PersonCreateInput | null
+  connect?: PersonWhereUniqueInput | null
+  update?: PersonUpdateDataInput | null
+  upsert?: PersonUpsertNestedInput | null
 }
 
 export interface PersonUpdateOneRequiredWithoutApplicationsInput {
@@ -28979,6 +33572,15 @@ export interface PersonUpdateOneWithoutCasepelakusInput {
   upsert?: PersonUpsertWithoutCasepelakusInput | null
 }
 
+export interface PersonUpdateOneWithoutLogRequestsInput {
+  create?: PersonCreateWithoutLogRequestsInput | null
+  connect?: PersonWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
+  update?: PersonUpdateWithoutLogRequestsDataInput | null
+  upsert?: PersonUpsertWithoutLogRequestsInput | null
+}
+
 export interface PersonUpdateWithoutApplicationsDataInput {
   agama?: String | null
   alamatDomisili?: String | null
@@ -29012,6 +33614,7 @@ export interface PersonUpdateWithoutApplicationsDataInput {
   casepelakus?: CasePelakuUpdateManyWithoutPersonIdInput | null
   clients?: ClientUpdateManyWithoutPersonIdInput | null
   documents?: PersonDocumentUpdateManyWithoutPersonIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutPersonIdInput | null
 }
 
 export interface PersonUpdateWithoutCasekorbansDataInput {
@@ -29047,6 +33650,7 @@ export interface PersonUpdateWithoutCasekorbansDataInput {
   casepelakus?: CasePelakuUpdateManyWithoutPersonIdInput | null
   clients?: ClientUpdateManyWithoutPersonIdInput | null
   documents?: PersonDocumentUpdateManyWithoutPersonIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutPersonIdInput | null
 }
 
 export interface PersonUpdateWithoutCasepelakusDataInput {
@@ -29082,6 +33686,7 @@ export interface PersonUpdateWithoutCasepelakusDataInput {
   casekorbans?: CaseKorbanUpdateManyWithoutPersonIdInput | null
   clients?: ClientUpdateManyWithoutPersonIdInput | null
   documents?: PersonDocumentUpdateManyWithoutPersonIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutPersonIdInput | null
 }
 
 export interface PersonUpdateWithoutClientsDataInput {
@@ -29117,6 +33722,7 @@ export interface PersonUpdateWithoutClientsDataInput {
   casekorbans?: CaseKorbanUpdateManyWithoutPersonIdInput | null
   casepelakus?: CasePelakuUpdateManyWithoutPersonIdInput | null
   documents?: PersonDocumentUpdateManyWithoutPersonIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutPersonIdInput | null
 }
 
 export interface PersonUpdateWithoutDocumentsDataInput {
@@ -29152,6 +33758,48 @@ export interface PersonUpdateWithoutDocumentsDataInput {
   casekorbans?: CaseKorbanUpdateManyWithoutPersonIdInput | null
   casepelakus?: CasePelakuUpdateManyWithoutPersonIdInput | null
   clients?: ClientUpdateManyWithoutPersonIdInput | null
+  logRequests?: LogRequestUpdateManyWithoutPersonIdInput | null
+}
+
+export interface PersonUpdateWithoutLogRequestsDataInput {
+  agama?: String | null
+  alamatDomisili?: String | null
+  alamatId?: String | null
+  alatBantu?: String | null
+  alias?: String | null
+  createdBy?: String | null
+  disabilitas?: Boolean | null
+  distrikDomisili?: String | null
+  distrikId?: String | null
+  domisiliSama?: Boolean | null
+  email?: String | null
+  golDarah?: String | null
+  jenisDisabilitas?: String | null
+  jenisDomisili?: String | null
+  jenisId?: String | null
+  jenisKelamin?: String | null
+  jmlAnggota?: Int | null
+  namaLengkap?: String | null
+  nomorId?: String | null
+  pekerjaan?: String | null
+  pendidikan?: String | null
+  statusPernikahan?: String | null
+  telepon?: String | null
+  tglLahir?: DateTime | null
+  tmpLahir?: String | null
+  unitSatuan?: String | null
+  updatedBy?: String | null
+  wargaNegara?: String | null
+  applications?: ApplicationUpdateManyWithoutWakilIdInput | null
+  casekorbans?: CaseKorbanUpdateManyWithoutPersonIdInput | null
+  casepelakus?: CasePelakuUpdateManyWithoutPersonIdInput | null
+  clients?: ClientUpdateManyWithoutPersonIdInput | null
+  documents?: PersonDocumentUpdateManyWithoutPersonIdInput | null
+}
+
+export interface PersonUpsertNestedInput {
+  update: PersonUpdateDataInput
+  create: PersonCreateInput
 }
 
 export interface PersonUpsertWithoutApplicationsInput {
@@ -29177,6 +33825,11 @@ export interface PersonUpsertWithoutClientsInput {
 export interface PersonUpsertWithoutDocumentsInput {
   update: PersonUpdateWithoutDocumentsDataInput
   create: PersonCreateWithoutDocumentsInput
+}
+
+export interface PersonUpsertWithoutLogRequestsInput {
+  update: PersonUpdateWithoutLogRequestsDataInput
+  create: PersonCreateWithoutLogRequestsInput
 }
 
 export interface PersonWhereInput {
@@ -29578,6 +34231,9 @@ export interface PersonWhereInput {
   documents_every?: PersonDocumentWhereInput | null
   documents_some?: PersonDocumentWhereInput | null
   documents_none?: PersonDocumentWhereInput | null
+  logRequests_every?: LogRequestWhereInput | null
+  logRequests_some?: LogRequestWhereInput | null
+  logRequests_none?: LogRequestWhereInput | null
 }
 
 export interface PersonWhereUniqueInput {
@@ -29585,8 +34241,123 @@ export interface PersonWhereUniqueInput {
 }
 
 export interface RoleCreateInput {
-  type?: Int | null
-  userId?: Int | null
+  userId?: UserCreateManyWithoutRoles_typeInput | null
+  type: RolesTypeCreateOneInput
+}
+
+export interface RoleCreateManyWithoutUserIdInput {
+  create?: RoleCreateWithoutUserIdInput[] | RoleCreateWithoutUserIdInput | null
+  connect?: RoleWhereUniqueInput[] | RoleWhereUniqueInput | null
+}
+
+export interface RoleCreateWithoutUserIdInput {
+  type: RolesTypeCreateOneInput
+}
+
+export interface RoleScalarWhereInput {
+  AND?: RoleScalarWhereInput[] | RoleScalarWhereInput | null
+  OR?: RoleScalarWhereInput[] | RoleScalarWhereInput | null
+  NOT?: RoleScalarWhereInput[] | RoleScalarWhereInput | null
+  createdAt?: DateTime | null
+  createdAt_not?: DateTime | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
+  createdAt_lt?: DateTime | null
+  createdAt_lte?: DateTime | null
+  createdAt_gt?: DateTime | null
+  createdAt_gte?: DateTime | null
+  id?: Int | null
+  id_not?: Int | null
+  id_in?: Int[] | Int | null
+  id_not_in?: Int[] | Int | null
+  id_lt?: Int | null
+  id_lte?: Int | null
+  id_gt?: Int | null
+  id_gte?: Int | null
+}
+
+export interface RolesTypeCreateInput {
+  description?: String | null
+}
+
+export interface RolesTypeCreateOneInput {
+  create?: RolesTypeCreateInput | null
+  connect?: RolesTypeWhereUniqueInput | null
+}
+
+export interface RolesTypeSubscriptionWhereInput {
+  AND?: RolesTypeSubscriptionWhereInput[] | RolesTypeSubscriptionWhereInput | null
+  OR?: RolesTypeSubscriptionWhereInput[] | RolesTypeSubscriptionWhereInput | null
+  NOT?: RolesTypeSubscriptionWhereInput[] | RolesTypeSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
+  updatedFields_contains?: String | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
+  node?: RolesTypeWhereInput | null
+}
+
+export interface RolesTypeUpdateDataInput {
+  description?: String | null
+}
+
+export interface RolesTypeUpdateInput {
+  description?: String | null
+}
+
+export interface RolesTypeUpdateManyMutationInput {
+  description?: String | null
+}
+
+export interface RolesTypeUpdateOneRequiredInput {
+  create?: RolesTypeCreateInput | null
+  connect?: RolesTypeWhereUniqueInput | null
+  update?: RolesTypeUpdateDataInput | null
+  upsert?: RolesTypeUpsertNestedInput | null
+}
+
+export interface RolesTypeUpsertNestedInput {
+  update: RolesTypeUpdateDataInput
+  create: RolesTypeCreateInput
+}
+
+export interface RolesTypeWhereInput {
+  AND?: RolesTypeWhereInput[] | RolesTypeWhereInput | null
+  OR?: RolesTypeWhereInput[] | RolesTypeWhereInput | null
+  NOT?: RolesTypeWhereInput[] | RolesTypeWhereInput | null
+  createdAt?: DateTime | null
+  createdAt_not?: DateTime | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
+  createdAt_lt?: DateTime | null
+  createdAt_lte?: DateTime | null
+  createdAt_gt?: DateTime | null
+  createdAt_gte?: DateTime | null
+  id?: Int | null
+  id_not?: Int | null
+  id_in?: Int[] | Int | null
+  id_not_in?: Int[] | Int | null
+  id_lt?: Int | null
+  id_lte?: Int | null
+  id_gt?: Int | null
+  id_gte?: Int | null
+  description?: String | null
+  description_not?: String | null
+  description_in?: String[] | String | null
+  description_not_in?: String[] | String | null
+  description_lt?: String | null
+  description_lte?: String | null
+  description_gt?: String | null
+  description_gte?: String | null
+  description_contains?: String | null
+  description_not_contains?: String | null
+  description_starts_with?: String | null
+  description_not_starts_with?: String | null
+  description_ends_with?: String | null
+  description_not_ends_with?: String | null
+}
+
+export interface RolesTypeWhereUniqueInput {
+  id?: Int | null
 }
 
 export interface RoleSubscriptionWhereInput {
@@ -29601,19 +34372,48 @@ export interface RoleSubscriptionWhereInput {
 }
 
 export interface RoleUpdateInput {
-  type?: Int | null
-  userId?: Int | null
+  userId?: UserUpdateManyWithoutRoles_typeInput | null
+  type?: RolesTypeUpdateOneRequiredInput | null
 }
 
-export interface RoleUpdateManyMutationInput {
-  type?: Int | null
-  userId?: Int | null
+export interface RoleUpdateManyWithoutUserIdInput {
+  create?: RoleCreateWithoutUserIdInput[] | RoleCreateWithoutUserIdInput | null
+  connect?: RoleWhereUniqueInput[] | RoleWhereUniqueInput | null
+  set?: RoleWhereUniqueInput[] | RoleWhereUniqueInput | null
+  disconnect?: RoleWhereUniqueInput[] | RoleWhereUniqueInput | null
+  delete?: RoleWhereUniqueInput[] | RoleWhereUniqueInput | null
+  update?: RoleUpdateWithWhereUniqueWithoutUserIdInput[] | RoleUpdateWithWhereUniqueWithoutUserIdInput | null
+  deleteMany?: RoleScalarWhereInput[] | RoleScalarWhereInput | null
+  upsert?: RoleUpsertWithWhereUniqueWithoutUserIdInput[] | RoleUpsertWithWhereUniqueWithoutUserIdInput | null
+}
+
+export interface RoleUpdateWithoutUserIdDataInput {
+  type?: RolesTypeUpdateOneRequiredInput | null
+}
+
+export interface RoleUpdateWithWhereUniqueWithoutUserIdInput {
+  where: RoleWhereUniqueInput
+  data: RoleUpdateWithoutUserIdDataInput
+}
+
+export interface RoleUpsertWithWhereUniqueWithoutUserIdInput {
+  where: RoleWhereUniqueInput
+  update: RoleUpdateWithoutUserIdDataInput
+  create: RoleCreateWithoutUserIdInput
 }
 
 export interface RoleWhereInput {
   AND?: RoleWhereInput[] | RoleWhereInput | null
   OR?: RoleWhereInput[] | RoleWhereInput | null
   NOT?: RoleWhereInput[] | RoleWhereInput | null
+  createdAt?: DateTime | null
+  createdAt_not?: DateTime | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
+  createdAt_lt?: DateTime | null
+  createdAt_lte?: DateTime | null
+  createdAt_gt?: DateTime | null
+  createdAt_gte?: DateTime | null
   id?: Int | null
   id_not?: Int | null
   id_in?: Int[] | Int | null
@@ -29622,22 +34422,10 @@ export interface RoleWhereInput {
   id_lte?: Int | null
   id_gt?: Int | null
   id_gte?: Int | null
-  type?: Int | null
-  type_not?: Int | null
-  type_in?: Int[] | Int | null
-  type_not_in?: Int[] | Int | null
-  type_lt?: Int | null
-  type_lte?: Int | null
-  type_gt?: Int | null
-  type_gte?: Int | null
-  userId?: Int | null
-  userId_not?: Int | null
-  userId_in?: Int[] | Int | null
-  userId_not_in?: Int[] | Int | null
-  userId_lt?: Int | null
-  userId_lte?: Int | null
-  userId_gt?: Int | null
-  userId_gte?: Int | null
+  userId_every?: UserWhereInput | null
+  userId_some?: UserWhereInput | null
+  userId_none?: UserWhereInput | null
+  type?: RolesTypeWhereInput | null
 }
 
 export interface RoleWhereUniqueInput {
@@ -29658,11 +34446,97 @@ export interface UserCreateInput {
   status?: String | null
   username?: String | null
   profile: UserProfileCreateOneWithoutUserIdInput
+  roles_type?: RoleCreateManyWithoutUserIdInput | null
+  logRequestBy?: LogRequestCreateManyWithoutRequestByInput | null
+  logRequestTo?: LogRequestCreateManyWithoutRequestToInput | null
+  appConsultation?: LogRequestAppCreateManyWithoutAppConsultationInput | null
+}
+
+export interface UserCreateManyWithoutRoles_typeInput {
+  create?: UserCreateWithoutRoles_typeInput[] | UserCreateWithoutRoles_typeInput | null
+  connect?: UserWhereUniqueInput[] | UserWhereUniqueInput | null
+}
+
+export interface UserCreateOneInput {
+  create?: UserCreateInput | null
+  connect?: UserWhereUniqueInput | null
+}
+
+export interface UserCreateOneWithoutAppConsultationInput {
+  create?: UserCreateWithoutAppConsultationInput | null
+  connect?: UserWhereUniqueInput | null
+}
+
+export interface UserCreateOneWithoutLogRequestByInput {
+  create?: UserCreateWithoutLogRequestByInput | null
+  connect?: UserWhereUniqueInput | null
+}
+
+export interface UserCreateOneWithoutLogRequestToInput {
+  create?: UserCreateWithoutLogRequestToInput | null
+  connect?: UserWhereUniqueInput | null
 }
 
 export interface UserCreateOneWithoutProfileInput {
   create?: UserCreateWithoutProfileInput | null
   connect?: UserWhereUniqueInput | null
+}
+
+export interface UserCreateWithoutAppConsultationInput {
+  address?: String | null
+  avatar?: String | null
+  deletedAt?: DateTime | null
+  email?: String | null
+  name?: String | null
+  password?: String | null
+  phone?: String | null
+  position?: String | null
+  rememberToken?: String | null
+  roles?: String | null
+  status?: String | null
+  username?: String | null
+  profile: UserProfileCreateOneWithoutUserIdInput
+  roles_type?: RoleCreateManyWithoutUserIdInput | null
+  logRequestBy?: LogRequestCreateManyWithoutRequestByInput | null
+  logRequestTo?: LogRequestCreateManyWithoutRequestToInput | null
+}
+
+export interface UserCreateWithoutLogRequestByInput {
+  address?: String | null
+  avatar?: String | null
+  deletedAt?: DateTime | null
+  email?: String | null
+  name?: String | null
+  password?: String | null
+  phone?: String | null
+  position?: String | null
+  rememberToken?: String | null
+  roles?: String | null
+  status?: String | null
+  username?: String | null
+  profile: UserProfileCreateOneWithoutUserIdInput
+  roles_type?: RoleCreateManyWithoutUserIdInput | null
+  logRequestTo?: LogRequestCreateManyWithoutRequestToInput | null
+  appConsultation?: LogRequestAppCreateManyWithoutAppConsultationInput | null
+}
+
+export interface UserCreateWithoutLogRequestToInput {
+  address?: String | null
+  avatar?: String | null
+  deletedAt?: DateTime | null
+  email?: String | null
+  name?: String | null
+  password?: String | null
+  phone?: String | null
+  position?: String | null
+  rememberToken?: String | null
+  roles?: String | null
+  status?: String | null
+  username?: String | null
+  profile: UserProfileCreateOneWithoutUserIdInput
+  roles_type?: RoleCreateManyWithoutUserIdInput | null
+  logRequestBy?: LogRequestCreateManyWithoutRequestByInput | null
+  appConsultation?: LogRequestAppCreateManyWithoutAppConsultationInput | null
 }
 
 export interface UserCreateWithoutProfileInput {
@@ -29678,6 +34552,29 @@ export interface UserCreateWithoutProfileInput {
   roles?: String | null
   status?: String | null
   username?: String | null
+  roles_type?: RoleCreateManyWithoutUserIdInput | null
+  logRequestBy?: LogRequestCreateManyWithoutRequestByInput | null
+  logRequestTo?: LogRequestCreateManyWithoutRequestToInput | null
+  appConsultation?: LogRequestAppCreateManyWithoutAppConsultationInput | null
+}
+
+export interface UserCreateWithoutRoles_typeInput {
+  address?: String | null
+  avatar?: String | null
+  deletedAt?: DateTime | null
+  email?: String | null
+  name?: String | null
+  password?: String | null
+  phone?: String | null
+  position?: String | null
+  rememberToken?: String | null
+  roles?: String | null
+  status?: String | null
+  username?: String | null
+  profile: UserProfileCreateOneWithoutUserIdInput
+  logRequestBy?: LogRequestCreateManyWithoutRequestByInput | null
+  logRequestTo?: LogRequestCreateManyWithoutRequestToInput | null
+  appConsultation?: LogRequestAppCreateManyWithoutAppConsultationInput | null
 }
 
 export interface UserProfileCreateInput {
@@ -29817,6 +34714,198 @@ export interface UserProfileWhereUniqueInput {
   id?: Int | null
 }
 
+export interface UserScalarWhereInput {
+  AND?: UserScalarWhereInput[] | UserScalarWhereInput | null
+  OR?: UserScalarWhereInput[] | UserScalarWhereInput | null
+  NOT?: UserScalarWhereInput[] | UserScalarWhereInput | null
+  address?: String | null
+  address_not?: String | null
+  address_in?: String[] | String | null
+  address_not_in?: String[] | String | null
+  address_lt?: String | null
+  address_lte?: String | null
+  address_gt?: String | null
+  address_gte?: String | null
+  address_contains?: String | null
+  address_not_contains?: String | null
+  address_starts_with?: String | null
+  address_not_starts_with?: String | null
+  address_ends_with?: String | null
+  address_not_ends_with?: String | null
+  avatar?: String | null
+  avatar_not?: String | null
+  avatar_in?: String[] | String | null
+  avatar_not_in?: String[] | String | null
+  avatar_lt?: String | null
+  avatar_lte?: String | null
+  avatar_gt?: String | null
+  avatar_gte?: String | null
+  avatar_contains?: String | null
+  avatar_not_contains?: String | null
+  avatar_starts_with?: String | null
+  avatar_not_starts_with?: String | null
+  avatar_ends_with?: String | null
+  avatar_not_ends_with?: String | null
+  createdAt?: DateTime | null
+  createdAt_not?: DateTime | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
+  createdAt_lt?: DateTime | null
+  createdAt_lte?: DateTime | null
+  createdAt_gt?: DateTime | null
+  createdAt_gte?: DateTime | null
+  deletedAt?: DateTime | null
+  deletedAt_not?: DateTime | null
+  deletedAt_in?: DateTime[] | DateTime | null
+  deletedAt_not_in?: DateTime[] | DateTime | null
+  deletedAt_lt?: DateTime | null
+  deletedAt_lte?: DateTime | null
+  deletedAt_gt?: DateTime | null
+  deletedAt_gte?: DateTime | null
+  email?: String | null
+  email_not?: String | null
+  email_in?: String[] | String | null
+  email_not_in?: String[] | String | null
+  email_lt?: String | null
+  email_lte?: String | null
+  email_gt?: String | null
+  email_gte?: String | null
+  email_contains?: String | null
+  email_not_contains?: String | null
+  email_starts_with?: String | null
+  email_not_starts_with?: String | null
+  email_ends_with?: String | null
+  email_not_ends_with?: String | null
+  id?: Int | null
+  id_not?: Int | null
+  id_in?: Int[] | Int | null
+  id_not_in?: Int[] | Int | null
+  id_lt?: Int | null
+  id_lte?: Int | null
+  id_gt?: Int | null
+  id_gte?: Int | null
+  name?: String | null
+  name_not?: String | null
+  name_in?: String[] | String | null
+  name_not_in?: String[] | String | null
+  name_lt?: String | null
+  name_lte?: String | null
+  name_gt?: String | null
+  name_gte?: String | null
+  name_contains?: String | null
+  name_not_contains?: String | null
+  name_starts_with?: String | null
+  name_not_starts_with?: String | null
+  name_ends_with?: String | null
+  name_not_ends_with?: String | null
+  password?: String | null
+  password_not?: String | null
+  password_in?: String[] | String | null
+  password_not_in?: String[] | String | null
+  password_lt?: String | null
+  password_lte?: String | null
+  password_gt?: String | null
+  password_gte?: String | null
+  password_contains?: String | null
+  password_not_contains?: String | null
+  password_starts_with?: String | null
+  password_not_starts_with?: String | null
+  password_ends_with?: String | null
+  password_not_ends_with?: String | null
+  phone?: String | null
+  phone_not?: String | null
+  phone_in?: String[] | String | null
+  phone_not_in?: String[] | String | null
+  phone_lt?: String | null
+  phone_lte?: String | null
+  phone_gt?: String | null
+  phone_gte?: String | null
+  phone_contains?: String | null
+  phone_not_contains?: String | null
+  phone_starts_with?: String | null
+  phone_not_starts_with?: String | null
+  phone_ends_with?: String | null
+  phone_not_ends_with?: String | null
+  position?: String | null
+  position_not?: String | null
+  position_in?: String[] | String | null
+  position_not_in?: String[] | String | null
+  position_lt?: String | null
+  position_lte?: String | null
+  position_gt?: String | null
+  position_gte?: String | null
+  position_contains?: String | null
+  position_not_contains?: String | null
+  position_starts_with?: String | null
+  position_not_starts_with?: String | null
+  position_ends_with?: String | null
+  position_not_ends_with?: String | null
+  rememberToken?: String | null
+  rememberToken_not?: String | null
+  rememberToken_in?: String[] | String | null
+  rememberToken_not_in?: String[] | String | null
+  rememberToken_lt?: String | null
+  rememberToken_lte?: String | null
+  rememberToken_gt?: String | null
+  rememberToken_gte?: String | null
+  rememberToken_contains?: String | null
+  rememberToken_not_contains?: String | null
+  rememberToken_starts_with?: String | null
+  rememberToken_not_starts_with?: String | null
+  rememberToken_ends_with?: String | null
+  rememberToken_not_ends_with?: String | null
+  roles?: String | null
+  roles_not?: String | null
+  roles_in?: String[] | String | null
+  roles_not_in?: String[] | String | null
+  roles_lt?: String | null
+  roles_lte?: String | null
+  roles_gt?: String | null
+  roles_gte?: String | null
+  roles_contains?: String | null
+  roles_not_contains?: String | null
+  roles_starts_with?: String | null
+  roles_not_starts_with?: String | null
+  roles_ends_with?: String | null
+  roles_not_ends_with?: String | null
+  status?: String | null
+  status_not?: String | null
+  status_in?: String[] | String | null
+  status_not_in?: String[] | String | null
+  status_lt?: String | null
+  status_lte?: String | null
+  status_gt?: String | null
+  status_gte?: String | null
+  status_contains?: String | null
+  status_not_contains?: String | null
+  status_starts_with?: String | null
+  status_not_starts_with?: String | null
+  status_ends_with?: String | null
+  status_not_ends_with?: String | null
+  updatedAt?: DateTime | null
+  updatedAt_not?: DateTime | null
+  updatedAt_in?: DateTime[] | DateTime | null
+  updatedAt_not_in?: DateTime[] | DateTime | null
+  updatedAt_lt?: DateTime | null
+  updatedAt_lte?: DateTime | null
+  updatedAt_gt?: DateTime | null
+  updatedAt_gte?: DateTime | null
+  username?: String | null
+  username_not?: String | null
+  username_in?: String[] | String | null
+  username_not_in?: String[] | String | null
+  username_lt?: String | null
+  username_lte?: String | null
+  username_gt?: String | null
+  username_gte?: String | null
+  username_contains?: String | null
+  username_not_contains?: String | null
+  username_starts_with?: String | null
+  username_not_starts_with?: String | null
+  username_ends_with?: String | null
+  username_not_ends_with?: String | null
+}
+
 export interface UserSubscriptionWhereInput {
   AND?: UserSubscriptionWhereInput[] | UserSubscriptionWhereInput | null
   OR?: UserSubscriptionWhereInput[] | UserSubscriptionWhereInput | null
@@ -29826,6 +34915,26 @@ export interface UserSubscriptionWhereInput {
   updatedFields_contains_every?: String[] | String | null
   updatedFields_contains_some?: String[] | String | null
   node?: UserWhereInput | null
+}
+
+export interface UserUpdateDataInput {
+  address?: String | null
+  avatar?: String | null
+  deletedAt?: DateTime | null
+  email?: String | null
+  name?: String | null
+  password?: String | null
+  phone?: String | null
+  position?: String | null
+  rememberToken?: String | null
+  roles?: String | null
+  status?: String | null
+  username?: String | null
+  profile?: UserProfileUpdateOneRequiredWithoutUserIdInput | null
+  roles_type?: RoleUpdateManyWithoutUserIdInput | null
+  logRequestBy?: LogRequestUpdateManyWithoutRequestByInput | null
+  logRequestTo?: LogRequestUpdateManyWithoutRequestToInput | null
+  appConsultation?: LogRequestAppUpdateManyWithoutAppConsultationInput | null
 }
 
 export interface UserUpdateInput {
@@ -29842,6 +34951,25 @@ export interface UserUpdateInput {
   status?: String | null
   username?: String | null
   profile?: UserProfileUpdateOneRequiredWithoutUserIdInput | null
+  roles_type?: RoleUpdateManyWithoutUserIdInput | null
+  logRequestBy?: LogRequestUpdateManyWithoutRequestByInput | null
+  logRequestTo?: LogRequestUpdateManyWithoutRequestToInput | null
+  appConsultation?: LogRequestAppUpdateManyWithoutAppConsultationInput | null
+}
+
+export interface UserUpdateManyDataInput {
+  address?: String | null
+  avatar?: String | null
+  deletedAt?: DateTime | null
+  email?: String | null
+  name?: String | null
+  password?: String | null
+  phone?: String | null
+  position?: String | null
+  rememberToken?: String | null
+  roles?: String | null
+  status?: String | null
+  username?: String | null
 }
 
 export interface UserUpdateManyMutationInput {
@@ -29859,11 +34987,119 @@ export interface UserUpdateManyMutationInput {
   username?: String | null
 }
 
+export interface UserUpdateManyWithoutRoles_typeInput {
+  create?: UserCreateWithoutRoles_typeInput[] | UserCreateWithoutRoles_typeInput | null
+  connect?: UserWhereUniqueInput[] | UserWhereUniqueInput | null
+  set?: UserWhereUniqueInput[] | UserWhereUniqueInput | null
+  disconnect?: UserWhereUniqueInput[] | UserWhereUniqueInput | null
+  delete?: UserWhereUniqueInput[] | UserWhereUniqueInput | null
+  update?: UserUpdateWithWhereUniqueWithoutRoles_typeInput[] | UserUpdateWithWhereUniqueWithoutRoles_typeInput | null
+  updateMany?: UserUpdateManyWithWhereNestedInput[] | UserUpdateManyWithWhereNestedInput | null
+  deleteMany?: UserScalarWhereInput[] | UserScalarWhereInput | null
+  upsert?: UserUpsertWithWhereUniqueWithoutRoles_typeInput[] | UserUpsertWithWhereUniqueWithoutRoles_typeInput | null
+}
+
+export interface UserUpdateManyWithWhereNestedInput {
+  where: UserScalarWhereInput
+  data: UserUpdateManyDataInput
+}
+
+export interface UserUpdateOneInput {
+  create?: UserCreateInput | null
+  connect?: UserWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
+  update?: UserUpdateDataInput | null
+  upsert?: UserUpsertNestedInput | null
+}
+
+export interface UserUpdateOneRequiredWithoutAppConsultationInput {
+  create?: UserCreateWithoutAppConsultationInput | null
+  connect?: UserWhereUniqueInput | null
+  update?: UserUpdateWithoutAppConsultationDataInput | null
+  upsert?: UserUpsertWithoutAppConsultationInput | null
+}
+
 export interface UserUpdateOneRequiredWithoutProfileInput {
   create?: UserCreateWithoutProfileInput | null
   connect?: UserWhereUniqueInput | null
   update?: UserUpdateWithoutProfileDataInput | null
   upsert?: UserUpsertWithoutProfileInput | null
+}
+
+export interface UserUpdateOneWithoutLogRequestByInput {
+  create?: UserCreateWithoutLogRequestByInput | null
+  connect?: UserWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
+  update?: UserUpdateWithoutLogRequestByDataInput | null
+  upsert?: UserUpsertWithoutLogRequestByInput | null
+}
+
+export interface UserUpdateOneWithoutLogRequestToInput {
+  create?: UserCreateWithoutLogRequestToInput | null
+  connect?: UserWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
+  update?: UserUpdateWithoutLogRequestToDataInput | null
+  upsert?: UserUpsertWithoutLogRequestToInput | null
+}
+
+export interface UserUpdateWithoutAppConsultationDataInput {
+  address?: String | null
+  avatar?: String | null
+  deletedAt?: DateTime | null
+  email?: String | null
+  name?: String | null
+  password?: String | null
+  phone?: String | null
+  position?: String | null
+  rememberToken?: String | null
+  roles?: String | null
+  status?: String | null
+  username?: String | null
+  profile?: UserProfileUpdateOneRequiredWithoutUserIdInput | null
+  roles_type?: RoleUpdateManyWithoutUserIdInput | null
+  logRequestBy?: LogRequestUpdateManyWithoutRequestByInput | null
+  logRequestTo?: LogRequestUpdateManyWithoutRequestToInput | null
+}
+
+export interface UserUpdateWithoutLogRequestByDataInput {
+  address?: String | null
+  avatar?: String | null
+  deletedAt?: DateTime | null
+  email?: String | null
+  name?: String | null
+  password?: String | null
+  phone?: String | null
+  position?: String | null
+  rememberToken?: String | null
+  roles?: String | null
+  status?: String | null
+  username?: String | null
+  profile?: UserProfileUpdateOneRequiredWithoutUserIdInput | null
+  roles_type?: RoleUpdateManyWithoutUserIdInput | null
+  logRequestTo?: LogRequestUpdateManyWithoutRequestToInput | null
+  appConsultation?: LogRequestAppUpdateManyWithoutAppConsultationInput | null
+}
+
+export interface UserUpdateWithoutLogRequestToDataInput {
+  address?: String | null
+  avatar?: String | null
+  deletedAt?: DateTime | null
+  email?: String | null
+  name?: String | null
+  password?: String | null
+  phone?: String | null
+  position?: String | null
+  rememberToken?: String | null
+  roles?: String | null
+  status?: String | null
+  username?: String | null
+  profile?: UserProfileUpdateOneRequiredWithoutUserIdInput | null
+  roles_type?: RoleUpdateManyWithoutUserIdInput | null
+  logRequestBy?: LogRequestUpdateManyWithoutRequestByInput | null
+  appConsultation?: LogRequestAppUpdateManyWithoutAppConsultationInput | null
 }
 
 export interface UserUpdateWithoutProfileDataInput {
@@ -29879,11 +35115,65 @@ export interface UserUpdateWithoutProfileDataInput {
   roles?: String | null
   status?: String | null
   username?: String | null
+  roles_type?: RoleUpdateManyWithoutUserIdInput | null
+  logRequestBy?: LogRequestUpdateManyWithoutRequestByInput | null
+  logRequestTo?: LogRequestUpdateManyWithoutRequestToInput | null
+  appConsultation?: LogRequestAppUpdateManyWithoutAppConsultationInput | null
+}
+
+export interface UserUpdateWithoutRoles_typeDataInput {
+  address?: String | null
+  avatar?: String | null
+  deletedAt?: DateTime | null
+  email?: String | null
+  name?: String | null
+  password?: String | null
+  phone?: String | null
+  position?: String | null
+  rememberToken?: String | null
+  roles?: String | null
+  status?: String | null
+  username?: String | null
+  profile?: UserProfileUpdateOneRequiredWithoutUserIdInput | null
+  logRequestBy?: LogRequestUpdateManyWithoutRequestByInput | null
+  logRequestTo?: LogRequestUpdateManyWithoutRequestToInput | null
+  appConsultation?: LogRequestAppUpdateManyWithoutAppConsultationInput | null
+}
+
+export interface UserUpdateWithWhereUniqueWithoutRoles_typeInput {
+  where: UserWhereUniqueInput
+  data: UserUpdateWithoutRoles_typeDataInput
+}
+
+export interface UserUpsertNestedInput {
+  update: UserUpdateDataInput
+  create: UserCreateInput
+}
+
+export interface UserUpsertWithoutAppConsultationInput {
+  update: UserUpdateWithoutAppConsultationDataInput
+  create: UserCreateWithoutAppConsultationInput
+}
+
+export interface UserUpsertWithoutLogRequestByInput {
+  update: UserUpdateWithoutLogRequestByDataInput
+  create: UserCreateWithoutLogRequestByInput
+}
+
+export interface UserUpsertWithoutLogRequestToInput {
+  update: UserUpdateWithoutLogRequestToDataInput
+  create: UserCreateWithoutLogRequestToInput
 }
 
 export interface UserUpsertWithoutProfileInput {
   update: UserUpdateWithoutProfileDataInput
   create: UserCreateWithoutProfileInput
+}
+
+export interface UserUpsertWithWhereUniqueWithoutRoles_typeInput {
+  where: UserWhereUniqueInput
+  update: UserUpdateWithoutRoles_typeDataInput
+  create: UserCreateWithoutRoles_typeInput
 }
 
 export interface UserWhereInput {
@@ -30077,6 +35367,18 @@ export interface UserWhereInput {
   username_ends_with?: String | null
   username_not_ends_with?: String | null
   profile?: UserProfileWhereInput | null
+  roles_type_every?: RoleWhereInput | null
+  roles_type_some?: RoleWhereInput | null
+  roles_type_none?: RoleWhereInput | null
+  logRequestBy_every?: LogRequestWhereInput | null
+  logRequestBy_some?: LogRequestWhereInput | null
+  logRequestBy_none?: LogRequestWhereInput | null
+  logRequestTo_every?: LogRequestWhereInput | null
+  logRequestTo_some?: LogRequestWhereInput | null
+  logRequestTo_none?: LogRequestWhereInput | null
+  appConsultation_every?: LogRequestAppWhereInput | null
+  appConsultation_some?: LogRequestAppWhereInput | null
+  appConsultation_none?: LogRequestAppWhereInput | null
 }
 
 export interface UserWhereUniqueInput {
@@ -30147,6 +35449,14 @@ export interface AggregateCaseProgressActivityNonlit {
   count: Int
 }
 
+export interface AggregateCaseReferral {
+  count: Int
+}
+
+export interface AggregateCaseTransfer {
+  count: Int
+}
+
 export interface AggregateCaseTransferReferral {
   count: Int
 }
@@ -30203,6 +35513,10 @@ export interface AggregateRole {
   count: Int
 }
 
+export interface AggregateRolesType {
+  count: Int
+}
+
 export interface AggregateUser {
   count: Int
 }
@@ -30232,8 +35546,10 @@ export interface Application {
   wakilId: Person
   waktuPernahKlien?: String | null
   whyLbh?: String | null
-  case: Case
+  case?: Case | null
   clients?: Array<Client> | null
+  tahap?: String | null
+  status?: String | null
 }
 
 /*
@@ -30275,6 +35591,8 @@ export interface ApplicationPreviousValues {
   updatedBy?: String | null
   waktuPernahKlien?: String | null
   whyLbh?: String | null
+  tahap?: String | null
+  status?: String | null
 }
 
 export interface ApplicationSubscriptionPayload {
@@ -30314,11 +35632,14 @@ export interface Case {
   issues?: Array<CaseIssue> | null
   korbans?: Array<CaseKorban> | null
   pelakus?: Array<CasePelaku> | null
-  pks?: Array<CasePk> | null
-  progresses?: Array<CaseProgress> | null
+  pk?: CasePk | null
+  progresses?: CaseProgress | null
   activities?: Array<CaseProgressActivity> | null
   transferreferrals?: Array<CaseTransferReferral> | null
   violatedrights?: Array<CaseViolatedRight> | null
+  logRequests?: Array<LogRequest> | null
+  transfer?: CaseTransfer | null
+  referrals?: Array<CaseReferral> | null
 }
 
 export interface CaseClassification {
@@ -30375,6 +35696,9 @@ export interface CaseConsultation {
   createdAt: DateTime
   createdBy?: String | null
   isiKonsul?: String | null
+  harapan?: String | null
+  saranHukum?: String | null
+  rencanaTindakLanjut?: String | null
   judulAktifitas?: String | null
   ppKonsul?: String | null
   tglKonsul?: DateTime | null
@@ -30385,7 +35709,7 @@ export interface CaseConsultation {
 
 export interface CaseConsultationApp {
   id: Int
-  appConsultation?: String | null
+  appConsultation?: User | null
   caseConsultationId: CaseConsultation
 }
 
@@ -30410,7 +35734,6 @@ export interface CaseConsultationAppEdge {
 
 export interface CaseConsultationAppPreviousValues {
   id: Int
-  appConsultation?: String | null
 }
 
 export interface CaseConsultationAppSubscriptionPayload {
@@ -30445,6 +35768,9 @@ export interface CaseConsultationPreviousValues {
   createdAt: DateTime
   createdBy?: String | null
   isiKonsul?: String | null
+  harapan?: String | null
+  saranHukum?: String | null
+  rencanaTindakLanjut?: String | null
   judulAktifitas?: String | null
   ppKonsul?: String | null
   tglKonsul?: DateTime | null
@@ -30633,10 +35959,10 @@ export interface CasePk {
   caseId: Case
   createdAt: DateTime
   createdBy?: String | null
-  didampingi: Boolean
+  didampingi?: String | null
   legalMemo?: String | null
   notulaRapat?: String | null
-  ppPendamping?: Int | null
+  ppPendamping?: User | null
   statusAlasanTdk?: String | null
   tglRapat?: DateTime | null
   updatedAt: DateTime
@@ -30666,10 +35992,9 @@ export interface CasePkPreviousValues {
   id: Int
   createdAt: DateTime
   createdBy?: String | null
-  didampingi: Boolean
+  didampingi?: String | null
   legalMemo?: String | null
   notulaRapat?: String | null
-  ppPendamping?: Int | null
   statusAlasanTdk?: String | null
   tglRapat?: DateTime | null
   updatedAt: DateTime
@@ -30884,11 +36209,93 @@ export interface CaseProgressSubscriptionPayload {
   previousValues?: CaseProgressPreviousValues | null
 }
 
+export interface CaseReferral {
+  id: Int
+  caseId: Case
+  client: Person
+  tglTransfer?: DateTime | null
+  catatan?: String | null
+  network?: Network | null
+  createdBy?: String | null
+  updatedBy?: String | null
+}
+
+/*
+ * A connection to a list of items.
+
+ */
+export interface CaseReferralConnection {
+  pageInfo: PageInfo
+  edges: Array<CaseReferralEdge | null>
+  aggregate: AggregateCaseReferral
+}
+
+/*
+ * An edge in a connection.
+
+ */
+export interface CaseReferralEdge {
+  node: CaseReferral
+  cursor: String
+}
+
+export interface CaseReferralPreviousValues {
+  id: Int
+  tglTransfer?: DateTime | null
+  catatan?: String | null
+  createdBy?: String | null
+  updatedBy?: String | null
+}
+
+export interface CaseReferralSubscriptionPayload {
+  mutation: MutationType
+  node?: CaseReferral | null
+  updatedFields?: Array<String> | null
+  previousValues?: CaseReferralPreviousValues | null
+}
+
 export interface CaseSubscriptionPayload {
   mutation: MutationType
   node?: Case | null
   updatedFields?: Array<String> | null
   previousValues?: CasePreviousValues | null
+}
+
+export interface CaseTransfer {
+  id: Int
+  caseId: Case
+  tglTransfer?: DateTime | null
+  catatan?: String | null
+  network?: Network | null
+  createdBy?: String | null
+  updatedBy?: String | null
+}
+
+/*
+ * A connection to a list of items.
+
+ */
+export interface CaseTransferConnection {
+  pageInfo: PageInfo
+  edges: Array<CaseTransferEdge | null>
+  aggregate: AggregateCaseTransfer
+}
+
+/*
+ * An edge in a connection.
+
+ */
+export interface CaseTransferEdge {
+  node: CaseTransfer
+  cursor: String
+}
+
+export interface CaseTransferPreviousValues {
+  id: Int
+  tglTransfer?: DateTime | null
+  catatan?: String | null
+  createdBy?: String | null
+  updatedBy?: String | null
 }
 
 export interface CaseTransferReferral {
@@ -30942,6 +36349,13 @@ export interface CaseTransferReferralSubscriptionPayload {
   node?: CaseTransferReferral | null
   updatedFields?: Array<String> | null
   previousValues?: CaseTransferReferralPreviousValues | null
+}
+
+export interface CaseTransferSubscriptionPayload {
+  mutation: MutationType
+  node?: CaseTransfer | null
+  updatedFields?: Array<String> | null
+  previousValues?: CaseTransferPreviousValues | null
 }
 
 export interface CaseViolatedRight {
@@ -31009,6 +36423,7 @@ export interface Client {
   updatedAt: DateTime
   updatedBy?: String | null
   usiaSaatKlien?: Int | null
+  logRequests?: Array<LogRequest> | null
 }
 
 /*
@@ -31203,15 +36618,18 @@ export interface DataDictSubscriptionPayload {
 
 export interface LogRequest {
   ID: Int
-  caseId?: Int | null
+  caseId?: Case | null
   isiRequest?: String | null
+  applicationId?: Application | null
   jenisRequest?: String | null
-  networkId?: Int | null
-  personId?: Int | null
-  pp?: Int | null
-  requestBy?: Int | null
-  requestTo?: Int | null
+  networkId?: Network | null
+  personId?: Person | null
+  pp?: Array<LogRequestApp> | null
+  statusRequest?: String | null
+  requestBy?: User | null
+  requestTo?: User | null
   tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
   tglExpired?: DateTime | null
   tglRequest?: DateTime | null
   tglRespon?: DateTime | null
@@ -31219,8 +36637,8 @@ export interface LogRequest {
 
 export interface LogRequestApp {
   id: Int
-  appConsultation?: String | null
-  logRequestId?: Int | null
+  appConsultation: User
+  logRequestId?: LogRequest | null
 }
 
 /*
@@ -31244,8 +36662,6 @@ export interface LogRequestAppEdge {
 
 export interface LogRequestAppPreviousValues {
   id: Int
-  appConsultation?: String | null
-  logRequestId?: Int | null
 }
 
 export interface LogRequestAppSubscriptionPayload {
@@ -31276,15 +36692,11 @@ export interface LogRequestEdge {
 
 export interface LogRequestPreviousValues {
   ID: Int
-  caseId?: Int | null
   isiRequest?: String | null
   jenisRequest?: String | null
-  networkId?: Int | null
-  personId?: Int | null
-  pp?: Int | null
-  requestBy?: Int | null
-  requestTo?: Int | null
+  statusRequest?: String | null
   tanggapanRequest?: String | null
+  tanggapanRequestIsi?: String | null
   tglExpired?: DateTime | null
   tglRequest?: DateTime | null
   tglRespon?: DateTime | null
@@ -31391,6 +36803,7 @@ export interface Network {
   regencyId?: Int | null
   type?: String | null
   updatedAt: DateTime
+  logRequests?: Array<LogRequest> | null
 }
 
 /*
@@ -31481,6 +36894,7 @@ export interface Person {
   casepelakus?: Array<CasePelaku> | null
   clients?: Array<Client> | null
   documents?: Array<PersonDocument> | null
+  logRequests?: Array<LogRequest> | null
 }
 
 /*
@@ -31589,9 +37003,10 @@ export interface PersonSubscriptionPayload {
 }
 
 export interface Role {
+  createdAt: DateTime
   id: Int
-  type?: Int | null
-  userId?: Int | null
+  userId?: Array<User> | null
+  type: RolesType
 }
 
 /*
@@ -31614,9 +37029,46 @@ export interface RoleEdge {
 }
 
 export interface RolePreviousValues {
+  createdAt: DateTime
   id: Int
-  type?: Int | null
-  userId?: Int | null
+}
+
+export interface RolesType {
+  createdAt: DateTime
+  id: Int
+  description?: String | null
+}
+
+/*
+ * A connection to a list of items.
+
+ */
+export interface RolesTypeConnection {
+  pageInfo: PageInfo
+  edges: Array<RolesTypeEdge | null>
+  aggregate: AggregateRolesType
+}
+
+/*
+ * An edge in a connection.
+
+ */
+export interface RolesTypeEdge {
+  node: RolesType
+  cursor: String
+}
+
+export interface RolesTypePreviousValues {
+  createdAt: DateTime
+  id: Int
+  description?: String | null
+}
+
+export interface RolesTypeSubscriptionPayload {
+  mutation: MutationType
+  node?: RolesType | null
+  updatedFields?: Array<String> | null
+  previousValues?: RolesTypePreviousValues | null
 }
 
 export interface RoleSubscriptionPayload {
@@ -31643,6 +37095,10 @@ export interface User {
   updatedAt: DateTime
   username?: String | null
   profile: UserProfile
+  roles_type?: Array<Role> | null
+  logRequestBy?: Array<LogRequest> | null
+  logRequestTo?: Array<LogRequest> | null
+  appConsultation?: Array<LogRequestApp> | null
 }
 
 /*

@@ -16,18 +16,23 @@ export class UserResolver {
   constructor(private readonly prisma: PrismaService) {}
 
   @Query('users')
-  async getPersons(@Args() args, @Info() info?): Promise<User[]> {
+  async getUsers(@Args() args, @Info() info?): Promise<User[]> {
     // console.log(JSON.stringify(args));
     return await this.prisma.query.users(args, info);
   }
 
   @Query('user')
-  async getPerson(@Args() args, @Info() info): Promise<User> {
+  async getUser(@Args() args, @Info() info): Promise<User> {
     return await this.prisma.query.user(args, info);
   }
 
+  @Mutation('createUser')
+  async createUser(@Args() args, @Info() info): Promise<User> {
+    return await this.prisma.mutation.createUser(args, info);
+  }
+
   @Mutation('updateUser')
-  async updatePost(@Args() args, @Info() info): Promise<User> {
+  async updateUser(@Args() args, @Info() info): Promise<User> {
     return await this.prisma.mutation.updateUser(args, info);
   }
 }

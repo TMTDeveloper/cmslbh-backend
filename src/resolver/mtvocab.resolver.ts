@@ -9,7 +9,7 @@ import {
 import { MtVocab } from '../prisma/prisma.binding';
 import { PrismaService } from '../prisma/prisma.service';
 import { UseGuards } from '@nestjs/common';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
 @Resolver()
 @UseGuards(JwtAuthGuard)
