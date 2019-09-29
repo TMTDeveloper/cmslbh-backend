@@ -13,7 +13,7 @@ import { JwtAuthGuard } from './guards/jwt-auth.guard';
     JwtModule.register({
       secret: 'secretKey',
       signOptions: {
-        expiresIn: 3600,
+        expiresIn: '8h',
       },
     }),
     ResolverModule,

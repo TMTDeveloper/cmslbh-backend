@@ -1,5 +1,5 @@
 # source: http://localhost:4466
-# timestamp: Sat Aug 03 2019 18:33:28 GMT+0700 (Western Indonesia Time)
+# timestamp: Thu Aug 29 2019 02:59:25 GMT+0700 (Western Indonesia Time)
 
 type AggregateApplication {
   count: Int!
@@ -151,7 +151,7 @@ type Application {
   statusPerwakilan: String
   updatedAt: DateTime!
   updatedBy: String
-  wakilId: Person!
+  wakilId: Person
   waktuPernahKlien: String
   whyLbh: String
   case: Case
@@ -189,7 +189,7 @@ input ApplicationCreateInput {
   whyLbh: String
   tahap: String
   status: String
-  wakilId: PersonCreateOneWithoutApplicationsInput!
+  wakilId: PersonCreateOneWithoutApplicationsInput
   case: CaseCreateOneWithoutApplicationInput
   clients: ClientCreateManyWithoutApplicationIdInput
 }
@@ -233,7 +233,7 @@ input ApplicationCreateWithoutCaseInput {
   whyLbh: String
   tahap: String
   status: String
-  wakilId: PersonCreateOneWithoutApplicationsInput!
+  wakilId: PersonCreateOneWithoutApplicationsInput
   clients: ClientCreateManyWithoutApplicationIdInput
 }
 
@@ -256,7 +256,7 @@ input ApplicationCreateWithoutClientsInput {
   whyLbh: String
   tahap: String
   status: String
-  wakilId: PersonCreateOneWithoutApplicationsInput!
+  wakilId: PersonCreateOneWithoutApplicationsInput
   case: CaseCreateOneWithoutApplicationInput
 }
 
@@ -1106,7 +1106,7 @@ input ApplicationUpdateDataInput {
   whyLbh: String
   tahap: String
   status: String
-  wakilId: PersonUpdateOneRequiredWithoutApplicationsInput
+  wakilId: PersonUpdateOneWithoutApplicationsInput
   case: CaseUpdateOneWithoutApplicationInput
   clients: ClientUpdateManyWithoutApplicationIdInput
 }
@@ -1130,7 +1130,7 @@ input ApplicationUpdateInput {
   whyLbh: String
   tahap: String
   status: String
-  wakilId: PersonUpdateOneRequiredWithoutApplicationsInput
+  wakilId: PersonUpdateOneWithoutApplicationsInput
   case: CaseUpdateOneWithoutApplicationInput
   clients: ClientUpdateManyWithoutApplicationIdInput
 }
@@ -1236,7 +1236,7 @@ input ApplicationUpdateWithoutCaseDataInput {
   whyLbh: String
   tahap: String
   status: String
-  wakilId: PersonUpdateOneRequiredWithoutApplicationsInput
+  wakilId: PersonUpdateOneWithoutApplicationsInput
   clients: ClientUpdateManyWithoutApplicationIdInput
 }
 
@@ -1259,7 +1259,7 @@ input ApplicationUpdateWithoutClientsDataInput {
   whyLbh: String
   tahap: String
   status: String
-  wakilId: PersonUpdateOneRequiredWithoutApplicationsInput
+  wakilId: PersonUpdateOneWithoutApplicationsInput
   case: CaseUpdateOneWithoutApplicationInput
 }
 
@@ -5944,6 +5944,8 @@ type CasePk {
   didampingi: String
   legalMemo: String
   notulaRapat: String
+  targetAkhirAdvokasi: String
+  strategiAdvokasi: String
   ppPendamping: User
   statusAlasanTdk: String
   tglRapat: DateTime
@@ -5966,6 +5968,8 @@ input CasePkCreateInput {
   didampingi: String
   legalMemo: String
   notulaRapat: String
+  targetAkhirAdvokasi: String
+  strategiAdvokasi: String
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedBy: String
@@ -5983,6 +5987,8 @@ input CasePkCreateWithoutCaseIdInput {
   didampingi: String
   legalMemo: String
   notulaRapat: String
+  targetAkhirAdvokasi: String
+  strategiAdvokasi: String
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedBy: String
@@ -6011,6 +6017,10 @@ enum CasePkOrderByInput {
   legalMemo_DESC
   notulaRapat_ASC
   notulaRapat_DESC
+  targetAkhirAdvokasi_ASC
+  targetAkhirAdvokasi_DESC
+  strategiAdvokasi_ASC
+  strategiAdvokasi_DESC
   statusAlasanTdk_ASC
   statusAlasanTdk_DESC
   tglRapat_ASC
@@ -6028,6 +6038,8 @@ type CasePkPreviousValues {
   didampingi: String
   legalMemo: String
   notulaRapat: String
+  targetAkhirAdvokasi: String
+  strategiAdvokasi: String
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedAt: DateTime!
@@ -6076,6 +6088,8 @@ input CasePkUpdateInput {
   didampingi: String
   legalMemo: String
   notulaRapat: String
+  targetAkhirAdvokasi: String
+  strategiAdvokasi: String
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedBy: String
@@ -6088,6 +6102,8 @@ input CasePkUpdateManyMutationInput {
   didampingi: String
   legalMemo: String
   notulaRapat: String
+  targetAkhirAdvokasi: String
+  strategiAdvokasi: String
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedBy: String
@@ -6107,6 +6123,8 @@ input CasePkUpdateWithoutCaseIdDataInput {
   didampingi: String
   legalMemo: String
   notulaRapat: String
+  targetAkhirAdvokasi: String
+  strategiAdvokasi: String
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedBy: String
@@ -6331,6 +6349,86 @@ input CasePkWhereInput {
 
   """All values not ending with the given string."""
   notulaRapat_not_ends_with: String
+  targetAkhirAdvokasi: String
+
+  """All values that are not equal to given value."""
+  targetAkhirAdvokasi_not: String
+
+  """All values that are contained in given list."""
+  targetAkhirAdvokasi_in: [String!]
+
+  """All values that are not contained in given list."""
+  targetAkhirAdvokasi_not_in: [String!]
+
+  """All values less than the given value."""
+  targetAkhirAdvokasi_lt: String
+
+  """All values less than or equal the given value."""
+  targetAkhirAdvokasi_lte: String
+
+  """All values greater than the given value."""
+  targetAkhirAdvokasi_gt: String
+
+  """All values greater than or equal the given value."""
+  targetAkhirAdvokasi_gte: String
+
+  """All values containing the given string."""
+  targetAkhirAdvokasi_contains: String
+
+  """All values not containing the given string."""
+  targetAkhirAdvokasi_not_contains: String
+
+  """All values starting with the given string."""
+  targetAkhirAdvokasi_starts_with: String
+
+  """All values not starting with the given string."""
+  targetAkhirAdvokasi_not_starts_with: String
+
+  """All values ending with the given string."""
+  targetAkhirAdvokasi_ends_with: String
+
+  """All values not ending with the given string."""
+  targetAkhirAdvokasi_not_ends_with: String
+  strategiAdvokasi: String
+
+  """All values that are not equal to given value."""
+  strategiAdvokasi_not: String
+
+  """All values that are contained in given list."""
+  strategiAdvokasi_in: [String!]
+
+  """All values that are not contained in given list."""
+  strategiAdvokasi_not_in: [String!]
+
+  """All values less than the given value."""
+  strategiAdvokasi_lt: String
+
+  """All values less than or equal the given value."""
+  strategiAdvokasi_lte: String
+
+  """All values greater than the given value."""
+  strategiAdvokasi_gt: String
+
+  """All values greater than or equal the given value."""
+  strategiAdvokasi_gte: String
+
+  """All values containing the given string."""
+  strategiAdvokasi_contains: String
+
+  """All values not containing the given string."""
+  strategiAdvokasi_not_contains: String
+
+  """All values starting with the given string."""
+  strategiAdvokasi_starts_with: String
+
+  """All values not starting with the given string."""
+  strategiAdvokasi_not_starts_with: String
+
+  """All values ending with the given string."""
+  strategiAdvokasi_ends_with: String
+
+  """All values not ending with the given string."""
+  strategiAdvokasi_not_ends_with: String
   statusAlasanTdk: String
 
   """All values that are not equal to given value."""
@@ -6606,7 +6704,7 @@ type CaseProgressActivityEdge {
 
 type CaseProgressActivityLit {
   id: Int!
-  caseProgressActivityId: CaseProgressActivity!
+  caseProgressActivityId: CaseProgressActivity
   kodeMt: String
 }
 
@@ -6622,7 +6720,7 @@ type CaseProgressActivityLitConnection {
 
 input CaseProgressActivityLitCreateInput {
   kodeMt: String
-  caseProgressActivityId: CaseProgressActivityCreateOneWithoutActivitieslitInput!
+  caseProgressActivityId: CaseProgressActivityCreateOneWithoutActivitieslitInput
 }
 
 input CaseProgressActivityLitCreateManyWithoutCaseProgressActivityIdInput {
@@ -6767,7 +6865,7 @@ input CaseProgressActivityLitSubscriptionWhereInput {
 
 input CaseProgressActivityLitUpdateInput {
   kodeMt: String
-  caseProgressActivityId: CaseProgressActivityUpdateOneRequiredWithoutActivitieslitInput
+  caseProgressActivityId: CaseProgressActivityUpdateOneWithoutActivitieslitInput
 }
 
 input CaseProgressActivityLitUpdateManyDataInput {
@@ -6890,7 +6988,7 @@ input CaseProgressActivityLitWhereUniqueInput {
 
 type CaseProgressActivityNonlit {
   id: Int!
-  caseProgressActivityId: CaseProgressActivity!
+  caseProgressActivityId: CaseProgressActivity
   kodeMt: String
 }
 
@@ -6906,7 +7004,7 @@ type CaseProgressActivityNonlitConnection {
 
 input CaseProgressActivityNonlitCreateInput {
   kodeMt: String
-  caseProgressActivityId: CaseProgressActivityCreateOneWithoutActivitiesnonlitInput!
+  caseProgressActivityId: CaseProgressActivityCreateOneWithoutActivitiesnonlitInput
 }
 
 input CaseProgressActivityNonlitCreateManyWithoutCaseProgressActivityIdInput {
@@ -7051,7 +7149,7 @@ input CaseProgressActivityNonlitSubscriptionWhereInput {
 
 input CaseProgressActivityNonlitUpdateInput {
   kodeMt: String
-  caseProgressActivityId: CaseProgressActivityUpdateOneRequiredWithoutActivitiesnonlitInput
+  caseProgressActivityId: CaseProgressActivityUpdateOneWithoutActivitiesnonlitInput
 }
 
 input CaseProgressActivityNonlitUpdateManyDataInput {
@@ -7726,16 +7824,20 @@ input CaseProgressActivityUpdateManyWithWhereNestedInput {
   data: CaseProgressActivityUpdateManyDataInput!
 }
 
-input CaseProgressActivityUpdateOneRequiredWithoutActivitieslitInput {
+input CaseProgressActivityUpdateOneWithoutActivitieslitInput {
   create: CaseProgressActivityCreateWithoutActivitieslitInput
   connect: CaseProgressActivityWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
   update: CaseProgressActivityUpdateWithoutActivitieslitDataInput
   upsert: CaseProgressActivityUpsertWithoutActivitieslitInput
 }
 
-input CaseProgressActivityUpdateOneRequiredWithoutActivitiesnonlitInput {
+input CaseProgressActivityUpdateOneWithoutActivitiesnonlitInput {
   create: CaseProgressActivityCreateWithoutActivitiesnonlitInput
   connect: CaseProgressActivityWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
   update: CaseProgressActivityUpdateWithoutActivitiesnonlitDataInput
   upsert: CaseProgressActivityUpsertWithoutActivitiesnonlitInput
 }
@@ -19333,13 +19435,6 @@ input PersonUpdateOneRequiredInput {
   upsert: PersonUpsertNestedInput
 }
 
-input PersonUpdateOneRequiredWithoutApplicationsInput {
-  create: PersonCreateWithoutApplicationsInput
-  connect: PersonWhereUniqueInput
-  update: PersonUpdateWithoutApplicationsDataInput
-  upsert: PersonUpsertWithoutApplicationsInput
-}
-
 input PersonUpdateOneRequiredWithoutClientsInput {
   create: PersonCreateWithoutClientsInput
   connect: PersonWhereUniqueInput
@@ -19352,6 +19447,15 @@ input PersonUpdateOneRequiredWithoutDocumentsInput {
   connect: PersonWhereUniqueInput
   update: PersonUpdateWithoutDocumentsDataInput
   upsert: PersonUpsertWithoutDocumentsInput
+}
+
+input PersonUpdateOneWithoutApplicationsInput {
+  create: PersonCreateWithoutApplicationsInput
+  connect: PersonWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: PersonUpdateWithoutApplicationsDataInput
+  upsert: PersonUpsertWithoutApplicationsInput
 }
 
 input PersonUpdateOneWithoutCasekorbansInput {

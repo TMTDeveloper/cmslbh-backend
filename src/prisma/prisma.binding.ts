@@ -546,7 +546,7 @@ type Application {
   statusPerwakilan: String
   updatedAt: DateTime!
   updatedBy: String
-  wakilId: Person!
+  wakilId: Person
   waktuPernahKlien: String
   whyLbh: String
   case: Case
@@ -584,7 +584,7 @@ input ApplicationCreateInput {
   whyLbh: String
   tahap: String
   status: String
-  wakilId: PersonCreateOneWithoutApplicationsInput!
+  wakilId: PersonCreateOneWithoutApplicationsInput
   case: CaseCreateOneWithoutApplicationInput
   clients: ClientCreateManyWithoutApplicationIdInput
 }
@@ -628,7 +628,7 @@ input ApplicationCreateWithoutCaseInput {
   whyLbh: String
   tahap: String
   status: String
-  wakilId: PersonCreateOneWithoutApplicationsInput!
+  wakilId: PersonCreateOneWithoutApplicationsInput
   clients: ClientCreateManyWithoutApplicationIdInput
 }
 
@@ -651,7 +651,7 @@ input ApplicationCreateWithoutClientsInput {
   whyLbh: String
   tahap: String
   status: String
-  wakilId: PersonCreateOneWithoutApplicationsInput!
+  wakilId: PersonCreateOneWithoutApplicationsInput
   case: CaseCreateOneWithoutApplicationInput
 }
 
@@ -1501,7 +1501,7 @@ input ApplicationUpdateDataInput {
   whyLbh: String
   tahap: String
   status: String
-  wakilId: PersonUpdateOneRequiredWithoutApplicationsInput
+  wakilId: PersonUpdateOneWithoutApplicationsInput
   case: CaseUpdateOneWithoutApplicationInput
   clients: ClientUpdateManyWithoutApplicationIdInput
 }
@@ -1525,7 +1525,7 @@ input ApplicationUpdateInput {
   whyLbh: String
   tahap: String
   status: String
-  wakilId: PersonUpdateOneRequiredWithoutApplicationsInput
+  wakilId: PersonUpdateOneWithoutApplicationsInput
   case: CaseUpdateOneWithoutApplicationInput
   clients: ClientUpdateManyWithoutApplicationIdInput
 }
@@ -1631,7 +1631,7 @@ input ApplicationUpdateWithoutCaseDataInput {
   whyLbh: String
   tahap: String
   status: String
-  wakilId: PersonUpdateOneRequiredWithoutApplicationsInput
+  wakilId: PersonUpdateOneWithoutApplicationsInput
   clients: ClientUpdateManyWithoutApplicationIdInput
 }
 
@@ -1654,7 +1654,7 @@ input ApplicationUpdateWithoutClientsDataInput {
   whyLbh: String
   tahap: String
   status: String
-  wakilId: PersonUpdateOneRequiredWithoutApplicationsInput
+  wakilId: PersonUpdateOneWithoutApplicationsInput
   case: CaseUpdateOneWithoutApplicationInput
 }
 
@@ -6339,6 +6339,8 @@ type CasePk {
   didampingi: String
   legalMemo: String
   notulaRapat: String
+  targetAkhirAdvokasi: String
+  strategiAdvokasi: String
   ppPendamping: User
   statusAlasanTdk: String
   tglRapat: DateTime
@@ -6361,6 +6363,8 @@ input CasePkCreateInput {
   didampingi: String
   legalMemo: String
   notulaRapat: String
+  targetAkhirAdvokasi: String
+  strategiAdvokasi: String
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedBy: String
@@ -6378,6 +6382,8 @@ input CasePkCreateWithoutCaseIdInput {
   didampingi: String
   legalMemo: String
   notulaRapat: String
+  targetAkhirAdvokasi: String
+  strategiAdvokasi: String
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedBy: String
@@ -6406,6 +6412,10 @@ enum CasePkOrderByInput {
   legalMemo_DESC
   notulaRapat_ASC
   notulaRapat_DESC
+  targetAkhirAdvokasi_ASC
+  targetAkhirAdvokasi_DESC
+  strategiAdvokasi_ASC
+  strategiAdvokasi_DESC
   statusAlasanTdk_ASC
   statusAlasanTdk_DESC
   tglRapat_ASC
@@ -6423,6 +6433,8 @@ type CasePkPreviousValues {
   didampingi: String
   legalMemo: String
   notulaRapat: String
+  targetAkhirAdvokasi: String
+  strategiAdvokasi: String
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedAt: DateTime!
@@ -6471,6 +6483,8 @@ input CasePkUpdateInput {
   didampingi: String
   legalMemo: String
   notulaRapat: String
+  targetAkhirAdvokasi: String
+  strategiAdvokasi: String
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedBy: String
@@ -6483,6 +6497,8 @@ input CasePkUpdateManyMutationInput {
   didampingi: String
   legalMemo: String
   notulaRapat: String
+  targetAkhirAdvokasi: String
+  strategiAdvokasi: String
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedBy: String
@@ -6502,6 +6518,8 @@ input CasePkUpdateWithoutCaseIdDataInput {
   didampingi: String
   legalMemo: String
   notulaRapat: String
+  targetAkhirAdvokasi: String
+  strategiAdvokasi: String
   statusAlasanTdk: String
   tglRapat: DateTime
   updatedBy: String
@@ -6726,6 +6744,86 @@ input CasePkWhereInput {
 
   """All values not ending with the given string."""
   notulaRapat_not_ends_with: String
+  targetAkhirAdvokasi: String
+
+  """All values that are not equal to given value."""
+  targetAkhirAdvokasi_not: String
+
+  """All values that are contained in given list."""
+  targetAkhirAdvokasi_in: [String!]
+
+  """All values that are not contained in given list."""
+  targetAkhirAdvokasi_not_in: [String!]
+
+  """All values less than the given value."""
+  targetAkhirAdvokasi_lt: String
+
+  """All values less than or equal the given value."""
+  targetAkhirAdvokasi_lte: String
+
+  """All values greater than the given value."""
+  targetAkhirAdvokasi_gt: String
+
+  """All values greater than or equal the given value."""
+  targetAkhirAdvokasi_gte: String
+
+  """All values containing the given string."""
+  targetAkhirAdvokasi_contains: String
+
+  """All values not containing the given string."""
+  targetAkhirAdvokasi_not_contains: String
+
+  """All values starting with the given string."""
+  targetAkhirAdvokasi_starts_with: String
+
+  """All values not starting with the given string."""
+  targetAkhirAdvokasi_not_starts_with: String
+
+  """All values ending with the given string."""
+  targetAkhirAdvokasi_ends_with: String
+
+  """All values not ending with the given string."""
+  targetAkhirAdvokasi_not_ends_with: String
+  strategiAdvokasi: String
+
+  """All values that are not equal to given value."""
+  strategiAdvokasi_not: String
+
+  """All values that are contained in given list."""
+  strategiAdvokasi_in: [String!]
+
+  """All values that are not contained in given list."""
+  strategiAdvokasi_not_in: [String!]
+
+  """All values less than the given value."""
+  strategiAdvokasi_lt: String
+
+  """All values less than or equal the given value."""
+  strategiAdvokasi_lte: String
+
+  """All values greater than the given value."""
+  strategiAdvokasi_gt: String
+
+  """All values greater than or equal the given value."""
+  strategiAdvokasi_gte: String
+
+  """All values containing the given string."""
+  strategiAdvokasi_contains: String
+
+  """All values not containing the given string."""
+  strategiAdvokasi_not_contains: String
+
+  """All values starting with the given string."""
+  strategiAdvokasi_starts_with: String
+
+  """All values not starting with the given string."""
+  strategiAdvokasi_not_starts_with: String
+
+  """All values ending with the given string."""
+  strategiAdvokasi_ends_with: String
+
+  """All values not ending with the given string."""
+  strategiAdvokasi_not_ends_with: String
   statusAlasanTdk: String
 
   """All values that are not equal to given value."""
@@ -7001,7 +7099,7 @@ type CaseProgressActivityEdge {
 
 type CaseProgressActivityLit {
   id: Int!
-  caseProgressActivityId: CaseProgressActivity!
+  caseProgressActivityId: CaseProgressActivity
   kodeMt: String
 }
 
@@ -7017,7 +7115,7 @@ type CaseProgressActivityLitConnection {
 
 input CaseProgressActivityLitCreateInput {
   kodeMt: String
-  caseProgressActivityId: CaseProgressActivityCreateOneWithoutActivitieslitInput!
+  caseProgressActivityId: CaseProgressActivityCreateOneWithoutActivitieslitInput
 }
 
 input CaseProgressActivityLitCreateManyWithoutCaseProgressActivityIdInput {
@@ -7162,7 +7260,7 @@ input CaseProgressActivityLitSubscriptionWhereInput {
 
 input CaseProgressActivityLitUpdateInput {
   kodeMt: String
-  caseProgressActivityId: CaseProgressActivityUpdateOneRequiredWithoutActivitieslitInput
+  caseProgressActivityId: CaseProgressActivityUpdateOneWithoutActivitieslitInput
 }
 
 input CaseProgressActivityLitUpdateManyDataInput {
@@ -7285,7 +7383,7 @@ input CaseProgressActivityLitWhereUniqueInput {
 
 type CaseProgressActivityNonlit {
   id: Int!
-  caseProgressActivityId: CaseProgressActivity!
+  caseProgressActivityId: CaseProgressActivity
   kodeMt: String
 }
 
@@ -7301,7 +7399,7 @@ type CaseProgressActivityNonlitConnection {
 
 input CaseProgressActivityNonlitCreateInput {
   kodeMt: String
-  caseProgressActivityId: CaseProgressActivityCreateOneWithoutActivitiesnonlitInput!
+  caseProgressActivityId: CaseProgressActivityCreateOneWithoutActivitiesnonlitInput
 }
 
 input CaseProgressActivityNonlitCreateManyWithoutCaseProgressActivityIdInput {
@@ -7446,7 +7544,7 @@ input CaseProgressActivityNonlitSubscriptionWhereInput {
 
 input CaseProgressActivityNonlitUpdateInput {
   kodeMt: String
-  caseProgressActivityId: CaseProgressActivityUpdateOneRequiredWithoutActivitiesnonlitInput
+  caseProgressActivityId: CaseProgressActivityUpdateOneWithoutActivitiesnonlitInput
 }
 
 input CaseProgressActivityNonlitUpdateManyDataInput {
@@ -8121,16 +8219,20 @@ input CaseProgressActivityUpdateManyWithWhereNestedInput {
   data: CaseProgressActivityUpdateManyDataInput!
 }
 
-input CaseProgressActivityUpdateOneRequiredWithoutActivitieslitInput {
+input CaseProgressActivityUpdateOneWithoutActivitieslitInput {
   create: CaseProgressActivityCreateWithoutActivitieslitInput
   connect: CaseProgressActivityWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
   update: CaseProgressActivityUpdateWithoutActivitieslitDataInput
   upsert: CaseProgressActivityUpsertWithoutActivitieslitInput
 }
 
-input CaseProgressActivityUpdateOneRequiredWithoutActivitiesnonlitInput {
+input CaseProgressActivityUpdateOneWithoutActivitiesnonlitInput {
   create: CaseProgressActivityCreateWithoutActivitiesnonlitInput
   connect: CaseProgressActivityWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
   update: CaseProgressActivityUpdateWithoutActivitiesnonlitDataInput
   upsert: CaseProgressActivityUpsertWithoutActivitiesnonlitInput
 }
@@ -19728,13 +19830,6 @@ input PersonUpdateOneRequiredInput {
   upsert: PersonUpsertNestedInput
 }
 
-input PersonUpdateOneRequiredWithoutApplicationsInput {
-  create: PersonCreateWithoutApplicationsInput
-  connect: PersonWhereUniqueInput
-  update: PersonUpdateWithoutApplicationsDataInput
-  upsert: PersonUpsertWithoutApplicationsInput
-}
-
 input PersonUpdateOneRequiredWithoutClientsInput {
   create: PersonCreateWithoutClientsInput
   connect: PersonWhereUniqueInput
@@ -19747,6 +19842,15 @@ input PersonUpdateOneRequiredWithoutDocumentsInput {
   connect: PersonWhereUniqueInput
   update: PersonUpdateWithoutDocumentsDataInput
   upsert: PersonUpsertWithoutDocumentsInput
+}
+
+input PersonUpdateOneWithoutApplicationsInput {
+  create: PersonCreateWithoutApplicationsInput
+  connect: PersonWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: PersonUpdateWithoutApplicationsDataInput
+  upsert: PersonUpsertWithoutApplicationsInput
 }
 
 input PersonUpdateOneWithoutCasekorbansInput {
@@ -23863,6 +23967,10 @@ export type CasePkOrderByInput =   'id_ASC' |
   'legalMemo_DESC' |
   'notulaRapat_ASC' |
   'notulaRapat_DESC' |
+  'targetAkhirAdvokasi_ASC' |
+  'targetAkhirAdvokasi_DESC' |
+  'strategiAdvokasi_ASC' |
+  'strategiAdvokasi_DESC' |
   'statusAlasanTdk_ASC' |
   'statusAlasanTdk_DESC' |
   'tglRapat_ASC' |
@@ -24280,7 +24388,7 @@ export interface ApplicationCreateInput {
   whyLbh?: String | null
   tahap?: String | null
   status?: String | null
-  wakilId: PersonCreateOneWithoutApplicationsInput
+  wakilId?: PersonCreateOneWithoutApplicationsInput | null
   case?: CaseCreateOneWithoutApplicationInput | null
   clients?: ClientCreateManyWithoutApplicationIdInput | null
 }
@@ -24324,7 +24432,7 @@ export interface ApplicationCreateWithoutCaseInput {
   whyLbh?: String | null
   tahap?: String | null
   status?: String | null
-  wakilId: PersonCreateOneWithoutApplicationsInput
+  wakilId?: PersonCreateOneWithoutApplicationsInput | null
   clients?: ClientCreateManyWithoutApplicationIdInput | null
 }
 
@@ -24347,7 +24455,7 @@ export interface ApplicationCreateWithoutClientsInput {
   whyLbh?: String | null
   tahap?: String | null
   status?: String | null
-  wakilId: PersonCreateOneWithoutApplicationsInput
+  wakilId?: PersonCreateOneWithoutApplicationsInput | null
   case?: CaseCreateOneWithoutApplicationInput | null
 }
 
@@ -24650,7 +24758,7 @@ export interface ApplicationUpdateDataInput {
   whyLbh?: String | null
   tahap?: String | null
   status?: String | null
-  wakilId?: PersonUpdateOneRequiredWithoutApplicationsInput | null
+  wakilId?: PersonUpdateOneWithoutApplicationsInput | null
   case?: CaseUpdateOneWithoutApplicationInput | null
   clients?: ClientUpdateManyWithoutApplicationIdInput | null
 }
@@ -24674,7 +24782,7 @@ export interface ApplicationUpdateInput {
   whyLbh?: String | null
   tahap?: String | null
   status?: String | null
-  wakilId?: PersonUpdateOneRequiredWithoutApplicationsInput | null
+  wakilId?: PersonUpdateOneWithoutApplicationsInput | null
   case?: CaseUpdateOneWithoutApplicationInput | null
   clients?: ClientUpdateManyWithoutApplicationIdInput | null
 }
@@ -24780,7 +24888,7 @@ export interface ApplicationUpdateWithoutCaseDataInput {
   whyLbh?: String | null
   tahap?: String | null
   status?: String | null
-  wakilId?: PersonUpdateOneRequiredWithoutApplicationsInput | null
+  wakilId?: PersonUpdateOneWithoutApplicationsInput | null
   clients?: ClientUpdateManyWithoutApplicationIdInput | null
 }
 
@@ -24803,7 +24911,7 @@ export interface ApplicationUpdateWithoutClientsDataInput {
   whyLbh?: String | null
   tahap?: String | null
   status?: String | null
-  wakilId?: PersonUpdateOneRequiredWithoutApplicationsInput | null
+  wakilId?: PersonUpdateOneWithoutApplicationsInput | null
   case?: CaseUpdateOneWithoutApplicationInput | null
 }
 
@@ -27148,6 +27256,8 @@ export interface CasePkCreateInput {
   didampingi?: String | null
   legalMemo?: String | null
   notulaRapat?: String | null
+  targetAkhirAdvokasi?: String | null
+  strategiAdvokasi?: String | null
   statusAlasanTdk?: String | null
   tglRapat?: DateTime | null
   updatedBy?: String | null
@@ -27165,6 +27275,8 @@ export interface CasePkCreateWithoutCaseIdInput {
   didampingi?: String | null
   legalMemo?: String | null
   notulaRapat?: String | null
+  targetAkhirAdvokasi?: String | null
+  strategiAdvokasi?: String | null
   statusAlasanTdk?: String | null
   tglRapat?: DateTime | null
   updatedBy?: String | null
@@ -27187,6 +27299,8 @@ export interface CasePkUpdateInput {
   didampingi?: String | null
   legalMemo?: String | null
   notulaRapat?: String | null
+  targetAkhirAdvokasi?: String | null
+  strategiAdvokasi?: String | null
   statusAlasanTdk?: String | null
   tglRapat?: DateTime | null
   updatedBy?: String | null
@@ -27199,6 +27313,8 @@ export interface CasePkUpdateManyMutationInput {
   didampingi?: String | null
   legalMemo?: String | null
   notulaRapat?: String | null
+  targetAkhirAdvokasi?: String | null
+  strategiAdvokasi?: String | null
   statusAlasanTdk?: String | null
   tglRapat?: DateTime | null
   updatedBy?: String | null
@@ -27218,6 +27334,8 @@ export interface CasePkUpdateWithoutCaseIdDataInput {
   didampingi?: String | null
   legalMemo?: String | null
   notulaRapat?: String | null
+  targetAkhirAdvokasi?: String | null
+  strategiAdvokasi?: String | null
   statusAlasanTdk?: String | null
   tglRapat?: DateTime | null
   updatedBy?: String | null
@@ -27305,6 +27423,34 @@ export interface CasePkWhereInput {
   notulaRapat_not_starts_with?: String | null
   notulaRapat_ends_with?: String | null
   notulaRapat_not_ends_with?: String | null
+  targetAkhirAdvokasi?: String | null
+  targetAkhirAdvokasi_not?: String | null
+  targetAkhirAdvokasi_in?: String[] | String | null
+  targetAkhirAdvokasi_not_in?: String[] | String | null
+  targetAkhirAdvokasi_lt?: String | null
+  targetAkhirAdvokasi_lte?: String | null
+  targetAkhirAdvokasi_gt?: String | null
+  targetAkhirAdvokasi_gte?: String | null
+  targetAkhirAdvokasi_contains?: String | null
+  targetAkhirAdvokasi_not_contains?: String | null
+  targetAkhirAdvokasi_starts_with?: String | null
+  targetAkhirAdvokasi_not_starts_with?: String | null
+  targetAkhirAdvokasi_ends_with?: String | null
+  targetAkhirAdvokasi_not_ends_with?: String | null
+  strategiAdvokasi?: String | null
+  strategiAdvokasi_not?: String | null
+  strategiAdvokasi_in?: String[] | String | null
+  strategiAdvokasi_not_in?: String[] | String | null
+  strategiAdvokasi_lt?: String | null
+  strategiAdvokasi_lte?: String | null
+  strategiAdvokasi_gt?: String | null
+  strategiAdvokasi_gte?: String | null
+  strategiAdvokasi_contains?: String | null
+  strategiAdvokasi_not_contains?: String | null
+  strategiAdvokasi_starts_with?: String | null
+  strategiAdvokasi_not_starts_with?: String | null
+  strategiAdvokasi_ends_with?: String | null
+  strategiAdvokasi_not_ends_with?: String | null
   statusAlasanTdk?: String | null
   statusAlasanTdk_not?: String | null
   statusAlasanTdk_in?: String[] | String | null
@@ -27431,7 +27577,7 @@ export interface CaseProgressActivityCreateWithoutCaseIdInput {
 
 export interface CaseProgressActivityLitCreateInput {
   kodeMt?: String | null
-  caseProgressActivityId: CaseProgressActivityCreateOneWithoutActivitieslitInput
+  caseProgressActivityId?: CaseProgressActivityCreateOneWithoutActivitieslitInput | null
 }
 
 export interface CaseProgressActivityLitCreateManyWithoutCaseProgressActivityIdInput {
@@ -27484,7 +27630,7 @@ export interface CaseProgressActivityLitSubscriptionWhereInput {
 
 export interface CaseProgressActivityLitUpdateInput {
   kodeMt?: String | null
-  caseProgressActivityId?: CaseProgressActivityUpdateOneRequiredWithoutActivitieslitInput | null
+  caseProgressActivityId?: CaseProgressActivityUpdateOneWithoutActivitieslitInput | null
 }
 
 export interface CaseProgressActivityLitUpdateManyDataInput {
@@ -27562,7 +27708,7 @@ export interface CaseProgressActivityLitWhereUniqueInput {
 
 export interface CaseProgressActivityNonlitCreateInput {
   kodeMt?: String | null
-  caseProgressActivityId: CaseProgressActivityCreateOneWithoutActivitiesnonlitInput
+  caseProgressActivityId?: CaseProgressActivityCreateOneWithoutActivitiesnonlitInput | null
 }
 
 export interface CaseProgressActivityNonlitCreateManyWithoutCaseProgressActivityIdInput {
@@ -27615,7 +27761,7 @@ export interface CaseProgressActivityNonlitSubscriptionWhereInput {
 
 export interface CaseProgressActivityNonlitUpdateInput {
   kodeMt?: String | null
-  caseProgressActivityId?: CaseProgressActivityUpdateOneRequiredWithoutActivitiesnonlitInput | null
+  caseProgressActivityId?: CaseProgressActivityUpdateOneWithoutActivitiesnonlitInput | null
 }
 
 export interface CaseProgressActivityNonlitUpdateManyDataInput {
@@ -27908,16 +28054,20 @@ export interface CaseProgressActivityUpdateManyWithWhereNestedInput {
   data: CaseProgressActivityUpdateManyDataInput
 }
 
-export interface CaseProgressActivityUpdateOneRequiredWithoutActivitieslitInput {
+export interface CaseProgressActivityUpdateOneWithoutActivitieslitInput {
   create?: CaseProgressActivityCreateWithoutActivitieslitInput | null
   connect?: CaseProgressActivityWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
   update?: CaseProgressActivityUpdateWithoutActivitieslitDataInput | null
   upsert?: CaseProgressActivityUpsertWithoutActivitieslitInput | null
 }
 
-export interface CaseProgressActivityUpdateOneRequiredWithoutActivitiesnonlitInput {
+export interface CaseProgressActivityUpdateOneWithoutActivitiesnonlitInput {
   create?: CaseProgressActivityCreateWithoutActivitiesnonlitInput | null
   connect?: CaseProgressActivityWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
   update?: CaseProgressActivityUpdateWithoutActivitiesnonlitDataInput | null
   upsert?: CaseProgressActivityUpsertWithoutActivitiesnonlitInput | null
 }
@@ -33533,13 +33683,6 @@ export interface PersonUpdateOneRequiredInput {
   upsert?: PersonUpsertNestedInput | null
 }
 
-export interface PersonUpdateOneRequiredWithoutApplicationsInput {
-  create?: PersonCreateWithoutApplicationsInput | null
-  connect?: PersonWhereUniqueInput | null
-  update?: PersonUpdateWithoutApplicationsDataInput | null
-  upsert?: PersonUpsertWithoutApplicationsInput | null
-}
-
 export interface PersonUpdateOneRequiredWithoutClientsInput {
   create?: PersonCreateWithoutClientsInput | null
   connect?: PersonWhereUniqueInput | null
@@ -33552,6 +33695,15 @@ export interface PersonUpdateOneRequiredWithoutDocumentsInput {
   connect?: PersonWhereUniqueInput | null
   update?: PersonUpdateWithoutDocumentsDataInput | null
   upsert?: PersonUpsertWithoutDocumentsInput | null
+}
+
+export interface PersonUpdateOneWithoutApplicationsInput {
+  create?: PersonCreateWithoutApplicationsInput | null
+  connect?: PersonWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
+  update?: PersonUpdateWithoutApplicationsDataInput | null
+  upsert?: PersonUpsertWithoutApplicationsInput | null
 }
 
 export interface PersonUpdateOneWithoutCasekorbansInput {
@@ -35543,7 +35695,7 @@ export interface Application {
   statusPerwakilan?: String | null
   updatedAt: DateTime
   updatedBy?: String | null
-  wakilId: Person
+  wakilId?: Person | null
   waktuPernahKlien?: String | null
   whyLbh?: String | null
   case?: Case | null
@@ -35962,6 +36114,8 @@ export interface CasePk {
   didampingi?: String | null
   legalMemo?: String | null
   notulaRapat?: String | null
+  targetAkhirAdvokasi?: String | null
+  strategiAdvokasi?: String | null
   ppPendamping?: User | null
   statusAlasanTdk?: String | null
   tglRapat?: DateTime | null
@@ -35995,6 +36149,8 @@ export interface CasePkPreviousValues {
   didampingi?: String | null
   legalMemo?: String | null
   notulaRapat?: String | null
+  targetAkhirAdvokasi?: String | null
+  strategiAdvokasi?: String | null
   statusAlasanTdk?: String | null
   tglRapat?: DateTime | null
   updatedAt: DateTime
@@ -36079,7 +36235,7 @@ export interface CaseProgressActivityEdge {
 
 export interface CaseProgressActivityLit {
   id: Int
-  caseProgressActivityId: CaseProgressActivity
+  caseProgressActivityId?: CaseProgressActivity | null
   kodeMt?: String | null
 }
 
@@ -36116,7 +36272,7 @@ export interface CaseProgressActivityLitSubscriptionPayload {
 
 export interface CaseProgressActivityNonlit {
   id: Int
-  caseProgressActivityId: CaseProgressActivity
+  caseProgressActivityId?: CaseProgressActivity | null
   kodeMt?: String | null
 }
 
