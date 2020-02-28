@@ -5,7 +5,8 @@ import * as dotenv from 'dotenv';
 export class PrismaService extends Prisma {
   constructor() {
     super({
-      endpoint: process.env.PRISMA_HOST + ':' + process.env.PRISMA_PORT,
+      endpoint:
+        'http://' + process.env.PRISMA_HOST + ':' + process.env.PRISMA_PORT,
       debug: false,
     });
   }

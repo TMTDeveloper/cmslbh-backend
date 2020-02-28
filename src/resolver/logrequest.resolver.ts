@@ -4,8 +4,9 @@ import {
   Mutation,
   Query,
   Resolver,
+  Subscription,
 } from '@nestjs/graphql';
-import { LogRequest, BatchPayload } from '../prisma/prisma.binding';
+import { LogRequest, BatchPayload, LogRequestSubscriptionPayload } from '../prisma/prisma.binding';
 // import {MtVocab } from '../prisma/prisma.binding'
 import { PrismaService } from '../prisma/prisma.service';
 
@@ -37,5 +38,10 @@ export class LogRequestResolver {
   @Mutation('deleteManyLogRequests')
   async deleteManyLogRequests(@Args() args, @Info() info): Promise<BatchPayload> {
     return await this.prisma.mutation.deleteManyLogRequests(args, info);
+  }
+
+  @Subscription('logRequest')
+  async subscribeLogRequests(@Args() args, @Info() info): Promise<any> {
+    return await this.prisma.subscription.logRequest(args, info);
   }
 }

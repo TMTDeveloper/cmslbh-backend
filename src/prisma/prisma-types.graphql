@@ -1,5 +1,5 @@
 # source: http://localhost:4466
-# timestamp: Thu Aug 29 2019 02:59:25 GMT+0700 (Western Indonesia Time)
+# timestamp: Wed Dec 18 2019 01:27:23 GMT+0700 (Western Indonesia Time)
 
 type AggregateApplication {
   count: Int!
@@ -122,6 +122,18 @@ type AggregateRole {
 }
 
 type AggregateRolesType {
+  count: Int!
+}
+
+type AggregateSrcAnalisa {
+  count: Int!
+}
+
+type AggregateSrcOperator {
+  count: Int!
+}
+
+type AggregateSrcTemplate {
   count: Int!
 }
 
@@ -4337,6 +4349,7 @@ type CaseDocument {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedAt: DateTime!
   updatedBy: String
 }
@@ -4357,6 +4370,7 @@ input CaseDocumentCreateInput {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedBy: String
   caseId: CaseCreateOneWithoutDocumentsInput!
 }
@@ -4372,6 +4386,7 @@ input CaseDocumentCreateWithoutCaseIdInput {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedBy: String
 }
 
@@ -4399,6 +4414,8 @@ enum CaseDocumentOrderByInput {
   keterangan_DESC
   link_ASC
   link_DESC
+  filename_ASC
+  filename_DESC
   updatedAt_ASC
   updatedAt_DESC
   updatedBy_ASC
@@ -4413,6 +4430,7 @@ type CaseDocumentPreviousValues {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedAt: DateTime!
   updatedBy: String
 }
@@ -4670,6 +4688,46 @@ input CaseDocumentScalarWhereInput {
 
   """All values not ending with the given string."""
   link_not_ends_with: String
+  filename: String
+
+  """All values that are not equal to given value."""
+  filename_not: String
+
+  """All values that are contained in given list."""
+  filename_in: [String!]
+
+  """All values that are not contained in given list."""
+  filename_not_in: [String!]
+
+  """All values less than the given value."""
+  filename_lt: String
+
+  """All values less than or equal the given value."""
+  filename_lte: String
+
+  """All values greater than the given value."""
+  filename_gt: String
+
+  """All values greater than or equal the given value."""
+  filename_gte: String
+
+  """All values containing the given string."""
+  filename_contains: String
+
+  """All values not containing the given string."""
+  filename_not_contains: String
+
+  """All values starting with the given string."""
+  filename_starts_with: String
+
+  """All values not starting with the given string."""
+  filename_not_starts_with: String
+
+  """All values ending with the given string."""
+  filename_ends_with: String
+
+  """All values not ending with the given string."""
+  filename_not_ends_with: String
   updatedAt: DateTime
 
   """All values that are not equal to given value."""
@@ -4777,6 +4835,7 @@ input CaseDocumentUpdateInput {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedBy: String
   caseId: CaseUpdateOneRequiredWithoutDocumentsInput
 }
@@ -4787,6 +4846,7 @@ input CaseDocumentUpdateManyDataInput {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedBy: String
 }
 
@@ -4796,6 +4856,7 @@ input CaseDocumentUpdateManyMutationInput {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedBy: String
 }
 
@@ -4822,6 +4883,7 @@ input CaseDocumentUpdateWithoutCaseIdDataInput {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedBy: String
 }
 
@@ -5089,6 +5151,46 @@ input CaseDocumentWhereInput {
 
   """All values not ending with the given string."""
   link_not_ends_with: String
+  filename: String
+
+  """All values that are not equal to given value."""
+  filename_not: String
+
+  """All values that are contained in given list."""
+  filename_in: [String!]
+
+  """All values that are not contained in given list."""
+  filename_not_in: [String!]
+
+  """All values less than the given value."""
+  filename_lt: String
+
+  """All values less than or equal the given value."""
+  filename_lte: String
+
+  """All values greater than the given value."""
+  filename_gt: String
+
+  """All values greater than or equal the given value."""
+  filename_gte: String
+
+  """All values containing the given string."""
+  filename_contains: String
+
+  """All values not containing the given string."""
+  filename_not_contains: String
+
+  """All values starting with the given string."""
+  filename_starts_with: String
+
+  """All values not starting with the given string."""
+  filename_not_starts_with: String
+
+  """All values ending with the given string."""
+  filename_ends_with: String
+
+  """All values not ending with the given string."""
+  filename_not_ends_with: String
   updatedAt: DateTime
 
   """All values that are not equal to given value."""
@@ -5716,6 +5818,7 @@ enum CaseOrderByInput {
 type CasePelaku {
   id: Int!
   caseId: Case!
+  jenisPelaku: String
   personId: Person
 }
 
@@ -5730,6 +5833,7 @@ type CasePelakuConnection {
 }
 
 input CasePelakuCreateInput {
+  jenisPelaku: String
   caseId: CaseCreateOneWithoutPelakusInput!
   personId: PersonCreateOneWithoutCasepelakusInput
 }
@@ -5745,10 +5849,12 @@ input CasePelakuCreateManyWithoutPersonIdInput {
 }
 
 input CasePelakuCreateWithoutCaseIdInput {
+  jenisPelaku: String
   personId: PersonCreateOneWithoutCasepelakusInput
 }
 
 input CasePelakuCreateWithoutPersonIdInput {
+  jenisPelaku: String
   caseId: CaseCreateOneWithoutPelakusInput!
 }
 
@@ -5764,10 +5870,13 @@ type CasePelakuEdge {
 enum CasePelakuOrderByInput {
   id_ASC
   id_DESC
+  jenisPelaku_ASC
+  jenisPelaku_DESC
 }
 
 type CasePelakuPreviousValues {
   id: Int!
+  jenisPelaku: String
 }
 
 input CasePelakuScalarWhereInput {
@@ -5801,6 +5910,46 @@ input CasePelakuScalarWhereInput {
 
   """All values greater than or equal the given value."""
   id_gte: Int
+  jenisPelaku: String
+
+  """All values that are not equal to given value."""
+  jenisPelaku_not: String
+
+  """All values that are contained in given list."""
+  jenisPelaku_in: [String!]
+
+  """All values that are not contained in given list."""
+  jenisPelaku_not_in: [String!]
+
+  """All values less than the given value."""
+  jenisPelaku_lt: String
+
+  """All values less than or equal the given value."""
+  jenisPelaku_lte: String
+
+  """All values greater than the given value."""
+  jenisPelaku_gt: String
+
+  """All values greater than or equal the given value."""
+  jenisPelaku_gte: String
+
+  """All values containing the given string."""
+  jenisPelaku_contains: String
+
+  """All values not containing the given string."""
+  jenisPelaku_not_contains: String
+
+  """All values starting with the given string."""
+  jenisPelaku_starts_with: String
+
+  """All values not starting with the given string."""
+  jenisPelaku_not_starts_with: String
+
+  """All values ending with the given string."""
+  jenisPelaku_ends_with: String
+
+  """All values not ending with the given string."""
+  jenisPelaku_not_ends_with: String
 }
 
 type CasePelakuSubscriptionPayload {
@@ -5841,8 +5990,17 @@ input CasePelakuSubscriptionWhereInput {
 }
 
 input CasePelakuUpdateInput {
+  jenisPelaku: String
   caseId: CaseUpdateOneRequiredWithoutPelakusInput
   personId: PersonUpdateOneWithoutCasepelakusInput
+}
+
+input CasePelakuUpdateManyDataInput {
+  jenisPelaku: String
+}
+
+input CasePelakuUpdateManyMutationInput {
+  jenisPelaku: String
 }
 
 input CasePelakuUpdateManyWithoutCaseIdInput {
@@ -5852,6 +6010,7 @@ input CasePelakuUpdateManyWithoutCaseIdInput {
   disconnect: [CasePelakuWhereUniqueInput!]
   delete: [CasePelakuWhereUniqueInput!]
   update: [CasePelakuUpdateWithWhereUniqueWithoutCaseIdInput!]
+  updateMany: [CasePelakuUpdateManyWithWhereNestedInput!]
   deleteMany: [CasePelakuScalarWhereInput!]
   upsert: [CasePelakuUpsertWithWhereUniqueWithoutCaseIdInput!]
 }
@@ -5863,15 +6022,23 @@ input CasePelakuUpdateManyWithoutPersonIdInput {
   disconnect: [CasePelakuWhereUniqueInput!]
   delete: [CasePelakuWhereUniqueInput!]
   update: [CasePelakuUpdateWithWhereUniqueWithoutPersonIdInput!]
+  updateMany: [CasePelakuUpdateManyWithWhereNestedInput!]
   deleteMany: [CasePelakuScalarWhereInput!]
   upsert: [CasePelakuUpsertWithWhereUniqueWithoutPersonIdInput!]
 }
 
+input CasePelakuUpdateManyWithWhereNestedInput {
+  where: CasePelakuScalarWhereInput!
+  data: CasePelakuUpdateManyDataInput!
+}
+
 input CasePelakuUpdateWithoutCaseIdDataInput {
+  jenisPelaku: String
   personId: PersonUpdateOneWithoutCasepelakusInput
 }
 
 input CasePelakuUpdateWithoutPersonIdDataInput {
+  jenisPelaku: String
   caseId: CaseUpdateOneRequiredWithoutPelakusInput
 }
 
@@ -5928,6 +6095,46 @@ input CasePelakuWhereInput {
 
   """All values greater than or equal the given value."""
   id_gte: Int
+  jenisPelaku: String
+
+  """All values that are not equal to given value."""
+  jenisPelaku_not: String
+
+  """All values that are contained in given list."""
+  jenisPelaku_in: [String!]
+
+  """All values that are not contained in given list."""
+  jenisPelaku_not_in: [String!]
+
+  """All values less than the given value."""
+  jenisPelaku_lt: String
+
+  """All values less than or equal the given value."""
+  jenisPelaku_lte: String
+
+  """All values greater than the given value."""
+  jenisPelaku_gt: String
+
+  """All values greater than or equal the given value."""
+  jenisPelaku_gte: String
+
+  """All values containing the given string."""
+  jenisPelaku_contains: String
+
+  """All values not containing the given string."""
+  jenisPelaku_not_contains: String
+
+  """All values starting with the given string."""
+  jenisPelaku_starts_with: String
+
+  """All values not starting with the given string."""
+  jenisPelaku_not_starts_with: String
+
+  """All values ending with the given string."""
+  jenisPelaku_ends_with: String
+
+  """All values not ending with the given string."""
+  jenisPelaku_not_ends_with: String
   caseId: CaseWhereInput
   personId: PersonWhereInput
 }
@@ -15444,6 +15651,7 @@ type LogRequest {
   tglExpired: DateTime
   tglRequest: DateTime
   tglRespon: DateTime
+  updatedAt: DateTime
 }
 
 type LogRequestApp {
@@ -15862,6 +16070,8 @@ enum LogRequestOrderByInput {
   tglRequest_DESC
   tglRespon_ASC
   tglRespon_DESC
+  updatedAt_ASC
+  updatedAt_DESC
 }
 
 type LogRequestPreviousValues {
@@ -15874,6 +16084,7 @@ type LogRequestPreviousValues {
   tglExpired: DateTime
   tglRequest: DateTime
   tglRespon: DateTime
+  updatedAt: DateTime
 }
 
 input LogRequestScalarWhereInput {
@@ -16173,6 +16384,28 @@ input LogRequestScalarWhereInput {
 
   """All values greater than or equal the given value."""
   tglRespon_gte: DateTime
+  updatedAt: DateTime
+
+  """All values that are not equal to given value."""
+  updatedAt_not: DateTime
+
+  """All values that are contained in given list."""
+  updatedAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  updatedAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  updatedAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  updatedAt_lte: DateTime
+
+  """All values greater than the given value."""
+  updatedAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  updatedAt_gte: DateTime
 }
 
 type LogRequestSubscriptionPayload {
@@ -16826,6 +17059,28 @@ input LogRequestWhereInput {
 
   """All values greater than or equal the given value."""
   tglRespon_gte: DateTime
+  updatedAt: DateTime
+
+  """All values that are not equal to given value."""
+  updatedAt_not: DateTime
+
+  """All values that are contained in given list."""
+  updatedAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  updatedAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  updatedAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  updatedAt_lte: DateTime
+
+  """All values greater than the given value."""
+  updatedAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  updatedAt_gte: DateTime
   caseId: CaseWhereInput
   applicationId: ApplicationWhereInput
   networkId: NetworkWhereInput
@@ -17608,6 +17863,9 @@ type Mutation {
   createPersonDocument(data: PersonDocumentCreateInput!): PersonDocument!
   createRole(data: RoleCreateInput!): Role!
   createUserProfile(data: UserProfileCreateInput!): UserProfile!
+  createSrcAnalisa(data: SrcAnalisaCreateInput!): SrcAnalisa!
+  createSrcOperator(data: SrcOperatorCreateInput!): SrcOperator!
+  createSrcTemplate(data: SrcTemplateCreateInput!): SrcTemplate!
   createApplication(data: ApplicationCreateInput!): Application!
   createLogRequest(data: LogRequestCreateInput!): LogRequest!
   createRolesType(data: RolesTypeCreateInput!): RolesType!
@@ -17641,6 +17899,9 @@ type Mutation {
   updatePersonDocument(data: PersonDocumentUpdateInput!, where: PersonDocumentWhereUniqueInput!): PersonDocument
   updateRole(data: RoleUpdateInput!, where: RoleWhereUniqueInput!): Role
   updateUserProfile(data: UserProfileUpdateInput!, where: UserProfileWhereUniqueInput!): UserProfile
+  updateSrcAnalisa(data: SrcAnalisaUpdateInput!, where: SrcAnalisaWhereUniqueInput!): SrcAnalisa
+  updateSrcOperator(data: SrcOperatorUpdateInput!, where: SrcOperatorWhereUniqueInput!): SrcOperator
+  updateSrcTemplate(data: SrcTemplateUpdateInput!, where: SrcTemplateWhereUniqueInput!): SrcTemplate
   updateApplication(data: ApplicationUpdateInput!, where: ApplicationWhereUniqueInput!): Application
   updateLogRequest(data: LogRequestUpdateInput!, where: LogRequestWhereUniqueInput!): LogRequest
   updateRolesType(data: RolesTypeUpdateInput!, where: RolesTypeWhereUniqueInput!): RolesType
@@ -17674,6 +17935,9 @@ type Mutation {
   deletePersonDocument(where: PersonDocumentWhereUniqueInput!): PersonDocument
   deleteRole(where: RoleWhereUniqueInput!): Role
   deleteUserProfile(where: UserProfileWhereUniqueInput!): UserProfile
+  deleteSrcAnalisa(where: SrcAnalisaWhereUniqueInput!): SrcAnalisa
+  deleteSrcOperator(where: SrcOperatorWhereUniqueInput!): SrcOperator
+  deleteSrcTemplate(where: SrcTemplateWhereUniqueInput!): SrcTemplate
   deleteApplication(where: ApplicationWhereUniqueInput!): Application
   deleteLogRequest(where: LogRequestWhereUniqueInput!): LogRequest
   deleteRolesType(where: RolesTypeWhereUniqueInput!): RolesType
@@ -17707,6 +17971,9 @@ type Mutation {
   upsertPersonDocument(where: PersonDocumentWhereUniqueInput!, create: PersonDocumentCreateInput!, update: PersonDocumentUpdateInput!): PersonDocument!
   upsertRole(where: RoleWhereUniqueInput!, create: RoleCreateInput!, update: RoleUpdateInput!): Role!
   upsertUserProfile(where: UserProfileWhereUniqueInput!, create: UserProfileCreateInput!, update: UserProfileUpdateInput!): UserProfile!
+  upsertSrcAnalisa(where: SrcAnalisaWhereUniqueInput!, create: SrcAnalisaCreateInput!, update: SrcAnalisaUpdateInput!): SrcAnalisa!
+  upsertSrcOperator(where: SrcOperatorWhereUniqueInput!, create: SrcOperatorCreateInput!, update: SrcOperatorUpdateInput!): SrcOperator!
+  upsertSrcTemplate(where: SrcTemplateWhereUniqueInput!, create: SrcTemplateCreateInput!, update: SrcTemplateUpdateInput!): SrcTemplate!
   upsertApplication(where: ApplicationWhereUniqueInput!, create: ApplicationCreateInput!, update: ApplicationUpdateInput!): Application!
   upsertLogRequest(where: LogRequestWhereUniqueInput!, create: LogRequestCreateInput!, update: LogRequestUpdateInput!): LogRequest!
   upsertRolesType(where: RolesTypeWhereUniqueInput!, create: RolesTypeCreateInput!, update: RolesTypeUpdateInput!): RolesType!
@@ -17718,6 +17985,7 @@ type Mutation {
   updateManyCaseConsultations(data: CaseConsultationUpdateManyMutationInput!, where: CaseConsultationWhereInput): BatchPayload!
   updateManyCaseDocuments(data: CaseDocumentUpdateManyMutationInput!, where: CaseDocumentWhereInput): BatchPayload!
   updateManyCaseIssues(data: CaseIssueUpdateManyMutationInput!, where: CaseIssueWhereInput): BatchPayload!
+  updateManyCasePelakus(data: CasePelakuUpdateManyMutationInput!, where: CasePelakuWhereInput): BatchPayload!
   updateManyCasePks(data: CasePkUpdateManyMutationInput!, where: CasePkWhereInput): BatchPayload!
   updateManyCaseProgresses(data: CaseProgressUpdateManyMutationInput!, where: CaseProgressWhereInput): BatchPayload!
   updateManyCaseProgressActivities(data: CaseProgressActivityUpdateManyMutationInput!, where: CaseProgressActivityWhereInput): BatchPayload!
@@ -17735,6 +18003,9 @@ type Mutation {
   updateManyMtVocabGroups(data: MtVocabGroupUpdateManyMutationInput!, where: MtVocabGroupWhereInput): BatchPayload!
   updateManyPersonDocuments(data: PersonDocumentUpdateManyMutationInput!, where: PersonDocumentWhereInput): BatchPayload!
   updateManyUserProfiles(data: UserProfileUpdateManyMutationInput!, where: UserProfileWhereInput): BatchPayload!
+  updateManySrcAnalisas(data: SrcAnalisaUpdateManyMutationInput!, where: SrcAnalisaWhereInput): BatchPayload!
+  updateManySrcOperators(data: SrcOperatorUpdateManyMutationInput!, where: SrcOperatorWhereInput): BatchPayload!
+  updateManySrcTemplates(data: SrcTemplateUpdateManyMutationInput!, where: SrcTemplateWhereInput): BatchPayload!
   updateManyApplications(data: ApplicationUpdateManyMutationInput!, where: ApplicationWhereInput): BatchPayload!
   updateManyLogRequests(data: LogRequestUpdateManyMutationInput!, where: LogRequestWhereInput): BatchPayload!
   updateManyRolesTypes(data: RolesTypeUpdateManyMutationInput!, where: RolesTypeWhereInput): BatchPayload!
@@ -17768,6 +18039,9 @@ type Mutation {
   deleteManyPersonDocuments(where: PersonDocumentWhereInput): BatchPayload!
   deleteManyRoles(where: RoleWhereInput): BatchPayload!
   deleteManyUserProfiles(where: UserProfileWhereInput): BatchPayload!
+  deleteManySrcAnalisas(where: SrcAnalisaWhereInput): BatchPayload!
+  deleteManySrcOperators(where: SrcOperatorWhereInput): BatchPayload!
+  deleteManySrcTemplates(where: SrcTemplateWhereInput): BatchPayload!
   deleteManyApplications(where: ApplicationWhereInput): BatchPayload!
   deleteManyLogRequests(where: LogRequestWhereInput): BatchPayload!
   deleteManyRolesTypes(where: RolesTypeWhereInput): BatchPayload!
@@ -17793,6 +18067,7 @@ type Network {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
   updatedAt: DateTime!
   logRequests(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LogRequest!]
 }
@@ -17816,6 +18091,7 @@ input NetworkCreateInput {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
   logRequests: LogRequestCreateManyWithoutNetworkIdInput
 }
 
@@ -17838,6 +18114,7 @@ input NetworkCreateWithoutLogRequestsInput {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
 }
 
 """An edge in a connection."""
@@ -17870,6 +18147,8 @@ enum NetworkOrderByInput {
   regencyId_DESC
   type_ASC
   type_DESC
+  status_ASC
+  status_DESC
   updatedAt_ASC
   updatedAt_DESC
 }
@@ -17885,6 +18164,7 @@ type NetworkPreviousValues {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
   updatedAt: DateTime!
 }
 
@@ -17934,6 +18214,7 @@ input NetworkUpdateDataInput {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
   logRequests: LogRequestUpdateManyWithoutNetworkIdInput
 }
 
@@ -17946,6 +18227,7 @@ input NetworkUpdateInput {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
   logRequests: LogRequestUpdateManyWithoutNetworkIdInput
 }
 
@@ -17958,6 +18240,7 @@ input NetworkUpdateManyMutationInput {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
 }
 
 input NetworkUpdateOneInput {
@@ -17987,6 +18270,7 @@ input NetworkUpdateWithoutLogRequestsDataInput {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
 }
 
 input NetworkUpsertNestedInput {
@@ -18336,6 +18620,46 @@ input NetworkWhereInput {
 
   """All values not ending with the given string."""
   type_not_ends_with: String
+  status: String
+
+  """All values that are not equal to given value."""
+  status_not: String
+
+  """All values that are contained in given list."""
+  status_in: [String!]
+
+  """All values that are not contained in given list."""
+  status_not_in: [String!]
+
+  """All values less than the given value."""
+  status_lt: String
+
+  """All values less than or equal the given value."""
+  status_lte: String
+
+  """All values greater than the given value."""
+  status_gt: String
+
+  """All values greater than or equal the given value."""
+  status_gte: String
+
+  """All values containing the given string."""
+  status_contains: String
+
+  """All values not containing the given string."""
+  status_not_contains: String
+
+  """All values starting with the given string."""
+  status_starts_with: String
+
+  """All values not starting with the given string."""
+  status_not_starts_with: String
+
+  """All values ending with the given string."""
+  status_ends_with: String
+
+  """All values not ending with the given string."""
+  status_not_ends_with: String
   updatedAt: DateTime
 
   """All values that are not equal to given value."""
@@ -20875,6 +21199,9 @@ type Query {
   personDocuments(where: PersonDocumentWhereInput, orderBy: PersonDocumentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PersonDocument]!
   roles(where: RoleWhereInput, orderBy: RoleOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Role]!
   userProfiles(where: UserProfileWhereInput, orderBy: UserProfileOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [UserProfile]!
+  srcAnalisas(where: SrcAnalisaWhereInput, orderBy: SrcAnalisaOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [SrcAnalisa]!
+  srcOperators(where: SrcOperatorWhereInput, orderBy: SrcOperatorOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [SrcOperator]!
+  srcTemplates(where: SrcTemplateWhereInput, orderBy: SrcTemplateOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [SrcTemplate]!
   applications(where: ApplicationWhereInput, orderBy: ApplicationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Application]!
   logRequests(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LogRequest]!
   rolesTypes(where: RolesTypeWhereInput, orderBy: RolesTypeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [RolesType]!
@@ -20908,6 +21235,9 @@ type Query {
   personDocument(where: PersonDocumentWhereUniqueInput!): PersonDocument
   role(where: RoleWhereUniqueInput!): Role
   userProfile(where: UserProfileWhereUniqueInput!): UserProfile
+  srcAnalisa(where: SrcAnalisaWhereUniqueInput!): SrcAnalisa
+  srcOperator(where: SrcOperatorWhereUniqueInput!): SrcOperator
+  srcTemplate(where: SrcTemplateWhereUniqueInput!): SrcTemplate
   application(where: ApplicationWhereUniqueInput!): Application
   logRequest(where: LogRequestWhereUniqueInput!): LogRequest
   rolesType(where: RolesTypeWhereUniqueInput!): RolesType
@@ -20941,6 +21271,9 @@ type Query {
   personDocumentsConnection(where: PersonDocumentWhereInput, orderBy: PersonDocumentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PersonDocumentConnection!
   rolesConnection(where: RoleWhereInput, orderBy: RoleOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): RoleConnection!
   userProfilesConnection(where: UserProfileWhereInput, orderBy: UserProfileOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserProfileConnection!
+  srcAnalisasConnection(where: SrcAnalisaWhereInput, orderBy: SrcAnalisaOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): SrcAnalisaConnection!
+  srcOperatorsConnection(where: SrcOperatorWhereInput, orderBy: SrcOperatorOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): SrcOperatorConnection!
+  srcTemplatesConnection(where: SrcTemplateWhereInput, orderBy: SrcTemplateOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): SrcTemplateConnection!
   applicationsConnection(where: ApplicationWhereInput, orderBy: ApplicationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ApplicationConnection!
   logRequestsConnection(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): LogRequestConnection!
   rolesTypesConnection(where: RolesTypeWhereInput, orderBy: RolesTypeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): RolesTypeConnection!
@@ -21402,6 +21735,915 @@ input RoleWhereUniqueInput {
   id: Int
 }
 
+type SrcAnalisa {
+  id: Int!
+  group: String
+  label: String
+  field: String
+  type: String
+  source: String
+  kode_list: String
+  alias: String
+}
+
+"""A connection to a list of items."""
+type SrcAnalisaConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [SrcAnalisaEdge]!
+  aggregate: AggregateSrcAnalisa!
+}
+
+input SrcAnalisaCreateInput {
+  group: String
+  label: String
+  field: String
+  type: String
+  source: String
+  kode_list: String
+  alias: String
+}
+
+"""An edge in a connection."""
+type SrcAnalisaEdge {
+  """The item at the end of the edge."""
+  node: SrcAnalisa!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum SrcAnalisaOrderByInput {
+  id_ASC
+  id_DESC
+  group_ASC
+  group_DESC
+  label_ASC
+  label_DESC
+  field_ASC
+  field_DESC
+  type_ASC
+  type_DESC
+  source_ASC
+  source_DESC
+  kode_list_ASC
+  kode_list_DESC
+  alias_ASC
+  alias_DESC
+}
+
+type SrcAnalisaPreviousValues {
+  id: Int!
+  group: String
+  label: String
+  field: String
+  type: String
+  source: String
+  kode_list: String
+  alias: String
+}
+
+type SrcAnalisaSubscriptionPayload {
+  mutation: MutationType!
+  node: SrcAnalisa
+  updatedFields: [String!]
+  previousValues: SrcAnalisaPreviousValues
+}
+
+input SrcAnalisaSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [SrcAnalisaSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [SrcAnalisaSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [SrcAnalisaSubscriptionWhereInput!]
+
+  """The subscription event gets dispatched when it's listed in mutation_in"""
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: SrcAnalisaWhereInput
+}
+
+input SrcAnalisaUpdateInput {
+  group: String
+  label: String
+  field: String
+  type: String
+  source: String
+  kode_list: String
+  alias: String
+}
+
+input SrcAnalisaUpdateManyMutationInput {
+  group: String
+  label: String
+  field: String
+  type: String
+  source: String
+  kode_list: String
+  alias: String
+}
+
+input SrcAnalisaWhereInput {
+  """Logical AND on all given filters."""
+  AND: [SrcAnalisaWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [SrcAnalisaWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [SrcAnalisaWhereInput!]
+  id: Int
+
+  """All values that are not equal to given value."""
+  id_not: Int
+
+  """All values that are contained in given list."""
+  id_in: [Int!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [Int!]
+
+  """All values less than the given value."""
+  id_lt: Int
+
+  """All values less than or equal the given value."""
+  id_lte: Int
+
+  """All values greater than the given value."""
+  id_gt: Int
+
+  """All values greater than or equal the given value."""
+  id_gte: Int
+  group: String
+
+  """All values that are not equal to given value."""
+  group_not: String
+
+  """All values that are contained in given list."""
+  group_in: [String!]
+
+  """All values that are not contained in given list."""
+  group_not_in: [String!]
+
+  """All values less than the given value."""
+  group_lt: String
+
+  """All values less than or equal the given value."""
+  group_lte: String
+
+  """All values greater than the given value."""
+  group_gt: String
+
+  """All values greater than or equal the given value."""
+  group_gte: String
+
+  """All values containing the given string."""
+  group_contains: String
+
+  """All values not containing the given string."""
+  group_not_contains: String
+
+  """All values starting with the given string."""
+  group_starts_with: String
+
+  """All values not starting with the given string."""
+  group_not_starts_with: String
+
+  """All values ending with the given string."""
+  group_ends_with: String
+
+  """All values not ending with the given string."""
+  group_not_ends_with: String
+  label: String
+
+  """All values that are not equal to given value."""
+  label_not: String
+
+  """All values that are contained in given list."""
+  label_in: [String!]
+
+  """All values that are not contained in given list."""
+  label_not_in: [String!]
+
+  """All values less than the given value."""
+  label_lt: String
+
+  """All values less than or equal the given value."""
+  label_lte: String
+
+  """All values greater than the given value."""
+  label_gt: String
+
+  """All values greater than or equal the given value."""
+  label_gte: String
+
+  """All values containing the given string."""
+  label_contains: String
+
+  """All values not containing the given string."""
+  label_not_contains: String
+
+  """All values starting with the given string."""
+  label_starts_with: String
+
+  """All values not starting with the given string."""
+  label_not_starts_with: String
+
+  """All values ending with the given string."""
+  label_ends_with: String
+
+  """All values not ending with the given string."""
+  label_not_ends_with: String
+  field: String
+
+  """All values that are not equal to given value."""
+  field_not: String
+
+  """All values that are contained in given list."""
+  field_in: [String!]
+
+  """All values that are not contained in given list."""
+  field_not_in: [String!]
+
+  """All values less than the given value."""
+  field_lt: String
+
+  """All values less than or equal the given value."""
+  field_lte: String
+
+  """All values greater than the given value."""
+  field_gt: String
+
+  """All values greater than or equal the given value."""
+  field_gte: String
+
+  """All values containing the given string."""
+  field_contains: String
+
+  """All values not containing the given string."""
+  field_not_contains: String
+
+  """All values starting with the given string."""
+  field_starts_with: String
+
+  """All values not starting with the given string."""
+  field_not_starts_with: String
+
+  """All values ending with the given string."""
+  field_ends_with: String
+
+  """All values not ending with the given string."""
+  field_not_ends_with: String
+  type: String
+
+  """All values that are not equal to given value."""
+  type_not: String
+
+  """All values that are contained in given list."""
+  type_in: [String!]
+
+  """All values that are not contained in given list."""
+  type_not_in: [String!]
+
+  """All values less than the given value."""
+  type_lt: String
+
+  """All values less than or equal the given value."""
+  type_lte: String
+
+  """All values greater than the given value."""
+  type_gt: String
+
+  """All values greater than or equal the given value."""
+  type_gte: String
+
+  """All values containing the given string."""
+  type_contains: String
+
+  """All values not containing the given string."""
+  type_not_contains: String
+
+  """All values starting with the given string."""
+  type_starts_with: String
+
+  """All values not starting with the given string."""
+  type_not_starts_with: String
+
+  """All values ending with the given string."""
+  type_ends_with: String
+
+  """All values not ending with the given string."""
+  type_not_ends_with: String
+  source: String
+
+  """All values that are not equal to given value."""
+  source_not: String
+
+  """All values that are contained in given list."""
+  source_in: [String!]
+
+  """All values that are not contained in given list."""
+  source_not_in: [String!]
+
+  """All values less than the given value."""
+  source_lt: String
+
+  """All values less than or equal the given value."""
+  source_lte: String
+
+  """All values greater than the given value."""
+  source_gt: String
+
+  """All values greater than or equal the given value."""
+  source_gte: String
+
+  """All values containing the given string."""
+  source_contains: String
+
+  """All values not containing the given string."""
+  source_not_contains: String
+
+  """All values starting with the given string."""
+  source_starts_with: String
+
+  """All values not starting with the given string."""
+  source_not_starts_with: String
+
+  """All values ending with the given string."""
+  source_ends_with: String
+
+  """All values not ending with the given string."""
+  source_not_ends_with: String
+  kode_list: String
+
+  """All values that are not equal to given value."""
+  kode_list_not: String
+
+  """All values that are contained in given list."""
+  kode_list_in: [String!]
+
+  """All values that are not contained in given list."""
+  kode_list_not_in: [String!]
+
+  """All values less than the given value."""
+  kode_list_lt: String
+
+  """All values less than or equal the given value."""
+  kode_list_lte: String
+
+  """All values greater than the given value."""
+  kode_list_gt: String
+
+  """All values greater than or equal the given value."""
+  kode_list_gte: String
+
+  """All values containing the given string."""
+  kode_list_contains: String
+
+  """All values not containing the given string."""
+  kode_list_not_contains: String
+
+  """All values starting with the given string."""
+  kode_list_starts_with: String
+
+  """All values not starting with the given string."""
+  kode_list_not_starts_with: String
+
+  """All values ending with the given string."""
+  kode_list_ends_with: String
+
+  """All values not ending with the given string."""
+  kode_list_not_ends_with: String
+  alias: String
+
+  """All values that are not equal to given value."""
+  alias_not: String
+
+  """All values that are contained in given list."""
+  alias_in: [String!]
+
+  """All values that are not contained in given list."""
+  alias_not_in: [String!]
+
+  """All values less than the given value."""
+  alias_lt: String
+
+  """All values less than or equal the given value."""
+  alias_lte: String
+
+  """All values greater than the given value."""
+  alias_gt: String
+
+  """All values greater than or equal the given value."""
+  alias_gte: String
+
+  """All values containing the given string."""
+  alias_contains: String
+
+  """All values not containing the given string."""
+  alias_not_contains: String
+
+  """All values starting with the given string."""
+  alias_starts_with: String
+
+  """All values not starting with the given string."""
+  alias_not_starts_with: String
+
+  """All values ending with the given string."""
+  alias_ends_with: String
+
+  """All values not ending with the given string."""
+  alias_not_ends_with: String
+}
+
+input SrcAnalisaWhereUniqueInput {
+  id: Int
+}
+
+type SrcOperator {
+  id: Int!
+  type: String
+  operator: String
+  label: String
+}
+
+"""A connection to a list of items."""
+type SrcOperatorConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [SrcOperatorEdge]!
+  aggregate: AggregateSrcOperator!
+}
+
+input SrcOperatorCreateInput {
+  type: String
+  operator: String
+  label: String
+}
+
+"""An edge in a connection."""
+type SrcOperatorEdge {
+  """The item at the end of the edge."""
+  node: SrcOperator!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum SrcOperatorOrderByInput {
+  id_ASC
+  id_DESC
+  type_ASC
+  type_DESC
+  operator_ASC
+  operator_DESC
+  label_ASC
+  label_DESC
+}
+
+type SrcOperatorPreviousValues {
+  id: Int!
+  type: String
+  operator: String
+  label: String
+}
+
+type SrcOperatorSubscriptionPayload {
+  mutation: MutationType!
+  node: SrcOperator
+  updatedFields: [String!]
+  previousValues: SrcOperatorPreviousValues
+}
+
+input SrcOperatorSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [SrcOperatorSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [SrcOperatorSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [SrcOperatorSubscriptionWhereInput!]
+
+  """The subscription event gets dispatched when it's listed in mutation_in"""
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: SrcOperatorWhereInput
+}
+
+input SrcOperatorUpdateInput {
+  type: String
+  operator: String
+  label: String
+}
+
+input SrcOperatorUpdateManyMutationInput {
+  type: String
+  operator: String
+  label: String
+}
+
+input SrcOperatorWhereInput {
+  """Logical AND on all given filters."""
+  AND: [SrcOperatorWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [SrcOperatorWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [SrcOperatorWhereInput!]
+  id: Int
+
+  """All values that are not equal to given value."""
+  id_not: Int
+
+  """All values that are contained in given list."""
+  id_in: [Int!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [Int!]
+
+  """All values less than the given value."""
+  id_lt: Int
+
+  """All values less than or equal the given value."""
+  id_lte: Int
+
+  """All values greater than the given value."""
+  id_gt: Int
+
+  """All values greater than or equal the given value."""
+  id_gte: Int
+  type: String
+
+  """All values that are not equal to given value."""
+  type_not: String
+
+  """All values that are contained in given list."""
+  type_in: [String!]
+
+  """All values that are not contained in given list."""
+  type_not_in: [String!]
+
+  """All values less than the given value."""
+  type_lt: String
+
+  """All values less than or equal the given value."""
+  type_lte: String
+
+  """All values greater than the given value."""
+  type_gt: String
+
+  """All values greater than or equal the given value."""
+  type_gte: String
+
+  """All values containing the given string."""
+  type_contains: String
+
+  """All values not containing the given string."""
+  type_not_contains: String
+
+  """All values starting with the given string."""
+  type_starts_with: String
+
+  """All values not starting with the given string."""
+  type_not_starts_with: String
+
+  """All values ending with the given string."""
+  type_ends_with: String
+
+  """All values not ending with the given string."""
+  type_not_ends_with: String
+  operator: String
+
+  """All values that are not equal to given value."""
+  operator_not: String
+
+  """All values that are contained in given list."""
+  operator_in: [String!]
+
+  """All values that are not contained in given list."""
+  operator_not_in: [String!]
+
+  """All values less than the given value."""
+  operator_lt: String
+
+  """All values less than or equal the given value."""
+  operator_lte: String
+
+  """All values greater than the given value."""
+  operator_gt: String
+
+  """All values greater than or equal the given value."""
+  operator_gte: String
+
+  """All values containing the given string."""
+  operator_contains: String
+
+  """All values not containing the given string."""
+  operator_not_contains: String
+
+  """All values starting with the given string."""
+  operator_starts_with: String
+
+  """All values not starting with the given string."""
+  operator_not_starts_with: String
+
+  """All values ending with the given string."""
+  operator_ends_with: String
+
+  """All values not ending with the given string."""
+  operator_not_ends_with: String
+  label: String
+
+  """All values that are not equal to given value."""
+  label_not: String
+
+  """All values that are contained in given list."""
+  label_in: [String!]
+
+  """All values that are not contained in given list."""
+  label_not_in: [String!]
+
+  """All values less than the given value."""
+  label_lt: String
+
+  """All values less than or equal the given value."""
+  label_lte: String
+
+  """All values greater than the given value."""
+  label_gt: String
+
+  """All values greater than or equal the given value."""
+  label_gte: String
+
+  """All values containing the given string."""
+  label_contains: String
+
+  """All values not containing the given string."""
+  label_not_contains: String
+
+  """All values starting with the given string."""
+  label_starts_with: String
+
+  """All values not starting with the given string."""
+  label_not_starts_with: String
+
+  """All values ending with the given string."""
+  label_ends_with: String
+
+  """All values not ending with the given string."""
+  label_not_ends_with: String
+}
+
+input SrcOperatorWhereUniqueInput {
+  id: Int
+}
+
+type SrcTemplate {
+  id: Int!
+  name: String
+  template: String
+}
+
+"""A connection to a list of items."""
+type SrcTemplateConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [SrcTemplateEdge]!
+  aggregate: AggregateSrcTemplate!
+}
+
+input SrcTemplateCreateInput {
+  name: String
+  template: String
+}
+
+"""An edge in a connection."""
+type SrcTemplateEdge {
+  """The item at the end of the edge."""
+  node: SrcTemplate!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum SrcTemplateOrderByInput {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  template_ASC
+  template_DESC
+}
+
+type SrcTemplatePreviousValues {
+  id: Int!
+  name: String
+  template: String
+}
+
+type SrcTemplateSubscriptionPayload {
+  mutation: MutationType!
+  node: SrcTemplate
+  updatedFields: [String!]
+  previousValues: SrcTemplatePreviousValues
+}
+
+input SrcTemplateSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [SrcTemplateSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [SrcTemplateSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [SrcTemplateSubscriptionWhereInput!]
+
+  """The subscription event gets dispatched when it's listed in mutation_in"""
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: SrcTemplateWhereInput
+}
+
+input SrcTemplateUpdateInput {
+  name: String
+  template: String
+}
+
+input SrcTemplateUpdateManyMutationInput {
+  name: String
+  template: String
+}
+
+input SrcTemplateWhereInput {
+  """Logical AND on all given filters."""
+  AND: [SrcTemplateWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [SrcTemplateWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [SrcTemplateWhereInput!]
+  id: Int
+
+  """All values that are not equal to given value."""
+  id_not: Int
+
+  """All values that are contained in given list."""
+  id_in: [Int!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [Int!]
+
+  """All values less than the given value."""
+  id_lt: Int
+
+  """All values less than or equal the given value."""
+  id_lte: Int
+
+  """All values greater than the given value."""
+  id_gt: Int
+
+  """All values greater than or equal the given value."""
+  id_gte: Int
+  name: String
+
+  """All values that are not equal to given value."""
+  name_not: String
+
+  """All values that are contained in given list."""
+  name_in: [String!]
+
+  """All values that are not contained in given list."""
+  name_not_in: [String!]
+
+  """All values less than the given value."""
+  name_lt: String
+
+  """All values less than or equal the given value."""
+  name_lte: String
+
+  """All values greater than the given value."""
+  name_gt: String
+
+  """All values greater than or equal the given value."""
+  name_gte: String
+
+  """All values containing the given string."""
+  name_contains: String
+
+  """All values not containing the given string."""
+  name_not_contains: String
+
+  """All values starting with the given string."""
+  name_starts_with: String
+
+  """All values not starting with the given string."""
+  name_not_starts_with: String
+
+  """All values ending with the given string."""
+  name_ends_with: String
+
+  """All values not ending with the given string."""
+  name_not_ends_with: String
+  template: String
+
+  """All values that are not equal to given value."""
+  template_not: String
+
+  """All values that are contained in given list."""
+  template_in: [String!]
+
+  """All values that are not contained in given list."""
+  template_not_in: [String!]
+
+  """All values less than the given value."""
+  template_lt: String
+
+  """All values less than or equal the given value."""
+  template_lte: String
+
+  """All values greater than the given value."""
+  template_gt: String
+
+  """All values greater than or equal the given value."""
+  template_gte: String
+
+  """All values containing the given string."""
+  template_contains: String
+
+  """All values not containing the given string."""
+  template_not_contains: String
+
+  """All values starting with the given string."""
+  template_starts_with: String
+
+  """All values not starting with the given string."""
+  template_not_starts_with: String
+
+  """All values ending with the given string."""
+  template_ends_with: String
+
+  """All values not ending with the given string."""
+  template_not_ends_with: String
+}
+
+input SrcTemplateWhereUniqueInput {
+  id: Int
+}
+
 type Subscription {
   case(where: CaseSubscriptionWhereInput): CaseSubscriptionPayload
   caseClassification(where: CaseClassificationSubscriptionWhereInput): CaseClassificationSubscriptionPayload
@@ -21430,6 +22672,9 @@ type Subscription {
   personDocument(where: PersonDocumentSubscriptionWhereInput): PersonDocumentSubscriptionPayload
   role(where: RoleSubscriptionWhereInput): RoleSubscriptionPayload
   userProfile(where: UserProfileSubscriptionWhereInput): UserProfileSubscriptionPayload
+  srcAnalisa(where: SrcAnalisaSubscriptionWhereInput): SrcAnalisaSubscriptionPayload
+  srcOperator(where: SrcOperatorSubscriptionWhereInput): SrcOperatorSubscriptionPayload
+  srcTemplate(where: SrcTemplateSubscriptionWhereInput): SrcTemplateSubscriptionPayload
   application(where: ApplicationSubscriptionWhereInput): ApplicationSubscriptionPayload
   logRequest(where: LogRequestSubscriptionWhereInput): LogRequestSubscriptionPayload
   rolesType(where: RolesTypeSubscriptionWhereInput): RolesTypeSubscriptionPayload

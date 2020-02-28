@@ -19,6 +19,7 @@ import { CasePkResolver } from './casepk.resolver';
 import { ConsultationResolver } from './consultations.resolver';
 import { CaseProgressActivityLitResolver } from './activitylit.resolver';
 import { CaseProgressActivityNonLitResolver } from './activitynonlit.resolver';
+import { IssueResolver } from './issue.resolver';
 
 const RESOLVER = [
   PersonResolver,
@@ -39,7 +40,8 @@ const RESOLVER = [
   CasePkResolver,
   ConsultationResolver,
   CaseProgressActivityLitResolver,
-  CaseProgressActivityNonLitResolver
+  CaseProgressActivityNonLitResolver,
+  IssueResolver,
 ];
 
 @Module({

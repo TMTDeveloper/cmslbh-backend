@@ -31,6 +31,9 @@ export interface Query {
     personDocuments: <T = Array<PersonDocument | null>>(args: { where?: PersonDocumentWhereInput | null, orderBy?: PersonDocumentOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     roles: <T = Array<Role | null>>(args: { where?: RoleWhereInput | null, orderBy?: RoleOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     userProfiles: <T = Array<UserProfile | null>>(args: { where?: UserProfileWhereInput | null, orderBy?: UserProfileOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    srcAnalisas: <T = Array<SrcAnalisa | null>>(args: { where?: SrcAnalisaWhereInput | null, orderBy?: SrcAnalisaOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    srcOperators: <T = Array<SrcOperator | null>>(args: { where?: SrcOperatorWhereInput | null, orderBy?: SrcOperatorOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    srcTemplates: <T = Array<SrcTemplate | null>>(args: { where?: SrcTemplateWhereInput | null, orderBy?: SrcTemplateOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     applications: <T = Array<Application | null>>(args: { where?: ApplicationWhereInput | null, orderBy?: ApplicationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     logRequests: <T = Array<LogRequest | null>>(args: { where?: LogRequestWhereInput | null, orderBy?: LogRequestOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     rolesTypes: <T = Array<RolesType | null>>(args: { where?: RolesTypeWhereInput | null, orderBy?: RolesTypeOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -64,6 +67,9 @@ export interface Query {
     personDocument: <T = PersonDocument | null>(args: { where: PersonDocumentWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     role: <T = Role | null>(args: { where: RoleWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     userProfile: <T = UserProfile | null>(args: { where: UserProfileWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    srcAnalisa: <T = SrcAnalisa | null>(args: { where: SrcAnalisaWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    srcOperator: <T = SrcOperator | null>(args: { where: SrcOperatorWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    srcTemplate: <T = SrcTemplate | null>(args: { where: SrcTemplateWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     application: <T = Application | null>(args: { where: ApplicationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     logRequest: <T = LogRequest | null>(args: { where: LogRequestWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     rolesType: <T = RolesType | null>(args: { where: RolesTypeWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
@@ -97,6 +103,9 @@ export interface Query {
     personDocumentsConnection: <T = PersonDocumentConnection>(args: { where?: PersonDocumentWhereInput | null, orderBy?: PersonDocumentOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     rolesConnection: <T = RoleConnection>(args: { where?: RoleWhereInput | null, orderBy?: RoleOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     userProfilesConnection: <T = UserProfileConnection>(args: { where?: UserProfileWhereInput | null, orderBy?: UserProfileOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    srcAnalisasConnection: <T = SrcAnalisaConnection>(args: { where?: SrcAnalisaWhereInput | null, orderBy?: SrcAnalisaOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    srcOperatorsConnection: <T = SrcOperatorConnection>(args: { where?: SrcOperatorWhereInput | null, orderBy?: SrcOperatorOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    srcTemplatesConnection: <T = SrcTemplateConnection>(args: { where?: SrcTemplateWhereInput | null, orderBy?: SrcTemplateOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     applicationsConnection: <T = ApplicationConnection>(args: { where?: ApplicationWhereInput | null, orderBy?: ApplicationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     logRequestsConnection: <T = LogRequestConnection>(args: { where?: LogRequestWhereInput | null, orderBy?: LogRequestOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     rolesTypesConnection: <T = RolesTypeConnection>(args: { where?: RolesTypeWhereInput | null, orderBy?: RolesTypeOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -134,6 +143,9 @@ export interface Mutation {
     createPersonDocument: <T = PersonDocument>(args: { data: PersonDocumentCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createRole: <T = Role>(args: { data: RoleCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createUserProfile: <T = UserProfile>(args: { data: UserProfileCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createSrcAnalisa: <T = SrcAnalisa>(args: { data: SrcAnalisaCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createSrcOperator: <T = SrcOperator>(args: { data: SrcOperatorCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createSrcTemplate: <T = SrcTemplate>(args: { data: SrcTemplateCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createApplication: <T = Application>(args: { data: ApplicationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createLogRequest: <T = LogRequest>(args: { data: LogRequestCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createRolesType: <T = RolesType>(args: { data: RolesTypeCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -167,6 +179,9 @@ export interface Mutation {
     updatePersonDocument: <T = PersonDocument | null>(args: { data: PersonDocumentUpdateInput, where: PersonDocumentWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateRole: <T = Role | null>(args: { data: RoleUpdateInput, where: RoleWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateUserProfile: <T = UserProfile | null>(args: { data: UserProfileUpdateInput, where: UserProfileWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateSrcAnalisa: <T = SrcAnalisa | null>(args: { data: SrcAnalisaUpdateInput, where: SrcAnalisaWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateSrcOperator: <T = SrcOperator | null>(args: { data: SrcOperatorUpdateInput, where: SrcOperatorWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateSrcTemplate: <T = SrcTemplate | null>(args: { data: SrcTemplateUpdateInput, where: SrcTemplateWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateApplication: <T = Application | null>(args: { data: ApplicationUpdateInput, where: ApplicationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateLogRequest: <T = LogRequest | null>(args: { data: LogRequestUpdateInput, where: LogRequestWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateRolesType: <T = RolesType | null>(args: { data: RolesTypeUpdateInput, where: RolesTypeWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
@@ -200,6 +215,9 @@ export interface Mutation {
     deletePersonDocument: <T = PersonDocument | null>(args: { where: PersonDocumentWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteRole: <T = Role | null>(args: { where: RoleWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteUserProfile: <T = UserProfile | null>(args: { where: UserProfileWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteSrcAnalisa: <T = SrcAnalisa | null>(args: { where: SrcAnalisaWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteSrcOperator: <T = SrcOperator | null>(args: { where: SrcOperatorWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteSrcTemplate: <T = SrcTemplate | null>(args: { where: SrcTemplateWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteApplication: <T = Application | null>(args: { where: ApplicationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteLogRequest: <T = LogRequest | null>(args: { where: LogRequestWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteRolesType: <T = RolesType | null>(args: { where: RolesTypeWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
@@ -233,6 +251,9 @@ export interface Mutation {
     upsertPersonDocument: <T = PersonDocument>(args: { where: PersonDocumentWhereUniqueInput, create: PersonDocumentCreateInput, update: PersonDocumentUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertRole: <T = Role>(args: { where: RoleWhereUniqueInput, create: RoleCreateInput, update: RoleUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertUserProfile: <T = UserProfile>(args: { where: UserProfileWhereUniqueInput, create: UserProfileCreateInput, update: UserProfileUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertSrcAnalisa: <T = SrcAnalisa>(args: { where: SrcAnalisaWhereUniqueInput, create: SrcAnalisaCreateInput, update: SrcAnalisaUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertSrcOperator: <T = SrcOperator>(args: { where: SrcOperatorWhereUniqueInput, create: SrcOperatorCreateInput, update: SrcOperatorUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertSrcTemplate: <T = SrcTemplate>(args: { where: SrcTemplateWhereUniqueInput, create: SrcTemplateCreateInput, update: SrcTemplateUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertApplication: <T = Application>(args: { where: ApplicationWhereUniqueInput, create: ApplicationCreateInput, update: ApplicationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertLogRequest: <T = LogRequest>(args: { where: LogRequestWhereUniqueInput, create: LogRequestCreateInput, update: LogRequestUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertRolesType: <T = RolesType>(args: { where: RolesTypeWhereUniqueInput, create: RolesTypeCreateInput, update: RolesTypeUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -244,6 +265,7 @@ export interface Mutation {
     updateManyCaseConsultations: <T = BatchPayload>(args: { data: CaseConsultationUpdateManyMutationInput, where?: CaseConsultationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCaseDocuments: <T = BatchPayload>(args: { data: CaseDocumentUpdateManyMutationInput, where?: CaseDocumentWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCaseIssues: <T = BatchPayload>(args: { data: CaseIssueUpdateManyMutationInput, where?: CaseIssueWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyCasePelakus: <T = BatchPayload>(args: { data: CasePelakuUpdateManyMutationInput, where?: CasePelakuWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCasePks: <T = BatchPayload>(args: { data: CasePkUpdateManyMutationInput, where?: CasePkWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCaseProgresses: <T = BatchPayload>(args: { data: CaseProgressUpdateManyMutationInput, where?: CaseProgressWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCaseProgressActivities: <T = BatchPayload>(args: { data: CaseProgressActivityUpdateManyMutationInput, where?: CaseProgressActivityWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -261,6 +283,9 @@ export interface Mutation {
     updateManyMtVocabGroups: <T = BatchPayload>(args: { data: MtVocabGroupUpdateManyMutationInput, where?: MtVocabGroupWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyPersonDocuments: <T = BatchPayload>(args: { data: PersonDocumentUpdateManyMutationInput, where?: PersonDocumentWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyUserProfiles: <T = BatchPayload>(args: { data: UserProfileUpdateManyMutationInput, where?: UserProfileWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManySrcAnalisas: <T = BatchPayload>(args: { data: SrcAnalisaUpdateManyMutationInput, where?: SrcAnalisaWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManySrcOperators: <T = BatchPayload>(args: { data: SrcOperatorUpdateManyMutationInput, where?: SrcOperatorWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManySrcTemplates: <T = BatchPayload>(args: { data: SrcTemplateUpdateManyMutationInput, where?: SrcTemplateWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyApplications: <T = BatchPayload>(args: { data: ApplicationUpdateManyMutationInput, where?: ApplicationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyLogRequests: <T = BatchPayload>(args: { data: LogRequestUpdateManyMutationInput, where?: LogRequestWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyRolesTypes: <T = BatchPayload>(args: { data: RolesTypeUpdateManyMutationInput, where?: RolesTypeWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -294,6 +319,9 @@ export interface Mutation {
     deleteManyPersonDocuments: <T = BatchPayload>(args: { where?: PersonDocumentWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyRoles: <T = BatchPayload>(args: { where?: RoleWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyUserProfiles: <T = BatchPayload>(args: { where?: UserProfileWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManySrcAnalisas: <T = BatchPayload>(args: { where?: SrcAnalisaWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManySrcOperators: <T = BatchPayload>(args: { where?: SrcOperatorWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManySrcTemplates: <T = BatchPayload>(args: { where?: SrcTemplateWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyApplications: <T = BatchPayload>(args: { where?: ApplicationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyLogRequests: <T = BatchPayload>(args: { where?: LogRequestWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyRolesTypes: <T = BatchPayload>(args: { where?: RolesTypeWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -330,6 +358,9 @@ export interface Subscription {
     personDocument: <T = PersonDocumentSubscriptionPayload | null>(args: { where?: PersonDocumentSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     role: <T = RoleSubscriptionPayload | null>(args: { where?: RoleSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     userProfile: <T = UserProfileSubscriptionPayload | null>(args: { where?: UserProfileSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    srcAnalisa: <T = SrcAnalisaSubscriptionPayload | null>(args: { where?: SrcAnalisaSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    srcOperator: <T = SrcOperatorSubscriptionPayload | null>(args: { where?: SrcOperatorSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    srcTemplate: <T = SrcTemplateSubscriptionPayload | null>(args: { where?: SrcTemplateSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     application: <T = ApplicationSubscriptionPayload | null>(args: { where?: ApplicationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     logRequest: <T = LogRequestSubscriptionPayload | null>(args: { where?: LogRequestSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     rolesType: <T = RolesTypeSubscriptionPayload | null>(args: { where?: RolesTypeSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
@@ -366,6 +397,9 @@ export interface Exists {
   PersonDocument: (where?: PersonDocumentWhereInput) => Promise<boolean>
   Role: (where?: RoleWhereInput) => Promise<boolean>
   UserProfile: (where?: UserProfileWhereInput) => Promise<boolean>
+  SrcAnalisa: (where?: SrcAnalisaWhereInput) => Promise<boolean>
+  SrcOperator: (where?: SrcOperatorWhereInput) => Promise<boolean>
+  SrcTemplate: (where?: SrcTemplateWhereInput) => Promise<boolean>
   Application: (where?: ApplicationWhereInput) => Promise<boolean>
   LogRequest: (where?: LogRequestWhereInput) => Promise<boolean>
   RolesType: (where?: RolesTypeWhereInput) => Promise<boolean>
@@ -517,6 +551,18 @@ type AggregateRole {
 }
 
 type AggregateRolesType {
+  count: Int!
+}
+
+type AggregateSrcAnalisa {
+  count: Int!
+}
+
+type AggregateSrcOperator {
+  count: Int!
+}
+
+type AggregateSrcTemplate {
   count: Int!
 }
 
@@ -4732,6 +4778,7 @@ type CaseDocument {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedAt: DateTime!
   updatedBy: String
 }
@@ -4752,6 +4799,7 @@ input CaseDocumentCreateInput {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedBy: String
   caseId: CaseCreateOneWithoutDocumentsInput!
 }
@@ -4767,6 +4815,7 @@ input CaseDocumentCreateWithoutCaseIdInput {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedBy: String
 }
 
@@ -4794,6 +4843,8 @@ enum CaseDocumentOrderByInput {
   keterangan_DESC
   link_ASC
   link_DESC
+  filename_ASC
+  filename_DESC
   updatedAt_ASC
   updatedAt_DESC
   updatedBy_ASC
@@ -4808,6 +4859,7 @@ type CaseDocumentPreviousValues {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedAt: DateTime!
   updatedBy: String
 }
@@ -5065,6 +5117,46 @@ input CaseDocumentScalarWhereInput {
 
   """All values not ending with the given string."""
   link_not_ends_with: String
+  filename: String
+
+  """All values that are not equal to given value."""
+  filename_not: String
+
+  """All values that are contained in given list."""
+  filename_in: [String!]
+
+  """All values that are not contained in given list."""
+  filename_not_in: [String!]
+
+  """All values less than the given value."""
+  filename_lt: String
+
+  """All values less than or equal the given value."""
+  filename_lte: String
+
+  """All values greater than the given value."""
+  filename_gt: String
+
+  """All values greater than or equal the given value."""
+  filename_gte: String
+
+  """All values containing the given string."""
+  filename_contains: String
+
+  """All values not containing the given string."""
+  filename_not_contains: String
+
+  """All values starting with the given string."""
+  filename_starts_with: String
+
+  """All values not starting with the given string."""
+  filename_not_starts_with: String
+
+  """All values ending with the given string."""
+  filename_ends_with: String
+
+  """All values not ending with the given string."""
+  filename_not_ends_with: String
   updatedAt: DateTime
 
   """All values that are not equal to given value."""
@@ -5172,6 +5264,7 @@ input CaseDocumentUpdateInput {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedBy: String
   caseId: CaseUpdateOneRequiredWithoutDocumentsInput
 }
@@ -5182,6 +5275,7 @@ input CaseDocumentUpdateManyDataInput {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedBy: String
 }
 
@@ -5191,6 +5285,7 @@ input CaseDocumentUpdateManyMutationInput {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedBy: String
 }
 
@@ -5217,6 +5312,7 @@ input CaseDocumentUpdateWithoutCaseIdDataInput {
   judulDokumen: String
   keterangan: String
   link: String
+  filename: String
   updatedBy: String
 }
 
@@ -5484,6 +5580,46 @@ input CaseDocumentWhereInput {
 
   """All values not ending with the given string."""
   link_not_ends_with: String
+  filename: String
+
+  """All values that are not equal to given value."""
+  filename_not: String
+
+  """All values that are contained in given list."""
+  filename_in: [String!]
+
+  """All values that are not contained in given list."""
+  filename_not_in: [String!]
+
+  """All values less than the given value."""
+  filename_lt: String
+
+  """All values less than or equal the given value."""
+  filename_lte: String
+
+  """All values greater than the given value."""
+  filename_gt: String
+
+  """All values greater than or equal the given value."""
+  filename_gte: String
+
+  """All values containing the given string."""
+  filename_contains: String
+
+  """All values not containing the given string."""
+  filename_not_contains: String
+
+  """All values starting with the given string."""
+  filename_starts_with: String
+
+  """All values not starting with the given string."""
+  filename_not_starts_with: String
+
+  """All values ending with the given string."""
+  filename_ends_with: String
+
+  """All values not ending with the given string."""
+  filename_not_ends_with: String
   updatedAt: DateTime
 
   """All values that are not equal to given value."""
@@ -6111,6 +6247,7 @@ enum CaseOrderByInput {
 type CasePelaku {
   id: Int!
   caseId: Case!
+  jenisPelaku: String
   personId: Person
 }
 
@@ -6125,6 +6262,7 @@ type CasePelakuConnection {
 }
 
 input CasePelakuCreateInput {
+  jenisPelaku: String
   caseId: CaseCreateOneWithoutPelakusInput!
   personId: PersonCreateOneWithoutCasepelakusInput
 }
@@ -6140,10 +6278,12 @@ input CasePelakuCreateManyWithoutPersonIdInput {
 }
 
 input CasePelakuCreateWithoutCaseIdInput {
+  jenisPelaku: String
   personId: PersonCreateOneWithoutCasepelakusInput
 }
 
 input CasePelakuCreateWithoutPersonIdInput {
+  jenisPelaku: String
   caseId: CaseCreateOneWithoutPelakusInput!
 }
 
@@ -6159,10 +6299,13 @@ type CasePelakuEdge {
 enum CasePelakuOrderByInput {
   id_ASC
   id_DESC
+  jenisPelaku_ASC
+  jenisPelaku_DESC
 }
 
 type CasePelakuPreviousValues {
   id: Int!
+  jenisPelaku: String
 }
 
 input CasePelakuScalarWhereInput {
@@ -6196,6 +6339,46 @@ input CasePelakuScalarWhereInput {
 
   """All values greater than or equal the given value."""
   id_gte: Int
+  jenisPelaku: String
+
+  """All values that are not equal to given value."""
+  jenisPelaku_not: String
+
+  """All values that are contained in given list."""
+  jenisPelaku_in: [String!]
+
+  """All values that are not contained in given list."""
+  jenisPelaku_not_in: [String!]
+
+  """All values less than the given value."""
+  jenisPelaku_lt: String
+
+  """All values less than or equal the given value."""
+  jenisPelaku_lte: String
+
+  """All values greater than the given value."""
+  jenisPelaku_gt: String
+
+  """All values greater than or equal the given value."""
+  jenisPelaku_gte: String
+
+  """All values containing the given string."""
+  jenisPelaku_contains: String
+
+  """All values not containing the given string."""
+  jenisPelaku_not_contains: String
+
+  """All values starting with the given string."""
+  jenisPelaku_starts_with: String
+
+  """All values not starting with the given string."""
+  jenisPelaku_not_starts_with: String
+
+  """All values ending with the given string."""
+  jenisPelaku_ends_with: String
+
+  """All values not ending with the given string."""
+  jenisPelaku_not_ends_with: String
 }
 
 type CasePelakuSubscriptionPayload {
@@ -6236,8 +6419,17 @@ input CasePelakuSubscriptionWhereInput {
 }
 
 input CasePelakuUpdateInput {
+  jenisPelaku: String
   caseId: CaseUpdateOneRequiredWithoutPelakusInput
   personId: PersonUpdateOneWithoutCasepelakusInput
+}
+
+input CasePelakuUpdateManyDataInput {
+  jenisPelaku: String
+}
+
+input CasePelakuUpdateManyMutationInput {
+  jenisPelaku: String
 }
 
 input CasePelakuUpdateManyWithoutCaseIdInput {
@@ -6247,6 +6439,7 @@ input CasePelakuUpdateManyWithoutCaseIdInput {
   disconnect: [CasePelakuWhereUniqueInput!]
   delete: [CasePelakuWhereUniqueInput!]
   update: [CasePelakuUpdateWithWhereUniqueWithoutCaseIdInput!]
+  updateMany: [CasePelakuUpdateManyWithWhereNestedInput!]
   deleteMany: [CasePelakuScalarWhereInput!]
   upsert: [CasePelakuUpsertWithWhereUniqueWithoutCaseIdInput!]
 }
@@ -6258,15 +6451,23 @@ input CasePelakuUpdateManyWithoutPersonIdInput {
   disconnect: [CasePelakuWhereUniqueInput!]
   delete: [CasePelakuWhereUniqueInput!]
   update: [CasePelakuUpdateWithWhereUniqueWithoutPersonIdInput!]
+  updateMany: [CasePelakuUpdateManyWithWhereNestedInput!]
   deleteMany: [CasePelakuScalarWhereInput!]
   upsert: [CasePelakuUpsertWithWhereUniqueWithoutPersonIdInput!]
 }
 
+input CasePelakuUpdateManyWithWhereNestedInput {
+  where: CasePelakuScalarWhereInput!
+  data: CasePelakuUpdateManyDataInput!
+}
+
 input CasePelakuUpdateWithoutCaseIdDataInput {
+  jenisPelaku: String
   personId: PersonUpdateOneWithoutCasepelakusInput
 }
 
 input CasePelakuUpdateWithoutPersonIdDataInput {
+  jenisPelaku: String
   caseId: CaseUpdateOneRequiredWithoutPelakusInput
 }
 
@@ -6323,6 +6524,46 @@ input CasePelakuWhereInput {
 
   """All values greater than or equal the given value."""
   id_gte: Int
+  jenisPelaku: String
+
+  """All values that are not equal to given value."""
+  jenisPelaku_not: String
+
+  """All values that are contained in given list."""
+  jenisPelaku_in: [String!]
+
+  """All values that are not contained in given list."""
+  jenisPelaku_not_in: [String!]
+
+  """All values less than the given value."""
+  jenisPelaku_lt: String
+
+  """All values less than or equal the given value."""
+  jenisPelaku_lte: String
+
+  """All values greater than the given value."""
+  jenisPelaku_gt: String
+
+  """All values greater than or equal the given value."""
+  jenisPelaku_gte: String
+
+  """All values containing the given string."""
+  jenisPelaku_contains: String
+
+  """All values not containing the given string."""
+  jenisPelaku_not_contains: String
+
+  """All values starting with the given string."""
+  jenisPelaku_starts_with: String
+
+  """All values not starting with the given string."""
+  jenisPelaku_not_starts_with: String
+
+  """All values ending with the given string."""
+  jenisPelaku_ends_with: String
+
+  """All values not ending with the given string."""
+  jenisPelaku_not_ends_with: String
   caseId: CaseWhereInput
   personId: PersonWhereInput
 }
@@ -15839,6 +16080,7 @@ type LogRequest {
   tglExpired: DateTime
   tglRequest: DateTime
   tglRespon: DateTime
+  updatedAt: DateTime
 }
 
 type LogRequestApp {
@@ -16257,6 +16499,8 @@ enum LogRequestOrderByInput {
   tglRequest_DESC
   tglRespon_ASC
   tglRespon_DESC
+  updatedAt_ASC
+  updatedAt_DESC
 }
 
 type LogRequestPreviousValues {
@@ -16269,6 +16513,7 @@ type LogRequestPreviousValues {
   tglExpired: DateTime
   tglRequest: DateTime
   tglRespon: DateTime
+  updatedAt: DateTime
 }
 
 input LogRequestScalarWhereInput {
@@ -16568,6 +16813,28 @@ input LogRequestScalarWhereInput {
 
   """All values greater than or equal the given value."""
   tglRespon_gte: DateTime
+  updatedAt: DateTime
+
+  """All values that are not equal to given value."""
+  updatedAt_not: DateTime
+
+  """All values that are contained in given list."""
+  updatedAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  updatedAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  updatedAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  updatedAt_lte: DateTime
+
+  """All values greater than the given value."""
+  updatedAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  updatedAt_gte: DateTime
 }
 
 type LogRequestSubscriptionPayload {
@@ -17221,6 +17488,28 @@ input LogRequestWhereInput {
 
   """All values greater than or equal the given value."""
   tglRespon_gte: DateTime
+  updatedAt: DateTime
+
+  """All values that are not equal to given value."""
+  updatedAt_not: DateTime
+
+  """All values that are contained in given list."""
+  updatedAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  updatedAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  updatedAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  updatedAt_lte: DateTime
+
+  """All values greater than the given value."""
+  updatedAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  updatedAt_gte: DateTime
   caseId: CaseWhereInput
   applicationId: ApplicationWhereInput
   networkId: NetworkWhereInput
@@ -18003,6 +18292,9 @@ type Mutation {
   createPersonDocument(data: PersonDocumentCreateInput!): PersonDocument!
   createRole(data: RoleCreateInput!): Role!
   createUserProfile(data: UserProfileCreateInput!): UserProfile!
+  createSrcAnalisa(data: SrcAnalisaCreateInput!): SrcAnalisa!
+  createSrcOperator(data: SrcOperatorCreateInput!): SrcOperator!
+  createSrcTemplate(data: SrcTemplateCreateInput!): SrcTemplate!
   createApplication(data: ApplicationCreateInput!): Application!
   createLogRequest(data: LogRequestCreateInput!): LogRequest!
   createRolesType(data: RolesTypeCreateInput!): RolesType!
@@ -18036,6 +18328,9 @@ type Mutation {
   updatePersonDocument(data: PersonDocumentUpdateInput!, where: PersonDocumentWhereUniqueInput!): PersonDocument
   updateRole(data: RoleUpdateInput!, where: RoleWhereUniqueInput!): Role
   updateUserProfile(data: UserProfileUpdateInput!, where: UserProfileWhereUniqueInput!): UserProfile
+  updateSrcAnalisa(data: SrcAnalisaUpdateInput!, where: SrcAnalisaWhereUniqueInput!): SrcAnalisa
+  updateSrcOperator(data: SrcOperatorUpdateInput!, where: SrcOperatorWhereUniqueInput!): SrcOperator
+  updateSrcTemplate(data: SrcTemplateUpdateInput!, where: SrcTemplateWhereUniqueInput!): SrcTemplate
   updateApplication(data: ApplicationUpdateInput!, where: ApplicationWhereUniqueInput!): Application
   updateLogRequest(data: LogRequestUpdateInput!, where: LogRequestWhereUniqueInput!): LogRequest
   updateRolesType(data: RolesTypeUpdateInput!, where: RolesTypeWhereUniqueInput!): RolesType
@@ -18069,6 +18364,9 @@ type Mutation {
   deletePersonDocument(where: PersonDocumentWhereUniqueInput!): PersonDocument
   deleteRole(where: RoleWhereUniqueInput!): Role
   deleteUserProfile(where: UserProfileWhereUniqueInput!): UserProfile
+  deleteSrcAnalisa(where: SrcAnalisaWhereUniqueInput!): SrcAnalisa
+  deleteSrcOperator(where: SrcOperatorWhereUniqueInput!): SrcOperator
+  deleteSrcTemplate(where: SrcTemplateWhereUniqueInput!): SrcTemplate
   deleteApplication(where: ApplicationWhereUniqueInput!): Application
   deleteLogRequest(where: LogRequestWhereUniqueInput!): LogRequest
   deleteRolesType(where: RolesTypeWhereUniqueInput!): RolesType
@@ -18102,6 +18400,9 @@ type Mutation {
   upsertPersonDocument(where: PersonDocumentWhereUniqueInput!, create: PersonDocumentCreateInput!, update: PersonDocumentUpdateInput!): PersonDocument!
   upsertRole(where: RoleWhereUniqueInput!, create: RoleCreateInput!, update: RoleUpdateInput!): Role!
   upsertUserProfile(where: UserProfileWhereUniqueInput!, create: UserProfileCreateInput!, update: UserProfileUpdateInput!): UserProfile!
+  upsertSrcAnalisa(where: SrcAnalisaWhereUniqueInput!, create: SrcAnalisaCreateInput!, update: SrcAnalisaUpdateInput!): SrcAnalisa!
+  upsertSrcOperator(where: SrcOperatorWhereUniqueInput!, create: SrcOperatorCreateInput!, update: SrcOperatorUpdateInput!): SrcOperator!
+  upsertSrcTemplate(where: SrcTemplateWhereUniqueInput!, create: SrcTemplateCreateInput!, update: SrcTemplateUpdateInput!): SrcTemplate!
   upsertApplication(where: ApplicationWhereUniqueInput!, create: ApplicationCreateInput!, update: ApplicationUpdateInput!): Application!
   upsertLogRequest(where: LogRequestWhereUniqueInput!, create: LogRequestCreateInput!, update: LogRequestUpdateInput!): LogRequest!
   upsertRolesType(where: RolesTypeWhereUniqueInput!, create: RolesTypeCreateInput!, update: RolesTypeUpdateInput!): RolesType!
@@ -18113,6 +18414,7 @@ type Mutation {
   updateManyCaseConsultations(data: CaseConsultationUpdateManyMutationInput!, where: CaseConsultationWhereInput): BatchPayload!
   updateManyCaseDocuments(data: CaseDocumentUpdateManyMutationInput!, where: CaseDocumentWhereInput): BatchPayload!
   updateManyCaseIssues(data: CaseIssueUpdateManyMutationInput!, where: CaseIssueWhereInput): BatchPayload!
+  updateManyCasePelakus(data: CasePelakuUpdateManyMutationInput!, where: CasePelakuWhereInput): BatchPayload!
   updateManyCasePks(data: CasePkUpdateManyMutationInput!, where: CasePkWhereInput): BatchPayload!
   updateManyCaseProgresses(data: CaseProgressUpdateManyMutationInput!, where: CaseProgressWhereInput): BatchPayload!
   updateManyCaseProgressActivities(data: CaseProgressActivityUpdateManyMutationInput!, where: CaseProgressActivityWhereInput): BatchPayload!
@@ -18130,6 +18432,9 @@ type Mutation {
   updateManyMtVocabGroups(data: MtVocabGroupUpdateManyMutationInput!, where: MtVocabGroupWhereInput): BatchPayload!
   updateManyPersonDocuments(data: PersonDocumentUpdateManyMutationInput!, where: PersonDocumentWhereInput): BatchPayload!
   updateManyUserProfiles(data: UserProfileUpdateManyMutationInput!, where: UserProfileWhereInput): BatchPayload!
+  updateManySrcAnalisas(data: SrcAnalisaUpdateManyMutationInput!, where: SrcAnalisaWhereInput): BatchPayload!
+  updateManySrcOperators(data: SrcOperatorUpdateManyMutationInput!, where: SrcOperatorWhereInput): BatchPayload!
+  updateManySrcTemplates(data: SrcTemplateUpdateManyMutationInput!, where: SrcTemplateWhereInput): BatchPayload!
   updateManyApplications(data: ApplicationUpdateManyMutationInput!, where: ApplicationWhereInput): BatchPayload!
   updateManyLogRequests(data: LogRequestUpdateManyMutationInput!, where: LogRequestWhereInput): BatchPayload!
   updateManyRolesTypes(data: RolesTypeUpdateManyMutationInput!, where: RolesTypeWhereInput): BatchPayload!
@@ -18163,6 +18468,9 @@ type Mutation {
   deleteManyPersonDocuments(where: PersonDocumentWhereInput): BatchPayload!
   deleteManyRoles(where: RoleWhereInput): BatchPayload!
   deleteManyUserProfiles(where: UserProfileWhereInput): BatchPayload!
+  deleteManySrcAnalisas(where: SrcAnalisaWhereInput): BatchPayload!
+  deleteManySrcOperators(where: SrcOperatorWhereInput): BatchPayload!
+  deleteManySrcTemplates(where: SrcTemplateWhereInput): BatchPayload!
   deleteManyApplications(where: ApplicationWhereInput): BatchPayload!
   deleteManyLogRequests(where: LogRequestWhereInput): BatchPayload!
   deleteManyRolesTypes(where: RolesTypeWhereInput): BatchPayload!
@@ -18188,6 +18496,7 @@ type Network {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
   updatedAt: DateTime!
   logRequests(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LogRequest!]
 }
@@ -18211,6 +18520,7 @@ input NetworkCreateInput {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
   logRequests: LogRequestCreateManyWithoutNetworkIdInput
 }
 
@@ -18233,6 +18543,7 @@ input NetworkCreateWithoutLogRequestsInput {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
 }
 
 """An edge in a connection."""
@@ -18265,6 +18576,8 @@ enum NetworkOrderByInput {
   regencyId_DESC
   type_ASC
   type_DESC
+  status_ASC
+  status_DESC
   updatedAt_ASC
   updatedAt_DESC
 }
@@ -18280,6 +18593,7 @@ type NetworkPreviousValues {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
   updatedAt: DateTime!
 }
 
@@ -18329,6 +18643,7 @@ input NetworkUpdateDataInput {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
   logRequests: LogRequestUpdateManyWithoutNetworkIdInput
 }
 
@@ -18341,6 +18656,7 @@ input NetworkUpdateInput {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
   logRequests: LogRequestUpdateManyWithoutNetworkIdInput
 }
 
@@ -18353,6 +18669,7 @@ input NetworkUpdateManyMutationInput {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
 }
 
 input NetworkUpdateOneInput {
@@ -18382,6 +18699,7 @@ input NetworkUpdateWithoutLogRequestsDataInput {
   provinceId: Int
   regencyId: Int
   type: String
+  status: String
 }
 
 input NetworkUpsertNestedInput {
@@ -18731,6 +19049,46 @@ input NetworkWhereInput {
 
   """All values not ending with the given string."""
   type_not_ends_with: String
+  status: String
+
+  """All values that are not equal to given value."""
+  status_not: String
+
+  """All values that are contained in given list."""
+  status_in: [String!]
+
+  """All values that are not contained in given list."""
+  status_not_in: [String!]
+
+  """All values less than the given value."""
+  status_lt: String
+
+  """All values less than or equal the given value."""
+  status_lte: String
+
+  """All values greater than the given value."""
+  status_gt: String
+
+  """All values greater than or equal the given value."""
+  status_gte: String
+
+  """All values containing the given string."""
+  status_contains: String
+
+  """All values not containing the given string."""
+  status_not_contains: String
+
+  """All values starting with the given string."""
+  status_starts_with: String
+
+  """All values not starting with the given string."""
+  status_not_starts_with: String
+
+  """All values ending with the given string."""
+  status_ends_with: String
+
+  """All values not ending with the given string."""
+  status_not_ends_with: String
   updatedAt: DateTime
 
   """All values that are not equal to given value."""
@@ -21270,6 +21628,9 @@ type Query {
   personDocuments(where: PersonDocumentWhereInput, orderBy: PersonDocumentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PersonDocument]!
   roles(where: RoleWhereInput, orderBy: RoleOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Role]!
   userProfiles(where: UserProfileWhereInput, orderBy: UserProfileOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [UserProfile]!
+  srcAnalisas(where: SrcAnalisaWhereInput, orderBy: SrcAnalisaOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [SrcAnalisa]!
+  srcOperators(where: SrcOperatorWhereInput, orderBy: SrcOperatorOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [SrcOperator]!
+  srcTemplates(where: SrcTemplateWhereInput, orderBy: SrcTemplateOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [SrcTemplate]!
   applications(where: ApplicationWhereInput, orderBy: ApplicationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Application]!
   logRequests(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [LogRequest]!
   rolesTypes(where: RolesTypeWhereInput, orderBy: RolesTypeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [RolesType]!
@@ -21303,6 +21664,9 @@ type Query {
   personDocument(where: PersonDocumentWhereUniqueInput!): PersonDocument
   role(where: RoleWhereUniqueInput!): Role
   userProfile(where: UserProfileWhereUniqueInput!): UserProfile
+  srcAnalisa(where: SrcAnalisaWhereUniqueInput!): SrcAnalisa
+  srcOperator(where: SrcOperatorWhereUniqueInput!): SrcOperator
+  srcTemplate(where: SrcTemplateWhereUniqueInput!): SrcTemplate
   application(where: ApplicationWhereUniqueInput!): Application
   logRequest(where: LogRequestWhereUniqueInput!): LogRequest
   rolesType(where: RolesTypeWhereUniqueInput!): RolesType
@@ -21336,6 +21700,9 @@ type Query {
   personDocumentsConnection(where: PersonDocumentWhereInput, orderBy: PersonDocumentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PersonDocumentConnection!
   rolesConnection(where: RoleWhereInput, orderBy: RoleOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): RoleConnection!
   userProfilesConnection(where: UserProfileWhereInput, orderBy: UserProfileOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserProfileConnection!
+  srcAnalisasConnection(where: SrcAnalisaWhereInput, orderBy: SrcAnalisaOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): SrcAnalisaConnection!
+  srcOperatorsConnection(where: SrcOperatorWhereInput, orderBy: SrcOperatorOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): SrcOperatorConnection!
+  srcTemplatesConnection(where: SrcTemplateWhereInput, orderBy: SrcTemplateOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): SrcTemplateConnection!
   applicationsConnection(where: ApplicationWhereInput, orderBy: ApplicationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ApplicationConnection!
   logRequestsConnection(where: LogRequestWhereInput, orderBy: LogRequestOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): LogRequestConnection!
   rolesTypesConnection(where: RolesTypeWhereInput, orderBy: RolesTypeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): RolesTypeConnection!
@@ -21797,6 +22164,915 @@ input RoleWhereUniqueInput {
   id: Int
 }
 
+type SrcAnalisa {
+  id: Int!
+  group: String
+  label: String
+  field: String
+  type: String
+  source: String
+  kode_list: String
+  alias: String
+}
+
+"""A connection to a list of items."""
+type SrcAnalisaConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [SrcAnalisaEdge]!
+  aggregate: AggregateSrcAnalisa!
+}
+
+input SrcAnalisaCreateInput {
+  group: String
+  label: String
+  field: String
+  type: String
+  source: String
+  kode_list: String
+  alias: String
+}
+
+"""An edge in a connection."""
+type SrcAnalisaEdge {
+  """The item at the end of the edge."""
+  node: SrcAnalisa!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum SrcAnalisaOrderByInput {
+  id_ASC
+  id_DESC
+  group_ASC
+  group_DESC
+  label_ASC
+  label_DESC
+  field_ASC
+  field_DESC
+  type_ASC
+  type_DESC
+  source_ASC
+  source_DESC
+  kode_list_ASC
+  kode_list_DESC
+  alias_ASC
+  alias_DESC
+}
+
+type SrcAnalisaPreviousValues {
+  id: Int!
+  group: String
+  label: String
+  field: String
+  type: String
+  source: String
+  kode_list: String
+  alias: String
+}
+
+type SrcAnalisaSubscriptionPayload {
+  mutation: MutationType!
+  node: SrcAnalisa
+  updatedFields: [String!]
+  previousValues: SrcAnalisaPreviousValues
+}
+
+input SrcAnalisaSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [SrcAnalisaSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [SrcAnalisaSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [SrcAnalisaSubscriptionWhereInput!]
+
+  """The subscription event gets dispatched when it's listed in mutation_in"""
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: SrcAnalisaWhereInput
+}
+
+input SrcAnalisaUpdateInput {
+  group: String
+  label: String
+  field: String
+  type: String
+  source: String
+  kode_list: String
+  alias: String
+}
+
+input SrcAnalisaUpdateManyMutationInput {
+  group: String
+  label: String
+  field: String
+  type: String
+  source: String
+  kode_list: String
+  alias: String
+}
+
+input SrcAnalisaWhereInput {
+  """Logical AND on all given filters."""
+  AND: [SrcAnalisaWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [SrcAnalisaWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [SrcAnalisaWhereInput!]
+  id: Int
+
+  """All values that are not equal to given value."""
+  id_not: Int
+
+  """All values that are contained in given list."""
+  id_in: [Int!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [Int!]
+
+  """All values less than the given value."""
+  id_lt: Int
+
+  """All values less than or equal the given value."""
+  id_lte: Int
+
+  """All values greater than the given value."""
+  id_gt: Int
+
+  """All values greater than or equal the given value."""
+  id_gte: Int
+  group: String
+
+  """All values that are not equal to given value."""
+  group_not: String
+
+  """All values that are contained in given list."""
+  group_in: [String!]
+
+  """All values that are not contained in given list."""
+  group_not_in: [String!]
+
+  """All values less than the given value."""
+  group_lt: String
+
+  """All values less than or equal the given value."""
+  group_lte: String
+
+  """All values greater than the given value."""
+  group_gt: String
+
+  """All values greater than or equal the given value."""
+  group_gte: String
+
+  """All values containing the given string."""
+  group_contains: String
+
+  """All values not containing the given string."""
+  group_not_contains: String
+
+  """All values starting with the given string."""
+  group_starts_with: String
+
+  """All values not starting with the given string."""
+  group_not_starts_with: String
+
+  """All values ending with the given string."""
+  group_ends_with: String
+
+  """All values not ending with the given string."""
+  group_not_ends_with: String
+  label: String
+
+  """All values that are not equal to given value."""
+  label_not: String
+
+  """All values that are contained in given list."""
+  label_in: [String!]
+
+  """All values that are not contained in given list."""
+  label_not_in: [String!]
+
+  """All values less than the given value."""
+  label_lt: String
+
+  """All values less than or equal the given value."""
+  label_lte: String
+
+  """All values greater than the given value."""
+  label_gt: String
+
+  """All values greater than or equal the given value."""
+  label_gte: String
+
+  """All values containing the given string."""
+  label_contains: String
+
+  """All values not containing the given string."""
+  label_not_contains: String
+
+  """All values starting with the given string."""
+  label_starts_with: String
+
+  """All values not starting with the given string."""
+  label_not_starts_with: String
+
+  """All values ending with the given string."""
+  label_ends_with: String
+
+  """All values not ending with the given string."""
+  label_not_ends_with: String
+  field: String
+
+  """All values that are not equal to given value."""
+  field_not: String
+
+  """All values that are contained in given list."""
+  field_in: [String!]
+
+  """All values that are not contained in given list."""
+  field_not_in: [String!]
+
+  """All values less than the given value."""
+  field_lt: String
+
+  """All values less than or equal the given value."""
+  field_lte: String
+
+  """All values greater than the given value."""
+  field_gt: String
+
+  """All values greater than or equal the given value."""
+  field_gte: String
+
+  """All values containing the given string."""
+  field_contains: String
+
+  """All values not containing the given string."""
+  field_not_contains: String
+
+  """All values starting with the given string."""
+  field_starts_with: String
+
+  """All values not starting with the given string."""
+  field_not_starts_with: String
+
+  """All values ending with the given string."""
+  field_ends_with: String
+
+  """All values not ending with the given string."""
+  field_not_ends_with: String
+  type: String
+
+  """All values that are not equal to given value."""
+  type_not: String
+
+  """All values that are contained in given list."""
+  type_in: [String!]
+
+  """All values that are not contained in given list."""
+  type_not_in: [String!]
+
+  """All values less than the given value."""
+  type_lt: String
+
+  """All values less than or equal the given value."""
+  type_lte: String
+
+  """All values greater than the given value."""
+  type_gt: String
+
+  """All values greater than or equal the given value."""
+  type_gte: String
+
+  """All values containing the given string."""
+  type_contains: String
+
+  """All values not containing the given string."""
+  type_not_contains: String
+
+  """All values starting with the given string."""
+  type_starts_with: String
+
+  """All values not starting with the given string."""
+  type_not_starts_with: String
+
+  """All values ending with the given string."""
+  type_ends_with: String
+
+  """All values not ending with the given string."""
+  type_not_ends_with: String
+  source: String
+
+  """All values that are not equal to given value."""
+  source_not: String
+
+  """All values that are contained in given list."""
+  source_in: [String!]
+
+  """All values that are not contained in given list."""
+  source_not_in: [String!]
+
+  """All values less than the given value."""
+  source_lt: String
+
+  """All values less than or equal the given value."""
+  source_lte: String
+
+  """All values greater than the given value."""
+  source_gt: String
+
+  """All values greater than or equal the given value."""
+  source_gte: String
+
+  """All values containing the given string."""
+  source_contains: String
+
+  """All values not containing the given string."""
+  source_not_contains: String
+
+  """All values starting with the given string."""
+  source_starts_with: String
+
+  """All values not starting with the given string."""
+  source_not_starts_with: String
+
+  """All values ending with the given string."""
+  source_ends_with: String
+
+  """All values not ending with the given string."""
+  source_not_ends_with: String
+  kode_list: String
+
+  """All values that are not equal to given value."""
+  kode_list_not: String
+
+  """All values that are contained in given list."""
+  kode_list_in: [String!]
+
+  """All values that are not contained in given list."""
+  kode_list_not_in: [String!]
+
+  """All values less than the given value."""
+  kode_list_lt: String
+
+  """All values less than or equal the given value."""
+  kode_list_lte: String
+
+  """All values greater than the given value."""
+  kode_list_gt: String
+
+  """All values greater than or equal the given value."""
+  kode_list_gte: String
+
+  """All values containing the given string."""
+  kode_list_contains: String
+
+  """All values not containing the given string."""
+  kode_list_not_contains: String
+
+  """All values starting with the given string."""
+  kode_list_starts_with: String
+
+  """All values not starting with the given string."""
+  kode_list_not_starts_with: String
+
+  """All values ending with the given string."""
+  kode_list_ends_with: String
+
+  """All values not ending with the given string."""
+  kode_list_not_ends_with: String
+  alias: String
+
+  """All values that are not equal to given value."""
+  alias_not: String
+
+  """All values that are contained in given list."""
+  alias_in: [String!]
+
+  """All values that are not contained in given list."""
+  alias_not_in: [String!]
+
+  """All values less than the given value."""
+  alias_lt: String
+
+  """All values less than or equal the given value."""
+  alias_lte: String
+
+  """All values greater than the given value."""
+  alias_gt: String
+
+  """All values greater than or equal the given value."""
+  alias_gte: String
+
+  """All values containing the given string."""
+  alias_contains: String
+
+  """All values not containing the given string."""
+  alias_not_contains: String
+
+  """All values starting with the given string."""
+  alias_starts_with: String
+
+  """All values not starting with the given string."""
+  alias_not_starts_with: String
+
+  """All values ending with the given string."""
+  alias_ends_with: String
+
+  """All values not ending with the given string."""
+  alias_not_ends_with: String
+}
+
+input SrcAnalisaWhereUniqueInput {
+  id: Int
+}
+
+type SrcOperator {
+  id: Int!
+  type: String
+  operator: String
+  label: String
+}
+
+"""A connection to a list of items."""
+type SrcOperatorConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [SrcOperatorEdge]!
+  aggregate: AggregateSrcOperator!
+}
+
+input SrcOperatorCreateInput {
+  type: String
+  operator: String
+  label: String
+}
+
+"""An edge in a connection."""
+type SrcOperatorEdge {
+  """The item at the end of the edge."""
+  node: SrcOperator!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum SrcOperatorOrderByInput {
+  id_ASC
+  id_DESC
+  type_ASC
+  type_DESC
+  operator_ASC
+  operator_DESC
+  label_ASC
+  label_DESC
+}
+
+type SrcOperatorPreviousValues {
+  id: Int!
+  type: String
+  operator: String
+  label: String
+}
+
+type SrcOperatorSubscriptionPayload {
+  mutation: MutationType!
+  node: SrcOperator
+  updatedFields: [String!]
+  previousValues: SrcOperatorPreviousValues
+}
+
+input SrcOperatorSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [SrcOperatorSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [SrcOperatorSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [SrcOperatorSubscriptionWhereInput!]
+
+  """The subscription event gets dispatched when it's listed in mutation_in"""
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: SrcOperatorWhereInput
+}
+
+input SrcOperatorUpdateInput {
+  type: String
+  operator: String
+  label: String
+}
+
+input SrcOperatorUpdateManyMutationInput {
+  type: String
+  operator: String
+  label: String
+}
+
+input SrcOperatorWhereInput {
+  """Logical AND on all given filters."""
+  AND: [SrcOperatorWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [SrcOperatorWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [SrcOperatorWhereInput!]
+  id: Int
+
+  """All values that are not equal to given value."""
+  id_not: Int
+
+  """All values that are contained in given list."""
+  id_in: [Int!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [Int!]
+
+  """All values less than the given value."""
+  id_lt: Int
+
+  """All values less than or equal the given value."""
+  id_lte: Int
+
+  """All values greater than the given value."""
+  id_gt: Int
+
+  """All values greater than or equal the given value."""
+  id_gte: Int
+  type: String
+
+  """All values that are not equal to given value."""
+  type_not: String
+
+  """All values that are contained in given list."""
+  type_in: [String!]
+
+  """All values that are not contained in given list."""
+  type_not_in: [String!]
+
+  """All values less than the given value."""
+  type_lt: String
+
+  """All values less than or equal the given value."""
+  type_lte: String
+
+  """All values greater than the given value."""
+  type_gt: String
+
+  """All values greater than or equal the given value."""
+  type_gte: String
+
+  """All values containing the given string."""
+  type_contains: String
+
+  """All values not containing the given string."""
+  type_not_contains: String
+
+  """All values starting with the given string."""
+  type_starts_with: String
+
+  """All values not starting with the given string."""
+  type_not_starts_with: String
+
+  """All values ending with the given string."""
+  type_ends_with: String
+
+  """All values not ending with the given string."""
+  type_not_ends_with: String
+  operator: String
+
+  """All values that are not equal to given value."""
+  operator_not: String
+
+  """All values that are contained in given list."""
+  operator_in: [String!]
+
+  """All values that are not contained in given list."""
+  operator_not_in: [String!]
+
+  """All values less than the given value."""
+  operator_lt: String
+
+  """All values less than or equal the given value."""
+  operator_lte: String
+
+  """All values greater than the given value."""
+  operator_gt: String
+
+  """All values greater than or equal the given value."""
+  operator_gte: String
+
+  """All values containing the given string."""
+  operator_contains: String
+
+  """All values not containing the given string."""
+  operator_not_contains: String
+
+  """All values starting with the given string."""
+  operator_starts_with: String
+
+  """All values not starting with the given string."""
+  operator_not_starts_with: String
+
+  """All values ending with the given string."""
+  operator_ends_with: String
+
+  """All values not ending with the given string."""
+  operator_not_ends_with: String
+  label: String
+
+  """All values that are not equal to given value."""
+  label_not: String
+
+  """All values that are contained in given list."""
+  label_in: [String!]
+
+  """All values that are not contained in given list."""
+  label_not_in: [String!]
+
+  """All values less than the given value."""
+  label_lt: String
+
+  """All values less than or equal the given value."""
+  label_lte: String
+
+  """All values greater than the given value."""
+  label_gt: String
+
+  """All values greater than or equal the given value."""
+  label_gte: String
+
+  """All values containing the given string."""
+  label_contains: String
+
+  """All values not containing the given string."""
+  label_not_contains: String
+
+  """All values starting with the given string."""
+  label_starts_with: String
+
+  """All values not starting with the given string."""
+  label_not_starts_with: String
+
+  """All values ending with the given string."""
+  label_ends_with: String
+
+  """All values not ending with the given string."""
+  label_not_ends_with: String
+}
+
+input SrcOperatorWhereUniqueInput {
+  id: Int
+}
+
+type SrcTemplate {
+  id: Int!
+  name: String
+  template: String
+}
+
+"""A connection to a list of items."""
+type SrcTemplateConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [SrcTemplateEdge]!
+  aggregate: AggregateSrcTemplate!
+}
+
+input SrcTemplateCreateInput {
+  name: String
+  template: String
+}
+
+"""An edge in a connection."""
+type SrcTemplateEdge {
+  """The item at the end of the edge."""
+  node: SrcTemplate!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum SrcTemplateOrderByInput {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  template_ASC
+  template_DESC
+}
+
+type SrcTemplatePreviousValues {
+  id: Int!
+  name: String
+  template: String
+}
+
+type SrcTemplateSubscriptionPayload {
+  mutation: MutationType!
+  node: SrcTemplate
+  updatedFields: [String!]
+  previousValues: SrcTemplatePreviousValues
+}
+
+input SrcTemplateSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [SrcTemplateSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [SrcTemplateSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [SrcTemplateSubscriptionWhereInput!]
+
+  """The subscription event gets dispatched when it's listed in mutation_in"""
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: SrcTemplateWhereInput
+}
+
+input SrcTemplateUpdateInput {
+  name: String
+  template: String
+}
+
+input SrcTemplateUpdateManyMutationInput {
+  name: String
+  template: String
+}
+
+input SrcTemplateWhereInput {
+  """Logical AND on all given filters."""
+  AND: [SrcTemplateWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [SrcTemplateWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [SrcTemplateWhereInput!]
+  id: Int
+
+  """All values that are not equal to given value."""
+  id_not: Int
+
+  """All values that are contained in given list."""
+  id_in: [Int!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [Int!]
+
+  """All values less than the given value."""
+  id_lt: Int
+
+  """All values less than or equal the given value."""
+  id_lte: Int
+
+  """All values greater than the given value."""
+  id_gt: Int
+
+  """All values greater than or equal the given value."""
+  id_gte: Int
+  name: String
+
+  """All values that are not equal to given value."""
+  name_not: String
+
+  """All values that are contained in given list."""
+  name_in: [String!]
+
+  """All values that are not contained in given list."""
+  name_not_in: [String!]
+
+  """All values less than the given value."""
+  name_lt: String
+
+  """All values less than or equal the given value."""
+  name_lte: String
+
+  """All values greater than the given value."""
+  name_gt: String
+
+  """All values greater than or equal the given value."""
+  name_gte: String
+
+  """All values containing the given string."""
+  name_contains: String
+
+  """All values not containing the given string."""
+  name_not_contains: String
+
+  """All values starting with the given string."""
+  name_starts_with: String
+
+  """All values not starting with the given string."""
+  name_not_starts_with: String
+
+  """All values ending with the given string."""
+  name_ends_with: String
+
+  """All values not ending with the given string."""
+  name_not_ends_with: String
+  template: String
+
+  """All values that are not equal to given value."""
+  template_not: String
+
+  """All values that are contained in given list."""
+  template_in: [String!]
+
+  """All values that are not contained in given list."""
+  template_not_in: [String!]
+
+  """All values less than the given value."""
+  template_lt: String
+
+  """All values less than or equal the given value."""
+  template_lte: String
+
+  """All values greater than the given value."""
+  template_gt: String
+
+  """All values greater than or equal the given value."""
+  template_gte: String
+
+  """All values containing the given string."""
+  template_contains: String
+
+  """All values not containing the given string."""
+  template_not_contains: String
+
+  """All values starting with the given string."""
+  template_starts_with: String
+
+  """All values not starting with the given string."""
+  template_not_starts_with: String
+
+  """All values ending with the given string."""
+  template_ends_with: String
+
+  """All values not ending with the given string."""
+  template_not_ends_with: String
+}
+
+input SrcTemplateWhereUniqueInput {
+  id: Int
+}
+
 type Subscription {
   case(where: CaseSubscriptionWhereInput): CaseSubscriptionPayload
   caseClassification(where: CaseClassificationSubscriptionWhereInput): CaseClassificationSubscriptionPayload
@@ -21825,6 +23101,9 @@ type Subscription {
   personDocument(where: PersonDocumentSubscriptionWhereInput): PersonDocumentSubscriptionPayload
   role(where: RoleSubscriptionWhereInput): RoleSubscriptionPayload
   userProfile(where: UserProfileSubscriptionWhereInput): UserProfileSubscriptionPayload
+  srcAnalisa(where: SrcAnalisaSubscriptionWhereInput): SrcAnalisaSubscriptionPayload
+  srcOperator(where: SrcOperatorSubscriptionWhereInput): SrcOperatorSubscriptionPayload
+  srcTemplate(where: SrcTemplateSubscriptionWhereInput): SrcTemplateSubscriptionPayload
   application(where: ApplicationSubscriptionWhereInput): ApplicationSubscriptionPayload
   logRequest(where: LogRequestSubscriptionWhereInput): LogRequestSubscriptionPayload
   rolesType(where: RolesTypeSubscriptionWhereInput): RolesTypeSubscriptionPayload
@@ -23902,6 +25181,8 @@ export type CaseDocumentOrderByInput =   'id_ASC' |
   'keterangan_DESC' |
   'link_ASC' |
   'link_DESC' |
+  'filename_ASC' |
+  'filename_DESC' |
   'updatedAt_ASC' |
   'updatedAt_DESC' |
   'updatedBy_ASC' |
@@ -23953,7 +25234,9 @@ export type CaseOrderByInput =   'id_ASC' |
   'updatedBy_DESC'
 
 export type CasePelakuOrderByInput =   'id_ASC' |
-  'id_DESC'
+  'id_DESC' |
+  'jenisPelaku_ASC' |
+  'jenisPelaku_DESC'
 
 export type CasePkOrderByInput =   'id_ASC' |
   'id_DESC' |
@@ -24190,7 +25473,9 @@ export type LogRequestOrderByInput =   'ID_ASC' |
   'tglRequest_ASC' |
   'tglRequest_DESC' |
   'tglRespon_ASC' |
-  'tglRespon_DESC'
+  'tglRespon_DESC' |
+  'updatedAt_ASC' |
+  'updatedAt_DESC'
 
 export type MtVocabGroupOrderByInput =   'kode_list_ASC' |
   'kode_list_DESC' |
@@ -24234,6 +25519,8 @@ export type NetworkOrderByInput =   'address_ASC' |
   'regencyId_DESC' |
   'type_ASC' |
   'type_DESC' |
+  'status_ASC' |
+  'status_DESC' |
   'updatedAt_ASC' |
   'updatedAt_DESC'
 
@@ -24324,6 +25611,39 @@ export type RolesTypeOrderByInput =   'createdAt_ASC' |
   'id_DESC' |
   'description_ASC' |
   'description_DESC'
+
+export type SrcAnalisaOrderByInput =   'id_ASC' |
+  'id_DESC' |
+  'group_ASC' |
+  'group_DESC' |
+  'label_ASC' |
+  'label_DESC' |
+  'field_ASC' |
+  'field_DESC' |
+  'type_ASC' |
+  'type_DESC' |
+  'source_ASC' |
+  'source_DESC' |
+  'kode_list_ASC' |
+  'kode_list_DESC' |
+  'alias_ASC' |
+  'alias_DESC'
+
+export type SrcOperatorOrderByInput =   'id_ASC' |
+  'id_DESC' |
+  'type_ASC' |
+  'type_DESC' |
+  'operator_ASC' |
+  'operator_DESC' |
+  'label_ASC' |
+  'label_DESC'
+
+export type SrcTemplateOrderByInput =   'id_ASC' |
+  'id_DESC' |
+  'name_ASC' |
+  'name_DESC' |
+  'template_ASC' |
+  'template_DESC'
 
 export type UserOrderByInput =   'address_ASC' |
   'address_DESC' |
@@ -26543,6 +27863,7 @@ export interface CaseDocumentCreateInput {
   judulDokumen?: String | null
   keterangan?: String | null
   link?: String | null
+  filename?: String | null
   updatedBy?: String | null
   caseId: CaseCreateOneWithoutDocumentsInput
 }
@@ -26558,6 +27879,7 @@ export interface CaseDocumentCreateWithoutCaseIdInput {
   judulDokumen?: String | null
   keterangan?: String | null
   link?: String | null
+  filename?: String | null
   updatedBy?: String | null
 }
 
@@ -26651,6 +27973,20 @@ export interface CaseDocumentScalarWhereInput {
   link_not_starts_with?: String | null
   link_ends_with?: String | null
   link_not_ends_with?: String | null
+  filename?: String | null
+  filename_not?: String | null
+  filename_in?: String[] | String | null
+  filename_not_in?: String[] | String | null
+  filename_lt?: String | null
+  filename_lte?: String | null
+  filename_gt?: String | null
+  filename_gte?: String | null
+  filename_contains?: String | null
+  filename_not_contains?: String | null
+  filename_starts_with?: String | null
+  filename_not_starts_with?: String | null
+  filename_ends_with?: String | null
+  filename_not_ends_with?: String | null
   updatedAt?: DateTime | null
   updatedAt_not?: DateTime | null
   updatedAt_in?: DateTime[] | DateTime | null
@@ -26692,6 +28028,7 @@ export interface CaseDocumentUpdateInput {
   judulDokumen?: String | null
   keterangan?: String | null
   link?: String | null
+  filename?: String | null
   updatedBy?: String | null
   caseId?: CaseUpdateOneRequiredWithoutDocumentsInput | null
 }
@@ -26702,6 +28039,7 @@ export interface CaseDocumentUpdateManyDataInput {
   judulDokumen?: String | null
   keterangan?: String | null
   link?: String | null
+  filename?: String | null
   updatedBy?: String | null
 }
 
@@ -26711,6 +28049,7 @@ export interface CaseDocumentUpdateManyMutationInput {
   judulDokumen?: String | null
   keterangan?: String | null
   link?: String | null
+  filename?: String | null
   updatedBy?: String | null
 }
 
@@ -26737,6 +28076,7 @@ export interface CaseDocumentUpdateWithoutCaseIdDataInput {
   judulDokumen?: String | null
   keterangan?: String | null
   link?: String | null
+  filename?: String | null
   updatedBy?: String | null
 }
 
@@ -26841,6 +28181,20 @@ export interface CaseDocumentWhereInput {
   link_not_starts_with?: String | null
   link_ends_with?: String | null
   link_not_ends_with?: String | null
+  filename?: String | null
+  filename_not?: String | null
+  filename_in?: String[] | String | null
+  filename_not_in?: String[] | String | null
+  filename_lt?: String | null
+  filename_lte?: String | null
+  filename_gt?: String | null
+  filename_gte?: String | null
+  filename_contains?: String | null
+  filename_not_contains?: String | null
+  filename_starts_with?: String | null
+  filename_not_starts_with?: String | null
+  filename_ends_with?: String | null
+  filename_not_ends_with?: String | null
   updatedAt?: DateTime | null
   updatedAt_not?: DateTime | null
   updatedAt_in?: DateTime[] | DateTime | null
@@ -27127,6 +28481,7 @@ export interface CaseKorbanWhereUniqueInput {
 }
 
 export interface CasePelakuCreateInput {
+  jenisPelaku?: String | null
   caseId: CaseCreateOneWithoutPelakusInput
   personId?: PersonCreateOneWithoutCasepelakusInput | null
 }
@@ -27142,10 +28497,12 @@ export interface CasePelakuCreateManyWithoutPersonIdInput {
 }
 
 export interface CasePelakuCreateWithoutCaseIdInput {
+  jenisPelaku?: String | null
   personId?: PersonCreateOneWithoutCasepelakusInput | null
 }
 
 export interface CasePelakuCreateWithoutPersonIdInput {
+  jenisPelaku?: String | null
   caseId: CaseCreateOneWithoutPelakusInput
 }
 
@@ -27161,6 +28518,20 @@ export interface CasePelakuScalarWhereInput {
   id_lte?: Int | null
   id_gt?: Int | null
   id_gte?: Int | null
+  jenisPelaku?: String | null
+  jenisPelaku_not?: String | null
+  jenisPelaku_in?: String[] | String | null
+  jenisPelaku_not_in?: String[] | String | null
+  jenisPelaku_lt?: String | null
+  jenisPelaku_lte?: String | null
+  jenisPelaku_gt?: String | null
+  jenisPelaku_gte?: String | null
+  jenisPelaku_contains?: String | null
+  jenisPelaku_not_contains?: String | null
+  jenisPelaku_starts_with?: String | null
+  jenisPelaku_not_starts_with?: String | null
+  jenisPelaku_ends_with?: String | null
+  jenisPelaku_not_ends_with?: String | null
 }
 
 export interface CasePelakuSubscriptionWhereInput {
@@ -27175,8 +28546,17 @@ export interface CasePelakuSubscriptionWhereInput {
 }
 
 export interface CasePelakuUpdateInput {
+  jenisPelaku?: String | null
   caseId?: CaseUpdateOneRequiredWithoutPelakusInput | null
   personId?: PersonUpdateOneWithoutCasepelakusInput | null
+}
+
+export interface CasePelakuUpdateManyDataInput {
+  jenisPelaku?: String | null
+}
+
+export interface CasePelakuUpdateManyMutationInput {
+  jenisPelaku?: String | null
 }
 
 export interface CasePelakuUpdateManyWithoutCaseIdInput {
@@ -27186,6 +28566,7 @@ export interface CasePelakuUpdateManyWithoutCaseIdInput {
   disconnect?: CasePelakuWhereUniqueInput[] | CasePelakuWhereUniqueInput | null
   delete?: CasePelakuWhereUniqueInput[] | CasePelakuWhereUniqueInput | null
   update?: CasePelakuUpdateWithWhereUniqueWithoutCaseIdInput[] | CasePelakuUpdateWithWhereUniqueWithoutCaseIdInput | null
+  updateMany?: CasePelakuUpdateManyWithWhereNestedInput[] | CasePelakuUpdateManyWithWhereNestedInput | null
   deleteMany?: CasePelakuScalarWhereInput[] | CasePelakuScalarWhereInput | null
   upsert?: CasePelakuUpsertWithWhereUniqueWithoutCaseIdInput[] | CasePelakuUpsertWithWhereUniqueWithoutCaseIdInput | null
 }
@@ -27197,15 +28578,23 @@ export interface CasePelakuUpdateManyWithoutPersonIdInput {
   disconnect?: CasePelakuWhereUniqueInput[] | CasePelakuWhereUniqueInput | null
   delete?: CasePelakuWhereUniqueInput[] | CasePelakuWhereUniqueInput | null
   update?: CasePelakuUpdateWithWhereUniqueWithoutPersonIdInput[] | CasePelakuUpdateWithWhereUniqueWithoutPersonIdInput | null
+  updateMany?: CasePelakuUpdateManyWithWhereNestedInput[] | CasePelakuUpdateManyWithWhereNestedInput | null
   deleteMany?: CasePelakuScalarWhereInput[] | CasePelakuScalarWhereInput | null
   upsert?: CasePelakuUpsertWithWhereUniqueWithoutPersonIdInput[] | CasePelakuUpsertWithWhereUniqueWithoutPersonIdInput | null
 }
 
+export interface CasePelakuUpdateManyWithWhereNestedInput {
+  where: CasePelakuScalarWhereInput
+  data: CasePelakuUpdateManyDataInput
+}
+
 export interface CasePelakuUpdateWithoutCaseIdDataInput {
+  jenisPelaku?: String | null
   personId?: PersonUpdateOneWithoutCasepelakusInput | null
 }
 
 export interface CasePelakuUpdateWithoutPersonIdDataInput {
+  jenisPelaku?: String | null
   caseId?: CaseUpdateOneRequiredWithoutPelakusInput | null
 }
 
@@ -27243,6 +28632,20 @@ export interface CasePelakuWhereInput {
   id_lte?: Int | null
   id_gt?: Int | null
   id_gte?: Int | null
+  jenisPelaku?: String | null
+  jenisPelaku_not?: String | null
+  jenisPelaku_in?: String[] | String | null
+  jenisPelaku_not_in?: String[] | String | null
+  jenisPelaku_lt?: String | null
+  jenisPelaku_lte?: String | null
+  jenisPelaku_gt?: String | null
+  jenisPelaku_gte?: String | null
+  jenisPelaku_contains?: String | null
+  jenisPelaku_not_contains?: String | null
+  jenisPelaku_starts_with?: String | null
+  jenisPelaku_not_starts_with?: String | null
+  jenisPelaku_ends_with?: String | null
+  jenisPelaku_not_ends_with?: String | null
   caseId?: CaseWhereInput | null
   personId?: PersonWhereInput | null
 }
@@ -32051,6 +33454,14 @@ export interface LogRequestScalarWhereInput {
   tglRespon_lte?: DateTime | null
   tglRespon_gt?: DateTime | null
   tglRespon_gte?: DateTime | null
+  updatedAt?: DateTime | null
+  updatedAt_not?: DateTime | null
+  updatedAt_in?: DateTime[] | DateTime | null
+  updatedAt_not_in?: DateTime[] | DateTime | null
+  updatedAt_lt?: DateTime | null
+  updatedAt_lte?: DateTime | null
+  updatedAt_gt?: DateTime | null
+  updatedAt_gte?: DateTime | null
 }
 
 export interface LogRequestSubscriptionWhereInput {
@@ -32487,6 +33898,14 @@ export interface LogRequestWhereInput {
   tglRespon_lte?: DateTime | null
   tglRespon_gt?: DateTime | null
   tglRespon_gte?: DateTime | null
+  updatedAt?: DateTime | null
+  updatedAt_not?: DateTime | null
+  updatedAt_in?: DateTime[] | DateTime | null
+  updatedAt_not_in?: DateTime[] | DateTime | null
+  updatedAt_lt?: DateTime | null
+  updatedAt_lte?: DateTime | null
+  updatedAt_gt?: DateTime | null
+  updatedAt_gte?: DateTime | null
   caseId?: CaseWhereInput | null
   applicationId?: ApplicationWhereInput | null
   networkId?: NetworkWhereInput | null
@@ -32831,6 +34250,7 @@ export interface NetworkCreateInput {
   provinceId?: Int | null
   regencyId?: Int | null
   type?: String | null
+  status?: String | null
   logRequests?: LogRequestCreateManyWithoutNetworkIdInput | null
 }
 
@@ -32853,6 +34273,7 @@ export interface NetworkCreateWithoutLogRequestsInput {
   provinceId?: Int | null
   regencyId?: Int | null
   type?: String | null
+  status?: String | null
 }
 
 export interface NetworkSubscriptionWhereInput {
@@ -32875,6 +34296,7 @@ export interface NetworkUpdateDataInput {
   provinceId?: Int | null
   regencyId?: Int | null
   type?: String | null
+  status?: String | null
   logRequests?: LogRequestUpdateManyWithoutNetworkIdInput | null
 }
 
@@ -32887,6 +34309,7 @@ export interface NetworkUpdateInput {
   provinceId?: Int | null
   regencyId?: Int | null
   type?: String | null
+  status?: String | null
   logRequests?: LogRequestUpdateManyWithoutNetworkIdInput | null
 }
 
@@ -32899,6 +34322,7 @@ export interface NetworkUpdateManyMutationInput {
   provinceId?: Int | null
   regencyId?: Int | null
   type?: String | null
+  status?: String | null
 }
 
 export interface NetworkUpdateOneInput {
@@ -32928,6 +34352,7 @@ export interface NetworkUpdateWithoutLogRequestsDataInput {
   provinceId?: Int | null
   regencyId?: Int | null
   type?: String | null
+  status?: String | null
 }
 
 export interface NetworkUpsertNestedInput {
@@ -33060,6 +34485,20 @@ export interface NetworkWhereInput {
   type_not_starts_with?: String | null
   type_ends_with?: String | null
   type_not_ends_with?: String | null
+  status?: String | null
+  status_not?: String | null
+  status_in?: String[] | String | null
+  status_not_in?: String[] | String | null
+  status_lt?: String | null
+  status_lte?: String | null
+  status_gt?: String | null
+  status_gte?: String | null
+  status_contains?: String | null
+  status_not_contains?: String | null
+  status_starts_with?: String | null
+  status_not_starts_with?: String | null
+  status_ends_with?: String | null
+  status_not_ends_with?: String | null
   updatedAt?: DateTime | null
   updatedAt_not?: DateTime | null
   updatedAt_in?: DateTime[] | DateTime | null
@@ -34584,6 +36023,324 @@ export interface RoleWhereUniqueInput {
   id?: Int | null
 }
 
+export interface SrcAnalisaCreateInput {
+  group?: String | null
+  label?: String | null
+  field?: String | null
+  type?: String | null
+  source?: String | null
+  kode_list?: String | null
+  alias?: String | null
+}
+
+export interface SrcAnalisaSubscriptionWhereInput {
+  AND?: SrcAnalisaSubscriptionWhereInput[] | SrcAnalisaSubscriptionWhereInput | null
+  OR?: SrcAnalisaSubscriptionWhereInput[] | SrcAnalisaSubscriptionWhereInput | null
+  NOT?: SrcAnalisaSubscriptionWhereInput[] | SrcAnalisaSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
+  updatedFields_contains?: String | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
+  node?: SrcAnalisaWhereInput | null
+}
+
+export interface SrcAnalisaUpdateInput {
+  group?: String | null
+  label?: String | null
+  field?: String | null
+  type?: String | null
+  source?: String | null
+  kode_list?: String | null
+  alias?: String | null
+}
+
+export interface SrcAnalisaUpdateManyMutationInput {
+  group?: String | null
+  label?: String | null
+  field?: String | null
+  type?: String | null
+  source?: String | null
+  kode_list?: String | null
+  alias?: String | null
+}
+
+export interface SrcAnalisaWhereInput {
+  AND?: SrcAnalisaWhereInput[] | SrcAnalisaWhereInput | null
+  OR?: SrcAnalisaWhereInput[] | SrcAnalisaWhereInput | null
+  NOT?: SrcAnalisaWhereInput[] | SrcAnalisaWhereInput | null
+  id?: Int | null
+  id_not?: Int | null
+  id_in?: Int[] | Int | null
+  id_not_in?: Int[] | Int | null
+  id_lt?: Int | null
+  id_lte?: Int | null
+  id_gt?: Int | null
+  id_gte?: Int | null
+  group?: String | null
+  group_not?: String | null
+  group_in?: String[] | String | null
+  group_not_in?: String[] | String | null
+  group_lt?: String | null
+  group_lte?: String | null
+  group_gt?: String | null
+  group_gte?: String | null
+  group_contains?: String | null
+  group_not_contains?: String | null
+  group_starts_with?: String | null
+  group_not_starts_with?: String | null
+  group_ends_with?: String | null
+  group_not_ends_with?: String | null
+  label?: String | null
+  label_not?: String | null
+  label_in?: String[] | String | null
+  label_not_in?: String[] | String | null
+  label_lt?: String | null
+  label_lte?: String | null
+  label_gt?: String | null
+  label_gte?: String | null
+  label_contains?: String | null
+  label_not_contains?: String | null
+  label_starts_with?: String | null
+  label_not_starts_with?: String | null
+  label_ends_with?: String | null
+  label_not_ends_with?: String | null
+  field?: String | null
+  field_not?: String | null
+  field_in?: String[] | String | null
+  field_not_in?: String[] | String | null
+  field_lt?: String | null
+  field_lte?: String | null
+  field_gt?: String | null
+  field_gte?: String | null
+  field_contains?: String | null
+  field_not_contains?: String | null
+  field_starts_with?: String | null
+  field_not_starts_with?: String | null
+  field_ends_with?: String | null
+  field_not_ends_with?: String | null
+  type?: String | null
+  type_not?: String | null
+  type_in?: String[] | String | null
+  type_not_in?: String[] | String | null
+  type_lt?: String | null
+  type_lte?: String | null
+  type_gt?: String | null
+  type_gte?: String | null
+  type_contains?: String | null
+  type_not_contains?: String | null
+  type_starts_with?: String | null
+  type_not_starts_with?: String | null
+  type_ends_with?: String | null
+  type_not_ends_with?: String | null
+  source?: String | null
+  source_not?: String | null
+  source_in?: String[] | String | null
+  source_not_in?: String[] | String | null
+  source_lt?: String | null
+  source_lte?: String | null
+  source_gt?: String | null
+  source_gte?: String | null
+  source_contains?: String | null
+  source_not_contains?: String | null
+  source_starts_with?: String | null
+  source_not_starts_with?: String | null
+  source_ends_with?: String | null
+  source_not_ends_with?: String | null
+  kode_list?: String | null
+  kode_list_not?: String | null
+  kode_list_in?: String[] | String | null
+  kode_list_not_in?: String[] | String | null
+  kode_list_lt?: String | null
+  kode_list_lte?: String | null
+  kode_list_gt?: String | null
+  kode_list_gte?: String | null
+  kode_list_contains?: String | null
+  kode_list_not_contains?: String | null
+  kode_list_starts_with?: String | null
+  kode_list_not_starts_with?: String | null
+  kode_list_ends_with?: String | null
+  kode_list_not_ends_with?: String | null
+  alias?: String | null
+  alias_not?: String | null
+  alias_in?: String[] | String | null
+  alias_not_in?: String[] | String | null
+  alias_lt?: String | null
+  alias_lte?: String | null
+  alias_gt?: String | null
+  alias_gte?: String | null
+  alias_contains?: String | null
+  alias_not_contains?: String | null
+  alias_starts_with?: String | null
+  alias_not_starts_with?: String | null
+  alias_ends_with?: String | null
+  alias_not_ends_with?: String | null
+}
+
+export interface SrcAnalisaWhereUniqueInput {
+  id?: Int | null
+}
+
+export interface SrcOperatorCreateInput {
+  type?: String | null
+  operator?: String | null
+  label?: String | null
+}
+
+export interface SrcOperatorSubscriptionWhereInput {
+  AND?: SrcOperatorSubscriptionWhereInput[] | SrcOperatorSubscriptionWhereInput | null
+  OR?: SrcOperatorSubscriptionWhereInput[] | SrcOperatorSubscriptionWhereInput | null
+  NOT?: SrcOperatorSubscriptionWhereInput[] | SrcOperatorSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
+  updatedFields_contains?: String | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
+  node?: SrcOperatorWhereInput | null
+}
+
+export interface SrcOperatorUpdateInput {
+  type?: String | null
+  operator?: String | null
+  label?: String | null
+}
+
+export interface SrcOperatorUpdateManyMutationInput {
+  type?: String | null
+  operator?: String | null
+  label?: String | null
+}
+
+export interface SrcOperatorWhereInput {
+  AND?: SrcOperatorWhereInput[] | SrcOperatorWhereInput | null
+  OR?: SrcOperatorWhereInput[] | SrcOperatorWhereInput | null
+  NOT?: SrcOperatorWhereInput[] | SrcOperatorWhereInput | null
+  id?: Int | null
+  id_not?: Int | null
+  id_in?: Int[] | Int | null
+  id_not_in?: Int[] | Int | null
+  id_lt?: Int | null
+  id_lte?: Int | null
+  id_gt?: Int | null
+  id_gte?: Int | null
+  type?: String | null
+  type_not?: String | null
+  type_in?: String[] | String | null
+  type_not_in?: String[] | String | null
+  type_lt?: String | null
+  type_lte?: String | null
+  type_gt?: String | null
+  type_gte?: String | null
+  type_contains?: String | null
+  type_not_contains?: String | null
+  type_starts_with?: String | null
+  type_not_starts_with?: String | null
+  type_ends_with?: String | null
+  type_not_ends_with?: String | null
+  operator?: String | null
+  operator_not?: String | null
+  operator_in?: String[] | String | null
+  operator_not_in?: String[] | String | null
+  operator_lt?: String | null
+  operator_lte?: String | null
+  operator_gt?: String | null
+  operator_gte?: String | null
+  operator_contains?: String | null
+  operator_not_contains?: String | null
+  operator_starts_with?: String | null
+  operator_not_starts_with?: String | null
+  operator_ends_with?: String | null
+  operator_not_ends_with?: String | null
+  label?: String | null
+  label_not?: String | null
+  label_in?: String[] | String | null
+  label_not_in?: String[] | String | null
+  label_lt?: String | null
+  label_lte?: String | null
+  label_gt?: String | null
+  label_gte?: String | null
+  label_contains?: String | null
+  label_not_contains?: String | null
+  label_starts_with?: String | null
+  label_not_starts_with?: String | null
+  label_ends_with?: String | null
+  label_not_ends_with?: String | null
+}
+
+export interface SrcOperatorWhereUniqueInput {
+  id?: Int | null
+}
+
+export interface SrcTemplateCreateInput {
+  name?: String | null
+  template?: String | null
+}
+
+export interface SrcTemplateSubscriptionWhereInput {
+  AND?: SrcTemplateSubscriptionWhereInput[] | SrcTemplateSubscriptionWhereInput | null
+  OR?: SrcTemplateSubscriptionWhereInput[] | SrcTemplateSubscriptionWhereInput | null
+  NOT?: SrcTemplateSubscriptionWhereInput[] | SrcTemplateSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
+  updatedFields_contains?: String | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
+  node?: SrcTemplateWhereInput | null
+}
+
+export interface SrcTemplateUpdateInput {
+  name?: String | null
+  template?: String | null
+}
+
+export interface SrcTemplateUpdateManyMutationInput {
+  name?: String | null
+  template?: String | null
+}
+
+export interface SrcTemplateWhereInput {
+  AND?: SrcTemplateWhereInput[] | SrcTemplateWhereInput | null
+  OR?: SrcTemplateWhereInput[] | SrcTemplateWhereInput | null
+  NOT?: SrcTemplateWhereInput[] | SrcTemplateWhereInput | null
+  id?: Int | null
+  id_not?: Int | null
+  id_in?: Int[] | Int | null
+  id_not_in?: Int[] | Int | null
+  id_lt?: Int | null
+  id_lte?: Int | null
+  id_gt?: Int | null
+  id_gte?: Int | null
+  name?: String | null
+  name_not?: String | null
+  name_in?: String[] | String | null
+  name_not_in?: String[] | String | null
+  name_lt?: String | null
+  name_lte?: String | null
+  name_gt?: String | null
+  name_gte?: String | null
+  name_contains?: String | null
+  name_not_contains?: String | null
+  name_starts_with?: String | null
+  name_not_starts_with?: String | null
+  name_ends_with?: String | null
+  name_not_ends_with?: String | null
+  template?: String | null
+  template_not?: String | null
+  template_in?: String[] | String | null
+  template_not_in?: String[] | String | null
+  template_lt?: String | null
+  template_lte?: String | null
+  template_gt?: String | null
+  template_gte?: String | null
+  template_contains?: String | null
+  template_not_contains?: String | null
+  template_starts_with?: String | null
+  template_not_starts_with?: String | null
+  template_ends_with?: String | null
+  template_not_ends_with?: String | null
+}
+
+export interface SrcTemplateWhereUniqueInput {
+  id?: Int | null
+}
+
 export interface UserCreateInput {
   address?: String | null
   avatar?: String | null
@@ -35669,6 +37426,18 @@ export interface AggregateRolesType {
   count: Int
 }
 
+export interface AggregateSrcAnalisa {
+  count: Int
+}
+
+export interface AggregateSrcOperator {
+  count: Int
+}
+
+export interface AggregateSrcTemplate {
+  count: Int
+}
+
 export interface AggregateUser {
   count: Int
 }
@@ -35946,6 +37715,7 @@ export interface CaseDocument {
   judulDokumen?: String | null
   keterangan?: String | null
   link?: String | null
+  filename?: String | null
   updatedAt: DateTime
   updatedBy?: String | null
 }
@@ -35977,6 +37747,7 @@ export interface CaseDocumentPreviousValues {
   judulDokumen?: String | null
   keterangan?: String | null
   link?: String | null
+  filename?: String | null
   updatedAt: DateTime
   updatedBy?: String | null
 }
@@ -36073,6 +37844,7 @@ export interface CaseKorbanSubscriptionPayload {
 export interface CasePelaku {
   id: Int
   caseId: Case
+  jenisPelaku?: String | null
   personId?: Person | null
 }
 
@@ -36097,6 +37869,7 @@ export interface CasePelakuEdge {
 
 export interface CasePelakuPreviousValues {
   id: Int
+  jenisPelaku?: String | null
 }
 
 export interface CasePelakuSubscriptionPayload {
@@ -36789,6 +38562,7 @@ export interface LogRequest {
   tglExpired?: DateTime | null
   tglRequest?: DateTime | null
   tglRespon?: DateTime | null
+  updatedAt?: DateTime | null
 }
 
 export interface LogRequestApp {
@@ -36856,6 +38630,7 @@ export interface LogRequestPreviousValues {
   tglExpired?: DateTime | null
   tglRequest?: DateTime | null
   tglRespon?: DateTime | null
+  updatedAt?: DateTime | null
 }
 
 export interface LogRequestSubscriptionPayload {
@@ -36958,6 +38733,7 @@ export interface Network {
   provinceId?: Int | null
   regencyId?: Int | null
   type?: String | null
+  status?: String | null
   updatedAt: DateTime
   logRequests?: Array<LogRequest> | null
 }
@@ -36992,6 +38768,7 @@ export interface NetworkPreviousValues {
   provinceId?: Int | null
   regencyId?: Int | null
   type?: String | null
+  status?: String | null
   updatedAt: DateTime
 }
 
@@ -37232,6 +39009,132 @@ export interface RoleSubscriptionPayload {
   node?: Role | null
   updatedFields?: Array<String> | null
   previousValues?: RolePreviousValues | null
+}
+
+export interface SrcAnalisa {
+  id: Int
+  group?: String | null
+  label?: String | null
+  field?: String | null
+  type?: String | null
+  source?: String | null
+  kode_list?: String | null
+  alias?: String | null
+}
+
+/*
+ * A connection to a list of items.
+
+ */
+export interface SrcAnalisaConnection {
+  pageInfo: PageInfo
+  edges: Array<SrcAnalisaEdge | null>
+  aggregate: AggregateSrcAnalisa
+}
+
+/*
+ * An edge in a connection.
+
+ */
+export interface SrcAnalisaEdge {
+  node: SrcAnalisa
+  cursor: String
+}
+
+export interface SrcAnalisaPreviousValues {
+  id: Int
+  group?: String | null
+  label?: String | null
+  field?: String | null
+  type?: String | null
+  source?: String | null
+  kode_list?: String | null
+  alias?: String | null
+}
+
+export interface SrcAnalisaSubscriptionPayload {
+  mutation: MutationType
+  node?: SrcAnalisa | null
+  updatedFields?: Array<String> | null
+  previousValues?: SrcAnalisaPreviousValues | null
+}
+
+export interface SrcOperator {
+  id: Int
+  type?: String | null
+  operator?: String | null
+  label?: String | null
+}
+
+/*
+ * A connection to a list of items.
+
+ */
+export interface SrcOperatorConnection {
+  pageInfo: PageInfo
+  edges: Array<SrcOperatorEdge | null>
+  aggregate: AggregateSrcOperator
+}
+
+/*
+ * An edge in a connection.
+
+ */
+export interface SrcOperatorEdge {
+  node: SrcOperator
+  cursor: String
+}
+
+export interface SrcOperatorPreviousValues {
+  id: Int
+  type?: String | null
+  operator?: String | null
+  label?: String | null
+}
+
+export interface SrcOperatorSubscriptionPayload {
+  mutation: MutationType
+  node?: SrcOperator | null
+  updatedFields?: Array<String> | null
+  previousValues?: SrcOperatorPreviousValues | null
+}
+
+export interface SrcTemplate {
+  id: Int
+  name?: String | null
+  template?: String | null
+}
+
+/*
+ * A connection to a list of items.
+
+ */
+export interface SrcTemplateConnection {
+  pageInfo: PageInfo
+  edges: Array<SrcTemplateEdge | null>
+  aggregate: AggregateSrcTemplate
+}
+
+/*
+ * An edge in a connection.
+
+ */
+export interface SrcTemplateEdge {
+  node: SrcTemplate
+  cursor: String
+}
+
+export interface SrcTemplatePreviousValues {
+  id: Int
+  name?: String | null
+  template?: String | null
+}
+
+export interface SrcTemplateSubscriptionPayload {
+  mutation: MutationType
+  node?: SrcTemplate | null
+  updatedFields?: Array<String> | null
+  previousValues?: SrcTemplatePreviousValues | null
 }
 
 export interface User {
